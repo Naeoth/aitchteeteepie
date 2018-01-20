@@ -1,0 +1,106 @@
+grammar aitchteeteepie.xtext.dsl.CurlBetterThanHttpie
+
+import "platform:/resource/aitchteeteepie/model/aitchteeteepie.ecore" 
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+CommandLineInterface returns CommandLineInterface:
+	{CommandLineInterface}
+	'http' WS (flags+=Flag WS)* (method=Method)? WS (protocol=STRING '://')? (url=STRING (':' port=INT)? | (':' (port=INT)?)) ('/' resource=STRING)?  WS ('--' WS)? (items+=Item WS)*;
+
+// FLAGS
+Flag returns Flag:
+	ProxyFlag | FormFlag | AuthFlag | DownloadFlag | BodyFlag | VersionFlag | JsonFlag | HelpFlag | HeadersFlag | VerboseFlag | TimeoutFlag;
+
+HeadersFlag returns HeadersFlag:
+	{HeadersFlag}
+	('--header' | '-t');
+
+BodyFlag returns BodyFlag:
+	{BodyFlag}
+	('--body' | '-b');
+	
+JsonFlag returns JsonFlag:
+	{JsonFlag}
+	('--json' | '-j');
+	
+FormFlag returns FormFlag:
+	{FormFlag}
+	('--form' | 'f');
+
+ProxyFlag returns ProxyFlag:
+	'--proxy' VALUE (protocol=STRING ':')? (proxyProtocol=STRING '://')? (username=STRING ':' password=STRING 'a')? hostname=STRING (':' port=INT)?;
+
+AuthFlag returns AuthFlag:
+	('--auth' | '-a') VALUE username=STRING (':' password=STRING)? ('@' hostname=STRING)?; // TO CHECK IF EMPTY STRING WORKS
+
+DownloadFlag returns DownloadFlag:
+	{DownloadFlag}
+	('--download' | '-d');
+	
+HelpFlag returns HelpFlag:
+	{HelpFlag}
+	('--help' | '-h');
+
+VersionFlag returns VersionFlag:
+	{VersionFlag}
+	'--version';
+
+VerboseFlag returns VerboseFlag:
+	{VerboseFlag}
+	('--verbose' | '-v');
+
+TimeoutFlag returns TimeoutFlag:
+	'--timeout' VALUE timeout=FLOAT;
+
+// METHODS
+enum Method returns Method:
+	GET = 'GET' | POST = 'POST' | PUT = 'PUT' | DELETE = 'DELETE';
+
+// ITEMS
+Item returns Item:
+	FormFileFieldItem | DataFieldItem | HttpHeaderItem | UrlParameterItem | RawJsonFieldItem;
+
+FormFileFieldItem returns FormFileFieldItem:
+	field=STRING '@' value=STRING;
+
+DataFieldItem returns DataFieldItem:
+	field=STRING '=' (value=STRING | '@' value=STRING);
+
+HttpHeaderItem returns HttpHeaderItem:
+	field=STRING ":" value=STRING;
+
+UrlParameterItem returns UrlParameterItem:
+	field=STRING "==" value=STRING;
+
+RawJsonFieldItem returns RawJsonFieldItem:
+	{RawJsonFieldItem}
+	;//field=STRING ':=' (value=STRING | '@' value=[JsonType]);
+	
+JsonType returns JsonType:
+	JsonBoolean | JsonObject | JsonArray | JsonNumber;
+
+JsonBoolean returns JsonBoolean:
+	{JsonBoolean}
+	BOOLEAN;
+
+JsonObject returns JsonObject:
+	{JsonObject}
+	'{' ('\'' | '"' ) '}';
+
+JsonArray returns JsonArray:
+	{JsonArray}
+	;//'[' (JsonType (',' JsonType)*)? ']';
+
+JsonNumber returns JsonNumber:
+	{JsonNumber}
+	;//();*/
+
+terminal WS: (' '|'\t')+;
+terminal VALUE: ('=' | WS);
+terminal fragment DIGIT: '0'..'9';
+terminal INT returns ecore::EInt: '0' | ('1'..'9' DIGIT*);
+terminal FLOAT returns ecore::EFloat: INT | INT? '.' DIGIT* (('E'|'e') INT)?;
+terminal STRING:
+	'"' ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|'"') )* '"' |
+	"'" ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|"'") )* "'" ;
+terminal BOOLEAN returns ecore::EBoolean: 'true' | 'false';

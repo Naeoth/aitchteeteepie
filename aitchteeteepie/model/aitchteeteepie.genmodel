@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/aitchteeteepie/src" modelPluginID="aitchteeteepie"
+    modelName="Aitchteeteepie" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>aitchteeteepie.ecore</foreignModel>
+  <genPackages prefix="Aitchteeteepie" disposableProviderFactory="true" ecorePackage="aitchteeteepie.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="aitchteeteepie.ecore#//Method">
+      <genEnumLiterals ecoreEnumLiteral="aitchteeteepie.ecore#//Method/GET"/>
+      <genEnumLiterals ecoreEnumLiteral="aitchteeteepie.ecore#//Method/POST"/>
+      <genEnumLiterals ecoreEnumLiteral="aitchteeteepie.ecore#//Method/PUT"/>
+      <genEnumLiterals ecoreEnumLiteral="aitchteeteepie.ecore#//Method/DELETE"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="aitchteeteepie.ecore#//JsonType"/>
+    <genClasses ecoreClass="aitchteeteepie.ecore#//FormFileFieldItem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aitchteeteepie.ecore#//FormFileFieldItem/value"/>
+    </genClasses>
+    <genClasses ecoreClass="aitchteeteepie.ecore#//ProxyFlag">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aitchteeteepie.ecore#//ProxyFlag/protocol"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aitchteeteepie.ecore#//ProxyFlag/proxyProtocol"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aitchteeteepie.ecore#//ProxyFlag/username"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aitchteeteepie.ecore#//ProxyFlag/password"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aitchteeteepie.ecore#//ProxyFlag/hostname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aitchteeteepie.ecore#//ProxyFlag/port"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="aitchteeteepie.ecore#//DataTypeFlag"/>
+    <genClasses ecoreClass="aitchteeteepie.ecore#//FormFlag"/>
+    <genClasses ecoreClass="aitchteeteepie.ecore#//AuthFlag">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aitchteeteepie.ecore#//AuthFlag/username"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aitchteeteepie.ecore#//AuthFlag/password"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aitchteeteepie.ecore#//AuthFlag/hostname"/>
+    </genClasses>
+    <genClasses ecoreClass="aitchteeteepie.ecore#//DownloadFlag"/>
+    <genClasses ecoreClass="aitchteeteepie.ecore#//BodyFlag"/>
+    <genClasses ecoreClass="aitchteeteepie.ecore#//JsonBoolean"/>
+    <genClasses ecoreClass="aitchteeteepie.ecore#//VersionFlag"/>
+    <genClasses ecoreClass="aitchteeteepie.ecore#//DataFieldItem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aitchteeteepie.ecore#//DataFieldItem/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="aitchteeteepie.ecore#//ResponseFlag"/>
+    <genClasses ecoreClass="aitchteeteepie.ecore#//JsonFlag"/>
+    <genClasses ecoreClass="aitchteeteepie.ecore#//HttpHeaderItem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aitchteeteepie.ecore#//HttpHeaderItem/value"/>
+    </genClasses>
+    <genClasses ecoreClass="aitchteeteepie.ecore#//JsonObject"/>
+    <genClasses ecoreClass="aitchteeteepie.ecore#//HelpFlag"/>
+    <genClasses ecoreClass="aitchteeteepie.ecore#//HeadersFlag"/>
+    <genClasses ecoreClass="aitchteeteepie.ecore#//UrlParameterItem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aitchteeteepie.ecore#//UrlParameterItem/value"/>
+    </genClasses>
+    <genClasses ecoreClass="aitchteeteepie.ecore#//JsonArray"/>
+    <genClasses ecoreClass="aitchteeteepie.ecore#//VerboseFlag"/>
+    <genClasses image="false" ecoreClass="aitchteeteepie.ecore#//Flag"/>
+    <genClasses ecoreClass="aitchteeteepie.ecore#//CommandLineInterface">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aitchteeteepie.ecore#//CommandLineInterface/flags"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aitchteeteepie.ecore#//CommandLineInterface/items"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aitchteeteepie.ecore#//CommandLineInterface/method"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aitchteeteepie.ecore#//CommandLineInterface/protocol"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aitchteeteepie.ecore#//CommandLineInterface/url"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aitchteeteepie.ecore#//CommandLineInterface/port"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aitchteeteepie.ecore#//CommandLineInterface/resource"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="aitchteeteepie.ecore#//Item">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aitchteeteepie.ecore#//Item/field"/>
+    </genClasses>
+    <genClasses ecoreClass="aitchteeteepie.ecore#//JsonNumber"/>
+    <genClasses ecoreClass="aitchteeteepie.ecore#//TimeoutFlag">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aitchteeteepie.ecore#//TimeoutFlag/timeout"/>
+    </genClasses>
+    <genClasses ecoreClass="aitchteeteepie.ecore#//RawJsonFieldItem">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference aitchteeteepie.ecore#//RawJsonFieldItem/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
