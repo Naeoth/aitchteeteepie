@@ -88,15 +88,15 @@ ruleCommandLineInterface returns [EObject current=null]
 		{
 			newLeafNode(otherlv_1, grammarAccess.getCommandLineInterfaceAccess().getHttpKeyword_1());
 		}
-		this_WS_2=RULE_WS
-		{
-			newLeafNode(this_WS_2, grammarAccess.getCommandLineInterfaceAccess().getWSTerminalRuleCall_2());
-		}
 		(
+			this_WS_2=RULE_WS
+			{
+				newLeafNode(this_WS_2, grammarAccess.getCommandLineInterfaceAccess().getWSTerminalRuleCall_2_0());
+			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getCommandLineInterfaceAccess().getFlagsFlagParserRuleCall_3_0_0());
+						newCompositeNode(grammarAccess.getCommandLineInterfaceAccess().getFlagsFlagParserRuleCall_2_1_0());
 					}
 					lv_flags_3_0=ruleFlag
 					{
@@ -112,192 +112,38 @@ ruleCommandLineInterface returns [EObject current=null]
 					}
 				)
 			)
-			this_WS_4=RULE_WS
-			{
-				newLeafNode(this_WS_4, grammarAccess.getCommandLineInterfaceAccess().getWSTerminalRuleCall_3_1());
-			}
 		)*
 		(
-			(
-				{
-					newCompositeNode(grammarAccess.getCommandLineInterfaceAccess().getMethodMethodEnumRuleCall_4_0());
-				}
-				lv_method_5_0=ruleMethod
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getCommandLineInterfaceRule());
-					}
-					set(
-						$current,
-						"method",
-						lv_method_5_0,
-						"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.Method");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)?
-		this_WS_6=RULE_WS
-		{
-			newLeafNode(this_WS_6, grammarAccess.getCommandLineInterfaceAccess().getWSTerminalRuleCall_5());
-		}
-		(
-			(
-				(
-					lv_protocol_7_0=RULE_STRING
-					{
-						newLeafNode(lv_protocol_7_0, grammarAccess.getCommandLineInterfaceAccess().getProtocolSTRINGTerminalRuleCall_6_0_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getCommandLineInterfaceRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"protocol",
-							lv_protocol_7_0,
-							"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.STRING");
-					}
-				)
-			)
-			otherlv_8='://'
+			this_WS_4=RULE_WS
 			{
-				newLeafNode(otherlv_8, grammarAccess.getCommandLineInterfaceAccess().getColonSolidusSolidusKeyword_6_1());
-			}
-		)?
-		(
-			(
-				(
-					(
-						lv_url_9_0=RULE_STRING
-						{
-							newLeafNode(lv_url_9_0, grammarAccess.getCommandLineInterfaceAccess().getUrlSTRINGTerminalRuleCall_7_0_0_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getCommandLineInterfaceRule());
-							}
-							setWithLastConsumed(
-								$current,
-								"url",
-								lv_url_9_0,
-								"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.STRING");
-						}
-					)
-				)
-				(
-					otherlv_10=':'
-					{
-						newLeafNode(otherlv_10, grammarAccess.getCommandLineInterfaceAccess().getColonKeyword_7_0_1_0());
-					}
-					(
-						(
-							lv_port_11_0=RULE_INT
-							{
-								newLeafNode(lv_port_11_0, grammarAccess.getCommandLineInterfaceAccess().getPortINTTerminalRuleCall_7_0_1_1_0());
-							}
-							{
-								if ($current==null) {
-									$current = createModelElement(grammarAccess.getCommandLineInterfaceRule());
-								}
-								setWithLastConsumed(
-									$current,
-									"port",
-									lv_port_11_0,
-									"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.INT");
-							}
-						)
-					)
-				)?
-			)
-			    |
-			(
-				otherlv_12=':'
-				{
-					newLeafNode(otherlv_12, grammarAccess.getCommandLineInterfaceAccess().getColonKeyword_7_1_0());
-				}
-				(
-					(
-						lv_port_13_0=RULE_INT
-						{
-							newLeafNode(lv_port_13_0, grammarAccess.getCommandLineInterfaceAccess().getPortINTTerminalRuleCall_7_1_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getCommandLineInterfaceRule());
-							}
-							setWithLastConsumed(
-								$current,
-								"port",
-								lv_port_13_0,
-								"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.INT");
-						}
-					)
-				)?
-			)
-		)
-		(
-			otherlv_14='/'
-			{
-				newLeafNode(otherlv_14, grammarAccess.getCommandLineInterfaceAccess().getSolidusKeyword_8_0());
+				newLeafNode(this_WS_4, grammarAccess.getCommandLineInterfaceAccess().getWSTerminalRuleCall_3_0());
 			}
 			(
 				(
-					lv_resource_15_0=RULE_STRING
 					{
-						newLeafNode(lv_resource_15_0, grammarAccess.getCommandLineInterfaceAccess().getResourceSTRINGTerminalRuleCall_8_1_0());
+						newCompositeNode(grammarAccess.getCommandLineInterfaceAccess().getMethodMethodEnumRuleCall_3_1_0());
 					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getCommandLineInterfaceRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"resource",
-							lv_resource_15_0,
-							"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.STRING");
-					}
-				)
-			)
-		)?
-		this_WS_16=RULE_WS
-		{
-			newLeafNode(this_WS_16, grammarAccess.getCommandLineInterfaceAccess().getWSTerminalRuleCall_9());
-		}
-		(
-			otherlv_17='--'
-			{
-				newLeafNode(otherlv_17, grammarAccess.getCommandLineInterfaceAccess().getHyphenMinusHyphenMinusKeyword_10_0());
-			}
-			this_WS_18=RULE_WS
-			{
-				newLeafNode(this_WS_18, grammarAccess.getCommandLineInterfaceAccess().getWSTerminalRuleCall_10_1());
-			}
-		)?
-		(
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getCommandLineInterfaceAccess().getItemsItemParserRuleCall_11_0_0());
-					}
-					lv_items_19_0=ruleItem
+					lv_method_5_0=ruleMethod
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getCommandLineInterfaceRule());
 						}
-						add(
+						set(
 							$current,
-							"items",
-							lv_items_19_0,
-							"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.Item");
+							"method",
+							lv_method_5_0,
+							"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.Method");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-			this_WS_20=RULE_WS
+		)?
+		(
+			this_WS_6=RULE_WS
 			{
-				newLeafNode(this_WS_20, grammarAccess.getCommandLineInterfaceAccess().getWSTerminalRuleCall_11_1());
+				newLeafNode(this_WS_6, grammarAccess.getCommandLineInterfaceAccess().getWSTerminalRuleCall_4());
 			}
-		)*
+		)?
 	)
 ;
 
@@ -1015,479 +861,6 @@ ruleTimeoutFlag returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleItem
-entryRuleItem returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getItemRule()); }
-	iv_ruleItem=ruleItem
-	{ $current=$iv_ruleItem.current; }
-	EOF;
-
-// Rule Item
-ruleItem returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		{
-			newCompositeNode(grammarAccess.getItemAccess().getFormFileFieldItemParserRuleCall_0());
-		}
-		this_FormFileFieldItem_0=ruleFormFileFieldItem
-		{
-			$current = $this_FormFileFieldItem_0.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getItemAccess().getDataFieldItemParserRuleCall_1());
-		}
-		this_DataFieldItem_1=ruleDataFieldItem
-		{
-			$current = $this_DataFieldItem_1.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getItemAccess().getHttpHeaderItemParserRuleCall_2());
-		}
-		this_HttpHeaderItem_2=ruleHttpHeaderItem
-		{
-			$current = $this_HttpHeaderItem_2.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getItemAccess().getUrlParameterItemParserRuleCall_3());
-		}
-		this_UrlParameterItem_3=ruleUrlParameterItem
-		{
-			$current = $this_UrlParameterItem_3.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getItemAccess().getRawJsonFieldItemParserRuleCall_4());
-		}
-		this_RawJsonFieldItem_4=ruleRawJsonFieldItem
-		{
-			$current = $this_RawJsonFieldItem_4.current;
-			afterParserOrEnumRuleCall();
-		}
-	)
-;
-
-// Entry rule entryRuleFormFileFieldItem
-entryRuleFormFileFieldItem returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getFormFileFieldItemRule()); }
-	iv_ruleFormFileFieldItem=ruleFormFileFieldItem
-	{ $current=$iv_ruleFormFileFieldItem.current; }
-	EOF;
-
-// Rule FormFileFieldItem
-ruleFormFileFieldItem returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			(
-				lv_field_0_0=RULE_STRING
-				{
-					newLeafNode(lv_field_0_0, grammarAccess.getFormFileFieldItemAccess().getFieldSTRINGTerminalRuleCall_0_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getFormFileFieldItemRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"field",
-						lv_field_0_0,
-						"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.STRING");
-				}
-			)
-		)
-		otherlv_1='@'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getFormFileFieldItemAccess().getCommercialAtKeyword_1());
-		}
-		(
-			(
-				lv_value_2_0=RULE_STRING
-				{
-					newLeafNode(lv_value_2_0, grammarAccess.getFormFileFieldItemAccess().getValueSTRINGTerminalRuleCall_2_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getFormFileFieldItemRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"value",
-						lv_value_2_0,
-						"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.STRING");
-				}
-			)
-		)
-	)
-;
-
-// Entry rule entryRuleDataFieldItem
-entryRuleDataFieldItem returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getDataFieldItemRule()); }
-	iv_ruleDataFieldItem=ruleDataFieldItem
-	{ $current=$iv_ruleDataFieldItem.current; }
-	EOF;
-
-// Rule DataFieldItem
-ruleDataFieldItem returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			(
-				lv_field_0_0=RULE_STRING
-				{
-					newLeafNode(lv_field_0_0, grammarAccess.getDataFieldItemAccess().getFieldSTRINGTerminalRuleCall_0_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getDataFieldItemRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"field",
-						lv_field_0_0,
-						"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.STRING");
-				}
-			)
-		)
-		otherlv_1='='
-		{
-			newLeafNode(otherlv_1, grammarAccess.getDataFieldItemAccess().getEqualsSignKeyword_1());
-		}
-		(
-			(
-				(
-					lv_value_2_0=RULE_STRING
-					{
-						newLeafNode(lv_value_2_0, grammarAccess.getDataFieldItemAccess().getValueSTRINGTerminalRuleCall_2_0_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getDataFieldItemRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"value",
-							lv_value_2_0,
-							"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.STRING");
-					}
-				)
-			)
-			    |
-			(
-				otherlv_3='@'
-				{
-					newLeafNode(otherlv_3, grammarAccess.getDataFieldItemAccess().getCommercialAtKeyword_2_1_0());
-				}
-				(
-					(
-						lv_value_4_0=RULE_STRING
-						{
-							newLeafNode(lv_value_4_0, grammarAccess.getDataFieldItemAccess().getValueSTRINGTerminalRuleCall_2_1_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getDataFieldItemRule());
-							}
-							setWithLastConsumed(
-								$current,
-								"value",
-								lv_value_4_0,
-								"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.STRING");
-						}
-					)
-				)
-			)
-		)
-	)
-;
-
-// Entry rule entryRuleHttpHeaderItem
-entryRuleHttpHeaderItem returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getHttpHeaderItemRule()); }
-	iv_ruleHttpHeaderItem=ruleHttpHeaderItem
-	{ $current=$iv_ruleHttpHeaderItem.current; }
-	EOF;
-
-// Rule HttpHeaderItem
-ruleHttpHeaderItem returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			(
-				lv_field_0_0=RULE_STRING
-				{
-					newLeafNode(lv_field_0_0, grammarAccess.getHttpHeaderItemAccess().getFieldSTRINGTerminalRuleCall_0_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getHttpHeaderItemRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"field",
-						lv_field_0_0,
-						"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.STRING");
-				}
-			)
-		)
-		otherlv_1=':'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getHttpHeaderItemAccess().getColonKeyword_1());
-		}
-		(
-			(
-				lv_value_2_0=RULE_STRING
-				{
-					newLeafNode(lv_value_2_0, grammarAccess.getHttpHeaderItemAccess().getValueSTRINGTerminalRuleCall_2_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getHttpHeaderItemRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"value",
-						lv_value_2_0,
-						"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.STRING");
-				}
-			)
-		)
-	)
-;
-
-// Entry rule entryRuleUrlParameterItem
-entryRuleUrlParameterItem returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getUrlParameterItemRule()); }
-	iv_ruleUrlParameterItem=ruleUrlParameterItem
-	{ $current=$iv_ruleUrlParameterItem.current; }
-	EOF;
-
-// Rule UrlParameterItem
-ruleUrlParameterItem returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			(
-				lv_field_0_0=RULE_STRING
-				{
-					newLeafNode(lv_field_0_0, grammarAccess.getUrlParameterItemAccess().getFieldSTRINGTerminalRuleCall_0_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getUrlParameterItemRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"field",
-						lv_field_0_0,
-						"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.STRING");
-				}
-			)
-		)
-		otherlv_1='=='
-		{
-			newLeafNode(otherlv_1, grammarAccess.getUrlParameterItemAccess().getEqualsSignEqualsSignKeyword_1());
-		}
-		(
-			(
-				lv_value_2_0=RULE_STRING
-				{
-					newLeafNode(lv_value_2_0, grammarAccess.getUrlParameterItemAccess().getValueSTRINGTerminalRuleCall_2_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getUrlParameterItemRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"value",
-						lv_value_2_0,
-						"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.STRING");
-				}
-			)
-		)
-	)
-;
-
-// Entry rule entryRuleRawJsonFieldItem
-entryRuleRawJsonFieldItem returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getRawJsonFieldItemRule()); }
-	iv_ruleRawJsonFieldItem=ruleRawJsonFieldItem
-	{ $current=$iv_ruleRawJsonFieldItem.current; }
-	EOF;
-
-// Rule RawJsonFieldItem
-ruleRawJsonFieldItem returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		{
-			$current = forceCreateModelElement(
-				grammarAccess.getRawJsonFieldItemAccess().getRawJsonFieldItemAction(),
-				$current);
-		}
-	)
-;
-
-// Entry rule entryRuleJsonBoolean
-entryRuleJsonBoolean returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getJsonBooleanRule()); }
-	iv_ruleJsonBoolean=ruleJsonBoolean
-	{ $current=$iv_ruleJsonBoolean.current; }
-	EOF;
-
-// Rule JsonBoolean
-ruleJsonBoolean returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			{
-				$current = forceCreateModelElement(
-					grammarAccess.getJsonBooleanAccess().getJsonBooleanAction_0(),
-					$current);
-			}
-		)
-		this_BOOLEAN_1=RULE_BOOLEAN
-		{
-			newLeafNode(this_BOOLEAN_1, grammarAccess.getJsonBooleanAccess().getBOOLEANTerminalRuleCall_1());
-		}
-	)
-;
-
-// Entry rule entryRuleJsonObject
-entryRuleJsonObject returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getJsonObjectRule()); }
-	iv_ruleJsonObject=ruleJsonObject
-	{ $current=$iv_ruleJsonObject.current; }
-	EOF;
-
-// Rule JsonObject
-ruleJsonObject returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			{
-				$current = forceCreateModelElement(
-					grammarAccess.getJsonObjectAccess().getJsonObjectAction_0(),
-					$current);
-			}
-		)
-		otherlv_1='{'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getJsonObjectAccess().getLeftCurlyBracketKeyword_1());
-		}
-		(
-			otherlv_2='\''
-			{
-				newLeafNode(otherlv_2, grammarAccess.getJsonObjectAccess().getApostropheKeyword_2_0());
-			}
-			    |
-			otherlv_3='"'
-			{
-				newLeafNode(otherlv_3, grammarAccess.getJsonObjectAccess().getQuotationMarkKeyword_2_1());
-			}
-		)
-		otherlv_4='}'
-		{
-			newLeafNode(otherlv_4, grammarAccess.getJsonObjectAccess().getRightCurlyBracketKeyword_3());
-		}
-	)
-;
-
-// Entry rule entryRuleJsonArray
-entryRuleJsonArray returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getJsonArrayRule()); }
-	iv_ruleJsonArray=ruleJsonArray
-	{ $current=$iv_ruleJsonArray.current; }
-	EOF;
-
-// Rule JsonArray
-ruleJsonArray returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		{
-			$current = forceCreateModelElement(
-				grammarAccess.getJsonArrayAccess().getJsonArrayAction(),
-				$current);
-		}
-	)
-;
-
-// Entry rule entryRuleJsonNumber
-entryRuleJsonNumber returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getJsonNumberRule()); }
-	iv_ruleJsonNumber=ruleJsonNumber
-	{ $current=$iv_ruleJsonNumber.current; }
-	EOF;
-
-// Rule JsonNumber
-ruleJsonNumber returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		{
-			$current = forceCreateModelElement(
-				grammarAccess.getJsonNumberAccess().getJsonNumberAction(),
-				$current);
-		}
-	)
-;
-
 // Rule Method
 ruleMethod returns [Enumerator current=null]
 @init {
@@ -1531,7 +904,7 @@ ruleMethod returns [Enumerator current=null]
 	)
 ;
 
-RULE_WS : (' '|'\t')+;
+RULE_WS : (' '|'\t'|'\r'|'\n')+;
 
 RULE_VALUE : ('='|RULE_WS);
 
@@ -1543,4 +916,4 @@ RULE_FLOAT : (RULE_INT|RULE_INT? '.' RULE_DIGIT* (('E'|'e') RULE_INT)?);
 
 RULE_STRING : ('"' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'"')))* '"'|'\'' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'\'')))* '\'');
 
-RULE_BOOLEAN : ('true'|'false');
+RULE_ANY_OTHER : .;

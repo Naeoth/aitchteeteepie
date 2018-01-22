@@ -12,50 +12,42 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalCurlBetterThanHttpieLexer extends Lexer {
-    public static final int RULE_BOOLEAN=9;
+    public static final int RULE_STRING=6;
     public static final int T__19=19;
+    public static final int RULE_VALUE=5;
     public static final int T__15=15;
+    public static final int T__37=37;
     public static final int T__16=16;
+    public static final int T__38=38;
     public static final int T__17=17;
     public static final int T__18=18;
     public static final int T__11=11;
-    public static final int T__12=12;
-    public static final int T__13=13;
-    public static final int T__14=14;
-    public static final int RULE_DIGIT=10;
-    public static final int T__26=26;
-    public static final int T__27=27;
-    public static final int T__28=28;
-    public static final int RULE_INT=6;
-    public static final int T__29=29;
-    public static final int T__22=22;
-    public static final int T__23=23;
-    public static final int T__24=24;
-    public static final int T__25=25;
-    public static final int T__20=20;
-    public static final int T__21=21;
-    public static final int RULE_STRING=5;
-    public static final int RULE_VALUE=7;
-    public static final int T__37=37;
-    public static final int T__38=38;
-    public static final int T__39=39;
     public static final int T__33=33;
+    public static final int T__12=12;
     public static final int T__34=34;
+    public static final int T__13=13;
     public static final int T__35=35;
+    public static final int T__14=14;
     public static final int T__36=36;
     public static final int EOF=-1;
     public static final int T__30=30;
     public static final int T__31=31;
     public static final int T__32=32;
     public static final int RULE_WS=4;
-    public static final int T__44=44;
-    public static final int T__45=45;
+    public static final int RULE_DIGIT=9;
+    public static final int RULE_ANY_OTHER=10;
+    public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int T__28=28;
+    public static final int RULE_INT=7;
+    public static final int T__29=29;
+    public static final int T__22=22;
+    public static final int T__23=23;
     public static final int RULE_FLOAT=8;
-    public static final int T__46=46;
-    public static final int T__40=40;
-    public static final int T__41=41;
-    public static final int T__42=42;
-    public static final int T__43=43;
+    public static final int T__24=24;
+    public static final int T__25=25;
+    public static final int T__20=20;
+    public static final int T__21=21;
 
     // delegates
     // delegators
@@ -96,10 +88,10 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
         try {
             int _type = T__12;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:12:7: ( '://' )
-            // InternalCurlBetterThanHttpie.g:12:9: '://'
+            // InternalCurlBetterThanHttpie.g:12:7: ( '--header' )
+            // InternalCurlBetterThanHttpie.g:12:9: '--header'
             {
-            match("://"); 
+            match("--header"); 
 
 
             }
@@ -117,10 +109,11 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:13:7: ( ':' )
-            // InternalCurlBetterThanHttpie.g:13:9: ':'
+            // InternalCurlBetterThanHttpie.g:13:7: ( '-t' )
+            // InternalCurlBetterThanHttpie.g:13:9: '-t'
             {
-            match(':'); 
+            match("-t"); 
+
 
             }
 
@@ -137,10 +130,11 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:14:7: ( '/' )
-            // InternalCurlBetterThanHttpie.g:14:9: '/'
+            // InternalCurlBetterThanHttpie.g:14:7: ( '--body' )
+            // InternalCurlBetterThanHttpie.g:14:9: '--body'
             {
-            match('/'); 
+            match("--body"); 
+
 
             }
 
@@ -157,10 +151,10 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:15:7: ( '--' )
-            // InternalCurlBetterThanHttpie.g:15:9: '--'
+            // InternalCurlBetterThanHttpie.g:15:7: ( '-b' )
+            // InternalCurlBetterThanHttpie.g:15:9: '-b'
             {
-            match("--"); 
+            match("-b"); 
 
 
             }
@@ -178,10 +172,10 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:16:7: ( '--header' )
-            // InternalCurlBetterThanHttpie.g:16:9: '--header'
+            // InternalCurlBetterThanHttpie.g:16:7: ( '--json' )
+            // InternalCurlBetterThanHttpie.g:16:9: '--json'
             {
-            match("--header"); 
+            match("--json"); 
 
 
             }
@@ -199,10 +193,10 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:17:7: ( '-t' )
-            // InternalCurlBetterThanHttpie.g:17:9: '-t'
+            // InternalCurlBetterThanHttpie.g:17:7: ( '-j' )
+            // InternalCurlBetterThanHttpie.g:17:9: '-j'
             {
-            match("-t"); 
+            match("-j"); 
 
 
             }
@@ -220,10 +214,10 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:18:7: ( '--body' )
-            // InternalCurlBetterThanHttpie.g:18:9: '--body'
+            // InternalCurlBetterThanHttpie.g:18:7: ( '--form' )
+            // InternalCurlBetterThanHttpie.g:18:9: '--form'
             {
-            match("--body"); 
+            match("--form"); 
 
 
             }
@@ -241,11 +235,10 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:19:7: ( '-b' )
-            // InternalCurlBetterThanHttpie.g:19:9: '-b'
+            // InternalCurlBetterThanHttpie.g:19:7: ( 'f' )
+            // InternalCurlBetterThanHttpie.g:19:9: 'f'
             {
-            match("-b"); 
-
+            match('f'); 
 
             }
 
@@ -262,10 +255,10 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:20:7: ( '--json' )
-            // InternalCurlBetterThanHttpie.g:20:9: '--json'
+            // InternalCurlBetterThanHttpie.g:20:7: ( '--proxy' )
+            // InternalCurlBetterThanHttpie.g:20:9: '--proxy'
             {
-            match("--json"); 
+            match("--proxy"); 
 
 
             }
@@ -283,11 +276,10 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:21:7: ( '-j' )
-            // InternalCurlBetterThanHttpie.g:21:9: '-j'
+            // InternalCurlBetterThanHttpie.g:21:7: ( ':' )
+            // InternalCurlBetterThanHttpie.g:21:9: ':'
             {
-            match("-j"); 
-
+            match(':'); 
 
             }
 
@@ -304,10 +296,10 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:22:7: ( '--form' )
-            // InternalCurlBetterThanHttpie.g:22:9: '--form'
+            // InternalCurlBetterThanHttpie.g:22:7: ( '://' )
+            // InternalCurlBetterThanHttpie.g:22:9: '://'
             {
-            match("--form"); 
+            match("://"); 
 
 
             }
@@ -325,10 +317,10 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:23:7: ( 'f' )
-            // InternalCurlBetterThanHttpie.g:23:9: 'f'
+            // InternalCurlBetterThanHttpie.g:23:7: ( 'a' )
+            // InternalCurlBetterThanHttpie.g:23:9: 'a'
             {
-            match('f'); 
+            match('a'); 
 
             }
 
@@ -345,10 +337,10 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:24:7: ( '--proxy' )
-            // InternalCurlBetterThanHttpie.g:24:9: '--proxy'
+            // InternalCurlBetterThanHttpie.g:24:7: ( '--auth' )
+            // InternalCurlBetterThanHttpie.g:24:9: '--auth'
             {
-            match("--proxy"); 
+            match("--auth"); 
 
 
             }
@@ -366,10 +358,11 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:25:7: ( 'a' )
-            // InternalCurlBetterThanHttpie.g:25:9: 'a'
+            // InternalCurlBetterThanHttpie.g:25:7: ( '-a' )
+            // InternalCurlBetterThanHttpie.g:25:9: '-a'
             {
-            match('a'); 
+            match("-a"); 
+
 
             }
 
@@ -386,11 +379,10 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:26:7: ( '--auth' )
-            // InternalCurlBetterThanHttpie.g:26:9: '--auth'
+            // InternalCurlBetterThanHttpie.g:26:7: ( '@' )
+            // InternalCurlBetterThanHttpie.g:26:9: '@'
             {
-            match("--auth"); 
-
+            match('@'); 
 
             }
 
@@ -407,10 +399,10 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:27:7: ( '-a' )
-            // InternalCurlBetterThanHttpie.g:27:9: '-a'
+            // InternalCurlBetterThanHttpie.g:27:7: ( '--download' )
+            // InternalCurlBetterThanHttpie.g:27:9: '--download'
             {
-            match("-a"); 
+            match("--download"); 
 
 
             }
@@ -428,10 +420,11 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:28:7: ( '@' )
-            // InternalCurlBetterThanHttpie.g:28:9: '@'
+            // InternalCurlBetterThanHttpie.g:28:7: ( '-d' )
+            // InternalCurlBetterThanHttpie.g:28:9: '-d'
             {
-            match('@'); 
+            match("-d"); 
+
 
             }
 
@@ -448,10 +441,10 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:29:7: ( '--download' )
-            // InternalCurlBetterThanHttpie.g:29:9: '--download'
+            // InternalCurlBetterThanHttpie.g:29:7: ( '--help' )
+            // InternalCurlBetterThanHttpie.g:29:9: '--help'
             {
-            match("--download"); 
+            match("--help"); 
 
 
             }
@@ -469,10 +462,10 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:30:7: ( '-d' )
-            // InternalCurlBetterThanHttpie.g:30:9: '-d'
+            // InternalCurlBetterThanHttpie.g:30:7: ( '-h' )
+            // InternalCurlBetterThanHttpie.g:30:9: '-h'
             {
-            match("-d"); 
+            match("-h"); 
 
 
             }
@@ -490,10 +483,10 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:31:7: ( '--help' )
-            // InternalCurlBetterThanHttpie.g:31:9: '--help'
+            // InternalCurlBetterThanHttpie.g:31:7: ( '--version' )
+            // InternalCurlBetterThanHttpie.g:31:9: '--version'
             {
-            match("--help"); 
+            match("--version"); 
 
 
             }
@@ -511,10 +504,10 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:32:7: ( '-h' )
-            // InternalCurlBetterThanHttpie.g:32:9: '-h'
+            // InternalCurlBetterThanHttpie.g:32:7: ( '--verbose' )
+            // InternalCurlBetterThanHttpie.g:32:9: '--verbose'
             {
-            match("-h"); 
+            match("--verbose"); 
 
 
             }
@@ -532,10 +525,10 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:33:7: ( '--version' )
-            // InternalCurlBetterThanHttpie.g:33:9: '--version'
+            // InternalCurlBetterThanHttpie.g:33:7: ( '-v' )
+            // InternalCurlBetterThanHttpie.g:33:9: '-v'
             {
-            match("--version"); 
+            match("-v"); 
 
 
             }
@@ -553,10 +546,10 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:34:7: ( '--verbose' )
-            // InternalCurlBetterThanHttpie.g:34:9: '--verbose'
+            // InternalCurlBetterThanHttpie.g:34:7: ( '--timeout' )
+            // InternalCurlBetterThanHttpie.g:34:9: '--timeout'
             {
-            match("--verbose"); 
+            match("--timeout"); 
 
 
             }
@@ -574,10 +567,10 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:35:7: ( '-v' )
-            // InternalCurlBetterThanHttpie.g:35:9: '-v'
+            // InternalCurlBetterThanHttpie.g:35:7: ( 'GET' )
+            // InternalCurlBetterThanHttpie.g:35:9: 'GET'
             {
-            match("-v"); 
+            match("GET"); 
 
 
             }
@@ -595,10 +588,10 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:36:7: ( '--timeout' )
-            // InternalCurlBetterThanHttpie.g:36:9: '--timeout'
+            // InternalCurlBetterThanHttpie.g:36:7: ( 'POST' )
+            // InternalCurlBetterThanHttpie.g:36:9: 'POST'
             {
-            match("--timeout"); 
+            match("POST"); 
 
 
             }
@@ -616,10 +609,11 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:37:7: ( '=' )
-            // InternalCurlBetterThanHttpie.g:37:9: '='
+            // InternalCurlBetterThanHttpie.g:37:7: ( 'PUT' )
+            // InternalCurlBetterThanHttpie.g:37:9: 'PUT'
             {
-            match('='); 
+            match("PUT"); 
+
 
             }
 
@@ -636,172 +630,8 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:38:7: ( '==' )
-            // InternalCurlBetterThanHttpie.g:38:9: '=='
-            {
-            match("=="); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__38"
-
-    // $ANTLR start "T__39"
-    public final void mT__39() throws RecognitionException {
-        try {
-            int _type = T__39;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:39:7: ( '{' )
-            // InternalCurlBetterThanHttpie.g:39:9: '{'
-            {
-            match('{'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__39"
-
-    // $ANTLR start "T__40"
-    public final void mT__40() throws RecognitionException {
-        try {
-            int _type = T__40;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:40:7: ( '\\'' )
-            // InternalCurlBetterThanHttpie.g:40:9: '\\''
-            {
-            match('\''); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__40"
-
-    // $ANTLR start "T__41"
-    public final void mT__41() throws RecognitionException {
-        try {
-            int _type = T__41;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:41:7: ( '\"' )
-            // InternalCurlBetterThanHttpie.g:41:9: '\"'
-            {
-            match('\"'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__41"
-
-    // $ANTLR start "T__42"
-    public final void mT__42() throws RecognitionException {
-        try {
-            int _type = T__42;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:42:7: ( '}' )
-            // InternalCurlBetterThanHttpie.g:42:9: '}'
-            {
-            match('}'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__42"
-
-    // $ANTLR start "T__43"
-    public final void mT__43() throws RecognitionException {
-        try {
-            int _type = T__43;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:43:7: ( 'GET' )
-            // InternalCurlBetterThanHttpie.g:43:9: 'GET'
-            {
-            match("GET"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__43"
-
-    // $ANTLR start "T__44"
-    public final void mT__44() throws RecognitionException {
-        try {
-            int _type = T__44;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:44:7: ( 'POST' )
-            // InternalCurlBetterThanHttpie.g:44:9: 'POST'
-            {
-            match("POST"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__44"
-
-    // $ANTLR start "T__45"
-    public final void mT__45() throws RecognitionException {
-        try {
-            int _type = T__45;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:45:7: ( 'PUT' )
-            // InternalCurlBetterThanHttpie.g:45:9: 'PUT'
-            {
-            match("PUT"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__45"
-
-    // $ANTLR start "T__46"
-    public final void mT__46() throws RecognitionException {
-        try {
-            int _type = T__46;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:46:7: ( 'DELETE' )
-            // InternalCurlBetterThanHttpie.g:46:9: 'DELETE'
+            // InternalCurlBetterThanHttpie.g:38:7: ( 'DELETE' )
+            // InternalCurlBetterThanHttpie.g:38:9: 'DELETE'
             {
             match("DELETE"); 
 
@@ -814,24 +644,24 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__46"
+    // $ANTLR end "T__38"
 
     // $ANTLR start "RULE_WS"
     public final void mRULE_WS() throws RecognitionException {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:1534:9: ( ( ' ' | '\\t' )+ )
-            // InternalCurlBetterThanHttpie.g:1534:11: ( ' ' | '\\t' )+
+            // InternalCurlBetterThanHttpie.g:907:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalCurlBetterThanHttpie.g:907:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalCurlBetterThanHttpie.g:1534:11: ( ' ' | '\\t' )+
+            // InternalCurlBetterThanHttpie.g:907:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt1=0;
             loop1:
             do {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0=='\t'||LA1_0==' ') ) {
+                if ( ((LA1_0>='\t' && LA1_0<='\n')||LA1_0=='\r'||LA1_0==' ') ) {
                     alt1=1;
                 }
 
@@ -840,7 +670,7 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
             	case 1 :
             	    // InternalCurlBetterThanHttpie.g:
             	    {
-            	    if ( input.LA(1)=='\t'||input.LA(1)==' ' ) {
+            	    if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
             	        input.consume();
 
             	    }
@@ -878,17 +708,17 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
         try {
             int _type = RULE_VALUE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:1536:12: ( ( '=' | RULE_WS ) )
-            // InternalCurlBetterThanHttpie.g:1536:14: ( '=' | RULE_WS )
+            // InternalCurlBetterThanHttpie.g:909:12: ( ( '=' | RULE_WS ) )
+            // InternalCurlBetterThanHttpie.g:909:14: ( '=' | RULE_WS )
             {
-            // InternalCurlBetterThanHttpie.g:1536:14: ( '=' | RULE_WS )
+            // InternalCurlBetterThanHttpie.g:909:14: ( '=' | RULE_WS )
             int alt2=2;
             int LA2_0 = input.LA(1);
 
             if ( (LA2_0=='=') ) {
                 alt2=1;
             }
-            else if ( (LA2_0=='\t'||LA2_0==' ') ) {
+            else if ( ((LA2_0>='\t' && LA2_0<='\n')||LA2_0=='\r'||LA2_0==' ') ) {
                 alt2=2;
             }
             else {
@@ -899,14 +729,14 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // InternalCurlBetterThanHttpie.g:1536:15: '='
+                    // InternalCurlBetterThanHttpie.g:909:15: '='
                     {
                     match('='); 
 
                     }
                     break;
                 case 2 :
-                    // InternalCurlBetterThanHttpie.g:1536:19: RULE_WS
+                    // InternalCurlBetterThanHttpie.g:909:19: RULE_WS
                     {
                     mRULE_WS(); 
 
@@ -929,8 +759,8 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
     // $ANTLR start "RULE_DIGIT"
     public final void mRULE_DIGIT() throws RecognitionException {
         try {
-            // InternalCurlBetterThanHttpie.g:1538:21: ( '0' .. '9' )
-            // InternalCurlBetterThanHttpie.g:1538:23: '0' .. '9'
+            // InternalCurlBetterThanHttpie.g:911:21: ( '0' .. '9' )
+            // InternalCurlBetterThanHttpie.g:911:23: '0' .. '9'
             {
             matchRange('0','9'); 
 
@@ -947,10 +777,10 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:1540:10: ( ( '0' | '1' .. '9' ( RULE_DIGIT )* ) )
-            // InternalCurlBetterThanHttpie.g:1540:12: ( '0' | '1' .. '9' ( RULE_DIGIT )* )
+            // InternalCurlBetterThanHttpie.g:913:10: ( ( '0' | '1' .. '9' ( RULE_DIGIT )* ) )
+            // InternalCurlBetterThanHttpie.g:913:12: ( '0' | '1' .. '9' ( RULE_DIGIT )* )
             {
-            // InternalCurlBetterThanHttpie.g:1540:12: ( '0' | '1' .. '9' ( RULE_DIGIT )* )
+            // InternalCurlBetterThanHttpie.g:913:12: ( '0' | '1' .. '9' ( RULE_DIGIT )* )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -968,17 +798,17 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // InternalCurlBetterThanHttpie.g:1540:13: '0'
+                    // InternalCurlBetterThanHttpie.g:913:13: '0'
                     {
                     match('0'); 
 
                     }
                     break;
                 case 2 :
-                    // InternalCurlBetterThanHttpie.g:1540:17: '1' .. '9' ( RULE_DIGIT )*
+                    // InternalCurlBetterThanHttpie.g:913:17: '1' .. '9' ( RULE_DIGIT )*
                     {
                     matchRange('1','9'); 
-                    // InternalCurlBetterThanHttpie.g:1540:26: ( RULE_DIGIT )*
+                    // InternalCurlBetterThanHttpie.g:913:26: ( RULE_DIGIT )*
                     loop3:
                     do {
                         int alt3=2;
@@ -991,7 +821,7 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
 
                         switch (alt3) {
                     	case 1 :
-                    	    // InternalCurlBetterThanHttpie.g:1540:26: RULE_DIGIT
+                    	    // InternalCurlBetterThanHttpie.g:913:26: RULE_DIGIT
                     	    {
                     	    mRULE_DIGIT(); 
 
@@ -1025,24 +855,24 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
         try {
             int _type = RULE_FLOAT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:1542:12: ( ( RULE_INT | ( RULE_INT )? '.' ( RULE_DIGIT )* ( ( 'E' | 'e' ) RULE_INT )? ) )
-            // InternalCurlBetterThanHttpie.g:1542:14: ( RULE_INT | ( RULE_INT )? '.' ( RULE_DIGIT )* ( ( 'E' | 'e' ) RULE_INT )? )
+            // InternalCurlBetterThanHttpie.g:915:12: ( ( RULE_INT | ( RULE_INT )? '.' ( RULE_DIGIT )* ( ( 'E' | 'e' ) RULE_INT )? ) )
+            // InternalCurlBetterThanHttpie.g:915:14: ( RULE_INT | ( RULE_INT )? '.' ( RULE_DIGIT )* ( ( 'E' | 'e' ) RULE_INT )? )
             {
-            // InternalCurlBetterThanHttpie.g:1542:14: ( RULE_INT | ( RULE_INT )? '.' ( RULE_DIGIT )* ( ( 'E' | 'e' ) RULE_INT )? )
+            // InternalCurlBetterThanHttpie.g:915:14: ( RULE_INT | ( RULE_INT )? '.' ( RULE_DIGIT )* ( ( 'E' | 'e' ) RULE_INT )? )
             int alt8=2;
             alt8 = dfa8.predict(input);
             switch (alt8) {
                 case 1 :
-                    // InternalCurlBetterThanHttpie.g:1542:15: RULE_INT
+                    // InternalCurlBetterThanHttpie.g:915:15: RULE_INT
                     {
                     mRULE_INT(); 
 
                     }
                     break;
                 case 2 :
-                    // InternalCurlBetterThanHttpie.g:1542:24: ( RULE_INT )? '.' ( RULE_DIGIT )* ( ( 'E' | 'e' ) RULE_INT )?
+                    // InternalCurlBetterThanHttpie.g:915:24: ( RULE_INT )? '.' ( RULE_DIGIT )* ( ( 'E' | 'e' ) RULE_INT )?
                     {
-                    // InternalCurlBetterThanHttpie.g:1542:24: ( RULE_INT )?
+                    // InternalCurlBetterThanHttpie.g:915:24: ( RULE_INT )?
                     int alt5=2;
                     int LA5_0 = input.LA(1);
 
@@ -1051,7 +881,7 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
                     }
                     switch (alt5) {
                         case 1 :
-                            // InternalCurlBetterThanHttpie.g:1542:24: RULE_INT
+                            // InternalCurlBetterThanHttpie.g:915:24: RULE_INT
                             {
                             mRULE_INT(); 
 
@@ -1061,7 +891,7 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
                     }
 
                     match('.'); 
-                    // InternalCurlBetterThanHttpie.g:1542:38: ( RULE_DIGIT )*
+                    // InternalCurlBetterThanHttpie.g:915:38: ( RULE_DIGIT )*
                     loop6:
                     do {
                         int alt6=2;
@@ -1074,7 +904,7 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // InternalCurlBetterThanHttpie.g:1542:38: RULE_DIGIT
+                    	    // InternalCurlBetterThanHttpie.g:915:38: RULE_DIGIT
                     	    {
                     	    mRULE_DIGIT(); 
 
@@ -1086,7 +916,7 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
                         }
                     } while (true);
 
-                    // InternalCurlBetterThanHttpie.g:1542:50: ( ( 'E' | 'e' ) RULE_INT )?
+                    // InternalCurlBetterThanHttpie.g:915:50: ( ( 'E' | 'e' ) RULE_INT )?
                     int alt7=2;
                     int LA7_0 = input.LA(1);
 
@@ -1095,7 +925,7 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
                     }
                     switch (alt7) {
                         case 1 :
-                            // InternalCurlBetterThanHttpie.g:1542:51: ( 'E' | 'e' ) RULE_INT
+                            // InternalCurlBetterThanHttpie.g:915:51: ( 'E' | 'e' ) RULE_INT
                             {
                             if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                                 input.consume();
@@ -1135,10 +965,10 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:1544:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalCurlBetterThanHttpie.g:1544:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalCurlBetterThanHttpie.g:917:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalCurlBetterThanHttpie.g:917:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalCurlBetterThanHttpie.g:1544:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalCurlBetterThanHttpie.g:917:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -1156,10 +986,10 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
             }
             switch (alt11) {
                 case 1 :
-                    // InternalCurlBetterThanHttpie.g:1544:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalCurlBetterThanHttpie.g:917:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalCurlBetterThanHttpie.g:1544:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalCurlBetterThanHttpie.g:917:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop9:
                     do {
                         int alt9=3;
@@ -1175,7 +1005,7 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
 
                         switch (alt9) {
                     	case 1 :
-                    	    // InternalCurlBetterThanHttpie.g:1544:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // InternalCurlBetterThanHttpie.g:917:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1191,7 +1021,7 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalCurlBetterThanHttpie.g:1544:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalCurlBetterThanHttpie.g:917:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1216,10 +1046,10 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalCurlBetterThanHttpie.g:1544:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalCurlBetterThanHttpie.g:917:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalCurlBetterThanHttpie.g:1544:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalCurlBetterThanHttpie.g:917:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop10:
                     do {
                         int alt10=3;
@@ -1235,7 +1065,7 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
 
                         switch (alt10) {
                     	case 1 :
-                    	    // InternalCurlBetterThanHttpie.g:1544:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // InternalCurlBetterThanHttpie.g:917:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1251,7 +1081,7 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalCurlBetterThanHttpie.g:1544:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalCurlBetterThanHttpie.g:917:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1289,50 +1119,15 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
     }
     // $ANTLR end "RULE_STRING"
 
-    // $ANTLR start "RULE_BOOLEAN"
-    public final void mRULE_BOOLEAN() throws RecognitionException {
+    // $ANTLR start "RULE_ANY_OTHER"
+    public final void mRULE_ANY_OTHER() throws RecognitionException {
         try {
-            int _type = RULE_BOOLEAN;
+            int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCurlBetterThanHttpie.g:1546:14: ( ( 'true' | 'false' ) )
-            // InternalCurlBetterThanHttpie.g:1546:16: ( 'true' | 'false' )
+            // InternalCurlBetterThanHttpie.g:919:16: ( . )
+            // InternalCurlBetterThanHttpie.g:919:18: .
             {
-            // InternalCurlBetterThanHttpie.g:1546:16: ( 'true' | 'false' )
-            int alt12=2;
-            int LA12_0 = input.LA(1);
-
-            if ( (LA12_0=='t') ) {
-                alt12=1;
-            }
-            else if ( (LA12_0=='f') ) {
-                alt12=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 12, 0, input);
-
-                throw nvae;
-            }
-            switch (alt12) {
-                case 1 :
-                    // InternalCurlBetterThanHttpie.g:1546:17: 'true'
-                    {
-                    match("true"); 
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalCurlBetterThanHttpie.g:1546:24: 'false'
-                    {
-                    match("false"); 
-
-
-                    }
-                    break;
-
-            }
-
+            matchAny(); 
 
             }
 
@@ -1342,13 +1137,13 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "RULE_BOOLEAN"
+    // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // InternalCurlBetterThanHttpie.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | RULE_WS | RULE_VALUE | RULE_INT | RULE_FLOAT | RULE_STRING | RULE_BOOLEAN )
-        int alt13=42;
-        alt13 = dfa13.predict(input);
-        switch (alt13) {
+        // InternalCurlBetterThanHttpie.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | RULE_WS | RULE_VALUE | RULE_INT | RULE_FLOAT | RULE_STRING | RULE_ANY_OTHER )
+        int alt12=34;
+        alt12 = dfa12.predict(input);
+        switch (alt12) {
             case 1 :
                 // InternalCurlBetterThanHttpie.g:1:10: T__11
                 {
@@ -1546,100 +1341,44 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
                 }
                 break;
             case 29 :
-                // InternalCurlBetterThanHttpie.g:1:178: T__39
-                {
-                mT__39(); 
-
-                }
-                break;
-            case 30 :
-                // InternalCurlBetterThanHttpie.g:1:184: T__40
-                {
-                mT__40(); 
-
-                }
-                break;
-            case 31 :
-                // InternalCurlBetterThanHttpie.g:1:190: T__41
-                {
-                mT__41(); 
-
-                }
-                break;
-            case 32 :
-                // InternalCurlBetterThanHttpie.g:1:196: T__42
-                {
-                mT__42(); 
-
-                }
-                break;
-            case 33 :
-                // InternalCurlBetterThanHttpie.g:1:202: T__43
-                {
-                mT__43(); 
-
-                }
-                break;
-            case 34 :
-                // InternalCurlBetterThanHttpie.g:1:208: T__44
-                {
-                mT__44(); 
-
-                }
-                break;
-            case 35 :
-                // InternalCurlBetterThanHttpie.g:1:214: T__45
-                {
-                mT__45(); 
-
-                }
-                break;
-            case 36 :
-                // InternalCurlBetterThanHttpie.g:1:220: T__46
-                {
-                mT__46(); 
-
-                }
-                break;
-            case 37 :
-                // InternalCurlBetterThanHttpie.g:1:226: RULE_WS
+                // InternalCurlBetterThanHttpie.g:1:178: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 38 :
-                // InternalCurlBetterThanHttpie.g:1:234: RULE_VALUE
+            case 30 :
+                // InternalCurlBetterThanHttpie.g:1:186: RULE_VALUE
                 {
                 mRULE_VALUE(); 
 
                 }
                 break;
-            case 39 :
-                // InternalCurlBetterThanHttpie.g:1:245: RULE_INT
+            case 31 :
+                // InternalCurlBetterThanHttpie.g:1:197: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 40 :
-                // InternalCurlBetterThanHttpie.g:1:254: RULE_FLOAT
+            case 32 :
+                // InternalCurlBetterThanHttpie.g:1:206: RULE_FLOAT
                 {
                 mRULE_FLOAT(); 
 
                 }
                 break;
-            case 41 :
-                // InternalCurlBetterThanHttpie.g:1:265: RULE_STRING
+            case 33 :
+                // InternalCurlBetterThanHttpie.g:1:217: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 42 :
-                // InternalCurlBetterThanHttpie.g:1:277: RULE_BOOLEAN
+            case 34 :
+                // InternalCurlBetterThanHttpie.g:1:229: RULE_ANY_OTHER
                 {
-                mRULE_BOOLEAN(); 
+                mRULE_ANY_OTHER(); 
 
                 }
                 break;
@@ -1650,7 +1389,7 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
 
 
     protected DFA8 dfa8 = new DFA8(this);
-    protected DFA13 dfa13 = new DFA13(this);
+    protected DFA12 dfa12 = new DFA12(this);
     static final String DFA8_eotS =
         "\1\uffff\2\4\2\uffff\1\4";
     static final String DFA8_eofS =
@@ -1702,46 +1441,42 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
             this.transition = DFA8_transition;
         }
         public String getDescription() {
-            return "1542:14: ( RULE_INT | ( RULE_INT )? '.' ( RULE_DIGIT )* ( ( 'E' | 'e' ) RULE_INT )? )";
+            return "915:14: ( RULE_INT | ( RULE_INT )? '.' ( RULE_DIGIT )* ( ( 'E' | 'e' ) RULE_INT )? )";
         }
     }
-    static final String DFA13_eotS =
-        "\2\uffff\1\26\2\uffff\1\37\2\uffff\1\41\1\uffff\1\43\1\44\4\uffff\1\47\2\50\4\uffff\1\63\21\uffff\1\50\21\uffff";
-    static final String DFA13_eofS =
+    static final String DFA12_eotS =
+        "\1\uffff\2\21\1\uffff\1\35\2\uffff\3\21\1\44\1\uffff\2\47\1\uffff\2\21\24\uffff\1\44\3\uffff\1\47\21\uffff";
+    static final String DFA12_eofS =
         "\73\uffff";
-    static final String DFA13_minS =
-        "\1\11\1\uffff\1\57\1\uffff\1\55\1\141\2\uffff\1\75\1\uffff\2\0\2\uffff\1\117\1\uffff\1\11\2\56\4\uffff\1\141\21\uffff\1\56\1\145\6\uffff\1\145\2\uffff\1\141\1\162\2\uffff\1\142\2\uffff";
-    static final String DFA13_maxS =
-        "\1\175\1\uffff\1\57\1\uffff\1\166\1\141\2\uffff\1\75\1\uffff\2\uffff\2\uffff\1\125\1\uffff\1\40\1\56\1\71\4\uffff\1\166\21\uffff\1\71\1\145\6\uffff\1\145\2\uffff\1\154\1\162\2\uffff\1\163\2\uffff";
-    static final String DFA13_acceptS =
-        "\1\uffff\1\1\1\uffff\1\4\2\uffff\1\17\1\22\1\uffff\1\35\2\uffff\1\40\1\41\1\uffff\1\44\3\uffff\1\50\1\52\1\2\1\3\1\uffff\1\7\1\11\1\13\1\21\1\24\1\26\1\31\1\15\1\34\1\33\1\51\1\36\1\37\1\42\1\43\1\45\1\47\2\uffff\1\10\1\12\1\14\1\16\1\20\1\23\1\uffff\1\32\1\5\2\uffff\1\6\1\25\1\uffff\1\27\1\30";
-    static final String DFA13_specialS =
-        "\12\uffff\1\1\1\0\57\uffff}>";
-    static final String[] DFA13_transitionS = {
-            "\1\20\26\uffff\1\20\1\uffff\1\13\4\uffff\1\12\5\uffff\1\4\1\23\1\3\1\21\11\22\1\2\2\uffff\1\10\2\uffff\1\7\3\uffff\1\17\2\uffff\1\15\10\uffff\1\16\20\uffff\1\6\4\uffff\1\5\1\uffff\1\1\13\uffff\1\24\6\uffff\1\11\1\uffff\1\14",
+    static final String DFA12_minS =
+        "\1\0\1\164\1\55\1\uffff\1\57\2\uffff\1\105\1\117\1\105\1\11\1\uffff\2\56\1\uffff\2\0\2\uffff\1\141\21\uffff\1\11\3\uffff\1\56\1\uffff\1\145\6\uffff\1\145\1\uffff\1\141\1\162\2\uffff\1\142\2\uffff";
+    static final String DFA12_maxS =
+        "\1\uffff\1\164\1\166\1\uffff\1\57\2\uffff\1\105\1\125\1\105\1\40\1\uffff\1\56\1\71\1\uffff\2\uffff\2\uffff\1\166\21\uffff\1\40\3\uffff\1\71\1\uffff\1\145\6\uffff\1\145\1\uffff\1\154\1\162\2\uffff\1\163\2\uffff";
+    static final String DFA12_acceptS =
+        "\3\uffff\1\11\1\uffff\1\15\1\20\4\uffff\1\36\2\uffff\1\40\2\uffff\1\42\1\1\1\uffff\1\3\1\5\1\7\1\17\1\22\1\24\1\27\1\11\1\14\1\13\1\15\1\20\1\31\1\32\1\33\1\34\1\35\1\uffff\1\36\1\37\1\40\1\uffff\1\41\1\uffff\1\4\1\6\1\10\1\12\1\16\1\21\1\uffff\1\30\2\uffff\1\2\1\23\1\uffff\1\25\1\26";
+    static final String DFA12_specialS =
+        "\1\1\16\uffff\1\2\1\0\52\uffff}>";
+    static final String[] DFA12_transitionS = {
+            "\11\21\2\12\2\21\1\12\22\21\1\12\1\21\1\17\4\21\1\20\5\21\1\2\1\16\1\21\1\14\11\15\1\4\2\21\1\13\2\21\1\6\3\21\1\11\2\21\1\7\10\21\1\10\20\21\1\5\4\21\1\3\1\21\1\1\uff97\21",
+            "\1\22",
+            "\1\23\63\uffff\1\27\1\25\1\uffff\1\30\3\uffff\1\31\1\uffff\1\26\11\uffff\1\24\1\uffff\1\32",
             "",
-            "\1\25",
-            "",
-            "\1\27\63\uffff\1\33\1\31\1\uffff\1\34\3\uffff\1\35\1\uffff\1\32\11\uffff\1\30\1\uffff\1\36",
-            "\1\24",
+            "\1\34",
             "",
             "",
             "\1\40",
+            "\1\41\5\uffff\1\42",
+            "\1\43",
+            "\2\45\2\uffff\1\45\22\uffff\1\45",
             "",
-            "\0\42",
-            "\0\42",
+            "\1\50",
+            "\1\50\1\uffff\12\51",
             "",
-            "",
-            "\1\45\5\uffff\1\46",
-            "",
-            "\1\20\26\uffff\1\20",
-            "\1\23",
-            "\1\23\1\uffff\12\51",
-            "",
+            "\0\52",
+            "\0\52",
             "",
             "",
-            "",
-            "\1\57\1\53\1\uffff\1\60\1\uffff\1\55\1\uffff\1\52\1\uffff\1\54\5\uffff\1\56\3\uffff\1\62\1\uffff\1\61",
+            "\1\60\1\54\1\uffff\1\61\1\uffff\1\56\1\uffff\1\53\1\uffff\1\55\5\uffff\1\57\3\uffff\1\63\1\uffff\1\62",
             "",
             "",
             "",
@@ -1759,7 +1494,12 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
             "",
             "",
             "",
-            "\1\23\1\uffff\12\51",
+            "\2\45\2\uffff\1\45\22\uffff\1\45",
+            "",
+            "",
+            "",
+            "\1\50\1\uffff\12\51",
+            "",
             "\1\64",
             "",
             "",
@@ -1768,7 +1508,6 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
             "",
             "",
             "\1\65",
-            "",
             "",
             "\1\66\12\uffff\1\67",
             "\1\70",
@@ -1779,65 +1518,105 @@ public class InternalCurlBetterThanHttpieLexer extends Lexer {
             ""
     };
 
-    static final short[] DFA13_eot = DFA.unpackEncodedString(DFA13_eotS);
-    static final short[] DFA13_eof = DFA.unpackEncodedString(DFA13_eofS);
-    static final char[] DFA13_min = DFA.unpackEncodedStringToUnsignedChars(DFA13_minS);
-    static final char[] DFA13_max = DFA.unpackEncodedStringToUnsignedChars(DFA13_maxS);
-    static final short[] DFA13_accept = DFA.unpackEncodedString(DFA13_acceptS);
-    static final short[] DFA13_special = DFA.unpackEncodedString(DFA13_specialS);
-    static final short[][] DFA13_transition;
+    static final short[] DFA12_eot = DFA.unpackEncodedString(DFA12_eotS);
+    static final short[] DFA12_eof = DFA.unpackEncodedString(DFA12_eofS);
+    static final char[] DFA12_min = DFA.unpackEncodedStringToUnsignedChars(DFA12_minS);
+    static final char[] DFA12_max = DFA.unpackEncodedStringToUnsignedChars(DFA12_maxS);
+    static final short[] DFA12_accept = DFA.unpackEncodedString(DFA12_acceptS);
+    static final short[] DFA12_special = DFA.unpackEncodedString(DFA12_specialS);
+    static final short[][] DFA12_transition;
 
     static {
-        int numStates = DFA13_transitionS.length;
-        DFA13_transition = new short[numStates][];
+        int numStates = DFA12_transitionS.length;
+        DFA12_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA13_transition[i] = DFA.unpackEncodedString(DFA13_transitionS[i]);
+            DFA12_transition[i] = DFA.unpackEncodedString(DFA12_transitionS[i]);
         }
     }
 
-    class DFA13 extends DFA {
+    class DFA12 extends DFA {
 
-        public DFA13(BaseRecognizer recognizer) {
+        public DFA12(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 13;
-            this.eot = DFA13_eot;
-            this.eof = DFA13_eof;
-            this.min = DFA13_min;
-            this.max = DFA13_max;
-            this.accept = DFA13_accept;
-            this.special = DFA13_special;
-            this.transition = DFA13_transition;
+            this.decisionNumber = 12;
+            this.eot = DFA12_eot;
+            this.eof = DFA12_eof;
+            this.min = DFA12_min;
+            this.max = DFA12_max;
+            this.accept = DFA12_accept;
+            this.special = DFA12_special;
+            this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | RULE_WS | RULE_VALUE | RULE_INT | RULE_FLOAT | RULE_STRING | RULE_BOOLEAN );";
+            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | RULE_WS | RULE_VALUE | RULE_INT | RULE_FLOAT | RULE_STRING | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA13_11 = input.LA(1);
+                        int LA12_16 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA13_11>='\u0000' && LA13_11<='\uFFFF')) ) {s = 34;}
+                        if ( ((LA12_16>='\u0000' && LA12_16<='\uFFFF')) ) {s = 42;}
 
-                        else s = 36;
+                        else s = 17;
 
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA13_10 = input.LA(1);
+                        int LA12_0 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA13_10>='\u0000' && LA13_10<='\uFFFF')) ) {s = 34;}
+                        if ( (LA12_0=='h') ) {s = 1;}
 
-                        else s = 35;
+                        else if ( (LA12_0=='-') ) {s = 2;}
+
+                        else if ( (LA12_0=='f') ) {s = 3;}
+
+                        else if ( (LA12_0==':') ) {s = 4;}
+
+                        else if ( (LA12_0=='a') ) {s = 5;}
+
+                        else if ( (LA12_0=='@') ) {s = 6;}
+
+                        else if ( (LA12_0=='G') ) {s = 7;}
+
+                        else if ( (LA12_0=='P') ) {s = 8;}
+
+                        else if ( (LA12_0=='D') ) {s = 9;}
+
+                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 10;}
+
+                        else if ( (LA12_0=='=') ) {s = 11;}
+
+                        else if ( (LA12_0=='0') ) {s = 12;}
+
+                        else if ( ((LA12_0>='1' && LA12_0<='9')) ) {s = 13;}
+
+                        else if ( (LA12_0=='.') ) {s = 14;}
+
+                        else if ( (LA12_0=='\"') ) {s = 15;}
+
+                        else if ( (LA12_0=='\'') ) {s = 16;}
+
+                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='(' && LA12_0<=',')||LA12_0=='/'||(LA12_0>=';' && LA12_0<='<')||(LA12_0>='>' && LA12_0<='?')||(LA12_0>='A' && LA12_0<='C')||(LA12_0>='E' && LA12_0<='F')||(LA12_0>='H' && LA12_0<='O')||(LA12_0>='Q' && LA12_0<='`')||(LA12_0>='b' && LA12_0<='e')||LA12_0=='g'||(LA12_0>='i' && LA12_0<='\uFFFF')) ) {s = 17;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA12_15 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA12_15>='\u0000' && LA12_15<='\uFFFF')) ) {s = 42;}
+
+                        else s = 17;
 
                         if ( s>=0 ) return s;
                         break;
             }
             NoViableAltException nvae =
-                new NoViableAltException(getDescription(), 13, _s, input);
+                new NoViableAltException(getDescription(), 12, _s, input);
             error(nvae);
             throw nvae;
         }

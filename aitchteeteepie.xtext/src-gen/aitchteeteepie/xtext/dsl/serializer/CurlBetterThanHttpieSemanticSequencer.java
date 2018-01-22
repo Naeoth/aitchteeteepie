@@ -7,22 +7,13 @@ import aitchteeteepie.AitchteeteepiePackage;
 import aitchteeteepie.AuthFlag;
 import aitchteeteepie.BodyFlag;
 import aitchteeteepie.CommandLineInterface;
-import aitchteeteepie.DataFieldItem;
 import aitchteeteepie.DownloadFlag;
-import aitchteeteepie.FormFileFieldItem;
 import aitchteeteepie.FormFlag;
 import aitchteeteepie.HeadersFlag;
 import aitchteeteepie.HelpFlag;
-import aitchteeteepie.HttpHeaderItem;
-import aitchteeteepie.JsonArray;
-import aitchteeteepie.JsonBoolean;
 import aitchteeteepie.JsonFlag;
-import aitchteeteepie.JsonNumber;
-import aitchteeteepie.JsonObject;
 import aitchteeteepie.ProxyFlag;
-import aitchteeteepie.RawJsonFieldItem;
 import aitchteeteepie.TimeoutFlag;
-import aitchteeteepie.UrlParameterItem;
 import aitchteeteepie.VerboseFlag;
 import aitchteeteepie.VersionFlag;
 import aitchteeteepie.xtext.dsl.services.CurlBetterThanHttpieGrammarAccess;
@@ -61,14 +52,8 @@ public class CurlBetterThanHttpieSemanticSequencer extends AbstractDelegatingSem
 			case AitchteeteepiePackage.COMMAND_LINE_INTERFACE:
 				sequence_CommandLineInterface(context, (CommandLineInterface) semanticObject); 
 				return; 
-			case AitchteeteepiePackage.DATA_FIELD_ITEM:
-				sequence_DataFieldItem(context, (DataFieldItem) semanticObject); 
-				return; 
 			case AitchteeteepiePackage.DOWNLOAD_FLAG:
 				sequence_DownloadFlag(context, (DownloadFlag) semanticObject); 
-				return; 
-			case AitchteeteepiePackage.FORM_FILE_FIELD_ITEM:
-				sequence_FormFileFieldItem(context, (FormFileFieldItem) semanticObject); 
 				return; 
 			case AitchteeteepiePackage.FORM_FLAG:
 				sequence_FormFlag(context, (FormFlag) semanticObject); 
@@ -79,35 +64,14 @@ public class CurlBetterThanHttpieSemanticSequencer extends AbstractDelegatingSem
 			case AitchteeteepiePackage.HELP_FLAG:
 				sequence_HelpFlag(context, (HelpFlag) semanticObject); 
 				return; 
-			case AitchteeteepiePackage.HTTP_HEADER_ITEM:
-				sequence_HttpHeaderItem(context, (HttpHeaderItem) semanticObject); 
-				return; 
-			case AitchteeteepiePackage.JSON_ARRAY:
-				sequence_JsonArray(context, (JsonArray) semanticObject); 
-				return; 
-			case AitchteeteepiePackage.JSON_BOOLEAN:
-				sequence_JsonBoolean(context, (JsonBoolean) semanticObject); 
-				return; 
 			case AitchteeteepiePackage.JSON_FLAG:
 				sequence_JsonFlag(context, (JsonFlag) semanticObject); 
-				return; 
-			case AitchteeteepiePackage.JSON_NUMBER:
-				sequence_JsonNumber(context, (JsonNumber) semanticObject); 
-				return; 
-			case AitchteeteepiePackage.JSON_OBJECT:
-				sequence_JsonObject(context, (JsonObject) semanticObject); 
 				return; 
 			case AitchteeteepiePackage.PROXY_FLAG:
 				sequence_ProxyFlag(context, (ProxyFlag) semanticObject); 
 				return; 
-			case AitchteeteepiePackage.RAW_JSON_FIELD_ITEM:
-				sequence_RawJsonFieldItem(context, (RawJsonFieldItem) semanticObject); 
-				return; 
 			case AitchteeteepiePackage.TIMEOUT_FLAG:
 				sequence_TimeoutFlag(context, (TimeoutFlag) semanticObject); 
-				return; 
-			case AitchteeteepiePackage.URL_PARAMETER_ITEM:
-				sequence_UrlParameterItem(context, (UrlParameterItem) semanticObject); 
 				return; 
 			case AitchteeteepiePackage.VERBOSE_FLAG:
 				sequence_VerboseFlag(context, (VerboseFlag) semanticObject); 
@@ -151,29 +115,9 @@ public class CurlBetterThanHttpieSemanticSequencer extends AbstractDelegatingSem
 	 *     CommandLineInterface returns CommandLineInterface
 	 *
 	 * Constraint:
-	 *     (
-	 *         flags+=Flag* 
-	 *         method=Method? 
-	 *         protocol=STRING? 
-	 *         ((url=STRING port=INT?) | port=INT)? 
-	 *         resource=STRING? 
-	 *         items+=Item*
-	 *     )
+	 *     (flags+=Flag* method=Method?)
 	 */
 	protected void sequence_CommandLineInterface(ISerializationContext context, CommandLineInterface semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Item returns DataFieldItem
-	 *     DataFieldItem returns DataFieldItem
-	 *
-	 * Constraint:
-	 *     (field=STRING (value=STRING | value=STRING))
-	 */
-	protected void sequence_DataFieldItem(ISerializationContext context, DataFieldItem semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -188,28 +132,6 @@ public class CurlBetterThanHttpieSemanticSequencer extends AbstractDelegatingSem
 	 */
 	protected void sequence_DownloadFlag(ISerializationContext context, DownloadFlag semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Item returns FormFileFieldItem
-	 *     FormFileFieldItem returns FormFileFieldItem
-	 *
-	 * Constraint:
-	 *     (field=STRING value=STRING)
-	 */
-	protected void sequence_FormFileFieldItem(ISerializationContext context, FormFileFieldItem semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AitchteeteepiePackage.Literals.ITEM__FIELD) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AitchteeteepiePackage.Literals.ITEM__FIELD));
-			if (transientValues.isValueTransient(semanticObject, AitchteeteepiePackage.Literals.FORM_FILE_FIELD_ITEM__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AitchteeteepiePackage.Literals.FORM_FILE_FIELD_ITEM__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getFormFileFieldItemAccess().getFieldSTRINGTerminalRuleCall_0_0(), semanticObject.getField());
-		feeder.accept(grammarAccess.getFormFileFieldItemAccess().getValueSTRINGTerminalRuleCall_2_0(), semanticObject.getValue());
-		feeder.finish();
 	}
 	
 	
@@ -254,54 +176,6 @@ public class CurlBetterThanHttpieSemanticSequencer extends AbstractDelegatingSem
 	
 	/**
 	 * Contexts:
-	 *     Item returns HttpHeaderItem
-	 *     HttpHeaderItem returns HttpHeaderItem
-	 *
-	 * Constraint:
-	 *     (field=STRING value=STRING)
-	 */
-	protected void sequence_HttpHeaderItem(ISerializationContext context, HttpHeaderItem semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AitchteeteepiePackage.Literals.ITEM__FIELD) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AitchteeteepiePackage.Literals.ITEM__FIELD));
-			if (transientValues.isValueTransient(semanticObject, AitchteeteepiePackage.Literals.HTTP_HEADER_ITEM__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AitchteeteepiePackage.Literals.HTTP_HEADER_ITEM__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getHttpHeaderItemAccess().getFieldSTRINGTerminalRuleCall_0_0(), semanticObject.getField());
-		feeder.accept(grammarAccess.getHttpHeaderItemAccess().getValueSTRINGTerminalRuleCall_2_0(), semanticObject.getValue());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     JsonType returns JsonArray
-	 *     JsonArray returns JsonArray
-	 *
-	 * Constraint:
-	 *     {JsonArray}
-	 */
-	protected void sequence_JsonArray(ISerializationContext context, JsonArray semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     JsonType returns JsonBoolean
-	 *     JsonBoolean returns JsonBoolean
-	 *
-	 * Constraint:
-	 *     {JsonBoolean}
-	 */
-	protected void sequence_JsonBoolean(ISerializationContext context, JsonBoolean semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     Flag returns JsonFlag
 	 *     JsonFlag returns JsonFlag
 	 *
@@ -309,32 +183,6 @@ public class CurlBetterThanHttpieSemanticSequencer extends AbstractDelegatingSem
 	 *     {JsonFlag}
 	 */
 	protected void sequence_JsonFlag(ISerializationContext context, JsonFlag semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     JsonType returns JsonNumber
-	 *     JsonNumber returns JsonNumber
-	 *
-	 * Constraint:
-	 *     {JsonNumber}
-	 */
-	protected void sequence_JsonNumber(ISerializationContext context, JsonNumber semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     JsonType returns JsonObject
-	 *     JsonObject returns JsonObject
-	 *
-	 * Constraint:
-	 *     {JsonObject}
-	 */
-	protected void sequence_JsonObject(ISerializationContext context, JsonObject semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -354,19 +202,6 @@ public class CurlBetterThanHttpieSemanticSequencer extends AbstractDelegatingSem
 	
 	/**
 	 * Contexts:
-	 *     Item returns RawJsonFieldItem
-	 *     RawJsonFieldItem returns RawJsonFieldItem
-	 *
-	 * Constraint:
-	 *     {RawJsonFieldItem}
-	 */
-	protected void sequence_RawJsonFieldItem(ISerializationContext context, RawJsonFieldItem semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     Flag returns TimeoutFlag
 	 *     TimeoutFlag returns TimeoutFlag
 	 *
@@ -380,28 +215,6 @@ public class CurlBetterThanHttpieSemanticSequencer extends AbstractDelegatingSem
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getTimeoutFlagAccess().getTimeoutFLOATTerminalRuleCall_2_0(), semanticObject.getTimeout());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Item returns UrlParameterItem
-	 *     UrlParameterItem returns UrlParameterItem
-	 *
-	 * Constraint:
-	 *     (field=STRING value=STRING)
-	 */
-	protected void sequence_UrlParameterItem(ISerializationContext context, UrlParameterItem semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AitchteeteepiePackage.Literals.ITEM__FIELD) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AitchteeteepiePackage.Literals.ITEM__FIELD));
-			if (transientValues.isValueTransient(semanticObject, AitchteeteepiePackage.Literals.URL_PARAMETER_ITEM__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AitchteeteepiePackage.Literals.URL_PARAMETER_ITEM__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getUrlParameterItemAccess().getFieldSTRINGTerminalRuleCall_0_0(), semanticObject.getField());
-		feeder.accept(grammarAccess.getUrlParameterItemAccess().getValueSTRINGTerminalRuleCall_2_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	

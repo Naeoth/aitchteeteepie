@@ -31,7 +31,6 @@ public class CurlBetterThanHttpieParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getCommandLineInterfaceAccess().getAlternatives_7(), "rule__CommandLineInterface__Alternatives_7");
 					put(grammarAccess.getFlagAccess().getAlternatives(), "rule__Flag__Alternatives");
 					put(grammarAccess.getHeadersFlagAccess().getAlternatives_1(), "rule__HeadersFlag__Alternatives_1");
 					put(grammarAccess.getBodyFlagAccess().getAlternatives_1(), "rule__BodyFlag__Alternatives_1");
@@ -41,20 +40,10 @@ public class CurlBetterThanHttpieParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDownloadFlagAccess().getAlternatives_1(), "rule__DownloadFlag__Alternatives_1");
 					put(grammarAccess.getHelpFlagAccess().getAlternatives_1(), "rule__HelpFlag__Alternatives_1");
 					put(grammarAccess.getVerboseFlagAccess().getAlternatives_1(), "rule__VerboseFlag__Alternatives_1");
-					put(grammarAccess.getItemAccess().getAlternatives(), "rule__Item__Alternatives");
-					put(grammarAccess.getDataFieldItemAccess().getAlternatives_2(), "rule__DataFieldItem__Alternatives_2");
-					put(grammarAccess.getJsonTypeAccess().getAlternatives(), "rule__JsonType__Alternatives");
-					put(grammarAccess.getJsonObjectAccess().getAlternatives_2(), "rule__JsonObject__Alternatives_2");
 					put(grammarAccess.getMethodAccess().getAlternatives(), "rule__Method__Alternatives");
 					put(grammarAccess.getCommandLineInterfaceAccess().getGroup(), "rule__CommandLineInterface__Group__0");
+					put(grammarAccess.getCommandLineInterfaceAccess().getGroup_2(), "rule__CommandLineInterface__Group_2__0");
 					put(grammarAccess.getCommandLineInterfaceAccess().getGroup_3(), "rule__CommandLineInterface__Group_3__0");
-					put(grammarAccess.getCommandLineInterfaceAccess().getGroup_6(), "rule__CommandLineInterface__Group_6__0");
-					put(grammarAccess.getCommandLineInterfaceAccess().getGroup_7_0(), "rule__CommandLineInterface__Group_7_0__0");
-					put(grammarAccess.getCommandLineInterfaceAccess().getGroup_7_0_1(), "rule__CommandLineInterface__Group_7_0_1__0");
-					put(grammarAccess.getCommandLineInterfaceAccess().getGroup_7_1(), "rule__CommandLineInterface__Group_7_1__0");
-					put(grammarAccess.getCommandLineInterfaceAccess().getGroup_8(), "rule__CommandLineInterface__Group_8__0");
-					put(grammarAccess.getCommandLineInterfaceAccess().getGroup_10(), "rule__CommandLineInterface__Group_10__0");
-					put(grammarAccess.getCommandLineInterfaceAccess().getGroup_11(), "rule__CommandLineInterface__Group_11__0");
 					put(grammarAccess.getHeadersFlagAccess().getGroup(), "rule__HeadersFlag__Group__0");
 					put(grammarAccess.getBodyFlagAccess().getGroup(), "rule__BodyFlag__Group__0");
 					put(grammarAccess.getJsonFlagAccess().getGroup(), "rule__JsonFlag__Group__0");
@@ -72,21 +61,8 @@ public class CurlBetterThanHttpieParser extends AbstractContentAssistParser {
 					put(grammarAccess.getVersionFlagAccess().getGroup(), "rule__VersionFlag__Group__0");
 					put(grammarAccess.getVerboseFlagAccess().getGroup(), "rule__VerboseFlag__Group__0");
 					put(grammarAccess.getTimeoutFlagAccess().getGroup(), "rule__TimeoutFlag__Group__0");
-					put(grammarAccess.getFormFileFieldItemAccess().getGroup(), "rule__FormFileFieldItem__Group__0");
-					put(grammarAccess.getDataFieldItemAccess().getGroup(), "rule__DataFieldItem__Group__0");
-					put(grammarAccess.getDataFieldItemAccess().getGroup_2_1(), "rule__DataFieldItem__Group_2_1__0");
-					put(grammarAccess.getHttpHeaderItemAccess().getGroup(), "rule__HttpHeaderItem__Group__0");
-					put(grammarAccess.getUrlParameterItemAccess().getGroup(), "rule__UrlParameterItem__Group__0");
-					put(grammarAccess.getJsonBooleanAccess().getGroup(), "rule__JsonBoolean__Group__0");
-					put(grammarAccess.getJsonObjectAccess().getGroup(), "rule__JsonObject__Group__0");
-					put(grammarAccess.getCommandLineInterfaceAccess().getFlagsAssignment_3_0(), "rule__CommandLineInterface__FlagsAssignment_3_0");
-					put(grammarAccess.getCommandLineInterfaceAccess().getMethodAssignment_4(), "rule__CommandLineInterface__MethodAssignment_4");
-					put(grammarAccess.getCommandLineInterfaceAccess().getProtocolAssignment_6_0(), "rule__CommandLineInterface__ProtocolAssignment_6_0");
-					put(grammarAccess.getCommandLineInterfaceAccess().getUrlAssignment_7_0_0(), "rule__CommandLineInterface__UrlAssignment_7_0_0");
-					put(grammarAccess.getCommandLineInterfaceAccess().getPortAssignment_7_0_1_1(), "rule__CommandLineInterface__PortAssignment_7_0_1_1");
-					put(grammarAccess.getCommandLineInterfaceAccess().getPortAssignment_7_1_1(), "rule__CommandLineInterface__PortAssignment_7_1_1");
-					put(grammarAccess.getCommandLineInterfaceAccess().getResourceAssignment_8_1(), "rule__CommandLineInterface__ResourceAssignment_8_1");
-					put(grammarAccess.getCommandLineInterfaceAccess().getItemsAssignment_11_0(), "rule__CommandLineInterface__ItemsAssignment_11_0");
+					put(grammarAccess.getCommandLineInterfaceAccess().getFlagsAssignment_2_1(), "rule__CommandLineInterface__FlagsAssignment_2_1");
+					put(grammarAccess.getCommandLineInterfaceAccess().getMethodAssignment_3_1(), "rule__CommandLineInterface__MethodAssignment_3_1");
 					put(grammarAccess.getProxyFlagAccess().getProtocolAssignment_2_0(), "rule__ProxyFlag__ProtocolAssignment_2_0");
 					put(grammarAccess.getProxyFlagAccess().getProxyProtocolAssignment_3_0(), "rule__ProxyFlag__ProxyProtocolAssignment_3_0");
 					put(grammarAccess.getProxyFlagAccess().getUsernameAssignment_4_0(), "rule__ProxyFlag__UsernameAssignment_4_0");
@@ -97,15 +73,6 @@ public class CurlBetterThanHttpieParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAuthFlagAccess().getPasswordAssignment_3_1(), "rule__AuthFlag__PasswordAssignment_3_1");
 					put(grammarAccess.getAuthFlagAccess().getHostnameAssignment_4_1(), "rule__AuthFlag__HostnameAssignment_4_1");
 					put(grammarAccess.getTimeoutFlagAccess().getTimeoutAssignment_2(), "rule__TimeoutFlag__TimeoutAssignment_2");
-					put(grammarAccess.getFormFileFieldItemAccess().getFieldAssignment_0(), "rule__FormFileFieldItem__FieldAssignment_0");
-					put(grammarAccess.getFormFileFieldItemAccess().getValueAssignment_2(), "rule__FormFileFieldItem__ValueAssignment_2");
-					put(grammarAccess.getDataFieldItemAccess().getFieldAssignment_0(), "rule__DataFieldItem__FieldAssignment_0");
-					put(grammarAccess.getDataFieldItemAccess().getValueAssignment_2_0(), "rule__DataFieldItem__ValueAssignment_2_0");
-					put(grammarAccess.getDataFieldItemAccess().getValueAssignment_2_1_1(), "rule__DataFieldItem__ValueAssignment_2_1_1");
-					put(grammarAccess.getHttpHeaderItemAccess().getFieldAssignment_0(), "rule__HttpHeaderItem__FieldAssignment_0");
-					put(grammarAccess.getHttpHeaderItemAccess().getValueAssignment_2(), "rule__HttpHeaderItem__ValueAssignment_2");
-					put(grammarAccess.getUrlParameterItemAccess().getFieldAssignment_0(), "rule__UrlParameterItem__FieldAssignment_0");
-					put(grammarAccess.getUrlParameterItemAccess().getValueAssignment_2(), "rule__UrlParameterItem__ValueAssignment_2");
 				}
 			};
 		}

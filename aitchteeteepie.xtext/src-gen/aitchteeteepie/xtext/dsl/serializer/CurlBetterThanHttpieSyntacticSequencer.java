@@ -12,7 +12,6 @@ import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AlternativeAlias;
-import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
@@ -24,13 +23,12 @@ public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSeq
 	protected CurlBetterThanHttpieGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_AuthFlag_AKeyword_0_1_or_AuthKeyword_0_0;
 	protected AbstractElementAlias match_BodyFlag_BKeyword_1_1_or_BodyKeyword_1_0;
-	protected AbstractElementAlias match_CommandLineInterface___HyphenMinusHyphenMinusKeyword_10_0_WSTerminalRuleCall_10_1__q;
+	protected AbstractElementAlias match_CommandLineInterface_WSTerminalRuleCall_4_q;
 	protected AbstractElementAlias match_DownloadFlag_DKeyword_1_1_or_DownloadKeyword_1_0;
 	protected AbstractElementAlias match_FormFlag_FKeyword_1_1_or_FormKeyword_1_0;
 	protected AbstractElementAlias match_HeadersFlag_HeaderKeyword_1_0_or_TKeyword_1_1;
 	protected AbstractElementAlias match_HelpFlag_HKeyword_1_1_or_HelpKeyword_1_0;
 	protected AbstractElementAlias match_JsonFlag_JKeyword_1_1_or_JsonKeyword_1_0;
-	protected AbstractElementAlias match_JsonObject_ApostropheKeyword_2_0_or_QuotationMarkKeyword_2_1;
 	protected AbstractElementAlias match_VerboseFlag_VKeyword_1_1_or_VerboseKeyword_1_0;
 	
 	@Inject
@@ -38,34 +36,22 @@ public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSeq
 		grammarAccess = (CurlBetterThanHttpieGrammarAccess) access;
 		match_AuthFlag_AKeyword_0_1_or_AuthKeyword_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getAuthFlagAccess().getAKeyword_0_1()), new TokenAlias(false, false, grammarAccess.getAuthFlagAccess().getAuthKeyword_0_0()));
 		match_BodyFlag_BKeyword_1_1_or_BodyKeyword_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getBodyFlagAccess().getBKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getBodyFlagAccess().getBodyKeyword_1_0()));
-		match_CommandLineInterface___HyphenMinusHyphenMinusKeyword_10_0_WSTerminalRuleCall_10_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getCommandLineInterfaceAccess().getHyphenMinusHyphenMinusKeyword_10_0()), new TokenAlias(false, false, grammarAccess.getCommandLineInterfaceAccess().getWSTerminalRuleCall_10_1()));
+		match_CommandLineInterface_WSTerminalRuleCall_4_q = new TokenAlias(false, true, grammarAccess.getCommandLineInterfaceAccess().getWSTerminalRuleCall_4());
 		match_DownloadFlag_DKeyword_1_1_or_DownloadKeyword_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getDownloadFlagAccess().getDKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getDownloadFlagAccess().getDownloadKeyword_1_0()));
 		match_FormFlag_FKeyword_1_1_or_FormKeyword_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getFormFlagAccess().getFKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getFormFlagAccess().getFormKeyword_1_0()));
 		match_HeadersFlag_HeaderKeyword_1_0_or_TKeyword_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getHeadersFlagAccess().getHeaderKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getHeadersFlagAccess().getTKeyword_1_1()));
 		match_HelpFlag_HKeyword_1_1_or_HelpKeyword_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getHelpFlagAccess().getHKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getHelpFlagAccess().getHelpKeyword_1_0()));
 		match_JsonFlag_JKeyword_1_1_or_JsonKeyword_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getJsonFlagAccess().getJKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getJsonFlagAccess().getJsonKeyword_1_0()));
-		match_JsonObject_ApostropheKeyword_2_0_or_QuotationMarkKeyword_2_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getJsonObjectAccess().getApostropheKeyword_2_0()), new TokenAlias(false, false, grammarAccess.getJsonObjectAccess().getQuotationMarkKeyword_2_1()));
 		match_VerboseFlag_VKeyword_1_1_or_VerboseKeyword_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getVerboseFlagAccess().getVKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getVerboseFlagAccess().getVerboseKeyword_1_0()));
 	}
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (ruleCall.getRule() == grammarAccess.getBOOLEANRule())
-			return getBOOLEANToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getVALUERule())
+		if (ruleCall.getRule() == grammarAccess.getVALUERule())
 			return getVALUEToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getWSRule())
 			return getWSToken(semanticObject, ruleCall, node);
 		return "";
-	}
-	
-	/**
-	 * terminal BOOLEAN returns ecore::EBoolean: 'true' | 'false';
-	 */
-	protected String getBOOLEANToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "true";
 	}
 	
 	/**
@@ -78,7 +64,7 @@ public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSeq
 	}
 	
 	/**
-	 * terminal WS: (' '|'\t')+;
+	 * terminal WS: (' ' | '\t' | '\r' | '\n')+;
 	 */
 	protected String getWSToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
@@ -96,8 +82,8 @@ public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSeq
 				emit_AuthFlag_AKeyword_0_1_or_AuthKeyword_0_0(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_BodyFlag_BKeyword_1_1_or_BodyKeyword_1_0.equals(syntax))
 				emit_BodyFlag_BKeyword_1_1_or_BodyKeyword_1_0(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_CommandLineInterface___HyphenMinusHyphenMinusKeyword_10_0_WSTerminalRuleCall_10_1__q.equals(syntax))
-				emit_CommandLineInterface___HyphenMinusHyphenMinusKeyword_10_0_WSTerminalRuleCall_10_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_CommandLineInterface_WSTerminalRuleCall_4_q.equals(syntax))
+				emit_CommandLineInterface_WSTerminalRuleCall_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_DownloadFlag_DKeyword_1_1_or_DownloadKeyword_1_0.equals(syntax))
 				emit_DownloadFlag_DKeyword_1_1_or_DownloadKeyword_1_0(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_FormFlag_FKeyword_1_1_or_FormKeyword_1_0.equals(syntax))
@@ -108,8 +94,6 @@ public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSeq
 				emit_HelpFlag_HKeyword_1_1_or_HelpKeyword_1_0(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_JsonFlag_JKeyword_1_1_or_JsonKeyword_1_0.equals(syntax))
 				emit_JsonFlag_JKeyword_1_1_or_JsonKeyword_1_0(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_JsonObject_ApostropheKeyword_2_0_or_QuotationMarkKeyword_2_1.equals(syntax))
-				emit_JsonObject_ApostropheKeyword_2_0_or_QuotationMarkKeyword_2_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_VerboseFlag_VKeyword_1_1_or_VerboseKeyword_1_0.equals(syntax))
 				emit_VerboseFlag_VKeyword_1_1_or_VerboseKeyword_1_0(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
@@ -118,7 +102,7 @@ public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSeq
 
 	/**
 	 * Ambiguous syntax:
-	 *     '--auth' | '-a'
+	 *     '-a' | '--auth'
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) VALUE username=STRING
@@ -140,31 +124,20 @@ public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSeq
 	
 	/**
 	 * Ambiguous syntax:
-	 *     ('--' WS)?
+	 *     WS?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) 'http' WS WS ':' WS (ambiguity) (rule start)
-	 *     (rule start) 'http' WS WS ':' WS (ambiguity) items+=Item
-	 *     flags+=Flag WS WS ':' WS (ambiguity) (rule end)
-	 *     flags+=Flag WS WS ':' WS (ambiguity) items+=Item
-	 *     method=Method WS ':' WS (ambiguity) (rule end)
-	 *     method=Method WS ':' WS (ambiguity) items+=Item
-	 *     port=INT WS (ambiguity) (rule end)
-	 *     port=INT WS (ambiguity) items+=Item
-	 *     protocol=STRING '://' ':' WS (ambiguity) (rule end)
-	 *     protocol=STRING '://' ':' WS (ambiguity) items+=Item
-	 *     resource=STRING WS (ambiguity) (rule end)
-	 *     resource=STRING WS (ambiguity) items+=Item
-	 *     url=STRING WS (ambiguity) (rule end)
-	 *     url=STRING WS (ambiguity) items+=Item
+	 *     (rule start) 'http' (ambiguity) (rule start)
+	 *     flags+=Flag (ambiguity) (rule end)
+	 *     method=Method (ambiguity) (rule end)
 	 */
-	protected void emit_CommandLineInterface___HyphenMinusHyphenMinusKeyword_10_0_WSTerminalRuleCall_10_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_CommandLineInterface_WSTerminalRuleCall_4_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Ambiguous syntax:
-	 *     '-d' | '--download'
+	 *     '--download' | '-d'
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) (rule start)
@@ -186,7 +159,7 @@ public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSeq
 	
 	/**
 	 * Ambiguous syntax:
-	 *     '-t' | '--header'
+	 *     '--header' | '-t'
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) (rule start)
@@ -219,18 +192,7 @@ public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSeq
 	
 	/**
 	 * Ambiguous syntax:
-	 *     '"' | '''
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) '{' (ambiguity) '}' (rule start)
-	 */
-	protected void emit_JsonObject_ApostropheKeyword_2_0_or_QuotationMarkKeyword_2_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     '--verbose' | '-v'
+	 *     '-v' | '--verbose'
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) (rule start)
