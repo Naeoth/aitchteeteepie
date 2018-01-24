@@ -34,18 +34,14 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 		private final RuleCall cWSTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
 		private final Assignment cFlagsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
 		private final RuleCall cFlagsFlagParserRuleCall_2_1_0 = (RuleCall)cFlagsAssignment_2_1.eContents().get(0);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final RuleCall cWSTerminalRuleCall_3_0 = (RuleCall)cGroup_3.eContents().get(0);
-		private final Assignment cMethodAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cMethodMethodEnumRuleCall_3_1_0 = (RuleCall)cMethodAssignment_3_1.eContents().get(0);
-		private final RuleCall cWSTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+		private final RuleCall cWSTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
 		
 		//CommandLineInterface:
 		//	{CommandLineInterface}
-		//	'http' (WS flags+=Flag)* (WS method=Method)? WS?;
+		//	'http' (WS flags+=Flag)* WS?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{CommandLineInterface} 'http' (WS flags+=Flag)* (WS method=Method)? WS?
+		//{CommandLineInterface} 'http' (WS flags+=Flag)* WS?
 		public Group getGroup() { return cGroup; }
 		
 		//{CommandLineInterface}
@@ -66,20 +62,8 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 		//Flag
 		public RuleCall getFlagsFlagParserRuleCall_2_1_0() { return cFlagsFlagParserRuleCall_2_1_0; }
 		
-		//(WS method=Method)?
-		public Group getGroup_3() { return cGroup_3; }
-		
-		//WS
-		public RuleCall getWSTerminalRuleCall_3_0() { return cWSTerminalRuleCall_3_0; }
-		
-		//method=Method
-		public Assignment getMethodAssignment_3_1() { return cMethodAssignment_3_1; }
-		
-		//Method
-		public RuleCall getMethodMethodEnumRuleCall_3_1_0() { return cMethodMethodEnumRuleCall_3_1_0; }
-		
 		//WS?
-		public RuleCall getWSTerminalRuleCall_4() { return cWSTerminalRuleCall_4; }
+		public RuleCall getWSTerminalRuleCall_3() { return cWSTerminalRuleCall_3; }
 	}
 	public class FlagElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.Flag");
@@ -96,7 +80,7 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 		private final RuleCall cVerboseFlagParserRuleCall_9 = (RuleCall)cAlternatives.eContents().get(9);
 		private final RuleCall cTimeoutFlagParserRuleCall_10 = (RuleCall)cAlternatives.eContents().get(10);
 		
-		////WS (protocol=STRING '://')? (url=STRING (':' port=INT)? | (':' (port=INT)?)) ('/' resource=STRING)? (WS '--')? (WS items+=Item)* WS?;
+		////(WS method=Method)? WS (protocol=BASIC_STRING '://')? (url=STRING (':' port=INT)? | (':' (port=INT)?)) ('/' resource=STRING)? (WS '--')? (WS items+=Item)* WS?;
 		//// FLAGS
 		//Flag:
 		//	ProxyFlag | FormFlag | AuthFlag | DownloadFlag | BodyFlag | VersionFlag | JsonFlag | HelpFlag | HeadersFlag |
@@ -230,195 +214,154 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 		private final Keyword cFKeyword_1_1 = (Keyword)cAlternatives_1.eContents().get(1);
 		
 		//FormFlag:
-		//	{FormFlag} ('--form' | 'f');
+		//	{FormFlag} ('--form' | '-f');
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{FormFlag} ('--form' | 'f')
+		//{FormFlag} ('--form' | '-f')
 		public Group getGroup() { return cGroup; }
 		
 		//{FormFlag}
 		public Action getFormFlagAction_0() { return cFormFlagAction_0; }
 		
-		//'--form' | 'f'
+		//'--form' | '-f'
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 		
 		//'--form'
 		public Keyword getFormKeyword_1_0() { return cFormKeyword_1_0; }
 		
-		//'f'
+		//'-f'
 		public Keyword getFKeyword_1_1() { return cFKeyword_1_1; }
 	}
 	public class ProxyFlagElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.ProxyFlag");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cProxyKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cVALUETerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Assignment cProtocolAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
-		private final RuleCall cProtocolSTRINGTerminalRuleCall_2_0_0 = (RuleCall)cProtocolAssignment_2_0.eContents().get(0);
-		private final Keyword cColonKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final Keyword cEqualsSignKeyword_1_0 = (Keyword)cAlternatives_1.eContents().get(0);
+		private final RuleCall cWSTerminalRuleCall_1_1 = (RuleCall)cAlternatives_1.eContents().get(1);
+		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
+		private final Group cGroup_2_0 = (Group)cAlternatives_2.eContents().get(0);
+		private final Group cGroup_2_0_0 = (Group)cGroup_2_0.eContents().get(0);
+		private final Assignment cProtocolAssignment_2_0_0_0 = (Assignment)cGroup_2_0_0.eContents().get(0);
+		private final RuleCall cProtocolBASIC_STRINGTerminalRuleCall_2_0_0_0_0 = (RuleCall)cProtocolAssignment_2_0_0_0.eContents().get(0);
+		private final Keyword cColonKeyword_2_0_0_1 = (Keyword)cGroup_2_0_0.eContents().get(1);
+		private final Group cGroup_2_0_1 = (Group)cGroup_2_0.eContents().get(1);
+		private final Assignment cProxyProtocolAssignment_2_0_1_0 = (Assignment)cGroup_2_0_1.eContents().get(0);
+		private final RuleCall cProxyProtocolBASIC_STRINGTerminalRuleCall_2_0_1_0_0 = (RuleCall)cProxyProtocolAssignment_2_0_1_0.eContents().get(0);
+		private final Keyword cColonSolidusSolidusKeyword_2_0_1_1 = (Keyword)cGroup_2_0_1.eContents().get(1);
+		private final Group cGroup_2_1 = (Group)cAlternatives_2.eContents().get(1);
+		private final Assignment cProxyProtocolAssignment_2_1_0 = (Assignment)cGroup_2_1.eContents().get(0);
+		private final RuleCall cProxyProtocolBASIC_STRINGTerminalRuleCall_2_1_0_0 = (RuleCall)cProxyProtocolAssignment_2_1_0.eContents().get(0);
+		private final Keyword cColonSolidusSolidusKeyword_2_1_1 = (Keyword)cGroup_2_1.eContents().get(1);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Assignment cProxyProtocolAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
-		private final RuleCall cProxyProtocolSTRINGTerminalRuleCall_3_0_0 = (RuleCall)cProxyProtocolAssignment_3_0.eContents().get(0);
-		private final Keyword cColonSolidusSolidusKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Assignment cUsernameAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
-		private final RuleCall cUsernameSTRINGTerminalRuleCall_4_0_0 = (RuleCall)cUsernameAssignment_4_0.eContents().get(0);
-		private final Keyword cColonKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Assignment cPasswordAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final RuleCall cPasswordSTRINGTerminalRuleCall_4_2_0 = (RuleCall)cPasswordAssignment_4_2.eContents().get(0);
-		private final Keyword cAKeyword_4_3 = (Keyword)cGroup_4.eContents().get(3);
-		private final Assignment cHostnameAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cHostnameSTRINGTerminalRuleCall_5_0 = (RuleCall)cHostnameAssignment_5.eContents().get(0);
-		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cColonKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cPortAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final RuleCall cPortINTTerminalRuleCall_6_1_0 = (RuleCall)cPortAssignment_6_1.eContents().get(0);
+		private final Assignment cUsernameAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
+		private final RuleCall cUsernameSTRING_UPTerminalRuleCall_3_0_0 = (RuleCall)cUsernameAssignment_3_0.eContents().get(0);
+		private final Keyword cColonKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Assignment cPasswordAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
+		private final RuleCall cPasswordSTRING_UPTerminalRuleCall_3_2_0 = (RuleCall)cPasswordAssignment_3_2.eContents().get(0);
 		
 		//ProxyFlag:
-		//	'--proxy' VALUE (protocol=STRING ':')? (proxyProtocol=STRING '://')? (username=STRING ':' password=STRING 'a')?
-		//	hostname=STRING (':' port=INT)?;
+		//	'--proxy' ('=' | WS) ((protocol=BASIC_STRING ':') (proxyProtocol=BASIC_STRING '://')? | proxyProtocol=BASIC_STRING
+		//	'://') (username=STRING_UP ':' password=STRING_UP)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'--proxy' VALUE (protocol=STRING ':')? (proxyProtocol=STRING '://')? (username=STRING ':' password=STRING 'a')?
-		//hostname=STRING (':' port=INT)?
+		//'--proxy' ('=' | WS) ((protocol=BASIC_STRING ':') (proxyProtocol=BASIC_STRING '://')? | proxyProtocol=BASIC_STRING
+		//'://') (username=STRING_UP ':' password=STRING_UP)?
 		public Group getGroup() { return cGroup; }
 		
 		//'--proxy'
 		public Keyword getProxyKeyword_0() { return cProxyKeyword_0; }
 		
-		//VALUE
-		public RuleCall getVALUETerminalRuleCall_1() { return cVALUETerminalRuleCall_1; }
+		//'=' | WS
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 		
-		//(protocol=STRING ':')?
-		public Group getGroup_2() { return cGroup_2; }
+		//'='
+		public Keyword getEqualsSignKeyword_1_0() { return cEqualsSignKeyword_1_0; }
 		
-		//protocol=STRING
-		public Assignment getProtocolAssignment_2_0() { return cProtocolAssignment_2_0; }
+		//WS
+		public RuleCall getWSTerminalRuleCall_1_1() { return cWSTerminalRuleCall_1_1; }
 		
-		//STRING
-		public RuleCall getProtocolSTRINGTerminalRuleCall_2_0_0() { return cProtocolSTRINGTerminalRuleCall_2_0_0; }
+		//(protocol=BASIC_STRING ':') (proxyProtocol=BASIC_STRING '://')? | proxyProtocol=BASIC_STRING '://'
+		public Alternatives getAlternatives_2() { return cAlternatives_2; }
+		
+		//(protocol=BASIC_STRING ':') (proxyProtocol=BASIC_STRING '://')?
+		public Group getGroup_2_0() { return cGroup_2_0; }
+		
+		//protocol=BASIC_STRING ':'
+		public Group getGroup_2_0_0() { return cGroup_2_0_0; }
+		
+		//protocol=BASIC_STRING
+		public Assignment getProtocolAssignment_2_0_0_0() { return cProtocolAssignment_2_0_0_0; }
+		
+		//BASIC_STRING
+		public RuleCall getProtocolBASIC_STRINGTerminalRuleCall_2_0_0_0_0() { return cProtocolBASIC_STRINGTerminalRuleCall_2_0_0_0_0; }
 		
 		//':'
-		public Keyword getColonKeyword_2_1() { return cColonKeyword_2_1; }
+		public Keyword getColonKeyword_2_0_0_1() { return cColonKeyword_2_0_0_1; }
 		
-		//(proxyProtocol=STRING '://')?
-		public Group getGroup_3() { return cGroup_3; }
+		//(proxyProtocol=BASIC_STRING '://')?
+		public Group getGroup_2_0_1() { return cGroup_2_0_1; }
 		
-		//proxyProtocol=STRING
-		public Assignment getProxyProtocolAssignment_3_0() { return cProxyProtocolAssignment_3_0; }
+		//proxyProtocol=BASIC_STRING
+		public Assignment getProxyProtocolAssignment_2_0_1_0() { return cProxyProtocolAssignment_2_0_1_0; }
 		
-		//STRING
-		public RuleCall getProxyProtocolSTRINGTerminalRuleCall_3_0_0() { return cProxyProtocolSTRINGTerminalRuleCall_3_0_0; }
+		//BASIC_STRING
+		public RuleCall getProxyProtocolBASIC_STRINGTerminalRuleCall_2_0_1_0_0() { return cProxyProtocolBASIC_STRINGTerminalRuleCall_2_0_1_0_0; }
 		
 		//'://'
-		public Keyword getColonSolidusSolidusKeyword_3_1() { return cColonSolidusSolidusKeyword_3_1; }
+		public Keyword getColonSolidusSolidusKeyword_2_0_1_1() { return cColonSolidusSolidusKeyword_2_0_1_1; }
 		
-		//(username=STRING ':' password=STRING 'a')?
-		public Group getGroup_4() { return cGroup_4; }
+		//proxyProtocol=BASIC_STRING '://'
+		public Group getGroup_2_1() { return cGroup_2_1; }
 		
-		//username=STRING
-		public Assignment getUsernameAssignment_4_0() { return cUsernameAssignment_4_0; }
+		//proxyProtocol=BASIC_STRING
+		public Assignment getProxyProtocolAssignment_2_1_0() { return cProxyProtocolAssignment_2_1_0; }
 		
-		//STRING
-		public RuleCall getUsernameSTRINGTerminalRuleCall_4_0_0() { return cUsernameSTRINGTerminalRuleCall_4_0_0; }
+		//BASIC_STRING
+		public RuleCall getProxyProtocolBASIC_STRINGTerminalRuleCall_2_1_0_0() { return cProxyProtocolBASIC_STRINGTerminalRuleCall_2_1_0_0; }
 		
-		//':'
-		public Keyword getColonKeyword_4_1() { return cColonKeyword_4_1; }
+		//'://'
+		public Keyword getColonSolidusSolidusKeyword_2_1_1() { return cColonSolidusSolidusKeyword_2_1_1; }
 		
-		//password=STRING
-		public Assignment getPasswordAssignment_4_2() { return cPasswordAssignment_4_2; }
+		//(username=STRING_UP ':' password=STRING_UP)?
+		public Group getGroup_3() { return cGroup_3; }
 		
-		//STRING
-		public RuleCall getPasswordSTRINGTerminalRuleCall_4_2_0() { return cPasswordSTRINGTerminalRuleCall_4_2_0; }
+		//username=STRING_UP
+		public Assignment getUsernameAssignment_3_0() { return cUsernameAssignment_3_0; }
 		
-		//'a'
-		public Keyword getAKeyword_4_3() { return cAKeyword_4_3; }
-		
-		//hostname=STRING
-		public Assignment getHostnameAssignment_5() { return cHostnameAssignment_5; }
-		
-		//STRING
-		public RuleCall getHostnameSTRINGTerminalRuleCall_5_0() { return cHostnameSTRINGTerminalRuleCall_5_0; }
-		
-		//(':' port=INT)?
-		public Group getGroup_6() { return cGroup_6; }
+		//STRING_UP
+		public RuleCall getUsernameSTRING_UPTerminalRuleCall_3_0_0() { return cUsernameSTRING_UPTerminalRuleCall_3_0_0; }
 		
 		//':'
-		public Keyword getColonKeyword_6_0() { return cColonKeyword_6_0; }
+		public Keyword getColonKeyword_3_1() { return cColonKeyword_3_1; }
 		
-		//port=INT
-		public Assignment getPortAssignment_6_1() { return cPortAssignment_6_1; }
+		//password=STRING_UP
+		public Assignment getPasswordAssignment_3_2() { return cPasswordAssignment_3_2; }
 		
-		//INT
-		public RuleCall getPortINTTerminalRuleCall_6_1_0() { return cPortINTTerminalRuleCall_6_1_0; }
+		//STRING_UP
+		public RuleCall getPasswordSTRING_UPTerminalRuleCall_3_2_0() { return cPasswordSTRING_UPTerminalRuleCall_3_2_0; }
 	}
 	public class AuthFlagElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.AuthFlag");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
-		private final Keyword cAuthKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
-		private final Keyword cAKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
-		private final RuleCall cVALUETerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final Assignment cUsernameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cUsernameSTRINGTerminalRuleCall_2_0 = (RuleCall)cUsernameAssignment_2.eContents().get(0);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cColonKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cPasswordAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cPasswordSTRINGTerminalRuleCall_3_1_0 = (RuleCall)cPasswordAssignment_3_1.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cCommercialAtKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cHostnameAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cHostnameSTRINGTerminalRuleCall_4_1_0 = (RuleCall)cHostnameAssignment_4_1.eContents().get(0);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cAuthKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cAKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
 		
+		////"'" ((protocol=BASIC_STRING ':') (proxyProtocol=BASIC_STRING '://')? | proxyProtocol=BASIC_STRING '://') (username=STRING ':' password=STRING)? hostname=STRING (':' port=INT)? "'" |
+		////'"' ((protocol=BASIC_STRING ':') (proxyProtocol=BASIC_STRING '://')? | proxyProtocol=BASIC_STRING '://') (username=STRING ':' password=STRING)? hostname=STRING (':' port=INT)? '"' |
+		////((protocol=BASIC_STRING ':') (proxyProtocol=BASIC_STRING '://')? | proxyProtocol=BASIC_STRING '://') (username=STRING ':' password=STRING)? hostname=STRING (':' port=INT)?;
 		//AuthFlag:
-		//	('--auth' | '-a') VALUE username=STRING (':' password=STRING)? ('@' hostname=STRING)?;
+		//	'--auth' | '-a';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('--auth' | '-a') VALUE username=STRING (':' password=STRING)? ('@' hostname=STRING)?
-		public Group getGroup() { return cGroup; }
-		
 		//'--auth' | '-a'
-		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//'--auth'
-		public Keyword getAuthKeyword_0_0() { return cAuthKeyword_0_0; }
+		public Keyword getAuthKeyword_0() { return cAuthKeyword_0; }
 		
 		//'-a'
-		public Keyword getAKeyword_0_1() { return cAKeyword_0_1; }
-		
-		//VALUE
-		public RuleCall getVALUETerminalRuleCall_1() { return cVALUETerminalRuleCall_1; }
-		
-		//username=STRING
-		public Assignment getUsernameAssignment_2() { return cUsernameAssignment_2; }
-		
-		//STRING
-		public RuleCall getUsernameSTRINGTerminalRuleCall_2_0() { return cUsernameSTRINGTerminalRuleCall_2_0; }
-		
-		//(':' password=STRING)?
-		public Group getGroup_3() { return cGroup_3; }
-		
-		//':'
-		public Keyword getColonKeyword_3_0() { return cColonKeyword_3_0; }
-		
-		//password=STRING
-		public Assignment getPasswordAssignment_3_1() { return cPasswordAssignment_3_1; }
-		
-		//STRING
-		public RuleCall getPasswordSTRINGTerminalRuleCall_3_1_0() { return cPasswordSTRINGTerminalRuleCall_3_1_0; }
-		
-		//('@' hostname=STRING)?
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//'@'
-		public Keyword getCommercialAtKeyword_4_0() { return cCommercialAtKeyword_4_0; }
-		
-		//hostname=STRING
-		public Assignment getHostnameAssignment_4_1() { return cHostnameAssignment_4_1; }
-		
-		//STRING
-		public RuleCall getHostnameSTRINGTerminalRuleCall_4_1_0() { return cHostnameSTRINGTerminalRuleCall_4_1_0; }
+		public Keyword getAKeyword_1() { return cAKeyword_1; }
 	}
 	public class DownloadFlagElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.DownloadFlag");
@@ -428,7 +371,7 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 		private final Keyword cDownloadKeyword_1_0 = (Keyword)cAlternatives_1.eContents().get(0);
 		private final Keyword cDKeyword_1_1 = (Keyword)cAlternatives_1.eContents().get(1);
 		
-		//// TO CHECK IF EMPTY STRING WORKS
+		////VALUE username=STRING (':' password=STRING)? ('@' hostname=STRING)?; // TO CHECK IF EMPTY STRING WORKS
 		//DownloadFlag:
 		//	{DownloadFlag} ('--download' | '-d');
 		@Override public ParserRule getRule() { return rule; }
@@ -524,30 +467,14 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 	}
 	public class TimeoutFlagElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.TimeoutFlag");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cTimeoutKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cVALUETerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final Assignment cTimeoutAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cTimeoutFLOATTerminalRuleCall_2_0 = (RuleCall)cTimeoutAssignment_2.eContents().get(0);
+		private final Keyword cTimeoutKeyword = (Keyword)rule.eContents().get(1);
 		
 		//TimeoutFlag:
-		//	'--timeout' VALUE timeout=FLOAT;
+		//	'--timeout';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'--timeout' VALUE timeout=FLOAT
-		public Group getGroup() { return cGroup; }
-		
 		//'--timeout'
-		public Keyword getTimeoutKeyword_0() { return cTimeoutKeyword_0; }
-		
-		//VALUE
-		public RuleCall getVALUETerminalRuleCall_1() { return cVALUETerminalRuleCall_1; }
-		
-		//timeout=FLOAT
-		public Assignment getTimeoutAssignment_2() { return cTimeoutAssignment_2; }
-		
-		//FLOAT
-		public RuleCall getTimeoutFLOATTerminalRuleCall_2_0() { return cTimeoutFLOATTerminalRuleCall_2_0; }
+		public Keyword getTimeoutKeyword() { return cTimeoutKeyword; }
 	}
 	
 	public class MethodElements extends AbstractEnumRuleElementFinder {
@@ -608,13 +535,14 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 	private final VerboseFlagElements pVerboseFlag;
 	private final TimeoutFlagElements pTimeoutFlag;
 	private final MethodElements eMethod;
-	private final TerminalRule tWS;
-	private final TerminalRule tVALUE;
 	private final TerminalRule tDIGIT;
+	private final TerminalRule tLETTER;
+	private final TerminalRule tSPECIAL_UP;
+	private final TerminalRule tWS;
 	private final TerminalRule tINT;
 	private final TerminalRule tFLOAT;
-	private final TerminalRule tSTRING;
-	private final TerminalRule tANY_OTHER;
+	private final TerminalRule tBASIC_STRING;
+	private final TerminalRule tSTRING_UP;
 	
 	private final Grammar grammar;
 
@@ -635,13 +563,14 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 		this.pVerboseFlag = new VerboseFlagElements();
 		this.pTimeoutFlag = new TimeoutFlagElements();
 		this.eMethod = new MethodElements();
-		this.tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.WS");
-		this.tVALUE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.VALUE");
 		this.tDIGIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.DIGIT");
+		this.tLETTER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.LETTER");
+		this.tSPECIAL_UP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.SPECIAL_UP");
+		this.tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.WS");
 		this.tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.INT");
 		this.tFLOAT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.FLOAT");
-		this.tSTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.STRING");
-		this.tANY_OTHER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.ANY_OTHER");
+		this.tBASIC_STRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.BASIC_STRING");
+		this.tSTRING_UP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.STRING_UP");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -669,7 +598,7 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 	
 	//CommandLineInterface:
 	//	{CommandLineInterface}
-	//	'http' (WS flags+=Flag)* (WS method=Method)? WS?;
+	//	'http' (WS flags+=Flag)* WS?;
 	public CommandLineInterfaceElements getCommandLineInterfaceAccess() {
 		return pCommandLineInterface;
 	}
@@ -678,7 +607,7 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 		return getCommandLineInterfaceAccess().getRule();
 	}
 	
-	////WS (protocol=STRING '://')? (url=STRING (':' port=INT)? | (':' (port=INT)?)) ('/' resource=STRING)? (WS '--')? (WS items+=Item)* WS?;
+	////(WS method=Method)? WS (protocol=BASIC_STRING '://')? (url=STRING (':' port=INT)? | (':' (port=INT)?)) ('/' resource=STRING)? (WS '--')? (WS items+=Item)* WS?;
 	//// FLAGS
 	//Flag:
 	//	ProxyFlag | FormFlag | AuthFlag | DownloadFlag | BodyFlag | VersionFlag | JsonFlag | HelpFlag | HeadersFlag |
@@ -722,7 +651,7 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 	}
 	
 	//FormFlag:
-	//	{FormFlag} ('--form' | 'f');
+	//	{FormFlag} ('--form' | '-f');
 	public FormFlagElements getFormFlagAccess() {
 		return pFormFlag;
 	}
@@ -732,8 +661,8 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 	}
 	
 	//ProxyFlag:
-	//	'--proxy' VALUE (protocol=STRING ':')? (proxyProtocol=STRING '://')? (username=STRING ':' password=STRING 'a')?
-	//	hostname=STRING (':' port=INT)?;
+	//	'--proxy' ('=' | WS) ((protocol=BASIC_STRING ':') (proxyProtocol=BASIC_STRING '://')? | proxyProtocol=BASIC_STRING
+	//	'://') (username=STRING_UP ':' password=STRING_UP)?;
 	public ProxyFlagElements getProxyFlagAccess() {
 		return pProxyFlag;
 	}
@@ -742,8 +671,11 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 		return getProxyFlagAccess().getRule();
 	}
 	
+	////"'" ((protocol=BASIC_STRING ':') (proxyProtocol=BASIC_STRING '://')? | proxyProtocol=BASIC_STRING '://') (username=STRING ':' password=STRING)? hostname=STRING (':' port=INT)? "'" |
+	////'"' ((protocol=BASIC_STRING ':') (proxyProtocol=BASIC_STRING '://')? | proxyProtocol=BASIC_STRING '://') (username=STRING ':' password=STRING)? hostname=STRING (':' port=INT)? '"' |
+	////((protocol=BASIC_STRING ':') (proxyProtocol=BASIC_STRING '://')? | proxyProtocol=BASIC_STRING '://') (username=STRING ':' password=STRING)? hostname=STRING (':' port=INT)?;
 	//AuthFlag:
-	//	('--auth' | '-a') VALUE username=STRING (':' password=STRING)? ('@' hostname=STRING)?;
+	//	'--auth' | '-a';
 	public AuthFlagElements getAuthFlagAccess() {
 		return pAuthFlag;
 	}
@@ -752,7 +684,7 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 		return getAuthFlagAccess().getRule();
 	}
 	
-	//// TO CHECK IF EMPTY STRING WORKS
+	////VALUE username=STRING (':' password=STRING)? ('@' hostname=STRING)?; // TO CHECK IF EMPTY STRING WORKS
 	//DownloadFlag:
 	//	{DownloadFlag} ('--download' | '-d');
 	public DownloadFlagElements getDownloadFlagAccess() {
@@ -795,7 +727,7 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 	}
 	
 	//TimeoutFlag:
-	//	'--timeout' VALUE timeout=FLOAT;
+	//	'--timeout';
 	public TimeoutFlagElements getTimeoutFlagAccess() {
 		return pTimeoutFlag;
 	}
@@ -814,22 +746,28 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 		return getMethodAccess().getRule();
 	}
 	
-	//terminal WS:
-	//	' ' | '\t' | '\r' | '\n'+;
-	public TerminalRule getWSRule() {
-		return tWS;
-	}
-	
-	//terminal VALUE:
-	//	'=' | WS;
-	public TerminalRule getVALUERule() {
-		return tVALUE;
-	}
-	
 	//terminal fragment DIGIT:
 	//	'0'..'9';
 	public TerminalRule getDIGITRule() {
 		return tDIGIT;
+	}
+	
+	//terminal fragment LETTER:
+	//	'a'..'z' | 'A'..'Z';
+	public TerminalRule getLETTERRule() {
+		return tLETTER;
+	}
+	
+	//terminal fragment SPECIAL_UP:
+	//	'-' | '.' | '_' | '~' | '/' | '?' | '#' | '[' | ']' | '!' | '$' | '&' | '(' | ')' | '*' | '+' | ',' | '|' | ';';
+	public TerminalRule getSPECIAL_UPRule() {
+		return tSPECIAL_UP;
+	}
+	
+	//terminal WS:
+	//	' ' | '\t'+;
+	public TerminalRule getWSRule() {
+		return tWS;
 	}
 	
 	//terminal INT returns ecore::EInt:
@@ -844,16 +782,15 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 		return tFLOAT;
 	}
 	
-	//terminal STRING:
-	//	'"' ('\\' ('b' | 't' | 'n' | 'f' | 'r' | 'u' | '"' | "'" | '\\') | !('\\' | '"'))* '"' |
-	//	"'" ('\\' ('b' | 't' | 'n' | 'f' | 'r' | 'u' | '"' | "'" | '\\') | !('\\' | "'"))* "'";
-	public TerminalRule getSTRINGRule() {
-		return tSTRING;
+	//terminal BASIC_STRING:
+	//	DIGIT | LETTER+;
+	public TerminalRule getBASIC_STRINGRule() {
+		return tBASIC_STRING;
 	}
 	
-	//terminal ANY_OTHER:
-	//	.;
-	public TerminalRule getANY_OTHERRule() {
-		return tANY_OTHER;
+	//terminal STRING_UP:
+	//	DIGIT | LETTER | SPECIAL_UP;
+	public TerminalRule getSTRING_UPRule() {
+		return tSTRING_UP;
 	}
 }

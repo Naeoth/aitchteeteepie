@@ -6,10 +6,15 @@ package aitchteeteepie.xtext.dsl.formatting2
 import aitchteeteepie.xtext.dsl.services.CurlBetterThanHttpieGrammarAccess
 import com.google.inject.Inject
 import org.eclipse.xtext.formatting2.AbstractFormatter2
+import org.eclipse.xtext.formatting2.IFormattableDocument
 
 class CurlBetterThanHttpieFormatter extends AbstractFormatter2 {
 	
 	@Inject extension CurlBetterThanHttpieGrammarAccess
+	
+	override format(Object obj, IFormattableDocument document) {
+		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+	}
 	
 	// TODO: implement for 
 }

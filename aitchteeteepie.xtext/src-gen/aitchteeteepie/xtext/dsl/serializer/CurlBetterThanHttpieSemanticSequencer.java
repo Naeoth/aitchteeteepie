@@ -4,7 +4,6 @@
 package aitchteeteepie.xtext.dsl.serializer;
 
 import aitchteeteepie.AitchteeteepiePackage;
-import aitchteeteepie.AuthFlag;
 import aitchteeteepie.BodyFlag;
 import aitchteeteepie.CommandLineInterface;
 import aitchteeteepie.DownloadFlag;
@@ -13,7 +12,6 @@ import aitchteeteepie.HeadersFlag;
 import aitchteeteepie.HelpFlag;
 import aitchteeteepie.JsonFlag;
 import aitchteeteepie.ProxyFlag;
-import aitchteeteepie.TimeoutFlag;
 import aitchteeteepie.VerboseFlag;
 import aitchteeteepie.VersionFlag;
 import aitchteeteepie.xtext.dsl.services.CurlBetterThanHttpieGrammarAccess;
@@ -25,9 +23,7 @@ import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Parameter;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.serializer.ISerializationContext;
-import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
-import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 
 @SuppressWarnings("all")
 public class CurlBetterThanHttpieSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -43,9 +39,6 @@ public class CurlBetterThanHttpieSemanticSequencer extends AbstractDelegatingSem
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == AitchteeteepiePackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case AitchteeteepiePackage.AUTH_FLAG:
-				sequence_AuthFlag(context, (AuthFlag) semanticObject); 
-				return; 
 			case AitchteeteepiePackage.BODY_FLAG:
 				sequence_BodyFlag(context, (BodyFlag) semanticObject); 
 				return; 
@@ -70,9 +63,6 @@ public class CurlBetterThanHttpieSemanticSequencer extends AbstractDelegatingSem
 			case AitchteeteepiePackage.PROXY_FLAG:
 				sequence_ProxyFlag(context, (ProxyFlag) semanticObject); 
 				return; 
-			case AitchteeteepiePackage.TIMEOUT_FLAG:
-				sequence_TimeoutFlag(context, (TimeoutFlag) semanticObject); 
-				return; 
 			case AitchteeteepiePackage.VERBOSE_FLAG:
 				sequence_VerboseFlag(context, (VerboseFlag) semanticObject); 
 				return; 
@@ -83,19 +73,6 @@ public class CurlBetterThanHttpieSemanticSequencer extends AbstractDelegatingSem
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
-	
-	/**
-	 * Contexts:
-	 *     Flag returns AuthFlag
-	 *     AuthFlag returns AuthFlag
-	 *
-	 * Constraint:
-	 *     (username=STRING password=STRING? hostname=STRING?)
-	 */
-	protected void sequence_AuthFlag(ISerializationContext context, AuthFlag semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
 	
 	/**
 	 * Contexts:
@@ -115,7 +92,7 @@ public class CurlBetterThanHttpieSemanticSequencer extends AbstractDelegatingSem
 	 *     CommandLineInterface returns CommandLineInterface
 	 *
 	 * Constraint:
-	 *     (flags+=Flag* method=Method?)
+	 *     flags+=Flag*
 	 */
 	protected void sequence_CommandLineInterface(ISerializationContext context, CommandLineInterface semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -193,29 +170,10 @@ public class CurlBetterThanHttpieSemanticSequencer extends AbstractDelegatingSem
 	 *     ProxyFlag returns ProxyFlag
 	 *
 	 * Constraint:
-	 *     (protocol=STRING? proxyProtocol=STRING? (username=STRING password=STRING)? hostname=STRING port=INT?)
+	 *     (((protocol=BASIC_STRING proxyProtocol=BASIC_STRING?) | proxyProtocol=BASIC_STRING) (username=STRING_UP password=STRING_UP)?)
 	 */
 	protected void sequence_ProxyFlag(ISerializationContext context, ProxyFlag semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Flag returns TimeoutFlag
-	 *     TimeoutFlag returns TimeoutFlag
-	 *
-	 * Constraint:
-	 *     timeout=FLOAT
-	 */
-	protected void sequence_TimeoutFlag(ISerializationContext context, TimeoutFlag semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AitchteeteepiePackage.Literals.TIMEOUT_FLAG__TIMEOUT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AitchteeteepiePackage.Literals.TIMEOUT_FLAG__TIMEOUT));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getTimeoutFlagAccess().getTimeoutFLOATTerminalRuleCall_2_0(), semanticObject.getTimeout());
-		feeder.finish();
 	}
 	
 	

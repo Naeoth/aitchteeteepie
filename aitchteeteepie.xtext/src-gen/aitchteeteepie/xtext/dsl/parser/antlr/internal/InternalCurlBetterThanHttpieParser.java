@@ -22,40 +22,36 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_WS", "RULE_VALUE", "RULE_STRING", "RULE_INT", "RULE_FLOAT", "RULE_DIGIT", "RULE_ANY_OTHER", "'http'", "'--header'", "'-t'", "'--body'", "'-b'", "'--json'", "'-j'", "'--form'", "'f'", "'--proxy'", "':'", "'://'", "'a'", "'--auth'", "'-a'", "'@'", "'--download'", "'-d'", "'--help'", "'-h'", "'--version'", "'--verbose'", "'-v'", "'--timeout'", "'GET'", "'POST'", "'PUT'", "'DELETE'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_WS", "RULE_BASIC_STRING", "RULE_STRING_UP", "RULE_DIGIT", "RULE_LETTER", "RULE_SPECIAL_UP", "RULE_INT", "RULE_FLOAT", "'http'", "'--header'", "'-t'", "'--body'", "'-b'", "'--json'", "'-j'", "'--form'", "'-f'", "'--proxy'", "'='", "':'", "'://'", "'--auth'", "'-a'", "'--download'", "'-d'", "'--help'", "'-h'", "'--version'", "'--verbose'", "'-v'", "'--timeout'"
     };
-    public static final int RULE_STRING=6;
     public static final int T__19=19;
-    public static final int RULE_VALUE=5;
     public static final int T__15=15;
-    public static final int T__37=37;
     public static final int T__16=16;
-    public static final int T__38=38;
     public static final int T__17=17;
     public static final int T__18=18;
-    public static final int T__11=11;
     public static final int T__33=33;
     public static final int T__12=12;
     public static final int T__34=34;
     public static final int T__13=13;
-    public static final int T__35=35;
     public static final int T__14=14;
-    public static final int T__36=36;
     public static final int EOF=-1;
     public static final int T__30=30;
     public static final int T__31=31;
     public static final int T__32=32;
+    public static final int RULE_BASIC_STRING=5;
+    public static final int RULE_SPECIAL_UP=9;
     public static final int RULE_WS=4;
-    public static final int RULE_DIGIT=9;
-    public static final int RULE_ANY_OTHER=10;
+    public static final int RULE_DIGIT=7;
+    public static final int RULE_LETTER=8;
     public static final int T__26=26;
     public static final int T__27=27;
     public static final int T__28=28;
-    public static final int RULE_INT=7;
+    public static final int RULE_INT=10;
     public static final int T__29=29;
     public static final int T__22=22;
+    public static final int RULE_STRING_UP=6;
     public static final int T__23=23;
-    public static final int RULE_FLOAT=8;
+    public static final int RULE_FLOAT=11;
     public static final int T__24=24;
     public static final int T__25=25;
     public static final int T__20=20;
@@ -137,28 +133,25 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
 
     // $ANTLR start "ruleCommandLineInterface"
-    // InternalCurlBetterThanHttpie.g:72:1: ruleCommandLineInterface returns [EObject current=null] : ( () otherlv_1= 'http' (this_WS_2= RULE_WS ( (lv_flags_3_0= ruleFlag ) ) )* (this_WS_4= RULE_WS ( (lv_method_5_0= ruleMethod ) ) )? (this_WS_6= RULE_WS )? ) ;
+    // InternalCurlBetterThanHttpie.g:72:1: ruleCommandLineInterface returns [EObject current=null] : ( () otherlv_1= 'http' (this_WS_2= RULE_WS ( (lv_flags_3_0= ruleFlag ) ) )* (this_WS_4= RULE_WS )? ) ;
     public final EObject ruleCommandLineInterface() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
         Token this_WS_2=null;
         Token this_WS_4=null;
-        Token this_WS_6=null;
         EObject lv_flags_3_0 = null;
-
-        Enumerator lv_method_5_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalCurlBetterThanHttpie.g:78:2: ( ( () otherlv_1= 'http' (this_WS_2= RULE_WS ( (lv_flags_3_0= ruleFlag ) ) )* (this_WS_4= RULE_WS ( (lv_method_5_0= ruleMethod ) ) )? (this_WS_6= RULE_WS )? ) )
-            // InternalCurlBetterThanHttpie.g:79:2: ( () otherlv_1= 'http' (this_WS_2= RULE_WS ( (lv_flags_3_0= ruleFlag ) ) )* (this_WS_4= RULE_WS ( (lv_method_5_0= ruleMethod ) ) )? (this_WS_6= RULE_WS )? )
+            // InternalCurlBetterThanHttpie.g:78:2: ( ( () otherlv_1= 'http' (this_WS_2= RULE_WS ( (lv_flags_3_0= ruleFlag ) ) )* (this_WS_4= RULE_WS )? ) )
+            // InternalCurlBetterThanHttpie.g:79:2: ( () otherlv_1= 'http' (this_WS_2= RULE_WS ( (lv_flags_3_0= ruleFlag ) ) )* (this_WS_4= RULE_WS )? )
             {
-            // InternalCurlBetterThanHttpie.g:79:2: ( () otherlv_1= 'http' (this_WS_2= RULE_WS ( (lv_flags_3_0= ruleFlag ) ) )* (this_WS_4= RULE_WS ( (lv_method_5_0= ruleMethod ) ) )? (this_WS_6= RULE_WS )? )
-            // InternalCurlBetterThanHttpie.g:80:3: () otherlv_1= 'http' (this_WS_2= RULE_WS ( (lv_flags_3_0= ruleFlag ) ) )* (this_WS_4= RULE_WS ( (lv_method_5_0= ruleMethod ) ) )? (this_WS_6= RULE_WS )?
+            // InternalCurlBetterThanHttpie.g:79:2: ( () otherlv_1= 'http' (this_WS_2= RULE_WS ( (lv_flags_3_0= ruleFlag ) ) )* (this_WS_4= RULE_WS )? )
+            // InternalCurlBetterThanHttpie.g:80:3: () otherlv_1= 'http' (this_WS_2= RULE_WS ( (lv_flags_3_0= ruleFlag ) ) )* (this_WS_4= RULE_WS )?
             {
             // InternalCurlBetterThanHttpie.g:80:3: ()
             // InternalCurlBetterThanHttpie.g:81:4: 
@@ -171,7 +164,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
             }
 
-            otherlv_1=(Token)match(input,11,FOLLOW_3); 
+            otherlv_1=(Token)match(input,12,FOLLOW_3); 
 
             			newLeafNode(otherlv_1, grammarAccess.getCommandLineInterfaceAccess().getHttpKeyword_1());
             		
@@ -184,7 +177,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
                 if ( (LA1_0==RULE_WS) ) {
                     int LA1_1 = input.LA(2);
 
-                    if ( ((LA1_1>=12 && LA1_1<=20)||(LA1_1>=24 && LA1_1<=25)||(LA1_1>=27 && LA1_1<=34)) ) {
+                    if ( ((LA1_1>=13 && LA1_1<=21)||(LA1_1>=25 && LA1_1<=34)) ) {
                         alt1=1;
                     }
 
@@ -240,76 +233,20 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
                 }
             } while (true);
 
-            // InternalCurlBetterThanHttpie.g:116:3: (this_WS_4= RULE_WS ( (lv_method_5_0= ruleMethod ) ) )?
+            // InternalCurlBetterThanHttpie.g:116:3: (this_WS_4= RULE_WS )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
             if ( (LA2_0==RULE_WS) ) {
-                int LA2_1 = input.LA(2);
-
-                if ( ((LA2_1>=35 && LA2_1<=38)) ) {
-                    alt2=1;
-                }
+                alt2=1;
             }
             switch (alt2) {
                 case 1 :
-                    // InternalCurlBetterThanHttpie.g:117:4: this_WS_4= RULE_WS ( (lv_method_5_0= ruleMethod ) )
+                    // InternalCurlBetterThanHttpie.g:117:4: this_WS_4= RULE_WS
                     {
-                    this_WS_4=(Token)match(input,RULE_WS,FOLLOW_5); 
+                    this_WS_4=(Token)match(input,RULE_WS,FOLLOW_2); 
 
-                    				newLeafNode(this_WS_4, grammarAccess.getCommandLineInterfaceAccess().getWSTerminalRuleCall_3_0());
-                    			
-                    // InternalCurlBetterThanHttpie.g:121:4: ( (lv_method_5_0= ruleMethod ) )
-                    // InternalCurlBetterThanHttpie.g:122:5: (lv_method_5_0= ruleMethod )
-                    {
-                    // InternalCurlBetterThanHttpie.g:122:5: (lv_method_5_0= ruleMethod )
-                    // InternalCurlBetterThanHttpie.g:123:6: lv_method_5_0= ruleMethod
-                    {
-
-                    						newCompositeNode(grammarAccess.getCommandLineInterfaceAccess().getMethodMethodEnumRuleCall_3_1_0());
-                    					
-                    pushFollow(FOLLOW_3);
-                    lv_method_5_0=ruleMethod();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getCommandLineInterfaceRule());
-                    						}
-                    						set(
-                    							current,
-                    							"method",
-                    							lv_method_5_0,
-                    							"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.Method");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // InternalCurlBetterThanHttpie.g:141:3: (this_WS_6= RULE_WS )?
-            int alt3=2;
-            int LA3_0 = input.LA(1);
-
-            if ( (LA3_0==RULE_WS) ) {
-                alt3=1;
-            }
-            switch (alt3) {
-                case 1 :
-                    // InternalCurlBetterThanHttpie.g:142:4: this_WS_6= RULE_WS
-                    {
-                    this_WS_6=(Token)match(input,RULE_WS,FOLLOW_2); 
-
-                    				newLeafNode(this_WS_6, grammarAccess.getCommandLineInterfaceAccess().getWSTerminalRuleCall_4());
+                    				newLeafNode(this_WS_4, grammarAccess.getCommandLineInterfaceAccess().getWSTerminalRuleCall_3());
                     			
 
                     }
@@ -340,7 +277,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
 
     // $ANTLR start "entryRuleFlag"
-    // InternalCurlBetterThanHttpie.g:151:1: entryRuleFlag returns [EObject current=null] : iv_ruleFlag= ruleFlag EOF ;
+    // InternalCurlBetterThanHttpie.g:126:1: entryRuleFlag returns [EObject current=null] : iv_ruleFlag= ruleFlag EOF ;
     public final EObject entryRuleFlag() throws RecognitionException {
         EObject current = null;
 
@@ -348,8 +285,8 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
 
         try {
-            // InternalCurlBetterThanHttpie.g:151:45: (iv_ruleFlag= ruleFlag EOF )
-            // InternalCurlBetterThanHttpie.g:152:2: iv_ruleFlag= ruleFlag EOF
+            // InternalCurlBetterThanHttpie.g:126:45: (iv_ruleFlag= ruleFlag EOF )
+            // InternalCurlBetterThanHttpie.g:127:2: iv_ruleFlag= ruleFlag EOF
             {
              newCompositeNode(grammarAccess.getFlagRule()); 
             pushFollow(FOLLOW_1);
@@ -376,7 +313,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
 
     // $ANTLR start "ruleFlag"
-    // InternalCurlBetterThanHttpie.g:158:1: ruleFlag returns [EObject current=null] : (this_ProxyFlag_0= ruleProxyFlag | this_FormFlag_1= ruleFormFlag | this_AuthFlag_2= ruleAuthFlag | this_DownloadFlag_3= ruleDownloadFlag | this_BodyFlag_4= ruleBodyFlag | this_VersionFlag_5= ruleVersionFlag | this_JsonFlag_6= ruleJsonFlag | this_HelpFlag_7= ruleHelpFlag | this_HeadersFlag_8= ruleHeadersFlag | this_VerboseFlag_9= ruleVerboseFlag | this_TimeoutFlag_10= ruleTimeoutFlag ) ;
+    // InternalCurlBetterThanHttpie.g:133:1: ruleFlag returns [EObject current=null] : (this_ProxyFlag_0= ruleProxyFlag | this_FormFlag_1= ruleFormFlag | this_AuthFlag_2= ruleAuthFlag | this_DownloadFlag_3= ruleDownloadFlag | this_BodyFlag_4= ruleBodyFlag | this_VersionFlag_5= ruleVersionFlag | this_JsonFlag_6= ruleJsonFlag | this_HelpFlag_7= ruleHelpFlag | this_HeadersFlag_8= ruleHeadersFlag | this_VerboseFlag_9= ruleVerboseFlag | this_TimeoutFlag_10= ruleTimeoutFlag ) ;
     public final EObject ruleFlag() throws RecognitionException {
         EObject current = null;
 
@@ -407,85 +344,85 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
         	enterRule();
 
         try {
-            // InternalCurlBetterThanHttpie.g:164:2: ( (this_ProxyFlag_0= ruleProxyFlag | this_FormFlag_1= ruleFormFlag | this_AuthFlag_2= ruleAuthFlag | this_DownloadFlag_3= ruleDownloadFlag | this_BodyFlag_4= ruleBodyFlag | this_VersionFlag_5= ruleVersionFlag | this_JsonFlag_6= ruleJsonFlag | this_HelpFlag_7= ruleHelpFlag | this_HeadersFlag_8= ruleHeadersFlag | this_VerboseFlag_9= ruleVerboseFlag | this_TimeoutFlag_10= ruleTimeoutFlag ) )
-            // InternalCurlBetterThanHttpie.g:165:2: (this_ProxyFlag_0= ruleProxyFlag | this_FormFlag_1= ruleFormFlag | this_AuthFlag_2= ruleAuthFlag | this_DownloadFlag_3= ruleDownloadFlag | this_BodyFlag_4= ruleBodyFlag | this_VersionFlag_5= ruleVersionFlag | this_JsonFlag_6= ruleJsonFlag | this_HelpFlag_7= ruleHelpFlag | this_HeadersFlag_8= ruleHeadersFlag | this_VerboseFlag_9= ruleVerboseFlag | this_TimeoutFlag_10= ruleTimeoutFlag )
+            // InternalCurlBetterThanHttpie.g:139:2: ( (this_ProxyFlag_0= ruleProxyFlag | this_FormFlag_1= ruleFormFlag | this_AuthFlag_2= ruleAuthFlag | this_DownloadFlag_3= ruleDownloadFlag | this_BodyFlag_4= ruleBodyFlag | this_VersionFlag_5= ruleVersionFlag | this_JsonFlag_6= ruleJsonFlag | this_HelpFlag_7= ruleHelpFlag | this_HeadersFlag_8= ruleHeadersFlag | this_VerboseFlag_9= ruleVerboseFlag | this_TimeoutFlag_10= ruleTimeoutFlag ) )
+            // InternalCurlBetterThanHttpie.g:140:2: (this_ProxyFlag_0= ruleProxyFlag | this_FormFlag_1= ruleFormFlag | this_AuthFlag_2= ruleAuthFlag | this_DownloadFlag_3= ruleDownloadFlag | this_BodyFlag_4= ruleBodyFlag | this_VersionFlag_5= ruleVersionFlag | this_JsonFlag_6= ruleJsonFlag | this_HelpFlag_7= ruleHelpFlag | this_HeadersFlag_8= ruleHeadersFlag | this_VerboseFlag_9= ruleVerboseFlag | this_TimeoutFlag_10= ruleTimeoutFlag )
             {
-            // InternalCurlBetterThanHttpie.g:165:2: (this_ProxyFlag_0= ruleProxyFlag | this_FormFlag_1= ruleFormFlag | this_AuthFlag_2= ruleAuthFlag | this_DownloadFlag_3= ruleDownloadFlag | this_BodyFlag_4= ruleBodyFlag | this_VersionFlag_5= ruleVersionFlag | this_JsonFlag_6= ruleJsonFlag | this_HelpFlag_7= ruleHelpFlag | this_HeadersFlag_8= ruleHeadersFlag | this_VerboseFlag_9= ruleVerboseFlag | this_TimeoutFlag_10= ruleTimeoutFlag )
-            int alt4=11;
+            // InternalCurlBetterThanHttpie.g:140:2: (this_ProxyFlag_0= ruleProxyFlag | this_FormFlag_1= ruleFormFlag | this_AuthFlag_2= ruleAuthFlag | this_DownloadFlag_3= ruleDownloadFlag | this_BodyFlag_4= ruleBodyFlag | this_VersionFlag_5= ruleVersionFlag | this_JsonFlag_6= ruleJsonFlag | this_HelpFlag_7= ruleHelpFlag | this_HeadersFlag_8= ruleHeadersFlag | this_VerboseFlag_9= ruleVerboseFlag | this_TimeoutFlag_10= ruleTimeoutFlag )
+            int alt3=11;
             switch ( input.LA(1) ) {
+            case 21:
+                {
+                alt3=1;
+                }
+                break;
+            case 19:
             case 20:
                 {
-                alt4=1;
+                alt3=2;
                 }
                 break;
-            case 18:
-            case 19:
-                {
-                alt4=2;
-                }
-                break;
-            case 24:
             case 25:
+            case 26:
                 {
-                alt4=3;
+                alt3=3;
                 }
                 break;
             case 27:
             case 28:
                 {
-                alt4=4;
+                alt3=4;
                 }
                 break;
-            case 14:
             case 15:
+            case 16:
                 {
-                alt4=5;
+                alt3=5;
                 }
                 break;
             case 31:
                 {
-                alt4=6;
+                alt3=6;
                 }
                 break;
-            case 16:
             case 17:
+            case 18:
                 {
-                alt4=7;
+                alt3=7;
                 }
                 break;
             case 29:
             case 30:
                 {
-                alt4=8;
+                alt3=8;
                 }
                 break;
-            case 12:
             case 13:
+            case 14:
                 {
-                alt4=9;
+                alt3=9;
                 }
                 break;
             case 32:
             case 33:
                 {
-                alt4=10;
+                alt3=10;
                 }
                 break;
             case 34:
                 {
-                alt4=11;
+                alt3=11;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 4, 0, input);
+                    new NoViableAltException("", 3, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt4) {
+            switch (alt3) {
                 case 1 :
-                    // InternalCurlBetterThanHttpie.g:166:3: this_ProxyFlag_0= ruleProxyFlag
+                    // InternalCurlBetterThanHttpie.g:141:3: this_ProxyFlag_0= ruleProxyFlag
                     {
 
                     			newCompositeNode(grammarAccess.getFlagAccess().getProxyFlagParserRuleCall_0());
@@ -503,7 +440,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
                     }
                     break;
                 case 2 :
-                    // InternalCurlBetterThanHttpie.g:175:3: this_FormFlag_1= ruleFormFlag
+                    // InternalCurlBetterThanHttpie.g:150:3: this_FormFlag_1= ruleFormFlag
                     {
 
                     			newCompositeNode(grammarAccess.getFlagAccess().getFormFlagParserRuleCall_1());
@@ -521,7 +458,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
                     }
                     break;
                 case 3 :
-                    // InternalCurlBetterThanHttpie.g:184:3: this_AuthFlag_2= ruleAuthFlag
+                    // InternalCurlBetterThanHttpie.g:159:3: this_AuthFlag_2= ruleAuthFlag
                     {
 
                     			newCompositeNode(grammarAccess.getFlagAccess().getAuthFlagParserRuleCall_2());
@@ -539,7 +476,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
                     }
                     break;
                 case 4 :
-                    // InternalCurlBetterThanHttpie.g:193:3: this_DownloadFlag_3= ruleDownloadFlag
+                    // InternalCurlBetterThanHttpie.g:168:3: this_DownloadFlag_3= ruleDownloadFlag
                     {
 
                     			newCompositeNode(grammarAccess.getFlagAccess().getDownloadFlagParserRuleCall_3());
@@ -557,7 +494,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
                     }
                     break;
                 case 5 :
-                    // InternalCurlBetterThanHttpie.g:202:3: this_BodyFlag_4= ruleBodyFlag
+                    // InternalCurlBetterThanHttpie.g:177:3: this_BodyFlag_4= ruleBodyFlag
                     {
 
                     			newCompositeNode(grammarAccess.getFlagAccess().getBodyFlagParserRuleCall_4());
@@ -575,7 +512,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
                     }
                     break;
                 case 6 :
-                    // InternalCurlBetterThanHttpie.g:211:3: this_VersionFlag_5= ruleVersionFlag
+                    // InternalCurlBetterThanHttpie.g:186:3: this_VersionFlag_5= ruleVersionFlag
                     {
 
                     			newCompositeNode(grammarAccess.getFlagAccess().getVersionFlagParserRuleCall_5());
@@ -593,7 +530,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
                     }
                     break;
                 case 7 :
-                    // InternalCurlBetterThanHttpie.g:220:3: this_JsonFlag_6= ruleJsonFlag
+                    // InternalCurlBetterThanHttpie.g:195:3: this_JsonFlag_6= ruleJsonFlag
                     {
 
                     			newCompositeNode(grammarAccess.getFlagAccess().getJsonFlagParserRuleCall_6());
@@ -611,7 +548,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
                     }
                     break;
                 case 8 :
-                    // InternalCurlBetterThanHttpie.g:229:3: this_HelpFlag_7= ruleHelpFlag
+                    // InternalCurlBetterThanHttpie.g:204:3: this_HelpFlag_7= ruleHelpFlag
                     {
 
                     			newCompositeNode(grammarAccess.getFlagAccess().getHelpFlagParserRuleCall_7());
@@ -629,7 +566,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
                     }
                     break;
                 case 9 :
-                    // InternalCurlBetterThanHttpie.g:238:3: this_HeadersFlag_8= ruleHeadersFlag
+                    // InternalCurlBetterThanHttpie.g:213:3: this_HeadersFlag_8= ruleHeadersFlag
                     {
 
                     			newCompositeNode(grammarAccess.getFlagAccess().getHeadersFlagParserRuleCall_8());
@@ -647,7 +584,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
                     }
                     break;
                 case 10 :
-                    // InternalCurlBetterThanHttpie.g:247:3: this_VerboseFlag_9= ruleVerboseFlag
+                    // InternalCurlBetterThanHttpie.g:222:3: this_VerboseFlag_9= ruleVerboseFlag
                     {
 
                     			newCompositeNode(grammarAccess.getFlagAccess().getVerboseFlagParserRuleCall_9());
@@ -665,7 +602,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
                     }
                     break;
                 case 11 :
-                    // InternalCurlBetterThanHttpie.g:256:3: this_TimeoutFlag_10= ruleTimeoutFlag
+                    // InternalCurlBetterThanHttpie.g:231:3: this_TimeoutFlag_10= ruleTimeoutFlag
                     {
 
                     			newCompositeNode(grammarAccess.getFlagAccess().getTimeoutFlagParserRuleCall_10());
@@ -705,7 +642,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
 
     // $ANTLR start "entryRuleHeadersFlag"
-    // InternalCurlBetterThanHttpie.g:268:1: entryRuleHeadersFlag returns [EObject current=null] : iv_ruleHeadersFlag= ruleHeadersFlag EOF ;
+    // InternalCurlBetterThanHttpie.g:243:1: entryRuleHeadersFlag returns [EObject current=null] : iv_ruleHeadersFlag= ruleHeadersFlag EOF ;
     public final EObject entryRuleHeadersFlag() throws RecognitionException {
         EObject current = null;
 
@@ -713,8 +650,8 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
 
         try {
-            // InternalCurlBetterThanHttpie.g:268:52: (iv_ruleHeadersFlag= ruleHeadersFlag EOF )
-            // InternalCurlBetterThanHttpie.g:269:2: iv_ruleHeadersFlag= ruleHeadersFlag EOF
+            // InternalCurlBetterThanHttpie.g:243:52: (iv_ruleHeadersFlag= ruleHeadersFlag EOF )
+            // InternalCurlBetterThanHttpie.g:244:2: iv_ruleHeadersFlag= ruleHeadersFlag EOF
             {
              newCompositeNode(grammarAccess.getHeadersFlagRule()); 
             pushFollow(FOLLOW_1);
@@ -741,7 +678,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
 
     // $ANTLR start "ruleHeadersFlag"
-    // InternalCurlBetterThanHttpie.g:275:1: ruleHeadersFlag returns [EObject current=null] : ( () (otherlv_1= '--header' | otherlv_2= '-t' ) ) ;
+    // InternalCurlBetterThanHttpie.g:250:1: ruleHeadersFlag returns [EObject current=null] : ( () (otherlv_1= '--header' | otherlv_2= '-t' ) ) ;
     public final EObject ruleHeadersFlag() throws RecognitionException {
         EObject current = null;
 
@@ -752,14 +689,14 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
         	enterRule();
 
         try {
-            // InternalCurlBetterThanHttpie.g:281:2: ( ( () (otherlv_1= '--header' | otherlv_2= '-t' ) ) )
-            // InternalCurlBetterThanHttpie.g:282:2: ( () (otherlv_1= '--header' | otherlv_2= '-t' ) )
+            // InternalCurlBetterThanHttpie.g:256:2: ( ( () (otherlv_1= '--header' | otherlv_2= '-t' ) ) )
+            // InternalCurlBetterThanHttpie.g:257:2: ( () (otherlv_1= '--header' | otherlv_2= '-t' ) )
             {
-            // InternalCurlBetterThanHttpie.g:282:2: ( () (otherlv_1= '--header' | otherlv_2= '-t' ) )
-            // InternalCurlBetterThanHttpie.g:283:3: () (otherlv_1= '--header' | otherlv_2= '-t' )
+            // InternalCurlBetterThanHttpie.g:257:2: ( () (otherlv_1= '--header' | otherlv_2= '-t' ) )
+            // InternalCurlBetterThanHttpie.g:258:3: () (otherlv_1= '--header' | otherlv_2= '-t' )
             {
-            // InternalCurlBetterThanHttpie.g:283:3: ()
-            // InternalCurlBetterThanHttpie.g:284:4: 
+            // InternalCurlBetterThanHttpie.g:258:3: ()
+            // InternalCurlBetterThanHttpie.g:259:4: 
             {
 
             				current = forceCreateModelElement(
@@ -769,27 +706,27 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
             }
 
-            // InternalCurlBetterThanHttpie.g:290:3: (otherlv_1= '--header' | otherlv_2= '-t' )
-            int alt5=2;
-            int LA5_0 = input.LA(1);
+            // InternalCurlBetterThanHttpie.g:265:3: (otherlv_1= '--header' | otherlv_2= '-t' )
+            int alt4=2;
+            int LA4_0 = input.LA(1);
 
-            if ( (LA5_0==12) ) {
-                alt5=1;
+            if ( (LA4_0==13) ) {
+                alt4=1;
             }
-            else if ( (LA5_0==13) ) {
-                alt5=2;
+            else if ( (LA4_0==14) ) {
+                alt4=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 5, 0, input);
+                    new NoViableAltException("", 4, 0, input);
 
                 throw nvae;
             }
-            switch (alt5) {
+            switch (alt4) {
                 case 1 :
-                    // InternalCurlBetterThanHttpie.g:291:4: otherlv_1= '--header'
+                    // InternalCurlBetterThanHttpie.g:266:4: otherlv_1= '--header'
                     {
-                    otherlv_1=(Token)match(input,12,FOLLOW_2); 
+                    otherlv_1=(Token)match(input,13,FOLLOW_2); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getHeadersFlagAccess().getHeaderKeyword_1_0());
                     			
@@ -797,9 +734,9 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
                     }
                     break;
                 case 2 :
-                    // InternalCurlBetterThanHttpie.g:296:4: otherlv_2= '-t'
+                    // InternalCurlBetterThanHttpie.g:271:4: otherlv_2= '-t'
                     {
-                    otherlv_2=(Token)match(input,13,FOLLOW_2); 
+                    otherlv_2=(Token)match(input,14,FOLLOW_2); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getHeadersFlagAccess().getTKeyword_1_1());
                     			
@@ -832,7 +769,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
 
     // $ANTLR start "entryRuleBodyFlag"
-    // InternalCurlBetterThanHttpie.g:305:1: entryRuleBodyFlag returns [EObject current=null] : iv_ruleBodyFlag= ruleBodyFlag EOF ;
+    // InternalCurlBetterThanHttpie.g:280:1: entryRuleBodyFlag returns [EObject current=null] : iv_ruleBodyFlag= ruleBodyFlag EOF ;
     public final EObject entryRuleBodyFlag() throws RecognitionException {
         EObject current = null;
 
@@ -840,8 +777,8 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
 
         try {
-            // InternalCurlBetterThanHttpie.g:305:49: (iv_ruleBodyFlag= ruleBodyFlag EOF )
-            // InternalCurlBetterThanHttpie.g:306:2: iv_ruleBodyFlag= ruleBodyFlag EOF
+            // InternalCurlBetterThanHttpie.g:280:49: (iv_ruleBodyFlag= ruleBodyFlag EOF )
+            // InternalCurlBetterThanHttpie.g:281:2: iv_ruleBodyFlag= ruleBodyFlag EOF
             {
              newCompositeNode(grammarAccess.getBodyFlagRule()); 
             pushFollow(FOLLOW_1);
@@ -868,7 +805,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
 
     // $ANTLR start "ruleBodyFlag"
-    // InternalCurlBetterThanHttpie.g:312:1: ruleBodyFlag returns [EObject current=null] : ( () (otherlv_1= '--body' | otherlv_2= '-b' ) ) ;
+    // InternalCurlBetterThanHttpie.g:287:1: ruleBodyFlag returns [EObject current=null] : ( () (otherlv_1= '--body' | otherlv_2= '-b' ) ) ;
     public final EObject ruleBodyFlag() throws RecognitionException {
         EObject current = null;
 
@@ -879,14 +816,14 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
         	enterRule();
 
         try {
-            // InternalCurlBetterThanHttpie.g:318:2: ( ( () (otherlv_1= '--body' | otherlv_2= '-b' ) ) )
-            // InternalCurlBetterThanHttpie.g:319:2: ( () (otherlv_1= '--body' | otherlv_2= '-b' ) )
+            // InternalCurlBetterThanHttpie.g:293:2: ( ( () (otherlv_1= '--body' | otherlv_2= '-b' ) ) )
+            // InternalCurlBetterThanHttpie.g:294:2: ( () (otherlv_1= '--body' | otherlv_2= '-b' ) )
             {
-            // InternalCurlBetterThanHttpie.g:319:2: ( () (otherlv_1= '--body' | otherlv_2= '-b' ) )
-            // InternalCurlBetterThanHttpie.g:320:3: () (otherlv_1= '--body' | otherlv_2= '-b' )
+            // InternalCurlBetterThanHttpie.g:294:2: ( () (otherlv_1= '--body' | otherlv_2= '-b' ) )
+            // InternalCurlBetterThanHttpie.g:295:3: () (otherlv_1= '--body' | otherlv_2= '-b' )
             {
-            // InternalCurlBetterThanHttpie.g:320:3: ()
-            // InternalCurlBetterThanHttpie.g:321:4: 
+            // InternalCurlBetterThanHttpie.g:295:3: ()
+            // InternalCurlBetterThanHttpie.g:296:4: 
             {
 
             				current = forceCreateModelElement(
@@ -896,27 +833,27 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
             }
 
-            // InternalCurlBetterThanHttpie.g:327:3: (otherlv_1= '--body' | otherlv_2= '-b' )
-            int alt6=2;
-            int LA6_0 = input.LA(1);
+            // InternalCurlBetterThanHttpie.g:302:3: (otherlv_1= '--body' | otherlv_2= '-b' )
+            int alt5=2;
+            int LA5_0 = input.LA(1);
 
-            if ( (LA6_0==14) ) {
-                alt6=1;
+            if ( (LA5_0==15) ) {
+                alt5=1;
             }
-            else if ( (LA6_0==15) ) {
-                alt6=2;
+            else if ( (LA5_0==16) ) {
+                alt5=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 6, 0, input);
+                    new NoViableAltException("", 5, 0, input);
 
                 throw nvae;
             }
-            switch (alt6) {
+            switch (alt5) {
                 case 1 :
-                    // InternalCurlBetterThanHttpie.g:328:4: otherlv_1= '--body'
+                    // InternalCurlBetterThanHttpie.g:303:4: otherlv_1= '--body'
                     {
-                    otherlv_1=(Token)match(input,14,FOLLOW_2); 
+                    otherlv_1=(Token)match(input,15,FOLLOW_2); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getBodyFlagAccess().getBodyKeyword_1_0());
                     			
@@ -924,9 +861,9 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
                     }
                     break;
                 case 2 :
-                    // InternalCurlBetterThanHttpie.g:333:4: otherlv_2= '-b'
+                    // InternalCurlBetterThanHttpie.g:308:4: otherlv_2= '-b'
                     {
-                    otherlv_2=(Token)match(input,15,FOLLOW_2); 
+                    otherlv_2=(Token)match(input,16,FOLLOW_2); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getBodyFlagAccess().getBKeyword_1_1());
                     			
@@ -959,7 +896,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
 
     // $ANTLR start "entryRuleJsonFlag"
-    // InternalCurlBetterThanHttpie.g:342:1: entryRuleJsonFlag returns [EObject current=null] : iv_ruleJsonFlag= ruleJsonFlag EOF ;
+    // InternalCurlBetterThanHttpie.g:317:1: entryRuleJsonFlag returns [EObject current=null] : iv_ruleJsonFlag= ruleJsonFlag EOF ;
     public final EObject entryRuleJsonFlag() throws RecognitionException {
         EObject current = null;
 
@@ -967,8 +904,8 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
 
         try {
-            // InternalCurlBetterThanHttpie.g:342:49: (iv_ruleJsonFlag= ruleJsonFlag EOF )
-            // InternalCurlBetterThanHttpie.g:343:2: iv_ruleJsonFlag= ruleJsonFlag EOF
+            // InternalCurlBetterThanHttpie.g:317:49: (iv_ruleJsonFlag= ruleJsonFlag EOF )
+            // InternalCurlBetterThanHttpie.g:318:2: iv_ruleJsonFlag= ruleJsonFlag EOF
             {
              newCompositeNode(grammarAccess.getJsonFlagRule()); 
             pushFollow(FOLLOW_1);
@@ -995,7 +932,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
 
     // $ANTLR start "ruleJsonFlag"
-    // InternalCurlBetterThanHttpie.g:349:1: ruleJsonFlag returns [EObject current=null] : ( () (otherlv_1= '--json' | otherlv_2= '-j' ) ) ;
+    // InternalCurlBetterThanHttpie.g:324:1: ruleJsonFlag returns [EObject current=null] : ( () (otherlv_1= '--json' | otherlv_2= '-j' ) ) ;
     public final EObject ruleJsonFlag() throws RecognitionException {
         EObject current = null;
 
@@ -1006,14 +943,14 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
         	enterRule();
 
         try {
-            // InternalCurlBetterThanHttpie.g:355:2: ( ( () (otherlv_1= '--json' | otherlv_2= '-j' ) ) )
-            // InternalCurlBetterThanHttpie.g:356:2: ( () (otherlv_1= '--json' | otherlv_2= '-j' ) )
+            // InternalCurlBetterThanHttpie.g:330:2: ( ( () (otherlv_1= '--json' | otherlv_2= '-j' ) ) )
+            // InternalCurlBetterThanHttpie.g:331:2: ( () (otherlv_1= '--json' | otherlv_2= '-j' ) )
             {
-            // InternalCurlBetterThanHttpie.g:356:2: ( () (otherlv_1= '--json' | otherlv_2= '-j' ) )
-            // InternalCurlBetterThanHttpie.g:357:3: () (otherlv_1= '--json' | otherlv_2= '-j' )
+            // InternalCurlBetterThanHttpie.g:331:2: ( () (otherlv_1= '--json' | otherlv_2= '-j' ) )
+            // InternalCurlBetterThanHttpie.g:332:3: () (otherlv_1= '--json' | otherlv_2= '-j' )
             {
-            // InternalCurlBetterThanHttpie.g:357:3: ()
-            // InternalCurlBetterThanHttpie.g:358:4: 
+            // InternalCurlBetterThanHttpie.g:332:3: ()
+            // InternalCurlBetterThanHttpie.g:333:4: 
             {
 
             				current = forceCreateModelElement(
@@ -1023,27 +960,27 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
             }
 
-            // InternalCurlBetterThanHttpie.g:364:3: (otherlv_1= '--json' | otherlv_2= '-j' )
-            int alt7=2;
-            int LA7_0 = input.LA(1);
+            // InternalCurlBetterThanHttpie.g:339:3: (otherlv_1= '--json' | otherlv_2= '-j' )
+            int alt6=2;
+            int LA6_0 = input.LA(1);
 
-            if ( (LA7_0==16) ) {
-                alt7=1;
+            if ( (LA6_0==17) ) {
+                alt6=1;
             }
-            else if ( (LA7_0==17) ) {
-                alt7=2;
+            else if ( (LA6_0==18) ) {
+                alt6=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 7, 0, input);
+                    new NoViableAltException("", 6, 0, input);
 
                 throw nvae;
             }
-            switch (alt7) {
+            switch (alt6) {
                 case 1 :
-                    // InternalCurlBetterThanHttpie.g:365:4: otherlv_1= '--json'
+                    // InternalCurlBetterThanHttpie.g:340:4: otherlv_1= '--json'
                     {
-                    otherlv_1=(Token)match(input,16,FOLLOW_2); 
+                    otherlv_1=(Token)match(input,17,FOLLOW_2); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getJsonFlagAccess().getJsonKeyword_1_0());
                     			
@@ -1051,9 +988,9 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
                     }
                     break;
                 case 2 :
-                    // InternalCurlBetterThanHttpie.g:370:4: otherlv_2= '-j'
+                    // InternalCurlBetterThanHttpie.g:345:4: otherlv_2= '-j'
                     {
-                    otherlv_2=(Token)match(input,17,FOLLOW_2); 
+                    otherlv_2=(Token)match(input,18,FOLLOW_2); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getJsonFlagAccess().getJKeyword_1_1());
                     			
@@ -1086,7 +1023,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
 
     // $ANTLR start "entryRuleFormFlag"
-    // InternalCurlBetterThanHttpie.g:379:1: entryRuleFormFlag returns [EObject current=null] : iv_ruleFormFlag= ruleFormFlag EOF ;
+    // InternalCurlBetterThanHttpie.g:354:1: entryRuleFormFlag returns [EObject current=null] : iv_ruleFormFlag= ruleFormFlag EOF ;
     public final EObject entryRuleFormFlag() throws RecognitionException {
         EObject current = null;
 
@@ -1094,8 +1031,8 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
 
         try {
-            // InternalCurlBetterThanHttpie.g:379:49: (iv_ruleFormFlag= ruleFormFlag EOF )
-            // InternalCurlBetterThanHttpie.g:380:2: iv_ruleFormFlag= ruleFormFlag EOF
+            // InternalCurlBetterThanHttpie.g:354:49: (iv_ruleFormFlag= ruleFormFlag EOF )
+            // InternalCurlBetterThanHttpie.g:355:2: iv_ruleFormFlag= ruleFormFlag EOF
             {
              newCompositeNode(grammarAccess.getFormFlagRule()); 
             pushFollow(FOLLOW_1);
@@ -1122,7 +1059,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
 
     // $ANTLR start "ruleFormFlag"
-    // InternalCurlBetterThanHttpie.g:386:1: ruleFormFlag returns [EObject current=null] : ( () (otherlv_1= '--form' | otherlv_2= 'f' ) ) ;
+    // InternalCurlBetterThanHttpie.g:361:1: ruleFormFlag returns [EObject current=null] : ( () (otherlv_1= '--form' | otherlv_2= '-f' ) ) ;
     public final EObject ruleFormFlag() throws RecognitionException {
         EObject current = null;
 
@@ -1133,14 +1070,14 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
         	enterRule();
 
         try {
-            // InternalCurlBetterThanHttpie.g:392:2: ( ( () (otherlv_1= '--form' | otherlv_2= 'f' ) ) )
-            // InternalCurlBetterThanHttpie.g:393:2: ( () (otherlv_1= '--form' | otherlv_2= 'f' ) )
+            // InternalCurlBetterThanHttpie.g:367:2: ( ( () (otherlv_1= '--form' | otherlv_2= '-f' ) ) )
+            // InternalCurlBetterThanHttpie.g:368:2: ( () (otherlv_1= '--form' | otherlv_2= '-f' ) )
             {
-            // InternalCurlBetterThanHttpie.g:393:2: ( () (otherlv_1= '--form' | otherlv_2= 'f' ) )
-            // InternalCurlBetterThanHttpie.g:394:3: () (otherlv_1= '--form' | otherlv_2= 'f' )
+            // InternalCurlBetterThanHttpie.g:368:2: ( () (otherlv_1= '--form' | otherlv_2= '-f' ) )
+            // InternalCurlBetterThanHttpie.g:369:3: () (otherlv_1= '--form' | otherlv_2= '-f' )
             {
-            // InternalCurlBetterThanHttpie.g:394:3: ()
-            // InternalCurlBetterThanHttpie.g:395:4: 
+            // InternalCurlBetterThanHttpie.g:369:3: ()
+            // InternalCurlBetterThanHttpie.g:370:4: 
             {
 
             				current = forceCreateModelElement(
@@ -1150,27 +1087,27 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
             }
 
-            // InternalCurlBetterThanHttpie.g:401:3: (otherlv_1= '--form' | otherlv_2= 'f' )
-            int alt8=2;
-            int LA8_0 = input.LA(1);
+            // InternalCurlBetterThanHttpie.g:376:3: (otherlv_1= '--form' | otherlv_2= '-f' )
+            int alt7=2;
+            int LA7_0 = input.LA(1);
 
-            if ( (LA8_0==18) ) {
-                alt8=1;
+            if ( (LA7_0==19) ) {
+                alt7=1;
             }
-            else if ( (LA8_0==19) ) {
-                alt8=2;
+            else if ( (LA7_0==20) ) {
+                alt7=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 8, 0, input);
+                    new NoViableAltException("", 7, 0, input);
 
                 throw nvae;
             }
-            switch (alt8) {
+            switch (alt7) {
                 case 1 :
-                    // InternalCurlBetterThanHttpie.g:402:4: otherlv_1= '--form'
+                    // InternalCurlBetterThanHttpie.g:377:4: otherlv_1= '--form'
                     {
-                    otherlv_1=(Token)match(input,18,FOLLOW_2); 
+                    otherlv_1=(Token)match(input,19,FOLLOW_2); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getFormFlagAccess().getFormKeyword_1_0());
                     			
@@ -1178,9 +1115,9 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
                     }
                     break;
                 case 2 :
-                    // InternalCurlBetterThanHttpie.g:407:4: otherlv_2= 'f'
+                    // InternalCurlBetterThanHttpie.g:382:4: otherlv_2= '-f'
                     {
-                    otherlv_2=(Token)match(input,19,FOLLOW_2); 
+                    otherlv_2=(Token)match(input,20,FOLLOW_2); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getFormFlagAccess().getFKeyword_1_1());
                     			
@@ -1213,7 +1150,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
 
     // $ANTLR start "entryRuleProxyFlag"
-    // InternalCurlBetterThanHttpie.g:416:1: entryRuleProxyFlag returns [EObject current=null] : iv_ruleProxyFlag= ruleProxyFlag EOF ;
+    // InternalCurlBetterThanHttpie.g:391:1: entryRuleProxyFlag returns [EObject current=null] : iv_ruleProxyFlag= ruleProxyFlag EOF ;
     public final EObject entryRuleProxyFlag() throws RecognitionException {
         EObject current = null;
 
@@ -1221,8 +1158,8 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
 
         try {
-            // InternalCurlBetterThanHttpie.g:416:50: (iv_ruleProxyFlag= ruleProxyFlag EOF )
-            // InternalCurlBetterThanHttpie.g:417:2: iv_ruleProxyFlag= ruleProxyFlag EOF
+            // InternalCurlBetterThanHttpie.g:391:50: (iv_ruleProxyFlag= ruleProxyFlag EOF )
+            // InternalCurlBetterThanHttpie.g:392:2: iv_ruleProxyFlag= ruleProxyFlag EOF
             {
              newCompositeNode(grammarAccess.getProxyFlagRule()); 
             pushFollow(FOLLOW_1);
@@ -1249,94 +1186,70 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
 
     // $ANTLR start "ruleProxyFlag"
-    // InternalCurlBetterThanHttpie.g:423:1: ruleProxyFlag returns [EObject current=null] : (otherlv_0= '--proxy' this_VALUE_1= RULE_VALUE ( ( (lv_protocol_2_0= RULE_STRING ) ) otherlv_3= ':' )? ( ( (lv_proxyProtocol_4_0= RULE_STRING ) ) otherlv_5= '://' )? ( ( (lv_username_6_0= RULE_STRING ) ) otherlv_7= ':' ( (lv_password_8_0= RULE_STRING ) ) otherlv_9= 'a' )? ( (lv_hostname_10_0= RULE_STRING ) ) (otherlv_11= ':' ( (lv_port_12_0= RULE_INT ) ) )? ) ;
+    // InternalCurlBetterThanHttpie.g:398:1: ruleProxyFlag returns [EObject current=null] : (otherlv_0= '--proxy' (otherlv_1= '=' | this_WS_2= RULE_WS ) ( ( ( ( (lv_protocol_3_0= RULE_BASIC_STRING ) ) otherlv_4= ':' ) ( ( (lv_proxyProtocol_5_0= RULE_BASIC_STRING ) ) otherlv_6= '://' )? ) | ( ( (lv_proxyProtocol_7_0= RULE_BASIC_STRING ) ) otherlv_8= '://' ) ) ( ( (lv_username_9_0= RULE_STRING_UP ) ) otherlv_10= ':' ( (lv_password_11_0= RULE_STRING_UP ) ) )? ) ;
     public final EObject ruleProxyFlag() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token this_VALUE_1=null;
-        Token lv_protocol_2_0=null;
-        Token otherlv_3=null;
-        Token lv_proxyProtocol_4_0=null;
-        Token otherlv_5=null;
-        Token lv_username_6_0=null;
-        Token otherlv_7=null;
-        Token lv_password_8_0=null;
-        Token otherlv_9=null;
-        Token lv_hostname_10_0=null;
-        Token otherlv_11=null;
-        Token lv_port_12_0=null;
+        Token otherlv_1=null;
+        Token this_WS_2=null;
+        Token lv_protocol_3_0=null;
+        Token otherlv_4=null;
+        Token lv_proxyProtocol_5_0=null;
+        Token otherlv_6=null;
+        Token lv_proxyProtocol_7_0=null;
+        Token otherlv_8=null;
+        Token lv_username_9_0=null;
+        Token otherlv_10=null;
+        Token lv_password_11_0=null;
 
 
         	enterRule();
 
         try {
-            // InternalCurlBetterThanHttpie.g:429:2: ( (otherlv_0= '--proxy' this_VALUE_1= RULE_VALUE ( ( (lv_protocol_2_0= RULE_STRING ) ) otherlv_3= ':' )? ( ( (lv_proxyProtocol_4_0= RULE_STRING ) ) otherlv_5= '://' )? ( ( (lv_username_6_0= RULE_STRING ) ) otherlv_7= ':' ( (lv_password_8_0= RULE_STRING ) ) otherlv_9= 'a' )? ( (lv_hostname_10_0= RULE_STRING ) ) (otherlv_11= ':' ( (lv_port_12_0= RULE_INT ) ) )? ) )
-            // InternalCurlBetterThanHttpie.g:430:2: (otherlv_0= '--proxy' this_VALUE_1= RULE_VALUE ( ( (lv_protocol_2_0= RULE_STRING ) ) otherlv_3= ':' )? ( ( (lv_proxyProtocol_4_0= RULE_STRING ) ) otherlv_5= '://' )? ( ( (lv_username_6_0= RULE_STRING ) ) otherlv_7= ':' ( (lv_password_8_0= RULE_STRING ) ) otherlv_9= 'a' )? ( (lv_hostname_10_0= RULE_STRING ) ) (otherlv_11= ':' ( (lv_port_12_0= RULE_INT ) ) )? )
+            // InternalCurlBetterThanHttpie.g:404:2: ( (otherlv_0= '--proxy' (otherlv_1= '=' | this_WS_2= RULE_WS ) ( ( ( ( (lv_protocol_3_0= RULE_BASIC_STRING ) ) otherlv_4= ':' ) ( ( (lv_proxyProtocol_5_0= RULE_BASIC_STRING ) ) otherlv_6= '://' )? ) | ( ( (lv_proxyProtocol_7_0= RULE_BASIC_STRING ) ) otherlv_8= '://' ) ) ( ( (lv_username_9_0= RULE_STRING_UP ) ) otherlv_10= ':' ( (lv_password_11_0= RULE_STRING_UP ) ) )? ) )
+            // InternalCurlBetterThanHttpie.g:405:2: (otherlv_0= '--proxy' (otherlv_1= '=' | this_WS_2= RULE_WS ) ( ( ( ( (lv_protocol_3_0= RULE_BASIC_STRING ) ) otherlv_4= ':' ) ( ( (lv_proxyProtocol_5_0= RULE_BASIC_STRING ) ) otherlv_6= '://' )? ) | ( ( (lv_proxyProtocol_7_0= RULE_BASIC_STRING ) ) otherlv_8= '://' ) ) ( ( (lv_username_9_0= RULE_STRING_UP ) ) otherlv_10= ':' ( (lv_password_11_0= RULE_STRING_UP ) ) )? )
             {
-            // InternalCurlBetterThanHttpie.g:430:2: (otherlv_0= '--proxy' this_VALUE_1= RULE_VALUE ( ( (lv_protocol_2_0= RULE_STRING ) ) otherlv_3= ':' )? ( ( (lv_proxyProtocol_4_0= RULE_STRING ) ) otherlv_5= '://' )? ( ( (lv_username_6_0= RULE_STRING ) ) otherlv_7= ':' ( (lv_password_8_0= RULE_STRING ) ) otherlv_9= 'a' )? ( (lv_hostname_10_0= RULE_STRING ) ) (otherlv_11= ':' ( (lv_port_12_0= RULE_INT ) ) )? )
-            // InternalCurlBetterThanHttpie.g:431:3: otherlv_0= '--proxy' this_VALUE_1= RULE_VALUE ( ( (lv_protocol_2_0= RULE_STRING ) ) otherlv_3= ':' )? ( ( (lv_proxyProtocol_4_0= RULE_STRING ) ) otherlv_5= '://' )? ( ( (lv_username_6_0= RULE_STRING ) ) otherlv_7= ':' ( (lv_password_8_0= RULE_STRING ) ) otherlv_9= 'a' )? ( (lv_hostname_10_0= RULE_STRING ) ) (otherlv_11= ':' ( (lv_port_12_0= RULE_INT ) ) )?
+            // InternalCurlBetterThanHttpie.g:405:2: (otherlv_0= '--proxy' (otherlv_1= '=' | this_WS_2= RULE_WS ) ( ( ( ( (lv_protocol_3_0= RULE_BASIC_STRING ) ) otherlv_4= ':' ) ( ( (lv_proxyProtocol_5_0= RULE_BASIC_STRING ) ) otherlv_6= '://' )? ) | ( ( (lv_proxyProtocol_7_0= RULE_BASIC_STRING ) ) otherlv_8= '://' ) ) ( ( (lv_username_9_0= RULE_STRING_UP ) ) otherlv_10= ':' ( (lv_password_11_0= RULE_STRING_UP ) ) )? )
+            // InternalCurlBetterThanHttpie.g:406:3: otherlv_0= '--proxy' (otherlv_1= '=' | this_WS_2= RULE_WS ) ( ( ( ( (lv_protocol_3_0= RULE_BASIC_STRING ) ) otherlv_4= ':' ) ( ( (lv_proxyProtocol_5_0= RULE_BASIC_STRING ) ) otherlv_6= '://' )? ) | ( ( (lv_proxyProtocol_7_0= RULE_BASIC_STRING ) ) otherlv_8= '://' ) ) ( ( (lv_username_9_0= RULE_STRING_UP ) ) otherlv_10= ':' ( (lv_password_11_0= RULE_STRING_UP ) ) )?
             {
-            otherlv_0=(Token)match(input,20,FOLLOW_6); 
+            otherlv_0=(Token)match(input,21,FOLLOW_5); 
 
             			newLeafNode(otherlv_0, grammarAccess.getProxyFlagAccess().getProxyKeyword_0());
             		
-            this_VALUE_1=(Token)match(input,RULE_VALUE,FOLLOW_7); 
+            // InternalCurlBetterThanHttpie.g:410:3: (otherlv_1= '=' | this_WS_2= RULE_WS )
+            int alt8=2;
+            int LA8_0 = input.LA(1);
 
-            			newLeafNode(this_VALUE_1, grammarAccess.getProxyFlagAccess().getVALUETerminalRuleCall_1());
-            		
-            // InternalCurlBetterThanHttpie.g:439:3: ( ( (lv_protocol_2_0= RULE_STRING ) ) otherlv_3= ':' )?
-            int alt9=2;
-            int LA9_0 = input.LA(1);
-
-            if ( (LA9_0==RULE_STRING) ) {
-                int LA9_1 = input.LA(2);
-
-                if ( (LA9_1==21) ) {
-                    int LA9_2 = input.LA(3);
-
-                    if ( (LA9_2==RULE_STRING) ) {
-                        int LA9_4 = input.LA(4);
-
-                        if ( (LA9_4==EOF||LA9_4==RULE_WS||(LA9_4>=21 && LA9_4<=22)) ) {
-                            alt9=1;
-                        }
-                    }
-                }
+            if ( (LA8_0==22) ) {
+                alt8=1;
             }
-            switch (alt9) {
+            else if ( (LA8_0==RULE_WS) ) {
+                alt8=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 8, 0, input);
+
+                throw nvae;
+            }
+            switch (alt8) {
                 case 1 :
-                    // InternalCurlBetterThanHttpie.g:440:4: ( (lv_protocol_2_0= RULE_STRING ) ) otherlv_3= ':'
+                    // InternalCurlBetterThanHttpie.g:411:4: otherlv_1= '='
                     {
-                    // InternalCurlBetterThanHttpie.g:440:4: ( (lv_protocol_2_0= RULE_STRING ) )
-                    // InternalCurlBetterThanHttpie.g:441:5: (lv_protocol_2_0= RULE_STRING )
-                    {
-                    // InternalCurlBetterThanHttpie.g:441:5: (lv_protocol_2_0= RULE_STRING )
-                    // InternalCurlBetterThanHttpie.g:442:6: lv_protocol_2_0= RULE_STRING
-                    {
-                    lv_protocol_2_0=(Token)match(input,RULE_STRING,FOLLOW_8); 
+                    otherlv_1=(Token)match(input,22,FOLLOW_6); 
 
-                    						newLeafNode(lv_protocol_2_0, grammarAccess.getProxyFlagAccess().getProtocolSTRINGTerminalRuleCall_2_0_0());
-                    					
-
-                    						if (current==null) {
-                    							current = createModelElement(grammarAccess.getProxyFlagRule());
-                    						}
-                    						setWithLastConsumed(
-                    							current,
-                    							"protocol",
-                    							lv_protocol_2_0,
-                    							"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.STRING");
-                    					
+                    				newLeafNode(otherlv_1, grammarAccess.getProxyFlagAccess().getEqualsSignKeyword_1_0());
+                    			
 
                     }
+                    break;
+                case 2 :
+                    // InternalCurlBetterThanHttpie.g:416:4: this_WS_2= RULE_WS
+                    {
+                    this_WS_2=(Token)match(input,RULE_WS,FOLLOW_6); 
 
-
-                    }
-
-                    otherlv_3=(Token)match(input,21,FOLLOW_7); 
-
-                    				newLeafNode(otherlv_3, grammarAccess.getProxyFlagAccess().getColonKeyword_2_1());
+                    				newLeafNode(this_WS_2, grammarAccess.getProxyFlagAccess().getWSTerminalRuleCall_1_1());
                     			
 
                     }
@@ -1344,85 +1257,193 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
             }
 
-            // InternalCurlBetterThanHttpie.g:463:3: ( ( (lv_proxyProtocol_4_0= RULE_STRING ) ) otherlv_5= '://' )?
+            // InternalCurlBetterThanHttpie.g:421:3: ( ( ( ( (lv_protocol_3_0= RULE_BASIC_STRING ) ) otherlv_4= ':' ) ( ( (lv_proxyProtocol_5_0= RULE_BASIC_STRING ) ) otherlv_6= '://' )? ) | ( ( (lv_proxyProtocol_7_0= RULE_BASIC_STRING ) ) otherlv_8= '://' ) )
             int alt10=2;
             int LA10_0 = input.LA(1);
 
-            if ( (LA10_0==RULE_STRING) ) {
+            if ( (LA10_0==RULE_BASIC_STRING) ) {
                 int LA10_1 = input.LA(2);
 
-                if ( (LA10_1==22) ) {
+                if ( (LA10_1==24) ) {
+                    alt10=2;
+                }
+                else if ( (LA10_1==23) ) {
                     alt10=1;
                 }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 10, 1, input);
+
+                    throw nvae;
+                }
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 10, 0, input);
+
+                throw nvae;
             }
             switch (alt10) {
                 case 1 :
-                    // InternalCurlBetterThanHttpie.g:464:4: ( (lv_proxyProtocol_4_0= RULE_STRING ) ) otherlv_5= '://'
+                    // InternalCurlBetterThanHttpie.g:422:4: ( ( ( (lv_protocol_3_0= RULE_BASIC_STRING ) ) otherlv_4= ':' ) ( ( (lv_proxyProtocol_5_0= RULE_BASIC_STRING ) ) otherlv_6= '://' )? )
                     {
-                    // InternalCurlBetterThanHttpie.g:464:4: ( (lv_proxyProtocol_4_0= RULE_STRING ) )
-                    // InternalCurlBetterThanHttpie.g:465:5: (lv_proxyProtocol_4_0= RULE_STRING )
+                    // InternalCurlBetterThanHttpie.g:422:4: ( ( ( (lv_protocol_3_0= RULE_BASIC_STRING ) ) otherlv_4= ':' ) ( ( (lv_proxyProtocol_5_0= RULE_BASIC_STRING ) ) otherlv_6= '://' )? )
+                    // InternalCurlBetterThanHttpie.g:423:5: ( ( (lv_protocol_3_0= RULE_BASIC_STRING ) ) otherlv_4= ':' ) ( ( (lv_proxyProtocol_5_0= RULE_BASIC_STRING ) ) otherlv_6= '://' )?
                     {
-                    // InternalCurlBetterThanHttpie.g:465:5: (lv_proxyProtocol_4_0= RULE_STRING )
-                    // InternalCurlBetterThanHttpie.g:466:6: lv_proxyProtocol_4_0= RULE_STRING
+                    // InternalCurlBetterThanHttpie.g:423:5: ( ( (lv_protocol_3_0= RULE_BASIC_STRING ) ) otherlv_4= ':' )
+                    // InternalCurlBetterThanHttpie.g:424:6: ( (lv_protocol_3_0= RULE_BASIC_STRING ) ) otherlv_4= ':'
                     {
-                    lv_proxyProtocol_4_0=(Token)match(input,RULE_STRING,FOLLOW_9); 
+                    // InternalCurlBetterThanHttpie.g:424:6: ( (lv_protocol_3_0= RULE_BASIC_STRING ) )
+                    // InternalCurlBetterThanHttpie.g:425:7: (lv_protocol_3_0= RULE_BASIC_STRING )
+                    {
+                    // InternalCurlBetterThanHttpie.g:425:7: (lv_protocol_3_0= RULE_BASIC_STRING )
+                    // InternalCurlBetterThanHttpie.g:426:8: lv_protocol_3_0= RULE_BASIC_STRING
+                    {
+                    lv_protocol_3_0=(Token)match(input,RULE_BASIC_STRING,FOLLOW_7); 
 
-                    						newLeafNode(lv_proxyProtocol_4_0, grammarAccess.getProxyFlagAccess().getProxyProtocolSTRINGTerminalRuleCall_3_0_0());
-                    					
+                    								newLeafNode(lv_protocol_3_0, grammarAccess.getProxyFlagAccess().getProtocolBASIC_STRINGTerminalRuleCall_2_0_0_0_0());
+                    							
 
-                    						if (current==null) {
-                    							current = createModelElement(grammarAccess.getProxyFlagRule());
-                    						}
-                    						setWithLastConsumed(
-                    							current,
-                    							"proxyProtocol",
-                    							lv_proxyProtocol_4_0,
-                    							"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.STRING");
-                    					
+                    								if (current==null) {
+                    									current = createModelElement(grammarAccess.getProxyFlagRule());
+                    								}
+                    								setWithLastConsumed(
+                    									current,
+                    									"protocol",
+                    									lv_protocol_3_0,
+                    									"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.BASIC_STRING");
+                    							
 
                     }
 
 
                     }
 
-                    otherlv_5=(Token)match(input,22,FOLLOW_7); 
+                    otherlv_4=(Token)match(input,23,FOLLOW_8); 
 
-                    				newLeafNode(otherlv_5, grammarAccess.getProxyFlagAccess().getColonSolidusSolidusKeyword_3_1());
-                    			
+                    						newLeafNode(otherlv_4, grammarAccess.getProxyFlagAccess().getColonKeyword_2_0_0_1());
+                    					
+
+                    }
+
+                    // InternalCurlBetterThanHttpie.g:447:5: ( ( (lv_proxyProtocol_5_0= RULE_BASIC_STRING ) ) otherlv_6= '://' )?
+                    int alt9=2;
+                    int LA9_0 = input.LA(1);
+
+                    if ( (LA9_0==RULE_BASIC_STRING) ) {
+                        alt9=1;
+                    }
+                    switch (alt9) {
+                        case 1 :
+                            // InternalCurlBetterThanHttpie.g:448:6: ( (lv_proxyProtocol_5_0= RULE_BASIC_STRING ) ) otherlv_6= '://'
+                            {
+                            // InternalCurlBetterThanHttpie.g:448:6: ( (lv_proxyProtocol_5_0= RULE_BASIC_STRING ) )
+                            // InternalCurlBetterThanHttpie.g:449:7: (lv_proxyProtocol_5_0= RULE_BASIC_STRING )
+                            {
+                            // InternalCurlBetterThanHttpie.g:449:7: (lv_proxyProtocol_5_0= RULE_BASIC_STRING )
+                            // InternalCurlBetterThanHttpie.g:450:8: lv_proxyProtocol_5_0= RULE_BASIC_STRING
+                            {
+                            lv_proxyProtocol_5_0=(Token)match(input,RULE_BASIC_STRING,FOLLOW_9); 
+
+                            								newLeafNode(lv_proxyProtocol_5_0, grammarAccess.getProxyFlagAccess().getProxyProtocolBASIC_STRINGTerminalRuleCall_2_0_1_0_0());
+                            							
+
+                            								if (current==null) {
+                            									current = createModelElement(grammarAccess.getProxyFlagRule());
+                            								}
+                            								setWithLastConsumed(
+                            									current,
+                            									"proxyProtocol",
+                            									lv_proxyProtocol_5_0,
+                            									"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.BASIC_STRING");
+                            							
+
+                            }
+
+
+                            }
+
+                            otherlv_6=(Token)match(input,24,FOLLOW_10); 
+
+                            						newLeafNode(otherlv_6, grammarAccess.getProxyFlagAccess().getColonSolidusSolidusKeyword_2_0_1_1());
+                            					
+
+                            }
+                            break;
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalCurlBetterThanHttpie.g:473:4: ( ( (lv_proxyProtocol_7_0= RULE_BASIC_STRING ) ) otherlv_8= '://' )
+                    {
+                    // InternalCurlBetterThanHttpie.g:473:4: ( ( (lv_proxyProtocol_7_0= RULE_BASIC_STRING ) ) otherlv_8= '://' )
+                    // InternalCurlBetterThanHttpie.g:474:5: ( (lv_proxyProtocol_7_0= RULE_BASIC_STRING ) ) otherlv_8= '://'
+                    {
+                    // InternalCurlBetterThanHttpie.g:474:5: ( (lv_proxyProtocol_7_0= RULE_BASIC_STRING ) )
+                    // InternalCurlBetterThanHttpie.g:475:6: (lv_proxyProtocol_7_0= RULE_BASIC_STRING )
+                    {
+                    // InternalCurlBetterThanHttpie.g:475:6: (lv_proxyProtocol_7_0= RULE_BASIC_STRING )
+                    // InternalCurlBetterThanHttpie.g:476:7: lv_proxyProtocol_7_0= RULE_BASIC_STRING
+                    {
+                    lv_proxyProtocol_7_0=(Token)match(input,RULE_BASIC_STRING,FOLLOW_9); 
+
+                    							newLeafNode(lv_proxyProtocol_7_0, grammarAccess.getProxyFlagAccess().getProxyProtocolBASIC_STRINGTerminalRuleCall_2_1_0_0());
+                    						
+
+                    							if (current==null) {
+                    								current = createModelElement(grammarAccess.getProxyFlagRule());
+                    							}
+                    							setWithLastConsumed(
+                    								current,
+                    								"proxyProtocol",
+                    								lv_proxyProtocol_7_0,
+                    								"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.BASIC_STRING");
+                    						
+
+                    }
+
+
+                    }
+
+                    otherlv_8=(Token)match(input,24,FOLLOW_10); 
+
+                    					newLeafNode(otherlv_8, grammarAccess.getProxyFlagAccess().getColonSolidusSolidusKeyword_2_1_1());
+                    				
+
+                    }
+
 
                     }
                     break;
 
             }
 
-            // InternalCurlBetterThanHttpie.g:487:3: ( ( (lv_username_6_0= RULE_STRING ) ) otherlv_7= ':' ( (lv_password_8_0= RULE_STRING ) ) otherlv_9= 'a' )?
+            // InternalCurlBetterThanHttpie.g:498:3: ( ( (lv_username_9_0= RULE_STRING_UP ) ) otherlv_10= ':' ( (lv_password_11_0= RULE_STRING_UP ) ) )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
-            if ( (LA11_0==RULE_STRING) ) {
-                int LA11_1 = input.LA(2);
-
-                if ( (LA11_1==21) ) {
-                    int LA11_2 = input.LA(3);
-
-                    if ( (LA11_2==RULE_STRING) ) {
-                        alt11=1;
-                    }
-                }
+            if ( (LA11_0==RULE_STRING_UP) ) {
+                alt11=1;
             }
             switch (alt11) {
                 case 1 :
-                    // InternalCurlBetterThanHttpie.g:488:4: ( (lv_username_6_0= RULE_STRING ) ) otherlv_7= ':' ( (lv_password_8_0= RULE_STRING ) ) otherlv_9= 'a'
+                    // InternalCurlBetterThanHttpie.g:499:4: ( (lv_username_9_0= RULE_STRING_UP ) ) otherlv_10= ':' ( (lv_password_11_0= RULE_STRING_UP ) )
                     {
-                    // InternalCurlBetterThanHttpie.g:488:4: ( (lv_username_6_0= RULE_STRING ) )
-                    // InternalCurlBetterThanHttpie.g:489:5: (lv_username_6_0= RULE_STRING )
+                    // InternalCurlBetterThanHttpie.g:499:4: ( (lv_username_9_0= RULE_STRING_UP ) )
+                    // InternalCurlBetterThanHttpie.g:500:5: (lv_username_9_0= RULE_STRING_UP )
                     {
-                    // InternalCurlBetterThanHttpie.g:489:5: (lv_username_6_0= RULE_STRING )
-                    // InternalCurlBetterThanHttpie.g:490:6: lv_username_6_0= RULE_STRING
+                    // InternalCurlBetterThanHttpie.g:500:5: (lv_username_9_0= RULE_STRING_UP )
+                    // InternalCurlBetterThanHttpie.g:501:6: lv_username_9_0= RULE_STRING_UP
                     {
-                    lv_username_6_0=(Token)match(input,RULE_STRING,FOLLOW_8); 
+                    lv_username_9_0=(Token)match(input,RULE_STRING_UP,FOLLOW_7); 
 
-                    						newLeafNode(lv_username_6_0, grammarAccess.getProxyFlagAccess().getUsernameSTRINGTerminalRuleCall_4_0_0());
+                    						newLeafNode(lv_username_9_0, grammarAccess.getProxyFlagAccess().getUsernameSTRING_UPTerminalRuleCall_3_0_0());
                     					
 
                     						if (current==null) {
@@ -1431,8 +1452,8 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
                     						setWithLastConsumed(
                     							current,
                     							"username",
-                    							lv_username_6_0,
-                    							"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.STRING");
+                    							lv_username_9_0,
+                    							"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.STRING_UP");
                     					
 
                     }
@@ -1440,19 +1461,19 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
                     }
 
-                    otherlv_7=(Token)match(input,21,FOLLOW_7); 
+                    otherlv_10=(Token)match(input,23,FOLLOW_11); 
 
-                    				newLeafNode(otherlv_7, grammarAccess.getProxyFlagAccess().getColonKeyword_4_1());
+                    				newLeafNode(otherlv_10, grammarAccess.getProxyFlagAccess().getColonKeyword_3_1());
                     			
-                    // InternalCurlBetterThanHttpie.g:510:4: ( (lv_password_8_0= RULE_STRING ) )
-                    // InternalCurlBetterThanHttpie.g:511:5: (lv_password_8_0= RULE_STRING )
+                    // InternalCurlBetterThanHttpie.g:521:4: ( (lv_password_11_0= RULE_STRING_UP ) )
+                    // InternalCurlBetterThanHttpie.g:522:5: (lv_password_11_0= RULE_STRING_UP )
                     {
-                    // InternalCurlBetterThanHttpie.g:511:5: (lv_password_8_0= RULE_STRING )
-                    // InternalCurlBetterThanHttpie.g:512:6: lv_password_8_0= RULE_STRING
+                    // InternalCurlBetterThanHttpie.g:522:5: (lv_password_11_0= RULE_STRING_UP )
+                    // InternalCurlBetterThanHttpie.g:523:6: lv_password_11_0= RULE_STRING_UP
                     {
-                    lv_password_8_0=(Token)match(input,RULE_STRING,FOLLOW_10); 
+                    lv_password_11_0=(Token)match(input,RULE_STRING_UP,FOLLOW_2); 
 
-                    						newLeafNode(lv_password_8_0, grammarAccess.getProxyFlagAccess().getPasswordSTRINGTerminalRuleCall_4_2_0());
+                    						newLeafNode(lv_password_11_0, grammarAccess.getProxyFlagAccess().getPasswordSTRING_UPTerminalRuleCall_3_2_0());
                     					
 
                     						if (current==null) {
@@ -1461,85 +1482,8 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
                     						setWithLastConsumed(
                     							current,
                     							"password",
-                    							lv_password_8_0,
-                    							"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.STRING");
-                    					
-
-                    }
-
-
-                    }
-
-                    otherlv_9=(Token)match(input,23,FOLLOW_7); 
-
-                    				newLeafNode(otherlv_9, grammarAccess.getProxyFlagAccess().getAKeyword_4_3());
-                    			
-
-                    }
-                    break;
-
-            }
-
-            // InternalCurlBetterThanHttpie.g:533:3: ( (lv_hostname_10_0= RULE_STRING ) )
-            // InternalCurlBetterThanHttpie.g:534:4: (lv_hostname_10_0= RULE_STRING )
-            {
-            // InternalCurlBetterThanHttpie.g:534:4: (lv_hostname_10_0= RULE_STRING )
-            // InternalCurlBetterThanHttpie.g:535:5: lv_hostname_10_0= RULE_STRING
-            {
-            lv_hostname_10_0=(Token)match(input,RULE_STRING,FOLLOW_11); 
-
-            					newLeafNode(lv_hostname_10_0, grammarAccess.getProxyFlagAccess().getHostnameSTRINGTerminalRuleCall_5_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getProxyFlagRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"hostname",
-            						lv_hostname_10_0,
-            						"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.STRING");
-            				
-
-            }
-
-
-            }
-
-            // InternalCurlBetterThanHttpie.g:551:3: (otherlv_11= ':' ( (lv_port_12_0= RULE_INT ) ) )?
-            int alt12=2;
-            int LA12_0 = input.LA(1);
-
-            if ( (LA12_0==21) ) {
-                alt12=1;
-            }
-            switch (alt12) {
-                case 1 :
-                    // InternalCurlBetterThanHttpie.g:552:4: otherlv_11= ':' ( (lv_port_12_0= RULE_INT ) )
-                    {
-                    otherlv_11=(Token)match(input,21,FOLLOW_12); 
-
-                    				newLeafNode(otherlv_11, grammarAccess.getProxyFlagAccess().getColonKeyword_6_0());
-                    			
-                    // InternalCurlBetterThanHttpie.g:556:4: ( (lv_port_12_0= RULE_INT ) )
-                    // InternalCurlBetterThanHttpie.g:557:5: (lv_port_12_0= RULE_INT )
-                    {
-                    // InternalCurlBetterThanHttpie.g:557:5: (lv_port_12_0= RULE_INT )
-                    // InternalCurlBetterThanHttpie.g:558:6: lv_port_12_0= RULE_INT
-                    {
-                    lv_port_12_0=(Token)match(input,RULE_INT,FOLLOW_2); 
-
-                    						newLeafNode(lv_port_12_0, grammarAccess.getProxyFlagAccess().getPortINTTerminalRuleCall_6_1_0());
-                    					
-
-                    						if (current==null) {
-                    							current = createModelElement(grammarAccess.getProxyFlagRule());
-                    						}
-                    						setWithLastConsumed(
-                    							current,
-                    							"port",
-                    							lv_port_12_0,
-                    							"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.INT");
+                    							lv_password_11_0,
+                    							"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.STRING_UP");
                     					
 
                     }
@@ -1576,7 +1520,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
 
     // $ANTLR start "entryRuleAuthFlag"
-    // InternalCurlBetterThanHttpie.g:579:1: entryRuleAuthFlag returns [EObject current=null] : iv_ruleAuthFlag= ruleAuthFlag EOF ;
+    // InternalCurlBetterThanHttpie.g:544:1: entryRuleAuthFlag returns [EObject current=null] : iv_ruleAuthFlag= ruleAuthFlag EOF ;
     public final EObject entryRuleAuthFlag() throws RecognitionException {
         EObject current = null;
 
@@ -1584,8 +1528,8 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
 
         try {
-            // InternalCurlBetterThanHttpie.g:579:49: (iv_ruleAuthFlag= ruleAuthFlag EOF )
-            // InternalCurlBetterThanHttpie.g:580:2: iv_ruleAuthFlag= ruleAuthFlag EOF
+            // InternalCurlBetterThanHttpie.g:544:49: (iv_ruleAuthFlag= ruleAuthFlag EOF )
+            // InternalCurlBetterThanHttpie.g:545:2: iv_ruleAuthFlag= ruleAuthFlag EOF
             {
              newCompositeNode(grammarAccess.getAuthFlagRule()); 
             pushFollow(FOLLOW_1);
@@ -1612,193 +1556,57 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
 
     // $ANTLR start "ruleAuthFlag"
-    // InternalCurlBetterThanHttpie.g:586:1: ruleAuthFlag returns [EObject current=null] : ( (otherlv_0= '--auth' | otherlv_1= '-a' ) this_VALUE_2= RULE_VALUE ( (lv_username_3_0= RULE_STRING ) ) (otherlv_4= ':' ( (lv_password_5_0= RULE_STRING ) ) )? (otherlv_6= '@' ( (lv_hostname_7_0= RULE_STRING ) ) )? ) ;
+    // InternalCurlBetterThanHttpie.g:551:1: ruleAuthFlag returns [EObject current=null] : (otherlv_0= '--auth' | otherlv_1= '-a' ) ;
     public final EObject ruleAuthFlag() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
-        Token this_VALUE_2=null;
-        Token lv_username_3_0=null;
-        Token otherlv_4=null;
-        Token lv_password_5_0=null;
-        Token otherlv_6=null;
-        Token lv_hostname_7_0=null;
 
 
         	enterRule();
 
         try {
-            // InternalCurlBetterThanHttpie.g:592:2: ( ( (otherlv_0= '--auth' | otherlv_1= '-a' ) this_VALUE_2= RULE_VALUE ( (lv_username_3_0= RULE_STRING ) ) (otherlv_4= ':' ( (lv_password_5_0= RULE_STRING ) ) )? (otherlv_6= '@' ( (lv_hostname_7_0= RULE_STRING ) ) )? ) )
-            // InternalCurlBetterThanHttpie.g:593:2: ( (otherlv_0= '--auth' | otherlv_1= '-a' ) this_VALUE_2= RULE_VALUE ( (lv_username_3_0= RULE_STRING ) ) (otherlv_4= ':' ( (lv_password_5_0= RULE_STRING ) ) )? (otherlv_6= '@' ( (lv_hostname_7_0= RULE_STRING ) ) )? )
+            // InternalCurlBetterThanHttpie.g:557:2: ( (otherlv_0= '--auth' | otherlv_1= '-a' ) )
+            // InternalCurlBetterThanHttpie.g:558:2: (otherlv_0= '--auth' | otherlv_1= '-a' )
             {
-            // InternalCurlBetterThanHttpie.g:593:2: ( (otherlv_0= '--auth' | otherlv_1= '-a' ) this_VALUE_2= RULE_VALUE ( (lv_username_3_0= RULE_STRING ) ) (otherlv_4= ':' ( (lv_password_5_0= RULE_STRING ) ) )? (otherlv_6= '@' ( (lv_hostname_7_0= RULE_STRING ) ) )? )
-            // InternalCurlBetterThanHttpie.g:594:3: (otherlv_0= '--auth' | otherlv_1= '-a' ) this_VALUE_2= RULE_VALUE ( (lv_username_3_0= RULE_STRING ) ) (otherlv_4= ':' ( (lv_password_5_0= RULE_STRING ) ) )? (otherlv_6= '@' ( (lv_hostname_7_0= RULE_STRING ) ) )?
-            {
-            // InternalCurlBetterThanHttpie.g:594:3: (otherlv_0= '--auth' | otherlv_1= '-a' )
-            int alt13=2;
-            int LA13_0 = input.LA(1);
+            // InternalCurlBetterThanHttpie.g:558:2: (otherlv_0= '--auth' | otherlv_1= '-a' )
+            int alt12=2;
+            int LA12_0 = input.LA(1);
 
-            if ( (LA13_0==24) ) {
-                alt13=1;
+            if ( (LA12_0==25) ) {
+                alt12=1;
             }
-            else if ( (LA13_0==25) ) {
-                alt13=2;
+            else if ( (LA12_0==26) ) {
+                alt12=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 13, 0, input);
+                    new NoViableAltException("", 12, 0, input);
 
                 throw nvae;
             }
-            switch (alt13) {
+            switch (alt12) {
                 case 1 :
-                    // InternalCurlBetterThanHttpie.g:595:4: otherlv_0= '--auth'
+                    // InternalCurlBetterThanHttpie.g:559:3: otherlv_0= '--auth'
                     {
-                    otherlv_0=(Token)match(input,24,FOLLOW_6); 
+                    otherlv_0=(Token)match(input,25,FOLLOW_2); 
 
-                    				newLeafNode(otherlv_0, grammarAccess.getAuthFlagAccess().getAuthKeyword_0_0());
-                    			
+                    			newLeafNode(otherlv_0, grammarAccess.getAuthFlagAccess().getAuthKeyword_0());
+                    		
 
                     }
                     break;
                 case 2 :
-                    // InternalCurlBetterThanHttpie.g:600:4: otherlv_1= '-a'
+                    // InternalCurlBetterThanHttpie.g:564:3: otherlv_1= '-a'
                     {
-                    otherlv_1=(Token)match(input,25,FOLLOW_6); 
+                    otherlv_1=(Token)match(input,26,FOLLOW_2); 
 
-                    				newLeafNode(otherlv_1, grammarAccess.getAuthFlagAccess().getAKeyword_0_1());
-                    			
+                    			newLeafNode(otherlv_1, grammarAccess.getAuthFlagAccess().getAKeyword_1());
+                    		
 
                     }
                     break;
-
-            }
-
-            this_VALUE_2=(Token)match(input,RULE_VALUE,FOLLOW_7); 
-
-            			newLeafNode(this_VALUE_2, grammarAccess.getAuthFlagAccess().getVALUETerminalRuleCall_1());
-            		
-            // InternalCurlBetterThanHttpie.g:609:3: ( (lv_username_3_0= RULE_STRING ) )
-            // InternalCurlBetterThanHttpie.g:610:4: (lv_username_3_0= RULE_STRING )
-            {
-            // InternalCurlBetterThanHttpie.g:610:4: (lv_username_3_0= RULE_STRING )
-            // InternalCurlBetterThanHttpie.g:611:5: lv_username_3_0= RULE_STRING
-            {
-            lv_username_3_0=(Token)match(input,RULE_STRING,FOLLOW_13); 
-
-            					newLeafNode(lv_username_3_0, grammarAccess.getAuthFlagAccess().getUsernameSTRINGTerminalRuleCall_2_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getAuthFlagRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"username",
-            						lv_username_3_0,
-            						"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.STRING");
-            				
-
-            }
-
-
-            }
-
-            // InternalCurlBetterThanHttpie.g:627:3: (otherlv_4= ':' ( (lv_password_5_0= RULE_STRING ) ) )?
-            int alt14=2;
-            int LA14_0 = input.LA(1);
-
-            if ( (LA14_0==21) ) {
-                alt14=1;
-            }
-            switch (alt14) {
-                case 1 :
-                    // InternalCurlBetterThanHttpie.g:628:4: otherlv_4= ':' ( (lv_password_5_0= RULE_STRING ) )
-                    {
-                    otherlv_4=(Token)match(input,21,FOLLOW_7); 
-
-                    				newLeafNode(otherlv_4, grammarAccess.getAuthFlagAccess().getColonKeyword_3_0());
-                    			
-                    // InternalCurlBetterThanHttpie.g:632:4: ( (lv_password_5_0= RULE_STRING ) )
-                    // InternalCurlBetterThanHttpie.g:633:5: (lv_password_5_0= RULE_STRING )
-                    {
-                    // InternalCurlBetterThanHttpie.g:633:5: (lv_password_5_0= RULE_STRING )
-                    // InternalCurlBetterThanHttpie.g:634:6: lv_password_5_0= RULE_STRING
-                    {
-                    lv_password_5_0=(Token)match(input,RULE_STRING,FOLLOW_14); 
-
-                    						newLeafNode(lv_password_5_0, grammarAccess.getAuthFlagAccess().getPasswordSTRINGTerminalRuleCall_3_1_0());
-                    					
-
-                    						if (current==null) {
-                    							current = createModelElement(grammarAccess.getAuthFlagRule());
-                    						}
-                    						setWithLastConsumed(
-                    							current,
-                    							"password",
-                    							lv_password_5_0,
-                    							"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.STRING");
-                    					
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // InternalCurlBetterThanHttpie.g:651:3: (otherlv_6= '@' ( (lv_hostname_7_0= RULE_STRING ) ) )?
-            int alt15=2;
-            int LA15_0 = input.LA(1);
-
-            if ( (LA15_0==26) ) {
-                alt15=1;
-            }
-            switch (alt15) {
-                case 1 :
-                    // InternalCurlBetterThanHttpie.g:652:4: otherlv_6= '@' ( (lv_hostname_7_0= RULE_STRING ) )
-                    {
-                    otherlv_6=(Token)match(input,26,FOLLOW_7); 
-
-                    				newLeafNode(otherlv_6, grammarAccess.getAuthFlagAccess().getCommercialAtKeyword_4_0());
-                    			
-                    // InternalCurlBetterThanHttpie.g:656:4: ( (lv_hostname_7_0= RULE_STRING ) )
-                    // InternalCurlBetterThanHttpie.g:657:5: (lv_hostname_7_0= RULE_STRING )
-                    {
-                    // InternalCurlBetterThanHttpie.g:657:5: (lv_hostname_7_0= RULE_STRING )
-                    // InternalCurlBetterThanHttpie.g:658:6: lv_hostname_7_0= RULE_STRING
-                    {
-                    lv_hostname_7_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
-
-                    						newLeafNode(lv_hostname_7_0, grammarAccess.getAuthFlagAccess().getHostnameSTRINGTerminalRuleCall_4_1_0());
-                    					
-
-                    						if (current==null) {
-                    							current = createModelElement(grammarAccess.getAuthFlagRule());
-                    						}
-                    						setWithLastConsumed(
-                    							current,
-                    							"hostname",
-                    							lv_hostname_7_0,
-                    							"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.STRING");
-                    					
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
 
             }
 
@@ -1822,7 +1630,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
 
     // $ANTLR start "entryRuleDownloadFlag"
-    // InternalCurlBetterThanHttpie.g:679:1: entryRuleDownloadFlag returns [EObject current=null] : iv_ruleDownloadFlag= ruleDownloadFlag EOF ;
+    // InternalCurlBetterThanHttpie.g:572:1: entryRuleDownloadFlag returns [EObject current=null] : iv_ruleDownloadFlag= ruleDownloadFlag EOF ;
     public final EObject entryRuleDownloadFlag() throws RecognitionException {
         EObject current = null;
 
@@ -1830,8 +1638,8 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
 
         try {
-            // InternalCurlBetterThanHttpie.g:679:53: (iv_ruleDownloadFlag= ruleDownloadFlag EOF )
-            // InternalCurlBetterThanHttpie.g:680:2: iv_ruleDownloadFlag= ruleDownloadFlag EOF
+            // InternalCurlBetterThanHttpie.g:572:53: (iv_ruleDownloadFlag= ruleDownloadFlag EOF )
+            // InternalCurlBetterThanHttpie.g:573:2: iv_ruleDownloadFlag= ruleDownloadFlag EOF
             {
              newCompositeNode(grammarAccess.getDownloadFlagRule()); 
             pushFollow(FOLLOW_1);
@@ -1858,7 +1666,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
 
     // $ANTLR start "ruleDownloadFlag"
-    // InternalCurlBetterThanHttpie.g:686:1: ruleDownloadFlag returns [EObject current=null] : ( () (otherlv_1= '--download' | otherlv_2= '-d' ) ) ;
+    // InternalCurlBetterThanHttpie.g:579:1: ruleDownloadFlag returns [EObject current=null] : ( () (otherlv_1= '--download' | otherlv_2= '-d' ) ) ;
     public final EObject ruleDownloadFlag() throws RecognitionException {
         EObject current = null;
 
@@ -1869,14 +1677,14 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
         	enterRule();
 
         try {
-            // InternalCurlBetterThanHttpie.g:692:2: ( ( () (otherlv_1= '--download' | otherlv_2= '-d' ) ) )
-            // InternalCurlBetterThanHttpie.g:693:2: ( () (otherlv_1= '--download' | otherlv_2= '-d' ) )
+            // InternalCurlBetterThanHttpie.g:585:2: ( ( () (otherlv_1= '--download' | otherlv_2= '-d' ) ) )
+            // InternalCurlBetterThanHttpie.g:586:2: ( () (otherlv_1= '--download' | otherlv_2= '-d' ) )
             {
-            // InternalCurlBetterThanHttpie.g:693:2: ( () (otherlv_1= '--download' | otherlv_2= '-d' ) )
-            // InternalCurlBetterThanHttpie.g:694:3: () (otherlv_1= '--download' | otherlv_2= '-d' )
+            // InternalCurlBetterThanHttpie.g:586:2: ( () (otherlv_1= '--download' | otherlv_2= '-d' ) )
+            // InternalCurlBetterThanHttpie.g:587:3: () (otherlv_1= '--download' | otherlv_2= '-d' )
             {
-            // InternalCurlBetterThanHttpie.g:694:3: ()
-            // InternalCurlBetterThanHttpie.g:695:4: 
+            // InternalCurlBetterThanHttpie.g:587:3: ()
+            // InternalCurlBetterThanHttpie.g:588:4: 
             {
 
             				current = forceCreateModelElement(
@@ -1886,25 +1694,25 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
             }
 
-            // InternalCurlBetterThanHttpie.g:701:3: (otherlv_1= '--download' | otherlv_2= '-d' )
-            int alt16=2;
-            int LA16_0 = input.LA(1);
+            // InternalCurlBetterThanHttpie.g:594:3: (otherlv_1= '--download' | otherlv_2= '-d' )
+            int alt13=2;
+            int LA13_0 = input.LA(1);
 
-            if ( (LA16_0==27) ) {
-                alt16=1;
+            if ( (LA13_0==27) ) {
+                alt13=1;
             }
-            else if ( (LA16_0==28) ) {
-                alt16=2;
+            else if ( (LA13_0==28) ) {
+                alt13=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 16, 0, input);
+                    new NoViableAltException("", 13, 0, input);
 
                 throw nvae;
             }
-            switch (alt16) {
+            switch (alt13) {
                 case 1 :
-                    // InternalCurlBetterThanHttpie.g:702:4: otherlv_1= '--download'
+                    // InternalCurlBetterThanHttpie.g:595:4: otherlv_1= '--download'
                     {
                     otherlv_1=(Token)match(input,27,FOLLOW_2); 
 
@@ -1914,7 +1722,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
                     }
                     break;
                 case 2 :
-                    // InternalCurlBetterThanHttpie.g:707:4: otherlv_2= '-d'
+                    // InternalCurlBetterThanHttpie.g:600:4: otherlv_2= '-d'
                     {
                     otherlv_2=(Token)match(input,28,FOLLOW_2); 
 
@@ -1949,7 +1757,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
 
     // $ANTLR start "entryRuleHelpFlag"
-    // InternalCurlBetterThanHttpie.g:716:1: entryRuleHelpFlag returns [EObject current=null] : iv_ruleHelpFlag= ruleHelpFlag EOF ;
+    // InternalCurlBetterThanHttpie.g:609:1: entryRuleHelpFlag returns [EObject current=null] : iv_ruleHelpFlag= ruleHelpFlag EOF ;
     public final EObject entryRuleHelpFlag() throws RecognitionException {
         EObject current = null;
 
@@ -1957,8 +1765,8 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
 
         try {
-            // InternalCurlBetterThanHttpie.g:716:49: (iv_ruleHelpFlag= ruleHelpFlag EOF )
-            // InternalCurlBetterThanHttpie.g:717:2: iv_ruleHelpFlag= ruleHelpFlag EOF
+            // InternalCurlBetterThanHttpie.g:609:49: (iv_ruleHelpFlag= ruleHelpFlag EOF )
+            // InternalCurlBetterThanHttpie.g:610:2: iv_ruleHelpFlag= ruleHelpFlag EOF
             {
              newCompositeNode(grammarAccess.getHelpFlagRule()); 
             pushFollow(FOLLOW_1);
@@ -1985,7 +1793,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
 
     // $ANTLR start "ruleHelpFlag"
-    // InternalCurlBetterThanHttpie.g:723:1: ruleHelpFlag returns [EObject current=null] : ( () (otherlv_1= '--help' | otherlv_2= '-h' ) ) ;
+    // InternalCurlBetterThanHttpie.g:616:1: ruleHelpFlag returns [EObject current=null] : ( () (otherlv_1= '--help' | otherlv_2= '-h' ) ) ;
     public final EObject ruleHelpFlag() throws RecognitionException {
         EObject current = null;
 
@@ -1996,14 +1804,14 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
         	enterRule();
 
         try {
-            // InternalCurlBetterThanHttpie.g:729:2: ( ( () (otherlv_1= '--help' | otherlv_2= '-h' ) ) )
-            // InternalCurlBetterThanHttpie.g:730:2: ( () (otherlv_1= '--help' | otherlv_2= '-h' ) )
+            // InternalCurlBetterThanHttpie.g:622:2: ( ( () (otherlv_1= '--help' | otherlv_2= '-h' ) ) )
+            // InternalCurlBetterThanHttpie.g:623:2: ( () (otherlv_1= '--help' | otherlv_2= '-h' ) )
             {
-            // InternalCurlBetterThanHttpie.g:730:2: ( () (otherlv_1= '--help' | otherlv_2= '-h' ) )
-            // InternalCurlBetterThanHttpie.g:731:3: () (otherlv_1= '--help' | otherlv_2= '-h' )
+            // InternalCurlBetterThanHttpie.g:623:2: ( () (otherlv_1= '--help' | otherlv_2= '-h' ) )
+            // InternalCurlBetterThanHttpie.g:624:3: () (otherlv_1= '--help' | otherlv_2= '-h' )
             {
-            // InternalCurlBetterThanHttpie.g:731:3: ()
-            // InternalCurlBetterThanHttpie.g:732:4: 
+            // InternalCurlBetterThanHttpie.g:624:3: ()
+            // InternalCurlBetterThanHttpie.g:625:4: 
             {
 
             				current = forceCreateModelElement(
@@ -2013,25 +1821,25 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
             }
 
-            // InternalCurlBetterThanHttpie.g:738:3: (otherlv_1= '--help' | otherlv_2= '-h' )
-            int alt17=2;
-            int LA17_0 = input.LA(1);
+            // InternalCurlBetterThanHttpie.g:631:3: (otherlv_1= '--help' | otherlv_2= '-h' )
+            int alt14=2;
+            int LA14_0 = input.LA(1);
 
-            if ( (LA17_0==29) ) {
-                alt17=1;
+            if ( (LA14_0==29) ) {
+                alt14=1;
             }
-            else if ( (LA17_0==30) ) {
-                alt17=2;
+            else if ( (LA14_0==30) ) {
+                alt14=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 17, 0, input);
+                    new NoViableAltException("", 14, 0, input);
 
                 throw nvae;
             }
-            switch (alt17) {
+            switch (alt14) {
                 case 1 :
-                    // InternalCurlBetterThanHttpie.g:739:4: otherlv_1= '--help'
+                    // InternalCurlBetterThanHttpie.g:632:4: otherlv_1= '--help'
                     {
                     otherlv_1=(Token)match(input,29,FOLLOW_2); 
 
@@ -2041,7 +1849,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
                     }
                     break;
                 case 2 :
-                    // InternalCurlBetterThanHttpie.g:744:4: otherlv_2= '-h'
+                    // InternalCurlBetterThanHttpie.g:637:4: otherlv_2= '-h'
                     {
                     otherlv_2=(Token)match(input,30,FOLLOW_2); 
 
@@ -2076,7 +1884,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
 
     // $ANTLR start "entryRuleVersionFlag"
-    // InternalCurlBetterThanHttpie.g:753:1: entryRuleVersionFlag returns [EObject current=null] : iv_ruleVersionFlag= ruleVersionFlag EOF ;
+    // InternalCurlBetterThanHttpie.g:646:1: entryRuleVersionFlag returns [EObject current=null] : iv_ruleVersionFlag= ruleVersionFlag EOF ;
     public final EObject entryRuleVersionFlag() throws RecognitionException {
         EObject current = null;
 
@@ -2084,8 +1892,8 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
 
         try {
-            // InternalCurlBetterThanHttpie.g:753:52: (iv_ruleVersionFlag= ruleVersionFlag EOF )
-            // InternalCurlBetterThanHttpie.g:754:2: iv_ruleVersionFlag= ruleVersionFlag EOF
+            // InternalCurlBetterThanHttpie.g:646:52: (iv_ruleVersionFlag= ruleVersionFlag EOF )
+            // InternalCurlBetterThanHttpie.g:647:2: iv_ruleVersionFlag= ruleVersionFlag EOF
             {
              newCompositeNode(grammarAccess.getVersionFlagRule()); 
             pushFollow(FOLLOW_1);
@@ -2112,7 +1920,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
 
     // $ANTLR start "ruleVersionFlag"
-    // InternalCurlBetterThanHttpie.g:760:1: ruleVersionFlag returns [EObject current=null] : ( () otherlv_1= '--version' ) ;
+    // InternalCurlBetterThanHttpie.g:653:1: ruleVersionFlag returns [EObject current=null] : ( () otherlv_1= '--version' ) ;
     public final EObject ruleVersionFlag() throws RecognitionException {
         EObject current = null;
 
@@ -2122,14 +1930,14 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
         	enterRule();
 
         try {
-            // InternalCurlBetterThanHttpie.g:766:2: ( ( () otherlv_1= '--version' ) )
-            // InternalCurlBetterThanHttpie.g:767:2: ( () otherlv_1= '--version' )
+            // InternalCurlBetterThanHttpie.g:659:2: ( ( () otherlv_1= '--version' ) )
+            // InternalCurlBetterThanHttpie.g:660:2: ( () otherlv_1= '--version' )
             {
-            // InternalCurlBetterThanHttpie.g:767:2: ( () otherlv_1= '--version' )
-            // InternalCurlBetterThanHttpie.g:768:3: () otherlv_1= '--version'
+            // InternalCurlBetterThanHttpie.g:660:2: ( () otherlv_1= '--version' )
+            // InternalCurlBetterThanHttpie.g:661:3: () otherlv_1= '--version'
             {
-            // InternalCurlBetterThanHttpie.g:768:3: ()
-            // InternalCurlBetterThanHttpie.g:769:4: 
+            // InternalCurlBetterThanHttpie.g:661:3: ()
+            // InternalCurlBetterThanHttpie.g:662:4: 
             {
 
             				current = forceCreateModelElement(
@@ -2166,7 +1974,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
 
     // $ANTLR start "entryRuleVerboseFlag"
-    // InternalCurlBetterThanHttpie.g:783:1: entryRuleVerboseFlag returns [EObject current=null] : iv_ruleVerboseFlag= ruleVerboseFlag EOF ;
+    // InternalCurlBetterThanHttpie.g:676:1: entryRuleVerboseFlag returns [EObject current=null] : iv_ruleVerboseFlag= ruleVerboseFlag EOF ;
     public final EObject entryRuleVerboseFlag() throws RecognitionException {
         EObject current = null;
 
@@ -2174,8 +1982,8 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
 
         try {
-            // InternalCurlBetterThanHttpie.g:783:52: (iv_ruleVerboseFlag= ruleVerboseFlag EOF )
-            // InternalCurlBetterThanHttpie.g:784:2: iv_ruleVerboseFlag= ruleVerboseFlag EOF
+            // InternalCurlBetterThanHttpie.g:676:52: (iv_ruleVerboseFlag= ruleVerboseFlag EOF )
+            // InternalCurlBetterThanHttpie.g:677:2: iv_ruleVerboseFlag= ruleVerboseFlag EOF
             {
              newCompositeNode(grammarAccess.getVerboseFlagRule()); 
             pushFollow(FOLLOW_1);
@@ -2202,7 +2010,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
 
     // $ANTLR start "ruleVerboseFlag"
-    // InternalCurlBetterThanHttpie.g:790:1: ruleVerboseFlag returns [EObject current=null] : ( () (otherlv_1= '--verbose' | otherlv_2= '-v' ) ) ;
+    // InternalCurlBetterThanHttpie.g:683:1: ruleVerboseFlag returns [EObject current=null] : ( () (otherlv_1= '--verbose' | otherlv_2= '-v' ) ) ;
     public final EObject ruleVerboseFlag() throws RecognitionException {
         EObject current = null;
 
@@ -2213,14 +2021,14 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
         	enterRule();
 
         try {
-            // InternalCurlBetterThanHttpie.g:796:2: ( ( () (otherlv_1= '--verbose' | otherlv_2= '-v' ) ) )
-            // InternalCurlBetterThanHttpie.g:797:2: ( () (otherlv_1= '--verbose' | otherlv_2= '-v' ) )
+            // InternalCurlBetterThanHttpie.g:689:2: ( ( () (otherlv_1= '--verbose' | otherlv_2= '-v' ) ) )
+            // InternalCurlBetterThanHttpie.g:690:2: ( () (otherlv_1= '--verbose' | otherlv_2= '-v' ) )
             {
-            // InternalCurlBetterThanHttpie.g:797:2: ( () (otherlv_1= '--verbose' | otherlv_2= '-v' ) )
-            // InternalCurlBetterThanHttpie.g:798:3: () (otherlv_1= '--verbose' | otherlv_2= '-v' )
+            // InternalCurlBetterThanHttpie.g:690:2: ( () (otherlv_1= '--verbose' | otherlv_2= '-v' ) )
+            // InternalCurlBetterThanHttpie.g:691:3: () (otherlv_1= '--verbose' | otherlv_2= '-v' )
             {
-            // InternalCurlBetterThanHttpie.g:798:3: ()
-            // InternalCurlBetterThanHttpie.g:799:4: 
+            // InternalCurlBetterThanHttpie.g:691:3: ()
+            // InternalCurlBetterThanHttpie.g:692:4: 
             {
 
             				current = forceCreateModelElement(
@@ -2230,25 +2038,25 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
             }
 
-            // InternalCurlBetterThanHttpie.g:805:3: (otherlv_1= '--verbose' | otherlv_2= '-v' )
-            int alt18=2;
-            int LA18_0 = input.LA(1);
+            // InternalCurlBetterThanHttpie.g:698:3: (otherlv_1= '--verbose' | otherlv_2= '-v' )
+            int alt15=2;
+            int LA15_0 = input.LA(1);
 
-            if ( (LA18_0==32) ) {
-                alt18=1;
+            if ( (LA15_0==32) ) {
+                alt15=1;
             }
-            else if ( (LA18_0==33) ) {
-                alt18=2;
+            else if ( (LA15_0==33) ) {
+                alt15=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 18, 0, input);
+                    new NoViableAltException("", 15, 0, input);
 
                 throw nvae;
             }
-            switch (alt18) {
+            switch (alt15) {
                 case 1 :
-                    // InternalCurlBetterThanHttpie.g:806:4: otherlv_1= '--verbose'
+                    // InternalCurlBetterThanHttpie.g:699:4: otherlv_1= '--verbose'
                     {
                     otherlv_1=(Token)match(input,32,FOLLOW_2); 
 
@@ -2258,7 +2066,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
                     }
                     break;
                 case 2 :
-                    // InternalCurlBetterThanHttpie.g:811:4: otherlv_2= '-v'
+                    // InternalCurlBetterThanHttpie.g:704:4: otherlv_2= '-v'
                     {
                     otherlv_2=(Token)match(input,33,FOLLOW_2); 
 
@@ -2293,7 +2101,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
 
     // $ANTLR start "entryRuleTimeoutFlag"
-    // InternalCurlBetterThanHttpie.g:820:1: entryRuleTimeoutFlag returns [EObject current=null] : iv_ruleTimeoutFlag= ruleTimeoutFlag EOF ;
+    // InternalCurlBetterThanHttpie.g:713:1: entryRuleTimeoutFlag returns [EObject current=null] : iv_ruleTimeoutFlag= ruleTimeoutFlag EOF ;
     public final EObject entryRuleTimeoutFlag() throws RecognitionException {
         EObject current = null;
 
@@ -2301,8 +2109,8 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
 
         try {
-            // InternalCurlBetterThanHttpie.g:820:52: (iv_ruleTimeoutFlag= ruleTimeoutFlag EOF )
-            // InternalCurlBetterThanHttpie.g:821:2: iv_ruleTimeoutFlag= ruleTimeoutFlag EOF
+            // InternalCurlBetterThanHttpie.g:713:52: (iv_ruleTimeoutFlag= ruleTimeoutFlag EOF )
+            // InternalCurlBetterThanHttpie.g:714:2: iv_ruleTimeoutFlag= ruleTimeoutFlag EOF
             {
              newCompositeNode(grammarAccess.getTimeoutFlagRule()); 
             pushFollow(FOLLOW_1);
@@ -2329,61 +2137,23 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
 
 
     // $ANTLR start "ruleTimeoutFlag"
-    // InternalCurlBetterThanHttpie.g:827:1: ruleTimeoutFlag returns [EObject current=null] : (otherlv_0= '--timeout' this_VALUE_1= RULE_VALUE ( (lv_timeout_2_0= RULE_FLOAT ) ) ) ;
+    // InternalCurlBetterThanHttpie.g:720:1: ruleTimeoutFlag returns [EObject current=null] : otherlv_0= '--timeout' ;
     public final EObject ruleTimeoutFlag() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token this_VALUE_1=null;
-        Token lv_timeout_2_0=null;
 
 
         	enterRule();
 
         try {
-            // InternalCurlBetterThanHttpie.g:833:2: ( (otherlv_0= '--timeout' this_VALUE_1= RULE_VALUE ( (lv_timeout_2_0= RULE_FLOAT ) ) ) )
-            // InternalCurlBetterThanHttpie.g:834:2: (otherlv_0= '--timeout' this_VALUE_1= RULE_VALUE ( (lv_timeout_2_0= RULE_FLOAT ) ) )
+            // InternalCurlBetterThanHttpie.g:726:2: (otherlv_0= '--timeout' )
+            // InternalCurlBetterThanHttpie.g:727:2: otherlv_0= '--timeout'
             {
-            // InternalCurlBetterThanHttpie.g:834:2: (otherlv_0= '--timeout' this_VALUE_1= RULE_VALUE ( (lv_timeout_2_0= RULE_FLOAT ) ) )
-            // InternalCurlBetterThanHttpie.g:835:3: otherlv_0= '--timeout' this_VALUE_1= RULE_VALUE ( (lv_timeout_2_0= RULE_FLOAT ) )
-            {
-            otherlv_0=(Token)match(input,34,FOLLOW_6); 
+            otherlv_0=(Token)match(input,34,FOLLOW_2); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getTimeoutFlagAccess().getTimeoutKeyword_0());
-            		
-            this_VALUE_1=(Token)match(input,RULE_VALUE,FOLLOW_15); 
-
-            			newLeafNode(this_VALUE_1, grammarAccess.getTimeoutFlagAccess().getVALUETerminalRuleCall_1());
-            		
-            // InternalCurlBetterThanHttpie.g:843:3: ( (lv_timeout_2_0= RULE_FLOAT ) )
-            // InternalCurlBetterThanHttpie.g:844:4: (lv_timeout_2_0= RULE_FLOAT )
-            {
-            // InternalCurlBetterThanHttpie.g:844:4: (lv_timeout_2_0= RULE_FLOAT )
-            // InternalCurlBetterThanHttpie.g:845:5: lv_timeout_2_0= RULE_FLOAT
-            {
-            lv_timeout_2_0=(Token)match(input,RULE_FLOAT,FOLLOW_2); 
-
-            					newLeafNode(lv_timeout_2_0, grammarAccess.getTimeoutFlagAccess().getTimeoutFLOATTerminalRuleCall_2_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getTimeoutFlagRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"timeout",
-            						lv_timeout_2_0,
-            						"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.FLOAT");
-            				
-
-            }
-
-
-            }
-
-
-            }
-
+            		newLeafNode(otherlv_0, grammarAccess.getTimeoutFlagAccess().getTimeoutKeyword());
+            	
 
             }
 
@@ -2402,144 +2172,6 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
     }
     // $ANTLR end "ruleTimeoutFlag"
 
-
-    // $ANTLR start "ruleMethod"
-    // InternalCurlBetterThanHttpie.g:865:1: ruleMethod returns [Enumerator current=null] : ( (enumLiteral_0= 'GET' ) | (enumLiteral_1= 'POST' ) | (enumLiteral_2= 'PUT' ) | (enumLiteral_3= 'DELETE' ) ) ;
-    public final Enumerator ruleMethod() throws RecognitionException {
-        Enumerator current = null;
-
-        Token enumLiteral_0=null;
-        Token enumLiteral_1=null;
-        Token enumLiteral_2=null;
-        Token enumLiteral_3=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalCurlBetterThanHttpie.g:871:2: ( ( (enumLiteral_0= 'GET' ) | (enumLiteral_1= 'POST' ) | (enumLiteral_2= 'PUT' ) | (enumLiteral_3= 'DELETE' ) ) )
-            // InternalCurlBetterThanHttpie.g:872:2: ( (enumLiteral_0= 'GET' ) | (enumLiteral_1= 'POST' ) | (enumLiteral_2= 'PUT' ) | (enumLiteral_3= 'DELETE' ) )
-            {
-            // InternalCurlBetterThanHttpie.g:872:2: ( (enumLiteral_0= 'GET' ) | (enumLiteral_1= 'POST' ) | (enumLiteral_2= 'PUT' ) | (enumLiteral_3= 'DELETE' ) )
-            int alt19=4;
-            switch ( input.LA(1) ) {
-            case 35:
-                {
-                alt19=1;
-                }
-                break;
-            case 36:
-                {
-                alt19=2;
-                }
-                break;
-            case 37:
-                {
-                alt19=3;
-                }
-                break;
-            case 38:
-                {
-                alt19=4;
-                }
-                break;
-            default:
-                NoViableAltException nvae =
-                    new NoViableAltException("", 19, 0, input);
-
-                throw nvae;
-            }
-
-            switch (alt19) {
-                case 1 :
-                    // InternalCurlBetterThanHttpie.g:873:3: (enumLiteral_0= 'GET' )
-                    {
-                    // InternalCurlBetterThanHttpie.g:873:3: (enumLiteral_0= 'GET' )
-                    // InternalCurlBetterThanHttpie.g:874:4: enumLiteral_0= 'GET'
-                    {
-                    enumLiteral_0=(Token)match(input,35,FOLLOW_2); 
-
-                    				current = grammarAccess.getMethodAccess().getGETEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_0, grammarAccess.getMethodAccess().getGETEnumLiteralDeclaration_0());
-                    			
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalCurlBetterThanHttpie.g:881:3: (enumLiteral_1= 'POST' )
-                    {
-                    // InternalCurlBetterThanHttpie.g:881:3: (enumLiteral_1= 'POST' )
-                    // InternalCurlBetterThanHttpie.g:882:4: enumLiteral_1= 'POST'
-                    {
-                    enumLiteral_1=(Token)match(input,36,FOLLOW_2); 
-
-                    				current = grammarAccess.getMethodAccess().getPOSTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_1, grammarAccess.getMethodAccess().getPOSTEnumLiteralDeclaration_1());
-                    			
-
-                    }
-
-
-                    }
-                    break;
-                case 3 :
-                    // InternalCurlBetterThanHttpie.g:889:3: (enumLiteral_2= 'PUT' )
-                    {
-                    // InternalCurlBetterThanHttpie.g:889:3: (enumLiteral_2= 'PUT' )
-                    // InternalCurlBetterThanHttpie.g:890:4: enumLiteral_2= 'PUT'
-                    {
-                    enumLiteral_2=(Token)match(input,37,FOLLOW_2); 
-
-                    				current = grammarAccess.getMethodAccess().getPUTEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_2, grammarAccess.getMethodAccess().getPUTEnumLiteralDeclaration_2());
-                    			
-
-                    }
-
-
-                    }
-                    break;
-                case 4 :
-                    // InternalCurlBetterThanHttpie.g:897:3: (enumLiteral_3= 'DELETE' )
-                    {
-                    // InternalCurlBetterThanHttpie.g:897:3: (enumLiteral_3= 'DELETE' )
-                    // InternalCurlBetterThanHttpie.g:898:4: enumLiteral_3= 'DELETE'
-                    {
-                    enumLiteral_3=(Token)match(input,38,FOLLOW_2); 
-
-                    				current = grammarAccess.getMethodAccess().getDELETEEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_3, grammarAccess.getMethodAccess().getDELETEEnumLiteralDeclaration_3());
-                    			
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleMethod"
-
     // Delegated rules
 
 
@@ -2548,17 +2180,13 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalAntlrPar
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x00000007FB1FF000L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000007800000000L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x00000007FE3FE000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000400010L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000200002L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000004200002L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000004000002L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000000062L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000000040L});
 
 }
