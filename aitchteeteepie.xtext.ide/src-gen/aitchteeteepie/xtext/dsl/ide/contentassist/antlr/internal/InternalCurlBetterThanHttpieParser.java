@@ -22,8 +22,10 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_WS", "RULE_BASIC_STRING", "RULE_STRING_UP", "RULE_DIGIT", "RULE_LETTER", "RULE_SPECIAL_UP", "RULE_INT", "RULE_FLOAT", "'--timeout'", "'--header'", "'-t'", "'--body'", "'-b'", "'--json'", "'-j'", "'--form'", "'-f'", "'='", "'--auth'", "'-a'", "'--download'", "'-d'", "'--help'", "'-h'", "'--verbose'", "'-v'", "'http'", "'--proxy'", "':'", "'://'", "'--version'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_WS", "RULE_STRING", "RULE_FLOAT", "RULE_BOOLEAN", "RULE_DIGIT", "RULE_LETTER", "RULE_SPECIAL", "RULE_INT", "'--header'", "'-t'", "'--body'", "'-b'", "'--json'", "'-j'", "'--form'", "'-f'", "'='", "'--auth'", "'-a'", "'--download'", "'-d'", "'--help'", "'-h'", "'--verbose'", "'-v'", "'http'", "'--proxy'", "':'", "'--version'", "'--timeout'"
     };
+    public static final int RULE_BOOLEAN=7;
+    public static final int RULE_STRING=5;
     public static final int T__19=19;
     public static final int T__15=15;
     public static final int T__16=16;
@@ -31,27 +33,24 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
     public static final int T__18=18;
     public static final int T__33=33;
     public static final int T__12=12;
-    public static final int T__34=34;
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int EOF=-1;
     public static final int T__30=30;
     public static final int T__31=31;
     public static final int T__32=32;
-    public static final int RULE_BASIC_STRING=5;
-    public static final int RULE_SPECIAL_UP=9;
     public static final int RULE_WS=4;
-    public static final int RULE_DIGIT=7;
-    public static final int RULE_LETTER=8;
+    public static final int RULE_DIGIT=8;
+    public static final int RULE_SPECIAL=10;
+    public static final int RULE_LETTER=9;
     public static final int T__26=26;
     public static final int T__27=27;
     public static final int T__28=28;
-    public static final int RULE_INT=10;
+    public static final int RULE_INT=11;
     public static final int T__29=29;
     public static final int T__22=22;
-    public static final int RULE_STRING_UP=6;
     public static final int T__23=23;
-    public static final int RULE_FLOAT=11;
+    public static final int RULE_FLOAT=6;
     public static final int T__24=24;
     public static final int T__25=25;
     public static final int T__20=20;
@@ -662,31 +661,31 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "ruleAuthFlag"
-    // InternalCurlBetterThanHttpie.g:237:1: ruleAuthFlag : ( ( rule__AuthFlag__Alternatives ) ) ;
+    // InternalCurlBetterThanHttpie.g:237:1: ruleAuthFlag : ( ( rule__AuthFlag__Group__0 ) ) ;
     public final void ruleAuthFlag() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:241:2: ( ( ( rule__AuthFlag__Alternatives ) ) )
-            // InternalCurlBetterThanHttpie.g:242:2: ( ( rule__AuthFlag__Alternatives ) )
+            // InternalCurlBetterThanHttpie.g:241:2: ( ( ( rule__AuthFlag__Group__0 ) ) )
+            // InternalCurlBetterThanHttpie.g:242:2: ( ( rule__AuthFlag__Group__0 ) )
             {
-            // InternalCurlBetterThanHttpie.g:242:2: ( ( rule__AuthFlag__Alternatives ) )
-            // InternalCurlBetterThanHttpie.g:243:3: ( rule__AuthFlag__Alternatives )
+            // InternalCurlBetterThanHttpie.g:242:2: ( ( rule__AuthFlag__Group__0 ) )
+            // InternalCurlBetterThanHttpie.g:243:3: ( rule__AuthFlag__Group__0 )
             {
-             before(grammarAccess.getAuthFlagAccess().getAlternatives()); 
-            // InternalCurlBetterThanHttpie.g:244:3: ( rule__AuthFlag__Alternatives )
-            // InternalCurlBetterThanHttpie.g:244:4: rule__AuthFlag__Alternatives
+             before(grammarAccess.getAuthFlagAccess().getGroup()); 
+            // InternalCurlBetterThanHttpie.g:244:3: ( rule__AuthFlag__Group__0 )
+            // InternalCurlBetterThanHttpie.g:244:4: rule__AuthFlag__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__AuthFlag__Alternatives();
+            rule__AuthFlag__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getAuthFlagAccess().getAlternatives()); 
+             after(grammarAccess.getAuthFlagAccess().getGroup()); 
 
             }
 
@@ -1047,21 +1046,31 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "ruleTimeoutFlag"
-    // InternalCurlBetterThanHttpie.g:362:1: ruleTimeoutFlag : ( '--timeout' ) ;
+    // InternalCurlBetterThanHttpie.g:362:1: ruleTimeoutFlag : ( ( rule__TimeoutFlag__Group__0 ) ) ;
     public final void ruleTimeoutFlag() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:366:2: ( ( '--timeout' ) )
-            // InternalCurlBetterThanHttpie.g:367:2: ( '--timeout' )
+            // InternalCurlBetterThanHttpie.g:366:2: ( ( ( rule__TimeoutFlag__Group__0 ) ) )
+            // InternalCurlBetterThanHttpie.g:367:2: ( ( rule__TimeoutFlag__Group__0 ) )
             {
-            // InternalCurlBetterThanHttpie.g:367:2: ( '--timeout' )
-            // InternalCurlBetterThanHttpie.g:368:3: '--timeout'
+            // InternalCurlBetterThanHttpie.g:367:2: ( ( rule__TimeoutFlag__Group__0 ) )
+            // InternalCurlBetterThanHttpie.g:368:3: ( rule__TimeoutFlag__Group__0 )
             {
-             before(grammarAccess.getTimeoutFlagAccess().getTimeoutKeyword()); 
-            match(input,12,FOLLOW_2); 
-             after(grammarAccess.getTimeoutFlagAccess().getTimeoutKeyword()); 
+             before(grammarAccess.getTimeoutFlagAccess().getGroup()); 
+            // InternalCurlBetterThanHttpie.g:369:3: ( rule__TimeoutFlag__Group__0 )
+            // InternalCurlBetterThanHttpie.g:369:4: rule__TimeoutFlag__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__TimeoutFlag__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getTimeoutFlagAccess().getGroup()); 
 
             }
 
@@ -1093,65 +1102,65 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
             // InternalCurlBetterThanHttpie.g:381:1: ( ( ruleProxyFlag ) | ( ruleFormFlag ) | ( ruleAuthFlag ) | ( ruleDownloadFlag ) | ( ruleBodyFlag ) | ( ruleVersionFlag ) | ( ruleJsonFlag ) | ( ruleHelpFlag ) | ( ruleHeadersFlag ) | ( ruleVerboseFlag ) | ( ruleTimeoutFlag ) )
             int alt1=11;
             switch ( input.LA(1) ) {
-            case 31:
+            case 30:
                 {
                 alt1=1;
                 }
                 break;
+            case 18:
             case 19:
-            case 20:
                 {
                 alt1=2;
                 }
                 break;
+            case 21:
             case 22:
-            case 23:
                 {
                 alt1=3;
                 }
                 break;
+            case 23:
             case 24:
-            case 25:
                 {
                 alt1=4;
                 }
                 break;
+            case 14:
             case 15:
-            case 16:
                 {
                 alt1=5;
                 }
                 break;
-            case 34:
+            case 32:
                 {
                 alt1=6;
                 }
                 break;
+            case 16:
             case 17:
-            case 18:
                 {
                 alt1=7;
                 }
                 break;
+            case 25:
             case 26:
-            case 27:
                 {
                 alt1=8;
                 }
                 break;
+            case 12:
             case 13:
-            case 14:
                 {
                 alt1=9;
                 }
                 break;
+            case 27:
             case 28:
-            case 29:
                 {
                 alt1=10;
                 }
                 break;
-            case 12:
+            case 33:
                 {
                 alt1=11;
                 }
@@ -1401,10 +1410,10 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
             int alt2=2;
             int LA2_0 = input.LA(1);
 
-            if ( (LA2_0==13) ) {
+            if ( (LA2_0==12) ) {
                 alt2=1;
             }
-            else if ( (LA2_0==14) ) {
+            else if ( (LA2_0==13) ) {
                 alt2=2;
             }
             else {
@@ -1421,7 +1430,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
                     // InternalCurlBetterThanHttpie.g:458:3: '--header'
                     {
                      before(grammarAccess.getHeadersFlagAccess().getHeaderKeyword_1_0()); 
-                    match(input,13,FOLLOW_2); 
+                    match(input,12,FOLLOW_2); 
                      after(grammarAccess.getHeadersFlagAccess().getHeaderKeyword_1_0()); 
 
                     }
@@ -1436,7 +1445,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
                     // InternalCurlBetterThanHttpie.g:464:3: '-t'
                     {
                      before(grammarAccess.getHeadersFlagAccess().getTKeyword_1_1()); 
-                    match(input,14,FOLLOW_2); 
+                    match(input,13,FOLLOW_2); 
                      after(grammarAccess.getHeadersFlagAccess().getTKeyword_1_1()); 
 
                     }
@@ -1472,10 +1481,10 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
             int alt3=2;
             int LA3_0 = input.LA(1);
 
-            if ( (LA3_0==15) ) {
+            if ( (LA3_0==14) ) {
                 alt3=1;
             }
-            else if ( (LA3_0==16) ) {
+            else if ( (LA3_0==15) ) {
                 alt3=2;
             }
             else {
@@ -1492,7 +1501,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
                     // InternalCurlBetterThanHttpie.g:479:3: '--body'
                     {
                      before(grammarAccess.getBodyFlagAccess().getBodyKeyword_1_0()); 
-                    match(input,15,FOLLOW_2); 
+                    match(input,14,FOLLOW_2); 
                      after(grammarAccess.getBodyFlagAccess().getBodyKeyword_1_0()); 
 
                     }
@@ -1507,7 +1516,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
                     // InternalCurlBetterThanHttpie.g:485:3: '-b'
                     {
                      before(grammarAccess.getBodyFlagAccess().getBKeyword_1_1()); 
-                    match(input,16,FOLLOW_2); 
+                    match(input,15,FOLLOW_2); 
                      after(grammarAccess.getBodyFlagAccess().getBKeyword_1_1()); 
 
                     }
@@ -1543,10 +1552,10 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
             int alt4=2;
             int LA4_0 = input.LA(1);
 
-            if ( (LA4_0==17) ) {
+            if ( (LA4_0==16) ) {
                 alt4=1;
             }
-            else if ( (LA4_0==18) ) {
+            else if ( (LA4_0==17) ) {
                 alt4=2;
             }
             else {
@@ -1563,7 +1572,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
                     // InternalCurlBetterThanHttpie.g:500:3: '--json'
                     {
                      before(grammarAccess.getJsonFlagAccess().getJsonKeyword_1_0()); 
-                    match(input,17,FOLLOW_2); 
+                    match(input,16,FOLLOW_2); 
                      after(grammarAccess.getJsonFlagAccess().getJsonKeyword_1_0()); 
 
                     }
@@ -1578,7 +1587,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
                     // InternalCurlBetterThanHttpie.g:506:3: '-j'
                     {
                      before(grammarAccess.getJsonFlagAccess().getJKeyword_1_1()); 
-                    match(input,18,FOLLOW_2); 
+                    match(input,17,FOLLOW_2); 
                      after(grammarAccess.getJsonFlagAccess().getJKeyword_1_1()); 
 
                     }
@@ -1614,10 +1623,10 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
             int alt5=2;
             int LA5_0 = input.LA(1);
 
-            if ( (LA5_0==19) ) {
+            if ( (LA5_0==18) ) {
                 alt5=1;
             }
-            else if ( (LA5_0==20) ) {
+            else if ( (LA5_0==19) ) {
                 alt5=2;
             }
             else {
@@ -1634,7 +1643,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
                     // InternalCurlBetterThanHttpie.g:521:3: '--form'
                     {
                      before(grammarAccess.getFormFlagAccess().getFormKeyword_1_0()); 
-                    match(input,19,FOLLOW_2); 
+                    match(input,18,FOLLOW_2); 
                      after(grammarAccess.getFormFlagAccess().getFormKeyword_1_0()); 
 
                     }
@@ -1649,7 +1658,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
                     // InternalCurlBetterThanHttpie.g:527:3: '-f'
                     {
                      before(grammarAccess.getFormFlagAccess().getFKeyword_1_1()); 
-                    match(input,20,FOLLOW_2); 
+                    match(input,19,FOLLOW_2); 
                      after(grammarAccess.getFormFlagAccess().getFKeyword_1_1()); 
 
                     }
@@ -1685,7 +1694,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
             int alt6=2;
             int LA6_0 = input.LA(1);
 
-            if ( (LA6_0==21) ) {
+            if ( (LA6_0==20) ) {
                 alt6=1;
             }
             else if ( (LA6_0==RULE_WS) ) {
@@ -1705,7 +1714,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
                     // InternalCurlBetterThanHttpie.g:542:3: '='
                     {
                      before(grammarAccess.getProxyFlagAccess().getEqualsSignKeyword_1_0()); 
-                    match(input,21,FOLLOW_2); 
+                    match(input,20,FOLLOW_2); 
                      after(grammarAccess.getProxyFlagAccess().getEqualsSignKeyword_1_0()); 
 
                     }
@@ -1745,32 +1754,22 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
     // $ANTLR end "rule__ProxyFlag__Alternatives_1"
 
 
-    // $ANTLR start "rule__ProxyFlag__Alternatives_2"
-    // InternalCurlBetterThanHttpie.g:557:1: rule__ProxyFlag__Alternatives_2 : ( ( ( rule__ProxyFlag__Group_2_0__0 ) ) | ( ( rule__ProxyFlag__Group_2_1__0 ) ) );
-    public final void rule__ProxyFlag__Alternatives_2() throws RecognitionException {
+    // $ANTLR start "rule__AuthFlag__Alternatives_0"
+    // InternalCurlBetterThanHttpie.g:557:1: rule__AuthFlag__Alternatives_0 : ( ( '--auth' ) | ( '-a' ) );
+    public final void rule__AuthFlag__Alternatives_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:561:1: ( ( ( rule__ProxyFlag__Group_2_0__0 ) ) | ( ( rule__ProxyFlag__Group_2_1__0 ) ) )
+            // InternalCurlBetterThanHttpie.g:561:1: ( ( '--auth' ) | ( '-a' ) )
             int alt7=2;
             int LA7_0 = input.LA(1);
 
-            if ( (LA7_0==RULE_BASIC_STRING) ) {
-                int LA7_1 = input.LA(2);
-
-                if ( (LA7_1==33) ) {
-                    alt7=2;
-                }
-                else if ( (LA7_1==32) ) {
-                    alt7=1;
-                }
-                else {
-                    NoViableAltException nvae =
-                        new NoViableAltException("", 7, 1, input);
-
-                    throw nvae;
-                }
+            if ( (LA7_0==21) ) {
+                alt7=1;
+            }
+            else if ( (LA7_0==22) ) {
+                alt7=2;
             }
             else {
                 NoViableAltException nvae =
@@ -1780,24 +1779,14 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
             }
             switch (alt7) {
                 case 1 :
-                    // InternalCurlBetterThanHttpie.g:562:2: ( ( rule__ProxyFlag__Group_2_0__0 ) )
+                    // InternalCurlBetterThanHttpie.g:562:2: ( '--auth' )
                     {
-                    // InternalCurlBetterThanHttpie.g:562:2: ( ( rule__ProxyFlag__Group_2_0__0 ) )
-                    // InternalCurlBetterThanHttpie.g:563:3: ( rule__ProxyFlag__Group_2_0__0 )
+                    // InternalCurlBetterThanHttpie.g:562:2: ( '--auth' )
+                    // InternalCurlBetterThanHttpie.g:563:3: '--auth'
                     {
-                     before(grammarAccess.getProxyFlagAccess().getGroup_2_0()); 
-                    // InternalCurlBetterThanHttpie.g:564:3: ( rule__ProxyFlag__Group_2_0__0 )
-                    // InternalCurlBetterThanHttpie.g:564:4: rule__ProxyFlag__Group_2_0__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__ProxyFlag__Group_2_0__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getProxyFlagAccess().getGroup_2_0()); 
+                     before(grammarAccess.getAuthFlagAccess().getAuthKeyword_0_0()); 
+                    match(input,21,FOLLOW_2); 
+                     after(grammarAccess.getAuthFlagAccess().getAuthKeyword_0_0()); 
 
                     }
 
@@ -1805,24 +1794,14 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
                     }
                     break;
                 case 2 :
-                    // InternalCurlBetterThanHttpie.g:568:2: ( ( rule__ProxyFlag__Group_2_1__0 ) )
+                    // InternalCurlBetterThanHttpie.g:568:2: ( '-a' )
                     {
-                    // InternalCurlBetterThanHttpie.g:568:2: ( ( rule__ProxyFlag__Group_2_1__0 ) )
-                    // InternalCurlBetterThanHttpie.g:569:3: ( rule__ProxyFlag__Group_2_1__0 )
+                    // InternalCurlBetterThanHttpie.g:568:2: ( '-a' )
+                    // InternalCurlBetterThanHttpie.g:569:3: '-a'
                     {
-                     before(grammarAccess.getProxyFlagAccess().getGroup_2_1()); 
-                    // InternalCurlBetterThanHttpie.g:570:3: ( rule__ProxyFlag__Group_2_1__0 )
-                    // InternalCurlBetterThanHttpie.g:570:4: rule__ProxyFlag__Group_2_1__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__ProxyFlag__Group_2_1__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getProxyFlagAccess().getGroup_2_1()); 
+                     before(grammarAccess.getAuthFlagAccess().getAKeyword_0_1()); 
+                    match(input,22,FOLLOW_2); 
+                     after(grammarAccess.getAuthFlagAccess().getAKeyword_0_1()); 
 
                     }
 
@@ -1843,24 +1822,24 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
         }
         return ;
     }
-    // $ANTLR end "rule__ProxyFlag__Alternatives_2"
+    // $ANTLR end "rule__AuthFlag__Alternatives_0"
 
 
-    // $ANTLR start "rule__AuthFlag__Alternatives"
-    // InternalCurlBetterThanHttpie.g:578:1: rule__AuthFlag__Alternatives : ( ( '--auth' ) | ( '-a' ) );
-    public final void rule__AuthFlag__Alternatives() throws RecognitionException {
+    // $ANTLR start "rule__AuthFlag__Alternatives_1"
+    // InternalCurlBetterThanHttpie.g:578:1: rule__AuthFlag__Alternatives_1 : ( ( '=' ) | ( RULE_WS ) );
+    public final void rule__AuthFlag__Alternatives_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:582:1: ( ( '--auth' ) | ( '-a' ) )
+            // InternalCurlBetterThanHttpie.g:582:1: ( ( '=' ) | ( RULE_WS ) )
             int alt8=2;
             int LA8_0 = input.LA(1);
 
-            if ( (LA8_0==22) ) {
+            if ( (LA8_0==20) ) {
                 alt8=1;
             }
-            else if ( (LA8_0==23) ) {
+            else if ( (LA8_0==RULE_WS) ) {
                 alt8=2;
             }
             else {
@@ -1871,14 +1850,14 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
             }
             switch (alt8) {
                 case 1 :
-                    // InternalCurlBetterThanHttpie.g:583:2: ( '--auth' )
+                    // InternalCurlBetterThanHttpie.g:583:2: ( '=' )
                     {
-                    // InternalCurlBetterThanHttpie.g:583:2: ( '--auth' )
-                    // InternalCurlBetterThanHttpie.g:584:3: '--auth'
+                    // InternalCurlBetterThanHttpie.g:583:2: ( '=' )
+                    // InternalCurlBetterThanHttpie.g:584:3: '='
                     {
-                     before(grammarAccess.getAuthFlagAccess().getAuthKeyword_0()); 
-                    match(input,22,FOLLOW_2); 
-                     after(grammarAccess.getAuthFlagAccess().getAuthKeyword_0()); 
+                     before(grammarAccess.getAuthFlagAccess().getEqualsSignKeyword_1_0()); 
+                    match(input,20,FOLLOW_2); 
+                     after(grammarAccess.getAuthFlagAccess().getEqualsSignKeyword_1_0()); 
 
                     }
 
@@ -1886,14 +1865,14 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
                     }
                     break;
                 case 2 :
-                    // InternalCurlBetterThanHttpie.g:589:2: ( '-a' )
+                    // InternalCurlBetterThanHttpie.g:589:2: ( RULE_WS )
                     {
-                    // InternalCurlBetterThanHttpie.g:589:2: ( '-a' )
-                    // InternalCurlBetterThanHttpie.g:590:3: '-a'
+                    // InternalCurlBetterThanHttpie.g:589:2: ( RULE_WS )
+                    // InternalCurlBetterThanHttpie.g:590:3: RULE_WS
                     {
-                     before(grammarAccess.getAuthFlagAccess().getAKeyword_1()); 
-                    match(input,23,FOLLOW_2); 
-                     after(grammarAccess.getAuthFlagAccess().getAKeyword_1()); 
+                     before(grammarAccess.getAuthFlagAccess().getWSTerminalRuleCall_1_1()); 
+                    match(input,RULE_WS,FOLLOW_2); 
+                     after(grammarAccess.getAuthFlagAccess().getWSTerminalRuleCall_1_1()); 
 
                     }
 
@@ -1914,7 +1893,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
         }
         return ;
     }
-    // $ANTLR end "rule__AuthFlag__Alternatives"
+    // $ANTLR end "rule__AuthFlag__Alternatives_1"
 
 
     // $ANTLR start "rule__DownloadFlag__Alternatives_1"
@@ -1928,10 +1907,10 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
             int alt9=2;
             int LA9_0 = input.LA(1);
 
-            if ( (LA9_0==24) ) {
+            if ( (LA9_0==23) ) {
                 alt9=1;
             }
-            else if ( (LA9_0==25) ) {
+            else if ( (LA9_0==24) ) {
                 alt9=2;
             }
             else {
@@ -1948,7 +1927,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
                     // InternalCurlBetterThanHttpie.g:605:3: '--download'
                     {
                      before(grammarAccess.getDownloadFlagAccess().getDownloadKeyword_1_0()); 
-                    match(input,24,FOLLOW_2); 
+                    match(input,23,FOLLOW_2); 
                      after(grammarAccess.getDownloadFlagAccess().getDownloadKeyword_1_0()); 
 
                     }
@@ -1963,7 +1942,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
                     // InternalCurlBetterThanHttpie.g:611:3: '-d'
                     {
                      before(grammarAccess.getDownloadFlagAccess().getDKeyword_1_1()); 
-                    match(input,25,FOLLOW_2); 
+                    match(input,24,FOLLOW_2); 
                      after(grammarAccess.getDownloadFlagAccess().getDKeyword_1_1()); 
 
                     }
@@ -1999,10 +1978,10 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
             int alt10=2;
             int LA10_0 = input.LA(1);
 
-            if ( (LA10_0==26) ) {
+            if ( (LA10_0==25) ) {
                 alt10=1;
             }
-            else if ( (LA10_0==27) ) {
+            else if ( (LA10_0==26) ) {
                 alt10=2;
             }
             else {
@@ -2019,7 +1998,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
                     // InternalCurlBetterThanHttpie.g:626:3: '--help'
                     {
                      before(grammarAccess.getHelpFlagAccess().getHelpKeyword_1_0()); 
-                    match(input,26,FOLLOW_2); 
+                    match(input,25,FOLLOW_2); 
                      after(grammarAccess.getHelpFlagAccess().getHelpKeyword_1_0()); 
 
                     }
@@ -2034,7 +2013,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
                     // InternalCurlBetterThanHttpie.g:632:3: '-h'
                     {
                      before(grammarAccess.getHelpFlagAccess().getHKeyword_1_1()); 
-                    match(input,27,FOLLOW_2); 
+                    match(input,26,FOLLOW_2); 
                      after(grammarAccess.getHelpFlagAccess().getHKeyword_1_1()); 
 
                     }
@@ -2070,10 +2049,10 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
             int alt11=2;
             int LA11_0 = input.LA(1);
 
-            if ( (LA11_0==28) ) {
+            if ( (LA11_0==27) ) {
                 alt11=1;
             }
-            else if ( (LA11_0==29) ) {
+            else if ( (LA11_0==28) ) {
                 alt11=2;
             }
             else {
@@ -2090,7 +2069,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
                     // InternalCurlBetterThanHttpie.g:647:3: '--verbose'
                     {
                      before(grammarAccess.getVerboseFlagAccess().getVerboseKeyword_1_0()); 
-                    match(input,28,FOLLOW_2); 
+                    match(input,27,FOLLOW_2); 
                      after(grammarAccess.getVerboseFlagAccess().getVerboseKeyword_1_0()); 
 
                     }
@@ -2105,7 +2084,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
                     // InternalCurlBetterThanHttpie.g:653:3: '-v'
                     {
                      before(grammarAccess.getVerboseFlagAccess().getVKeyword_1_1()); 
-                    match(input,29,FOLLOW_2); 
+                    match(input,28,FOLLOW_2); 
                      after(grammarAccess.getVerboseFlagAccess().getVKeyword_1_1()); 
 
                     }
@@ -2130,15 +2109,86 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
     // $ANTLR end "rule__VerboseFlag__Alternatives_1"
 
 
+    // $ANTLR start "rule__TimeoutFlag__Alternatives_1"
+    // InternalCurlBetterThanHttpie.g:662:1: rule__TimeoutFlag__Alternatives_1 : ( ( '=' ) | ( RULE_WS ) );
+    public final void rule__TimeoutFlag__Alternatives_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCurlBetterThanHttpie.g:666:1: ( ( '=' ) | ( RULE_WS ) )
+            int alt12=2;
+            int LA12_0 = input.LA(1);
+
+            if ( (LA12_0==20) ) {
+                alt12=1;
+            }
+            else if ( (LA12_0==RULE_WS) ) {
+                alt12=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 12, 0, input);
+
+                throw nvae;
+            }
+            switch (alt12) {
+                case 1 :
+                    // InternalCurlBetterThanHttpie.g:667:2: ( '=' )
+                    {
+                    // InternalCurlBetterThanHttpie.g:667:2: ( '=' )
+                    // InternalCurlBetterThanHttpie.g:668:3: '='
+                    {
+                     before(grammarAccess.getTimeoutFlagAccess().getEqualsSignKeyword_1_0()); 
+                    match(input,20,FOLLOW_2); 
+                     after(grammarAccess.getTimeoutFlagAccess().getEqualsSignKeyword_1_0()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalCurlBetterThanHttpie.g:673:2: ( RULE_WS )
+                    {
+                    // InternalCurlBetterThanHttpie.g:673:2: ( RULE_WS )
+                    // InternalCurlBetterThanHttpie.g:674:3: RULE_WS
+                    {
+                     before(grammarAccess.getTimeoutFlagAccess().getWSTerminalRuleCall_1_1()); 
+                    match(input,RULE_WS,FOLLOW_2); 
+                     after(grammarAccess.getTimeoutFlagAccess().getWSTerminalRuleCall_1_1()); 
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__TimeoutFlag__Alternatives_1"
+
+
     // $ANTLR start "rule__CommandLineInterface__Group__0"
-    // InternalCurlBetterThanHttpie.g:662:1: rule__CommandLineInterface__Group__0 : rule__CommandLineInterface__Group__0__Impl rule__CommandLineInterface__Group__1 ;
+    // InternalCurlBetterThanHttpie.g:683:1: rule__CommandLineInterface__Group__0 : rule__CommandLineInterface__Group__0__Impl rule__CommandLineInterface__Group__1 ;
     public final void rule__CommandLineInterface__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:666:1: ( rule__CommandLineInterface__Group__0__Impl rule__CommandLineInterface__Group__1 )
-            // InternalCurlBetterThanHttpie.g:667:2: rule__CommandLineInterface__Group__0__Impl rule__CommandLineInterface__Group__1
+            // InternalCurlBetterThanHttpie.g:687:1: ( rule__CommandLineInterface__Group__0__Impl rule__CommandLineInterface__Group__1 )
+            // InternalCurlBetterThanHttpie.g:688:2: rule__CommandLineInterface__Group__0__Impl rule__CommandLineInterface__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__CommandLineInterface__Group__0__Impl();
@@ -2169,21 +2219,21 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__CommandLineInterface__Group__0__Impl"
-    // InternalCurlBetterThanHttpie.g:674:1: rule__CommandLineInterface__Group__0__Impl : ( () ) ;
+    // InternalCurlBetterThanHttpie.g:695:1: rule__CommandLineInterface__Group__0__Impl : ( () ) ;
     public final void rule__CommandLineInterface__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:678:1: ( ( () ) )
-            // InternalCurlBetterThanHttpie.g:679:1: ( () )
+            // InternalCurlBetterThanHttpie.g:699:1: ( ( () ) )
+            // InternalCurlBetterThanHttpie.g:700:1: ( () )
             {
-            // InternalCurlBetterThanHttpie.g:679:1: ( () )
-            // InternalCurlBetterThanHttpie.g:680:2: ()
+            // InternalCurlBetterThanHttpie.g:700:1: ( () )
+            // InternalCurlBetterThanHttpie.g:701:2: ()
             {
              before(grammarAccess.getCommandLineInterfaceAccess().getCommandLineInterfaceAction_0()); 
-            // InternalCurlBetterThanHttpie.g:681:2: ()
-            // InternalCurlBetterThanHttpie.g:681:3: 
+            // InternalCurlBetterThanHttpie.g:702:2: ()
+            // InternalCurlBetterThanHttpie.g:702:3: 
             {
             }
 
@@ -2206,14 +2256,14 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__CommandLineInterface__Group__1"
-    // InternalCurlBetterThanHttpie.g:689:1: rule__CommandLineInterface__Group__1 : rule__CommandLineInterface__Group__1__Impl rule__CommandLineInterface__Group__2 ;
+    // InternalCurlBetterThanHttpie.g:710:1: rule__CommandLineInterface__Group__1 : rule__CommandLineInterface__Group__1__Impl rule__CommandLineInterface__Group__2 ;
     public final void rule__CommandLineInterface__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:693:1: ( rule__CommandLineInterface__Group__1__Impl rule__CommandLineInterface__Group__2 )
-            // InternalCurlBetterThanHttpie.g:694:2: rule__CommandLineInterface__Group__1__Impl rule__CommandLineInterface__Group__2
+            // InternalCurlBetterThanHttpie.g:714:1: ( rule__CommandLineInterface__Group__1__Impl rule__CommandLineInterface__Group__2 )
+            // InternalCurlBetterThanHttpie.g:715:2: rule__CommandLineInterface__Group__1__Impl rule__CommandLineInterface__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__CommandLineInterface__Group__1__Impl();
@@ -2244,20 +2294,20 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__CommandLineInterface__Group__1__Impl"
-    // InternalCurlBetterThanHttpie.g:701:1: rule__CommandLineInterface__Group__1__Impl : ( 'http' ) ;
+    // InternalCurlBetterThanHttpie.g:722:1: rule__CommandLineInterface__Group__1__Impl : ( 'http' ) ;
     public final void rule__CommandLineInterface__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:705:1: ( ( 'http' ) )
-            // InternalCurlBetterThanHttpie.g:706:1: ( 'http' )
+            // InternalCurlBetterThanHttpie.g:726:1: ( ( 'http' ) )
+            // InternalCurlBetterThanHttpie.g:727:1: ( 'http' )
             {
-            // InternalCurlBetterThanHttpie.g:706:1: ( 'http' )
-            // InternalCurlBetterThanHttpie.g:707:2: 'http'
+            // InternalCurlBetterThanHttpie.g:727:1: ( 'http' )
+            // InternalCurlBetterThanHttpie.g:728:2: 'http'
             {
              before(grammarAccess.getCommandLineInterfaceAccess().getHttpKeyword_1()); 
-            match(input,30,FOLLOW_2); 
+            match(input,29,FOLLOW_2); 
              after(grammarAccess.getCommandLineInterfaceAccess().getHttpKeyword_1()); 
 
             }
@@ -2281,14 +2331,14 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__CommandLineInterface__Group__2"
-    // InternalCurlBetterThanHttpie.g:716:1: rule__CommandLineInterface__Group__2 : rule__CommandLineInterface__Group__2__Impl rule__CommandLineInterface__Group__3 ;
+    // InternalCurlBetterThanHttpie.g:737:1: rule__CommandLineInterface__Group__2 : rule__CommandLineInterface__Group__2__Impl rule__CommandLineInterface__Group__3 ;
     public final void rule__CommandLineInterface__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:720:1: ( rule__CommandLineInterface__Group__2__Impl rule__CommandLineInterface__Group__3 )
-            // InternalCurlBetterThanHttpie.g:721:2: rule__CommandLineInterface__Group__2__Impl rule__CommandLineInterface__Group__3
+            // InternalCurlBetterThanHttpie.g:741:1: ( rule__CommandLineInterface__Group__2__Impl rule__CommandLineInterface__Group__3 )
+            // InternalCurlBetterThanHttpie.g:742:2: rule__CommandLineInterface__Group__2__Impl rule__CommandLineInterface__Group__3
             {
             pushFollow(FOLLOW_4);
             rule__CommandLineInterface__Group__2__Impl();
@@ -2319,39 +2369,39 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__CommandLineInterface__Group__2__Impl"
-    // InternalCurlBetterThanHttpie.g:728:1: rule__CommandLineInterface__Group__2__Impl : ( ( rule__CommandLineInterface__Group_2__0 )* ) ;
+    // InternalCurlBetterThanHttpie.g:749:1: rule__CommandLineInterface__Group__2__Impl : ( ( rule__CommandLineInterface__Group_2__0 )* ) ;
     public final void rule__CommandLineInterface__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:732:1: ( ( ( rule__CommandLineInterface__Group_2__0 )* ) )
-            // InternalCurlBetterThanHttpie.g:733:1: ( ( rule__CommandLineInterface__Group_2__0 )* )
+            // InternalCurlBetterThanHttpie.g:753:1: ( ( ( rule__CommandLineInterface__Group_2__0 )* ) )
+            // InternalCurlBetterThanHttpie.g:754:1: ( ( rule__CommandLineInterface__Group_2__0 )* )
             {
-            // InternalCurlBetterThanHttpie.g:733:1: ( ( rule__CommandLineInterface__Group_2__0 )* )
-            // InternalCurlBetterThanHttpie.g:734:2: ( rule__CommandLineInterface__Group_2__0 )*
+            // InternalCurlBetterThanHttpie.g:754:1: ( ( rule__CommandLineInterface__Group_2__0 )* )
+            // InternalCurlBetterThanHttpie.g:755:2: ( rule__CommandLineInterface__Group_2__0 )*
             {
              before(grammarAccess.getCommandLineInterfaceAccess().getGroup_2()); 
-            // InternalCurlBetterThanHttpie.g:735:2: ( rule__CommandLineInterface__Group_2__0 )*
-            loop12:
+            // InternalCurlBetterThanHttpie.g:756:2: ( rule__CommandLineInterface__Group_2__0 )*
+            loop13:
             do {
-                int alt12=2;
-                int LA12_0 = input.LA(1);
+                int alt13=2;
+                int LA13_0 = input.LA(1);
 
-                if ( (LA12_0==RULE_WS) ) {
-                    int LA12_1 = input.LA(2);
+                if ( (LA13_0==RULE_WS) ) {
+                    int LA13_1 = input.LA(2);
 
-                    if ( ((LA12_1>=12 && LA12_1<=20)||(LA12_1>=22 && LA12_1<=29)||LA12_1==31||LA12_1==34) ) {
-                        alt12=1;
+                    if ( ((LA13_1>=12 && LA13_1<=19)||(LA13_1>=21 && LA13_1<=28)||LA13_1==30||(LA13_1>=32 && LA13_1<=33)) ) {
+                        alt13=1;
                     }
 
 
                 }
 
 
-                switch (alt12) {
+                switch (alt13) {
             	case 1 :
-            	    // InternalCurlBetterThanHttpie.g:735:3: rule__CommandLineInterface__Group_2__0
+            	    // InternalCurlBetterThanHttpie.g:756:3: rule__CommandLineInterface__Group_2__0
             	    {
             	    pushFollow(FOLLOW_5);
             	    rule__CommandLineInterface__Group_2__0();
@@ -2363,7 +2413,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
             	    break;
 
             	default :
-            	    break loop12;
+            	    break loop13;
                 }
             } while (true);
 
@@ -2390,14 +2440,14 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__CommandLineInterface__Group__3"
-    // InternalCurlBetterThanHttpie.g:743:1: rule__CommandLineInterface__Group__3 : rule__CommandLineInterface__Group__3__Impl ;
+    // InternalCurlBetterThanHttpie.g:764:1: rule__CommandLineInterface__Group__3 : rule__CommandLineInterface__Group__3__Impl ;
     public final void rule__CommandLineInterface__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:747:1: ( rule__CommandLineInterface__Group__3__Impl )
-            // InternalCurlBetterThanHttpie.g:748:2: rule__CommandLineInterface__Group__3__Impl
+            // InternalCurlBetterThanHttpie.g:768:1: ( rule__CommandLineInterface__Group__3__Impl )
+            // InternalCurlBetterThanHttpie.g:769:2: rule__CommandLineInterface__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__CommandLineInterface__Group__3__Impl();
@@ -2423,29 +2473,29 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__CommandLineInterface__Group__3__Impl"
-    // InternalCurlBetterThanHttpie.g:754:1: rule__CommandLineInterface__Group__3__Impl : ( ( RULE_WS )? ) ;
+    // InternalCurlBetterThanHttpie.g:775:1: rule__CommandLineInterface__Group__3__Impl : ( ( RULE_WS )? ) ;
     public final void rule__CommandLineInterface__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:758:1: ( ( ( RULE_WS )? ) )
-            // InternalCurlBetterThanHttpie.g:759:1: ( ( RULE_WS )? )
+            // InternalCurlBetterThanHttpie.g:779:1: ( ( ( RULE_WS )? ) )
+            // InternalCurlBetterThanHttpie.g:780:1: ( ( RULE_WS )? )
             {
-            // InternalCurlBetterThanHttpie.g:759:1: ( ( RULE_WS )? )
-            // InternalCurlBetterThanHttpie.g:760:2: ( RULE_WS )?
+            // InternalCurlBetterThanHttpie.g:780:1: ( ( RULE_WS )? )
+            // InternalCurlBetterThanHttpie.g:781:2: ( RULE_WS )?
             {
              before(grammarAccess.getCommandLineInterfaceAccess().getWSTerminalRuleCall_3()); 
-            // InternalCurlBetterThanHttpie.g:761:2: ( RULE_WS )?
-            int alt13=2;
-            int LA13_0 = input.LA(1);
+            // InternalCurlBetterThanHttpie.g:782:2: ( RULE_WS )?
+            int alt14=2;
+            int LA14_0 = input.LA(1);
 
-            if ( (LA13_0==RULE_WS) ) {
-                alt13=1;
+            if ( (LA14_0==RULE_WS) ) {
+                alt14=1;
             }
-            switch (alt13) {
+            switch (alt14) {
                 case 1 :
-                    // InternalCurlBetterThanHttpie.g:761:3: RULE_WS
+                    // InternalCurlBetterThanHttpie.g:782:3: RULE_WS
                     {
                     match(input,RULE_WS,FOLLOW_2); 
 
@@ -2477,14 +2527,14 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__CommandLineInterface__Group_2__0"
-    // InternalCurlBetterThanHttpie.g:770:1: rule__CommandLineInterface__Group_2__0 : rule__CommandLineInterface__Group_2__0__Impl rule__CommandLineInterface__Group_2__1 ;
+    // InternalCurlBetterThanHttpie.g:791:1: rule__CommandLineInterface__Group_2__0 : rule__CommandLineInterface__Group_2__0__Impl rule__CommandLineInterface__Group_2__1 ;
     public final void rule__CommandLineInterface__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:774:1: ( rule__CommandLineInterface__Group_2__0__Impl rule__CommandLineInterface__Group_2__1 )
-            // InternalCurlBetterThanHttpie.g:775:2: rule__CommandLineInterface__Group_2__0__Impl rule__CommandLineInterface__Group_2__1
+            // InternalCurlBetterThanHttpie.g:795:1: ( rule__CommandLineInterface__Group_2__0__Impl rule__CommandLineInterface__Group_2__1 )
+            // InternalCurlBetterThanHttpie.g:796:2: rule__CommandLineInterface__Group_2__0__Impl rule__CommandLineInterface__Group_2__1
             {
             pushFollow(FOLLOW_6);
             rule__CommandLineInterface__Group_2__0__Impl();
@@ -2515,17 +2565,17 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__CommandLineInterface__Group_2__0__Impl"
-    // InternalCurlBetterThanHttpie.g:782:1: rule__CommandLineInterface__Group_2__0__Impl : ( RULE_WS ) ;
+    // InternalCurlBetterThanHttpie.g:803:1: rule__CommandLineInterface__Group_2__0__Impl : ( RULE_WS ) ;
     public final void rule__CommandLineInterface__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:786:1: ( ( RULE_WS ) )
-            // InternalCurlBetterThanHttpie.g:787:1: ( RULE_WS )
+            // InternalCurlBetterThanHttpie.g:807:1: ( ( RULE_WS ) )
+            // InternalCurlBetterThanHttpie.g:808:1: ( RULE_WS )
             {
-            // InternalCurlBetterThanHttpie.g:787:1: ( RULE_WS )
-            // InternalCurlBetterThanHttpie.g:788:2: RULE_WS
+            // InternalCurlBetterThanHttpie.g:808:1: ( RULE_WS )
+            // InternalCurlBetterThanHttpie.g:809:2: RULE_WS
             {
              before(grammarAccess.getCommandLineInterfaceAccess().getWSTerminalRuleCall_2_0()); 
             match(input,RULE_WS,FOLLOW_2); 
@@ -2552,14 +2602,14 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__CommandLineInterface__Group_2__1"
-    // InternalCurlBetterThanHttpie.g:797:1: rule__CommandLineInterface__Group_2__1 : rule__CommandLineInterface__Group_2__1__Impl ;
+    // InternalCurlBetterThanHttpie.g:818:1: rule__CommandLineInterface__Group_2__1 : rule__CommandLineInterface__Group_2__1__Impl ;
     public final void rule__CommandLineInterface__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:801:1: ( rule__CommandLineInterface__Group_2__1__Impl )
-            // InternalCurlBetterThanHttpie.g:802:2: rule__CommandLineInterface__Group_2__1__Impl
+            // InternalCurlBetterThanHttpie.g:822:1: ( rule__CommandLineInterface__Group_2__1__Impl )
+            // InternalCurlBetterThanHttpie.g:823:2: rule__CommandLineInterface__Group_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__CommandLineInterface__Group_2__1__Impl();
@@ -2585,21 +2635,21 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__CommandLineInterface__Group_2__1__Impl"
-    // InternalCurlBetterThanHttpie.g:808:1: rule__CommandLineInterface__Group_2__1__Impl : ( ( rule__CommandLineInterface__FlagsAssignment_2_1 ) ) ;
+    // InternalCurlBetterThanHttpie.g:829:1: rule__CommandLineInterface__Group_2__1__Impl : ( ( rule__CommandLineInterface__FlagsAssignment_2_1 ) ) ;
     public final void rule__CommandLineInterface__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:812:1: ( ( ( rule__CommandLineInterface__FlagsAssignment_2_1 ) ) )
-            // InternalCurlBetterThanHttpie.g:813:1: ( ( rule__CommandLineInterface__FlagsAssignment_2_1 ) )
+            // InternalCurlBetterThanHttpie.g:833:1: ( ( ( rule__CommandLineInterface__FlagsAssignment_2_1 ) ) )
+            // InternalCurlBetterThanHttpie.g:834:1: ( ( rule__CommandLineInterface__FlagsAssignment_2_1 ) )
             {
-            // InternalCurlBetterThanHttpie.g:813:1: ( ( rule__CommandLineInterface__FlagsAssignment_2_1 ) )
-            // InternalCurlBetterThanHttpie.g:814:2: ( rule__CommandLineInterface__FlagsAssignment_2_1 )
+            // InternalCurlBetterThanHttpie.g:834:1: ( ( rule__CommandLineInterface__FlagsAssignment_2_1 ) )
+            // InternalCurlBetterThanHttpie.g:835:2: ( rule__CommandLineInterface__FlagsAssignment_2_1 )
             {
              before(grammarAccess.getCommandLineInterfaceAccess().getFlagsAssignment_2_1()); 
-            // InternalCurlBetterThanHttpie.g:815:2: ( rule__CommandLineInterface__FlagsAssignment_2_1 )
-            // InternalCurlBetterThanHttpie.g:815:3: rule__CommandLineInterface__FlagsAssignment_2_1
+            // InternalCurlBetterThanHttpie.g:836:2: ( rule__CommandLineInterface__FlagsAssignment_2_1 )
+            // InternalCurlBetterThanHttpie.g:836:3: rule__CommandLineInterface__FlagsAssignment_2_1
             {
             pushFollow(FOLLOW_2);
             rule__CommandLineInterface__FlagsAssignment_2_1();
@@ -2632,14 +2682,14 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__HeadersFlag__Group__0"
-    // InternalCurlBetterThanHttpie.g:824:1: rule__HeadersFlag__Group__0 : rule__HeadersFlag__Group__0__Impl rule__HeadersFlag__Group__1 ;
+    // InternalCurlBetterThanHttpie.g:845:1: rule__HeadersFlag__Group__0 : rule__HeadersFlag__Group__0__Impl rule__HeadersFlag__Group__1 ;
     public final void rule__HeadersFlag__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:828:1: ( rule__HeadersFlag__Group__0__Impl rule__HeadersFlag__Group__1 )
-            // InternalCurlBetterThanHttpie.g:829:2: rule__HeadersFlag__Group__0__Impl rule__HeadersFlag__Group__1
+            // InternalCurlBetterThanHttpie.g:849:1: ( rule__HeadersFlag__Group__0__Impl rule__HeadersFlag__Group__1 )
+            // InternalCurlBetterThanHttpie.g:850:2: rule__HeadersFlag__Group__0__Impl rule__HeadersFlag__Group__1
             {
             pushFollow(FOLLOW_7);
             rule__HeadersFlag__Group__0__Impl();
@@ -2670,21 +2720,21 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__HeadersFlag__Group__0__Impl"
-    // InternalCurlBetterThanHttpie.g:836:1: rule__HeadersFlag__Group__0__Impl : ( () ) ;
+    // InternalCurlBetterThanHttpie.g:857:1: rule__HeadersFlag__Group__0__Impl : ( () ) ;
     public final void rule__HeadersFlag__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:840:1: ( ( () ) )
-            // InternalCurlBetterThanHttpie.g:841:1: ( () )
+            // InternalCurlBetterThanHttpie.g:861:1: ( ( () ) )
+            // InternalCurlBetterThanHttpie.g:862:1: ( () )
             {
-            // InternalCurlBetterThanHttpie.g:841:1: ( () )
-            // InternalCurlBetterThanHttpie.g:842:2: ()
+            // InternalCurlBetterThanHttpie.g:862:1: ( () )
+            // InternalCurlBetterThanHttpie.g:863:2: ()
             {
              before(grammarAccess.getHeadersFlagAccess().getHeadersFlagAction_0()); 
-            // InternalCurlBetterThanHttpie.g:843:2: ()
-            // InternalCurlBetterThanHttpie.g:843:3: 
+            // InternalCurlBetterThanHttpie.g:864:2: ()
+            // InternalCurlBetterThanHttpie.g:864:3: 
             {
             }
 
@@ -2707,14 +2757,14 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__HeadersFlag__Group__1"
-    // InternalCurlBetterThanHttpie.g:851:1: rule__HeadersFlag__Group__1 : rule__HeadersFlag__Group__1__Impl ;
+    // InternalCurlBetterThanHttpie.g:872:1: rule__HeadersFlag__Group__1 : rule__HeadersFlag__Group__1__Impl ;
     public final void rule__HeadersFlag__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:855:1: ( rule__HeadersFlag__Group__1__Impl )
-            // InternalCurlBetterThanHttpie.g:856:2: rule__HeadersFlag__Group__1__Impl
+            // InternalCurlBetterThanHttpie.g:876:1: ( rule__HeadersFlag__Group__1__Impl )
+            // InternalCurlBetterThanHttpie.g:877:2: rule__HeadersFlag__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__HeadersFlag__Group__1__Impl();
@@ -2740,21 +2790,21 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__HeadersFlag__Group__1__Impl"
-    // InternalCurlBetterThanHttpie.g:862:1: rule__HeadersFlag__Group__1__Impl : ( ( rule__HeadersFlag__Alternatives_1 ) ) ;
+    // InternalCurlBetterThanHttpie.g:883:1: rule__HeadersFlag__Group__1__Impl : ( ( rule__HeadersFlag__Alternatives_1 ) ) ;
     public final void rule__HeadersFlag__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:866:1: ( ( ( rule__HeadersFlag__Alternatives_1 ) ) )
-            // InternalCurlBetterThanHttpie.g:867:1: ( ( rule__HeadersFlag__Alternatives_1 ) )
+            // InternalCurlBetterThanHttpie.g:887:1: ( ( ( rule__HeadersFlag__Alternatives_1 ) ) )
+            // InternalCurlBetterThanHttpie.g:888:1: ( ( rule__HeadersFlag__Alternatives_1 ) )
             {
-            // InternalCurlBetterThanHttpie.g:867:1: ( ( rule__HeadersFlag__Alternatives_1 ) )
-            // InternalCurlBetterThanHttpie.g:868:2: ( rule__HeadersFlag__Alternatives_1 )
+            // InternalCurlBetterThanHttpie.g:888:1: ( ( rule__HeadersFlag__Alternatives_1 ) )
+            // InternalCurlBetterThanHttpie.g:889:2: ( rule__HeadersFlag__Alternatives_1 )
             {
              before(grammarAccess.getHeadersFlagAccess().getAlternatives_1()); 
-            // InternalCurlBetterThanHttpie.g:869:2: ( rule__HeadersFlag__Alternatives_1 )
-            // InternalCurlBetterThanHttpie.g:869:3: rule__HeadersFlag__Alternatives_1
+            // InternalCurlBetterThanHttpie.g:890:2: ( rule__HeadersFlag__Alternatives_1 )
+            // InternalCurlBetterThanHttpie.g:890:3: rule__HeadersFlag__Alternatives_1
             {
             pushFollow(FOLLOW_2);
             rule__HeadersFlag__Alternatives_1();
@@ -2787,14 +2837,14 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__BodyFlag__Group__0"
-    // InternalCurlBetterThanHttpie.g:878:1: rule__BodyFlag__Group__0 : rule__BodyFlag__Group__0__Impl rule__BodyFlag__Group__1 ;
+    // InternalCurlBetterThanHttpie.g:899:1: rule__BodyFlag__Group__0 : rule__BodyFlag__Group__0__Impl rule__BodyFlag__Group__1 ;
     public final void rule__BodyFlag__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:882:1: ( rule__BodyFlag__Group__0__Impl rule__BodyFlag__Group__1 )
-            // InternalCurlBetterThanHttpie.g:883:2: rule__BodyFlag__Group__0__Impl rule__BodyFlag__Group__1
+            // InternalCurlBetterThanHttpie.g:903:1: ( rule__BodyFlag__Group__0__Impl rule__BodyFlag__Group__1 )
+            // InternalCurlBetterThanHttpie.g:904:2: rule__BodyFlag__Group__0__Impl rule__BodyFlag__Group__1
             {
             pushFollow(FOLLOW_8);
             rule__BodyFlag__Group__0__Impl();
@@ -2825,21 +2875,21 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__BodyFlag__Group__0__Impl"
-    // InternalCurlBetterThanHttpie.g:890:1: rule__BodyFlag__Group__0__Impl : ( () ) ;
+    // InternalCurlBetterThanHttpie.g:911:1: rule__BodyFlag__Group__0__Impl : ( () ) ;
     public final void rule__BodyFlag__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:894:1: ( ( () ) )
-            // InternalCurlBetterThanHttpie.g:895:1: ( () )
+            // InternalCurlBetterThanHttpie.g:915:1: ( ( () ) )
+            // InternalCurlBetterThanHttpie.g:916:1: ( () )
             {
-            // InternalCurlBetterThanHttpie.g:895:1: ( () )
-            // InternalCurlBetterThanHttpie.g:896:2: ()
+            // InternalCurlBetterThanHttpie.g:916:1: ( () )
+            // InternalCurlBetterThanHttpie.g:917:2: ()
             {
              before(grammarAccess.getBodyFlagAccess().getBodyFlagAction_0()); 
-            // InternalCurlBetterThanHttpie.g:897:2: ()
-            // InternalCurlBetterThanHttpie.g:897:3: 
+            // InternalCurlBetterThanHttpie.g:918:2: ()
+            // InternalCurlBetterThanHttpie.g:918:3: 
             {
             }
 
@@ -2862,14 +2912,14 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__BodyFlag__Group__1"
-    // InternalCurlBetterThanHttpie.g:905:1: rule__BodyFlag__Group__1 : rule__BodyFlag__Group__1__Impl ;
+    // InternalCurlBetterThanHttpie.g:926:1: rule__BodyFlag__Group__1 : rule__BodyFlag__Group__1__Impl ;
     public final void rule__BodyFlag__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:909:1: ( rule__BodyFlag__Group__1__Impl )
-            // InternalCurlBetterThanHttpie.g:910:2: rule__BodyFlag__Group__1__Impl
+            // InternalCurlBetterThanHttpie.g:930:1: ( rule__BodyFlag__Group__1__Impl )
+            // InternalCurlBetterThanHttpie.g:931:2: rule__BodyFlag__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__BodyFlag__Group__1__Impl();
@@ -2895,21 +2945,21 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__BodyFlag__Group__1__Impl"
-    // InternalCurlBetterThanHttpie.g:916:1: rule__BodyFlag__Group__1__Impl : ( ( rule__BodyFlag__Alternatives_1 ) ) ;
+    // InternalCurlBetterThanHttpie.g:937:1: rule__BodyFlag__Group__1__Impl : ( ( rule__BodyFlag__Alternatives_1 ) ) ;
     public final void rule__BodyFlag__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:920:1: ( ( ( rule__BodyFlag__Alternatives_1 ) ) )
-            // InternalCurlBetterThanHttpie.g:921:1: ( ( rule__BodyFlag__Alternatives_1 ) )
+            // InternalCurlBetterThanHttpie.g:941:1: ( ( ( rule__BodyFlag__Alternatives_1 ) ) )
+            // InternalCurlBetterThanHttpie.g:942:1: ( ( rule__BodyFlag__Alternatives_1 ) )
             {
-            // InternalCurlBetterThanHttpie.g:921:1: ( ( rule__BodyFlag__Alternatives_1 ) )
-            // InternalCurlBetterThanHttpie.g:922:2: ( rule__BodyFlag__Alternatives_1 )
+            // InternalCurlBetterThanHttpie.g:942:1: ( ( rule__BodyFlag__Alternatives_1 ) )
+            // InternalCurlBetterThanHttpie.g:943:2: ( rule__BodyFlag__Alternatives_1 )
             {
              before(grammarAccess.getBodyFlagAccess().getAlternatives_1()); 
-            // InternalCurlBetterThanHttpie.g:923:2: ( rule__BodyFlag__Alternatives_1 )
-            // InternalCurlBetterThanHttpie.g:923:3: rule__BodyFlag__Alternatives_1
+            // InternalCurlBetterThanHttpie.g:944:2: ( rule__BodyFlag__Alternatives_1 )
+            // InternalCurlBetterThanHttpie.g:944:3: rule__BodyFlag__Alternatives_1
             {
             pushFollow(FOLLOW_2);
             rule__BodyFlag__Alternatives_1();
@@ -2942,14 +2992,14 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__JsonFlag__Group__0"
-    // InternalCurlBetterThanHttpie.g:932:1: rule__JsonFlag__Group__0 : rule__JsonFlag__Group__0__Impl rule__JsonFlag__Group__1 ;
+    // InternalCurlBetterThanHttpie.g:953:1: rule__JsonFlag__Group__0 : rule__JsonFlag__Group__0__Impl rule__JsonFlag__Group__1 ;
     public final void rule__JsonFlag__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:936:1: ( rule__JsonFlag__Group__0__Impl rule__JsonFlag__Group__1 )
-            // InternalCurlBetterThanHttpie.g:937:2: rule__JsonFlag__Group__0__Impl rule__JsonFlag__Group__1
+            // InternalCurlBetterThanHttpie.g:957:1: ( rule__JsonFlag__Group__0__Impl rule__JsonFlag__Group__1 )
+            // InternalCurlBetterThanHttpie.g:958:2: rule__JsonFlag__Group__0__Impl rule__JsonFlag__Group__1
             {
             pushFollow(FOLLOW_9);
             rule__JsonFlag__Group__0__Impl();
@@ -2980,21 +3030,21 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__JsonFlag__Group__0__Impl"
-    // InternalCurlBetterThanHttpie.g:944:1: rule__JsonFlag__Group__0__Impl : ( () ) ;
+    // InternalCurlBetterThanHttpie.g:965:1: rule__JsonFlag__Group__0__Impl : ( () ) ;
     public final void rule__JsonFlag__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:948:1: ( ( () ) )
-            // InternalCurlBetterThanHttpie.g:949:1: ( () )
+            // InternalCurlBetterThanHttpie.g:969:1: ( ( () ) )
+            // InternalCurlBetterThanHttpie.g:970:1: ( () )
             {
-            // InternalCurlBetterThanHttpie.g:949:1: ( () )
-            // InternalCurlBetterThanHttpie.g:950:2: ()
+            // InternalCurlBetterThanHttpie.g:970:1: ( () )
+            // InternalCurlBetterThanHttpie.g:971:2: ()
             {
              before(grammarAccess.getJsonFlagAccess().getJsonFlagAction_0()); 
-            // InternalCurlBetterThanHttpie.g:951:2: ()
-            // InternalCurlBetterThanHttpie.g:951:3: 
+            // InternalCurlBetterThanHttpie.g:972:2: ()
+            // InternalCurlBetterThanHttpie.g:972:3: 
             {
             }
 
@@ -3017,14 +3067,14 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__JsonFlag__Group__1"
-    // InternalCurlBetterThanHttpie.g:959:1: rule__JsonFlag__Group__1 : rule__JsonFlag__Group__1__Impl ;
+    // InternalCurlBetterThanHttpie.g:980:1: rule__JsonFlag__Group__1 : rule__JsonFlag__Group__1__Impl ;
     public final void rule__JsonFlag__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:963:1: ( rule__JsonFlag__Group__1__Impl )
-            // InternalCurlBetterThanHttpie.g:964:2: rule__JsonFlag__Group__1__Impl
+            // InternalCurlBetterThanHttpie.g:984:1: ( rule__JsonFlag__Group__1__Impl )
+            // InternalCurlBetterThanHttpie.g:985:2: rule__JsonFlag__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__JsonFlag__Group__1__Impl();
@@ -3050,21 +3100,21 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__JsonFlag__Group__1__Impl"
-    // InternalCurlBetterThanHttpie.g:970:1: rule__JsonFlag__Group__1__Impl : ( ( rule__JsonFlag__Alternatives_1 ) ) ;
+    // InternalCurlBetterThanHttpie.g:991:1: rule__JsonFlag__Group__1__Impl : ( ( rule__JsonFlag__Alternatives_1 ) ) ;
     public final void rule__JsonFlag__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:974:1: ( ( ( rule__JsonFlag__Alternatives_1 ) ) )
-            // InternalCurlBetterThanHttpie.g:975:1: ( ( rule__JsonFlag__Alternatives_1 ) )
+            // InternalCurlBetterThanHttpie.g:995:1: ( ( ( rule__JsonFlag__Alternatives_1 ) ) )
+            // InternalCurlBetterThanHttpie.g:996:1: ( ( rule__JsonFlag__Alternatives_1 ) )
             {
-            // InternalCurlBetterThanHttpie.g:975:1: ( ( rule__JsonFlag__Alternatives_1 ) )
-            // InternalCurlBetterThanHttpie.g:976:2: ( rule__JsonFlag__Alternatives_1 )
+            // InternalCurlBetterThanHttpie.g:996:1: ( ( rule__JsonFlag__Alternatives_1 ) )
+            // InternalCurlBetterThanHttpie.g:997:2: ( rule__JsonFlag__Alternatives_1 )
             {
              before(grammarAccess.getJsonFlagAccess().getAlternatives_1()); 
-            // InternalCurlBetterThanHttpie.g:977:2: ( rule__JsonFlag__Alternatives_1 )
-            // InternalCurlBetterThanHttpie.g:977:3: rule__JsonFlag__Alternatives_1
+            // InternalCurlBetterThanHttpie.g:998:2: ( rule__JsonFlag__Alternatives_1 )
+            // InternalCurlBetterThanHttpie.g:998:3: rule__JsonFlag__Alternatives_1
             {
             pushFollow(FOLLOW_2);
             rule__JsonFlag__Alternatives_1();
@@ -3097,14 +3147,14 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__FormFlag__Group__0"
-    // InternalCurlBetterThanHttpie.g:986:1: rule__FormFlag__Group__0 : rule__FormFlag__Group__0__Impl rule__FormFlag__Group__1 ;
+    // InternalCurlBetterThanHttpie.g:1007:1: rule__FormFlag__Group__0 : rule__FormFlag__Group__0__Impl rule__FormFlag__Group__1 ;
     public final void rule__FormFlag__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:990:1: ( rule__FormFlag__Group__0__Impl rule__FormFlag__Group__1 )
-            // InternalCurlBetterThanHttpie.g:991:2: rule__FormFlag__Group__0__Impl rule__FormFlag__Group__1
+            // InternalCurlBetterThanHttpie.g:1011:1: ( rule__FormFlag__Group__0__Impl rule__FormFlag__Group__1 )
+            // InternalCurlBetterThanHttpie.g:1012:2: rule__FormFlag__Group__0__Impl rule__FormFlag__Group__1
             {
             pushFollow(FOLLOW_10);
             rule__FormFlag__Group__0__Impl();
@@ -3135,21 +3185,21 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__FormFlag__Group__0__Impl"
-    // InternalCurlBetterThanHttpie.g:998:1: rule__FormFlag__Group__0__Impl : ( () ) ;
+    // InternalCurlBetterThanHttpie.g:1019:1: rule__FormFlag__Group__0__Impl : ( () ) ;
     public final void rule__FormFlag__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:1002:1: ( ( () ) )
-            // InternalCurlBetterThanHttpie.g:1003:1: ( () )
+            // InternalCurlBetterThanHttpie.g:1023:1: ( ( () ) )
+            // InternalCurlBetterThanHttpie.g:1024:1: ( () )
             {
-            // InternalCurlBetterThanHttpie.g:1003:1: ( () )
-            // InternalCurlBetterThanHttpie.g:1004:2: ()
+            // InternalCurlBetterThanHttpie.g:1024:1: ( () )
+            // InternalCurlBetterThanHttpie.g:1025:2: ()
             {
              before(grammarAccess.getFormFlagAccess().getFormFlagAction_0()); 
-            // InternalCurlBetterThanHttpie.g:1005:2: ()
-            // InternalCurlBetterThanHttpie.g:1005:3: 
+            // InternalCurlBetterThanHttpie.g:1026:2: ()
+            // InternalCurlBetterThanHttpie.g:1026:3: 
             {
             }
 
@@ -3172,14 +3222,14 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__FormFlag__Group__1"
-    // InternalCurlBetterThanHttpie.g:1013:1: rule__FormFlag__Group__1 : rule__FormFlag__Group__1__Impl ;
+    // InternalCurlBetterThanHttpie.g:1034:1: rule__FormFlag__Group__1 : rule__FormFlag__Group__1__Impl ;
     public final void rule__FormFlag__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:1017:1: ( rule__FormFlag__Group__1__Impl )
-            // InternalCurlBetterThanHttpie.g:1018:2: rule__FormFlag__Group__1__Impl
+            // InternalCurlBetterThanHttpie.g:1038:1: ( rule__FormFlag__Group__1__Impl )
+            // InternalCurlBetterThanHttpie.g:1039:2: rule__FormFlag__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FormFlag__Group__1__Impl();
@@ -3205,21 +3255,21 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__FormFlag__Group__1__Impl"
-    // InternalCurlBetterThanHttpie.g:1024:1: rule__FormFlag__Group__1__Impl : ( ( rule__FormFlag__Alternatives_1 ) ) ;
+    // InternalCurlBetterThanHttpie.g:1045:1: rule__FormFlag__Group__1__Impl : ( ( rule__FormFlag__Alternatives_1 ) ) ;
     public final void rule__FormFlag__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:1028:1: ( ( ( rule__FormFlag__Alternatives_1 ) ) )
-            // InternalCurlBetterThanHttpie.g:1029:1: ( ( rule__FormFlag__Alternatives_1 ) )
+            // InternalCurlBetterThanHttpie.g:1049:1: ( ( ( rule__FormFlag__Alternatives_1 ) ) )
+            // InternalCurlBetterThanHttpie.g:1050:1: ( ( rule__FormFlag__Alternatives_1 ) )
             {
-            // InternalCurlBetterThanHttpie.g:1029:1: ( ( rule__FormFlag__Alternatives_1 ) )
-            // InternalCurlBetterThanHttpie.g:1030:2: ( rule__FormFlag__Alternatives_1 )
+            // InternalCurlBetterThanHttpie.g:1050:1: ( ( rule__FormFlag__Alternatives_1 ) )
+            // InternalCurlBetterThanHttpie.g:1051:2: ( rule__FormFlag__Alternatives_1 )
             {
              before(grammarAccess.getFormFlagAccess().getAlternatives_1()); 
-            // InternalCurlBetterThanHttpie.g:1031:2: ( rule__FormFlag__Alternatives_1 )
-            // InternalCurlBetterThanHttpie.g:1031:3: rule__FormFlag__Alternatives_1
+            // InternalCurlBetterThanHttpie.g:1052:2: ( rule__FormFlag__Alternatives_1 )
+            // InternalCurlBetterThanHttpie.g:1052:3: rule__FormFlag__Alternatives_1
             {
             pushFollow(FOLLOW_2);
             rule__FormFlag__Alternatives_1();
@@ -3252,14 +3302,14 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__ProxyFlag__Group__0"
-    // InternalCurlBetterThanHttpie.g:1040:1: rule__ProxyFlag__Group__0 : rule__ProxyFlag__Group__0__Impl rule__ProxyFlag__Group__1 ;
+    // InternalCurlBetterThanHttpie.g:1061:1: rule__ProxyFlag__Group__0 : rule__ProxyFlag__Group__0__Impl rule__ProxyFlag__Group__1 ;
     public final void rule__ProxyFlag__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:1044:1: ( rule__ProxyFlag__Group__0__Impl rule__ProxyFlag__Group__1 )
-            // InternalCurlBetterThanHttpie.g:1045:2: rule__ProxyFlag__Group__0__Impl rule__ProxyFlag__Group__1
+            // InternalCurlBetterThanHttpie.g:1065:1: ( rule__ProxyFlag__Group__0__Impl rule__ProxyFlag__Group__1 )
+            // InternalCurlBetterThanHttpie.g:1066:2: rule__ProxyFlag__Group__0__Impl rule__ProxyFlag__Group__1
             {
             pushFollow(FOLLOW_11);
             rule__ProxyFlag__Group__0__Impl();
@@ -3290,20 +3340,20 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__ProxyFlag__Group__0__Impl"
-    // InternalCurlBetterThanHttpie.g:1052:1: rule__ProxyFlag__Group__0__Impl : ( '--proxy' ) ;
+    // InternalCurlBetterThanHttpie.g:1073:1: rule__ProxyFlag__Group__0__Impl : ( '--proxy' ) ;
     public final void rule__ProxyFlag__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:1056:1: ( ( '--proxy' ) )
-            // InternalCurlBetterThanHttpie.g:1057:1: ( '--proxy' )
+            // InternalCurlBetterThanHttpie.g:1077:1: ( ( '--proxy' ) )
+            // InternalCurlBetterThanHttpie.g:1078:1: ( '--proxy' )
             {
-            // InternalCurlBetterThanHttpie.g:1057:1: ( '--proxy' )
-            // InternalCurlBetterThanHttpie.g:1058:2: '--proxy'
+            // InternalCurlBetterThanHttpie.g:1078:1: ( '--proxy' )
+            // InternalCurlBetterThanHttpie.g:1079:2: '--proxy'
             {
              before(grammarAccess.getProxyFlagAccess().getProxyKeyword_0()); 
-            match(input,31,FOLLOW_2); 
+            match(input,30,FOLLOW_2); 
              after(grammarAccess.getProxyFlagAccess().getProxyKeyword_0()); 
 
             }
@@ -3327,14 +3377,14 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__ProxyFlag__Group__1"
-    // InternalCurlBetterThanHttpie.g:1067:1: rule__ProxyFlag__Group__1 : rule__ProxyFlag__Group__1__Impl rule__ProxyFlag__Group__2 ;
+    // InternalCurlBetterThanHttpie.g:1088:1: rule__ProxyFlag__Group__1 : rule__ProxyFlag__Group__1__Impl rule__ProxyFlag__Group__2 ;
     public final void rule__ProxyFlag__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:1071:1: ( rule__ProxyFlag__Group__1__Impl rule__ProxyFlag__Group__2 )
-            // InternalCurlBetterThanHttpie.g:1072:2: rule__ProxyFlag__Group__1__Impl rule__ProxyFlag__Group__2
+            // InternalCurlBetterThanHttpie.g:1092:1: ( rule__ProxyFlag__Group__1__Impl rule__ProxyFlag__Group__2 )
+            // InternalCurlBetterThanHttpie.g:1093:2: rule__ProxyFlag__Group__1__Impl rule__ProxyFlag__Group__2
             {
             pushFollow(FOLLOW_12);
             rule__ProxyFlag__Group__1__Impl();
@@ -3365,21 +3415,21 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__ProxyFlag__Group__1__Impl"
-    // InternalCurlBetterThanHttpie.g:1079:1: rule__ProxyFlag__Group__1__Impl : ( ( rule__ProxyFlag__Alternatives_1 ) ) ;
+    // InternalCurlBetterThanHttpie.g:1100:1: rule__ProxyFlag__Group__1__Impl : ( ( rule__ProxyFlag__Alternatives_1 ) ) ;
     public final void rule__ProxyFlag__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:1083:1: ( ( ( rule__ProxyFlag__Alternatives_1 ) ) )
-            // InternalCurlBetterThanHttpie.g:1084:1: ( ( rule__ProxyFlag__Alternatives_1 ) )
+            // InternalCurlBetterThanHttpie.g:1104:1: ( ( ( rule__ProxyFlag__Alternatives_1 ) ) )
+            // InternalCurlBetterThanHttpie.g:1105:1: ( ( rule__ProxyFlag__Alternatives_1 ) )
             {
-            // InternalCurlBetterThanHttpie.g:1084:1: ( ( rule__ProxyFlag__Alternatives_1 ) )
-            // InternalCurlBetterThanHttpie.g:1085:2: ( rule__ProxyFlag__Alternatives_1 )
+            // InternalCurlBetterThanHttpie.g:1105:1: ( ( rule__ProxyFlag__Alternatives_1 ) )
+            // InternalCurlBetterThanHttpie.g:1106:2: ( rule__ProxyFlag__Alternatives_1 )
             {
              before(grammarAccess.getProxyFlagAccess().getAlternatives_1()); 
-            // InternalCurlBetterThanHttpie.g:1086:2: ( rule__ProxyFlag__Alternatives_1 )
-            // InternalCurlBetterThanHttpie.g:1086:3: rule__ProxyFlag__Alternatives_1
+            // InternalCurlBetterThanHttpie.g:1107:2: ( rule__ProxyFlag__Alternatives_1 )
+            // InternalCurlBetterThanHttpie.g:1107:3: rule__ProxyFlag__Alternatives_1
             {
             pushFollow(FOLLOW_2);
             rule__ProxyFlag__Alternatives_1();
@@ -3412,22 +3462,17 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__ProxyFlag__Group__2"
-    // InternalCurlBetterThanHttpie.g:1094:1: rule__ProxyFlag__Group__2 : rule__ProxyFlag__Group__2__Impl rule__ProxyFlag__Group__3 ;
+    // InternalCurlBetterThanHttpie.g:1115:1: rule__ProxyFlag__Group__2 : rule__ProxyFlag__Group__2__Impl ;
     public final void rule__ProxyFlag__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:1098:1: ( rule__ProxyFlag__Group__2__Impl rule__ProxyFlag__Group__3 )
-            // InternalCurlBetterThanHttpie.g:1099:2: rule__ProxyFlag__Group__2__Impl rule__ProxyFlag__Group__3
+            // InternalCurlBetterThanHttpie.g:1119:1: ( rule__ProxyFlag__Group__2__Impl )
+            // InternalCurlBetterThanHttpie.g:1120:2: rule__ProxyFlag__Group__2__Impl
             {
-            pushFollow(FOLLOW_13);
-            rule__ProxyFlag__Group__2__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__ProxyFlag__Group__3();
+            rule__ProxyFlag__Group__2__Impl();
 
             state._fsp--;
 
@@ -3450,31 +3495,31 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__ProxyFlag__Group__2__Impl"
-    // InternalCurlBetterThanHttpie.g:1106:1: rule__ProxyFlag__Group__2__Impl : ( ( rule__ProxyFlag__Alternatives_2 ) ) ;
+    // InternalCurlBetterThanHttpie.g:1126:1: rule__ProxyFlag__Group__2__Impl : ( ( rule__ProxyFlag__Group_2__0 ) ) ;
     public final void rule__ProxyFlag__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:1110:1: ( ( ( rule__ProxyFlag__Alternatives_2 ) ) )
-            // InternalCurlBetterThanHttpie.g:1111:1: ( ( rule__ProxyFlag__Alternatives_2 ) )
+            // InternalCurlBetterThanHttpie.g:1130:1: ( ( ( rule__ProxyFlag__Group_2__0 ) ) )
+            // InternalCurlBetterThanHttpie.g:1131:1: ( ( rule__ProxyFlag__Group_2__0 ) )
             {
-            // InternalCurlBetterThanHttpie.g:1111:1: ( ( rule__ProxyFlag__Alternatives_2 ) )
-            // InternalCurlBetterThanHttpie.g:1112:2: ( rule__ProxyFlag__Alternatives_2 )
+            // InternalCurlBetterThanHttpie.g:1131:1: ( ( rule__ProxyFlag__Group_2__0 ) )
+            // InternalCurlBetterThanHttpie.g:1132:2: ( rule__ProxyFlag__Group_2__0 )
             {
-             before(grammarAccess.getProxyFlagAccess().getAlternatives_2()); 
-            // InternalCurlBetterThanHttpie.g:1113:2: ( rule__ProxyFlag__Alternatives_2 )
-            // InternalCurlBetterThanHttpie.g:1113:3: rule__ProxyFlag__Alternatives_2
+             before(grammarAccess.getProxyFlagAccess().getGroup_2()); 
+            // InternalCurlBetterThanHttpie.g:1133:2: ( rule__ProxyFlag__Group_2__0 )
+            // InternalCurlBetterThanHttpie.g:1133:3: rule__ProxyFlag__Group_2__0
             {
             pushFollow(FOLLOW_2);
-            rule__ProxyFlag__Alternatives_2();
+            rule__ProxyFlag__Group_2__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getProxyFlagAccess().getAlternatives_2()); 
+             after(grammarAccess.getProxyFlagAccess().getGroup_2()); 
 
             }
 
@@ -3496,840 +3541,23 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
     // $ANTLR end "rule__ProxyFlag__Group__2__Impl"
 
 
-    // $ANTLR start "rule__ProxyFlag__Group__3"
-    // InternalCurlBetterThanHttpie.g:1121:1: rule__ProxyFlag__Group__3 : rule__ProxyFlag__Group__3__Impl ;
-    public final void rule__ProxyFlag__Group__3() throws RecognitionException {
+    // $ANTLR start "rule__ProxyFlag__Group_2__0"
+    // InternalCurlBetterThanHttpie.g:1142:1: rule__ProxyFlag__Group_2__0 : rule__ProxyFlag__Group_2__0__Impl rule__ProxyFlag__Group_2__1 ;
+    public final void rule__ProxyFlag__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:1125:1: ( rule__ProxyFlag__Group__3__Impl )
-            // InternalCurlBetterThanHttpie.g:1126:2: rule__ProxyFlag__Group__3__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__ProxyFlag__Group__3__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ProxyFlag__Group__3"
-
-
-    // $ANTLR start "rule__ProxyFlag__Group__3__Impl"
-    // InternalCurlBetterThanHttpie.g:1132:1: rule__ProxyFlag__Group__3__Impl : ( ( rule__ProxyFlag__Group_3__0 )? ) ;
-    public final void rule__ProxyFlag__Group__3__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCurlBetterThanHttpie.g:1136:1: ( ( ( rule__ProxyFlag__Group_3__0 )? ) )
-            // InternalCurlBetterThanHttpie.g:1137:1: ( ( rule__ProxyFlag__Group_3__0 )? )
-            {
-            // InternalCurlBetterThanHttpie.g:1137:1: ( ( rule__ProxyFlag__Group_3__0 )? )
-            // InternalCurlBetterThanHttpie.g:1138:2: ( rule__ProxyFlag__Group_3__0 )?
-            {
-             before(grammarAccess.getProxyFlagAccess().getGroup_3()); 
-            // InternalCurlBetterThanHttpie.g:1139:2: ( rule__ProxyFlag__Group_3__0 )?
-            int alt14=2;
-            int LA14_0 = input.LA(1);
-
-            if ( (LA14_0==RULE_STRING_UP) ) {
-                alt14=1;
-            }
-            switch (alt14) {
-                case 1 :
-                    // InternalCurlBetterThanHttpie.g:1139:3: rule__ProxyFlag__Group_3__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__ProxyFlag__Group_3__0();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-             after(grammarAccess.getProxyFlagAccess().getGroup_3()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ProxyFlag__Group__3__Impl"
-
-
-    // $ANTLR start "rule__ProxyFlag__Group_2_0__0"
-    // InternalCurlBetterThanHttpie.g:1148:1: rule__ProxyFlag__Group_2_0__0 : rule__ProxyFlag__Group_2_0__0__Impl rule__ProxyFlag__Group_2_0__1 ;
-    public final void rule__ProxyFlag__Group_2_0__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCurlBetterThanHttpie.g:1152:1: ( rule__ProxyFlag__Group_2_0__0__Impl rule__ProxyFlag__Group_2_0__1 )
-            // InternalCurlBetterThanHttpie.g:1153:2: rule__ProxyFlag__Group_2_0__0__Impl rule__ProxyFlag__Group_2_0__1
-            {
-            pushFollow(FOLLOW_12);
-            rule__ProxyFlag__Group_2_0__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__ProxyFlag__Group_2_0__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ProxyFlag__Group_2_0__0"
-
-
-    // $ANTLR start "rule__ProxyFlag__Group_2_0__0__Impl"
-    // InternalCurlBetterThanHttpie.g:1160:1: rule__ProxyFlag__Group_2_0__0__Impl : ( ( rule__ProxyFlag__Group_2_0_0__0 ) ) ;
-    public final void rule__ProxyFlag__Group_2_0__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCurlBetterThanHttpie.g:1164:1: ( ( ( rule__ProxyFlag__Group_2_0_0__0 ) ) )
-            // InternalCurlBetterThanHttpie.g:1165:1: ( ( rule__ProxyFlag__Group_2_0_0__0 ) )
-            {
-            // InternalCurlBetterThanHttpie.g:1165:1: ( ( rule__ProxyFlag__Group_2_0_0__0 ) )
-            // InternalCurlBetterThanHttpie.g:1166:2: ( rule__ProxyFlag__Group_2_0_0__0 )
-            {
-             before(grammarAccess.getProxyFlagAccess().getGroup_2_0_0()); 
-            // InternalCurlBetterThanHttpie.g:1167:2: ( rule__ProxyFlag__Group_2_0_0__0 )
-            // InternalCurlBetterThanHttpie.g:1167:3: rule__ProxyFlag__Group_2_0_0__0
-            {
-            pushFollow(FOLLOW_2);
-            rule__ProxyFlag__Group_2_0_0__0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getProxyFlagAccess().getGroup_2_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ProxyFlag__Group_2_0__0__Impl"
-
-
-    // $ANTLR start "rule__ProxyFlag__Group_2_0__1"
-    // InternalCurlBetterThanHttpie.g:1175:1: rule__ProxyFlag__Group_2_0__1 : rule__ProxyFlag__Group_2_0__1__Impl ;
-    public final void rule__ProxyFlag__Group_2_0__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCurlBetterThanHttpie.g:1179:1: ( rule__ProxyFlag__Group_2_0__1__Impl )
-            // InternalCurlBetterThanHttpie.g:1180:2: rule__ProxyFlag__Group_2_0__1__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__ProxyFlag__Group_2_0__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ProxyFlag__Group_2_0__1"
-
-
-    // $ANTLR start "rule__ProxyFlag__Group_2_0__1__Impl"
-    // InternalCurlBetterThanHttpie.g:1186:1: rule__ProxyFlag__Group_2_0__1__Impl : ( ( rule__ProxyFlag__Group_2_0_1__0 )? ) ;
-    public final void rule__ProxyFlag__Group_2_0__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCurlBetterThanHttpie.g:1190:1: ( ( ( rule__ProxyFlag__Group_2_0_1__0 )? ) )
-            // InternalCurlBetterThanHttpie.g:1191:1: ( ( rule__ProxyFlag__Group_2_0_1__0 )? )
-            {
-            // InternalCurlBetterThanHttpie.g:1191:1: ( ( rule__ProxyFlag__Group_2_0_1__0 )? )
-            // InternalCurlBetterThanHttpie.g:1192:2: ( rule__ProxyFlag__Group_2_0_1__0 )?
-            {
-             before(grammarAccess.getProxyFlagAccess().getGroup_2_0_1()); 
-            // InternalCurlBetterThanHttpie.g:1193:2: ( rule__ProxyFlag__Group_2_0_1__0 )?
-            int alt15=2;
-            int LA15_0 = input.LA(1);
-
-            if ( (LA15_0==RULE_BASIC_STRING) ) {
-                alt15=1;
-            }
-            switch (alt15) {
-                case 1 :
-                    // InternalCurlBetterThanHttpie.g:1193:3: rule__ProxyFlag__Group_2_0_1__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__ProxyFlag__Group_2_0_1__0();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-             after(grammarAccess.getProxyFlagAccess().getGroup_2_0_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ProxyFlag__Group_2_0__1__Impl"
-
-
-    // $ANTLR start "rule__ProxyFlag__Group_2_0_0__0"
-    // InternalCurlBetterThanHttpie.g:1202:1: rule__ProxyFlag__Group_2_0_0__0 : rule__ProxyFlag__Group_2_0_0__0__Impl rule__ProxyFlag__Group_2_0_0__1 ;
-    public final void rule__ProxyFlag__Group_2_0_0__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCurlBetterThanHttpie.g:1206:1: ( rule__ProxyFlag__Group_2_0_0__0__Impl rule__ProxyFlag__Group_2_0_0__1 )
-            // InternalCurlBetterThanHttpie.g:1207:2: rule__ProxyFlag__Group_2_0_0__0__Impl rule__ProxyFlag__Group_2_0_0__1
-            {
-            pushFollow(FOLLOW_14);
-            rule__ProxyFlag__Group_2_0_0__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__ProxyFlag__Group_2_0_0__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ProxyFlag__Group_2_0_0__0"
-
-
-    // $ANTLR start "rule__ProxyFlag__Group_2_0_0__0__Impl"
-    // InternalCurlBetterThanHttpie.g:1214:1: rule__ProxyFlag__Group_2_0_0__0__Impl : ( ( rule__ProxyFlag__ProtocolAssignment_2_0_0_0 ) ) ;
-    public final void rule__ProxyFlag__Group_2_0_0__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCurlBetterThanHttpie.g:1218:1: ( ( ( rule__ProxyFlag__ProtocolAssignment_2_0_0_0 ) ) )
-            // InternalCurlBetterThanHttpie.g:1219:1: ( ( rule__ProxyFlag__ProtocolAssignment_2_0_0_0 ) )
-            {
-            // InternalCurlBetterThanHttpie.g:1219:1: ( ( rule__ProxyFlag__ProtocolAssignment_2_0_0_0 ) )
-            // InternalCurlBetterThanHttpie.g:1220:2: ( rule__ProxyFlag__ProtocolAssignment_2_0_0_0 )
-            {
-             before(grammarAccess.getProxyFlagAccess().getProtocolAssignment_2_0_0_0()); 
-            // InternalCurlBetterThanHttpie.g:1221:2: ( rule__ProxyFlag__ProtocolAssignment_2_0_0_0 )
-            // InternalCurlBetterThanHttpie.g:1221:3: rule__ProxyFlag__ProtocolAssignment_2_0_0_0
-            {
-            pushFollow(FOLLOW_2);
-            rule__ProxyFlag__ProtocolAssignment_2_0_0_0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getProxyFlagAccess().getProtocolAssignment_2_0_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ProxyFlag__Group_2_0_0__0__Impl"
-
-
-    // $ANTLR start "rule__ProxyFlag__Group_2_0_0__1"
-    // InternalCurlBetterThanHttpie.g:1229:1: rule__ProxyFlag__Group_2_0_0__1 : rule__ProxyFlag__Group_2_0_0__1__Impl ;
-    public final void rule__ProxyFlag__Group_2_0_0__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCurlBetterThanHttpie.g:1233:1: ( rule__ProxyFlag__Group_2_0_0__1__Impl )
-            // InternalCurlBetterThanHttpie.g:1234:2: rule__ProxyFlag__Group_2_0_0__1__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__ProxyFlag__Group_2_0_0__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ProxyFlag__Group_2_0_0__1"
-
-
-    // $ANTLR start "rule__ProxyFlag__Group_2_0_0__1__Impl"
-    // InternalCurlBetterThanHttpie.g:1240:1: rule__ProxyFlag__Group_2_0_0__1__Impl : ( ':' ) ;
-    public final void rule__ProxyFlag__Group_2_0_0__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCurlBetterThanHttpie.g:1244:1: ( ( ':' ) )
-            // InternalCurlBetterThanHttpie.g:1245:1: ( ':' )
-            {
-            // InternalCurlBetterThanHttpie.g:1245:1: ( ':' )
-            // InternalCurlBetterThanHttpie.g:1246:2: ':'
-            {
-             before(grammarAccess.getProxyFlagAccess().getColonKeyword_2_0_0_1()); 
-            match(input,32,FOLLOW_2); 
-             after(grammarAccess.getProxyFlagAccess().getColonKeyword_2_0_0_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ProxyFlag__Group_2_0_0__1__Impl"
-
-
-    // $ANTLR start "rule__ProxyFlag__Group_2_0_1__0"
-    // InternalCurlBetterThanHttpie.g:1256:1: rule__ProxyFlag__Group_2_0_1__0 : rule__ProxyFlag__Group_2_0_1__0__Impl rule__ProxyFlag__Group_2_0_1__1 ;
-    public final void rule__ProxyFlag__Group_2_0_1__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCurlBetterThanHttpie.g:1260:1: ( rule__ProxyFlag__Group_2_0_1__0__Impl rule__ProxyFlag__Group_2_0_1__1 )
-            // InternalCurlBetterThanHttpie.g:1261:2: rule__ProxyFlag__Group_2_0_1__0__Impl rule__ProxyFlag__Group_2_0_1__1
-            {
-            pushFollow(FOLLOW_15);
-            rule__ProxyFlag__Group_2_0_1__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__ProxyFlag__Group_2_0_1__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ProxyFlag__Group_2_0_1__0"
-
-
-    // $ANTLR start "rule__ProxyFlag__Group_2_0_1__0__Impl"
-    // InternalCurlBetterThanHttpie.g:1268:1: rule__ProxyFlag__Group_2_0_1__0__Impl : ( ( rule__ProxyFlag__ProxyProtocolAssignment_2_0_1_0 ) ) ;
-    public final void rule__ProxyFlag__Group_2_0_1__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCurlBetterThanHttpie.g:1272:1: ( ( ( rule__ProxyFlag__ProxyProtocolAssignment_2_0_1_0 ) ) )
-            // InternalCurlBetterThanHttpie.g:1273:1: ( ( rule__ProxyFlag__ProxyProtocolAssignment_2_0_1_0 ) )
-            {
-            // InternalCurlBetterThanHttpie.g:1273:1: ( ( rule__ProxyFlag__ProxyProtocolAssignment_2_0_1_0 ) )
-            // InternalCurlBetterThanHttpie.g:1274:2: ( rule__ProxyFlag__ProxyProtocolAssignment_2_0_1_0 )
-            {
-             before(grammarAccess.getProxyFlagAccess().getProxyProtocolAssignment_2_0_1_0()); 
-            // InternalCurlBetterThanHttpie.g:1275:2: ( rule__ProxyFlag__ProxyProtocolAssignment_2_0_1_0 )
-            // InternalCurlBetterThanHttpie.g:1275:3: rule__ProxyFlag__ProxyProtocolAssignment_2_0_1_0
-            {
-            pushFollow(FOLLOW_2);
-            rule__ProxyFlag__ProxyProtocolAssignment_2_0_1_0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getProxyFlagAccess().getProxyProtocolAssignment_2_0_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ProxyFlag__Group_2_0_1__0__Impl"
-
-
-    // $ANTLR start "rule__ProxyFlag__Group_2_0_1__1"
-    // InternalCurlBetterThanHttpie.g:1283:1: rule__ProxyFlag__Group_2_0_1__1 : rule__ProxyFlag__Group_2_0_1__1__Impl ;
-    public final void rule__ProxyFlag__Group_2_0_1__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCurlBetterThanHttpie.g:1287:1: ( rule__ProxyFlag__Group_2_0_1__1__Impl )
-            // InternalCurlBetterThanHttpie.g:1288:2: rule__ProxyFlag__Group_2_0_1__1__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__ProxyFlag__Group_2_0_1__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ProxyFlag__Group_2_0_1__1"
-
-
-    // $ANTLR start "rule__ProxyFlag__Group_2_0_1__1__Impl"
-    // InternalCurlBetterThanHttpie.g:1294:1: rule__ProxyFlag__Group_2_0_1__1__Impl : ( '://' ) ;
-    public final void rule__ProxyFlag__Group_2_0_1__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCurlBetterThanHttpie.g:1298:1: ( ( '://' ) )
-            // InternalCurlBetterThanHttpie.g:1299:1: ( '://' )
-            {
-            // InternalCurlBetterThanHttpie.g:1299:1: ( '://' )
-            // InternalCurlBetterThanHttpie.g:1300:2: '://'
-            {
-             before(grammarAccess.getProxyFlagAccess().getColonSolidusSolidusKeyword_2_0_1_1()); 
-            match(input,33,FOLLOW_2); 
-             after(grammarAccess.getProxyFlagAccess().getColonSolidusSolidusKeyword_2_0_1_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ProxyFlag__Group_2_0_1__1__Impl"
-
-
-    // $ANTLR start "rule__ProxyFlag__Group_2_1__0"
-    // InternalCurlBetterThanHttpie.g:1310:1: rule__ProxyFlag__Group_2_1__0 : rule__ProxyFlag__Group_2_1__0__Impl rule__ProxyFlag__Group_2_1__1 ;
-    public final void rule__ProxyFlag__Group_2_1__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCurlBetterThanHttpie.g:1314:1: ( rule__ProxyFlag__Group_2_1__0__Impl rule__ProxyFlag__Group_2_1__1 )
-            // InternalCurlBetterThanHttpie.g:1315:2: rule__ProxyFlag__Group_2_1__0__Impl rule__ProxyFlag__Group_2_1__1
-            {
-            pushFollow(FOLLOW_15);
-            rule__ProxyFlag__Group_2_1__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__ProxyFlag__Group_2_1__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ProxyFlag__Group_2_1__0"
-
-
-    // $ANTLR start "rule__ProxyFlag__Group_2_1__0__Impl"
-    // InternalCurlBetterThanHttpie.g:1322:1: rule__ProxyFlag__Group_2_1__0__Impl : ( ( rule__ProxyFlag__ProxyProtocolAssignment_2_1_0 ) ) ;
-    public final void rule__ProxyFlag__Group_2_1__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCurlBetterThanHttpie.g:1326:1: ( ( ( rule__ProxyFlag__ProxyProtocolAssignment_2_1_0 ) ) )
-            // InternalCurlBetterThanHttpie.g:1327:1: ( ( rule__ProxyFlag__ProxyProtocolAssignment_2_1_0 ) )
-            {
-            // InternalCurlBetterThanHttpie.g:1327:1: ( ( rule__ProxyFlag__ProxyProtocolAssignment_2_1_0 ) )
-            // InternalCurlBetterThanHttpie.g:1328:2: ( rule__ProxyFlag__ProxyProtocolAssignment_2_1_0 )
-            {
-             before(grammarAccess.getProxyFlagAccess().getProxyProtocolAssignment_2_1_0()); 
-            // InternalCurlBetterThanHttpie.g:1329:2: ( rule__ProxyFlag__ProxyProtocolAssignment_2_1_0 )
-            // InternalCurlBetterThanHttpie.g:1329:3: rule__ProxyFlag__ProxyProtocolAssignment_2_1_0
-            {
-            pushFollow(FOLLOW_2);
-            rule__ProxyFlag__ProxyProtocolAssignment_2_1_0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getProxyFlagAccess().getProxyProtocolAssignment_2_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ProxyFlag__Group_2_1__0__Impl"
-
-
-    // $ANTLR start "rule__ProxyFlag__Group_2_1__1"
-    // InternalCurlBetterThanHttpie.g:1337:1: rule__ProxyFlag__Group_2_1__1 : rule__ProxyFlag__Group_2_1__1__Impl ;
-    public final void rule__ProxyFlag__Group_2_1__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCurlBetterThanHttpie.g:1341:1: ( rule__ProxyFlag__Group_2_1__1__Impl )
-            // InternalCurlBetterThanHttpie.g:1342:2: rule__ProxyFlag__Group_2_1__1__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__ProxyFlag__Group_2_1__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ProxyFlag__Group_2_1__1"
-
-
-    // $ANTLR start "rule__ProxyFlag__Group_2_1__1__Impl"
-    // InternalCurlBetterThanHttpie.g:1348:1: rule__ProxyFlag__Group_2_1__1__Impl : ( '://' ) ;
-    public final void rule__ProxyFlag__Group_2_1__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCurlBetterThanHttpie.g:1352:1: ( ( '://' ) )
-            // InternalCurlBetterThanHttpie.g:1353:1: ( '://' )
-            {
-            // InternalCurlBetterThanHttpie.g:1353:1: ( '://' )
-            // InternalCurlBetterThanHttpie.g:1354:2: '://'
-            {
-             before(grammarAccess.getProxyFlagAccess().getColonSolidusSolidusKeyword_2_1_1()); 
-            match(input,33,FOLLOW_2); 
-             after(grammarAccess.getProxyFlagAccess().getColonSolidusSolidusKeyword_2_1_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ProxyFlag__Group_2_1__1__Impl"
-
-
-    // $ANTLR start "rule__ProxyFlag__Group_3__0"
-    // InternalCurlBetterThanHttpie.g:1364:1: rule__ProxyFlag__Group_3__0 : rule__ProxyFlag__Group_3__0__Impl rule__ProxyFlag__Group_3__1 ;
-    public final void rule__ProxyFlag__Group_3__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCurlBetterThanHttpie.g:1368:1: ( rule__ProxyFlag__Group_3__0__Impl rule__ProxyFlag__Group_3__1 )
-            // InternalCurlBetterThanHttpie.g:1369:2: rule__ProxyFlag__Group_3__0__Impl rule__ProxyFlag__Group_3__1
-            {
-            pushFollow(FOLLOW_14);
-            rule__ProxyFlag__Group_3__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__ProxyFlag__Group_3__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ProxyFlag__Group_3__0"
-
-
-    // $ANTLR start "rule__ProxyFlag__Group_3__0__Impl"
-    // InternalCurlBetterThanHttpie.g:1376:1: rule__ProxyFlag__Group_3__0__Impl : ( ( rule__ProxyFlag__UsernameAssignment_3_0 ) ) ;
-    public final void rule__ProxyFlag__Group_3__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCurlBetterThanHttpie.g:1380:1: ( ( ( rule__ProxyFlag__UsernameAssignment_3_0 ) ) )
-            // InternalCurlBetterThanHttpie.g:1381:1: ( ( rule__ProxyFlag__UsernameAssignment_3_0 ) )
-            {
-            // InternalCurlBetterThanHttpie.g:1381:1: ( ( rule__ProxyFlag__UsernameAssignment_3_0 ) )
-            // InternalCurlBetterThanHttpie.g:1382:2: ( rule__ProxyFlag__UsernameAssignment_3_0 )
-            {
-             before(grammarAccess.getProxyFlagAccess().getUsernameAssignment_3_0()); 
-            // InternalCurlBetterThanHttpie.g:1383:2: ( rule__ProxyFlag__UsernameAssignment_3_0 )
-            // InternalCurlBetterThanHttpie.g:1383:3: rule__ProxyFlag__UsernameAssignment_3_0
-            {
-            pushFollow(FOLLOW_2);
-            rule__ProxyFlag__UsernameAssignment_3_0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getProxyFlagAccess().getUsernameAssignment_3_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ProxyFlag__Group_3__0__Impl"
-
-
-    // $ANTLR start "rule__ProxyFlag__Group_3__1"
-    // InternalCurlBetterThanHttpie.g:1391:1: rule__ProxyFlag__Group_3__1 : rule__ProxyFlag__Group_3__1__Impl rule__ProxyFlag__Group_3__2 ;
-    public final void rule__ProxyFlag__Group_3__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCurlBetterThanHttpie.g:1395:1: ( rule__ProxyFlag__Group_3__1__Impl rule__ProxyFlag__Group_3__2 )
-            // InternalCurlBetterThanHttpie.g:1396:2: rule__ProxyFlag__Group_3__1__Impl rule__ProxyFlag__Group_3__2
+            // InternalCurlBetterThanHttpie.g:1146:1: ( rule__ProxyFlag__Group_2__0__Impl rule__ProxyFlag__Group_2__1 )
+            // InternalCurlBetterThanHttpie.g:1147:2: rule__ProxyFlag__Group_2__0__Impl rule__ProxyFlag__Group_2__1
             {
             pushFollow(FOLLOW_13);
-            rule__ProxyFlag__Group_3__1__Impl();
+            rule__ProxyFlag__Group_2__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__ProxyFlag__Group_3__2();
+            rule__ProxyFlag__Group_2__1();
 
             state._fsp--;
 
@@ -4348,60 +3576,37 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
         }
         return ;
     }
-    // $ANTLR end "rule__ProxyFlag__Group_3__1"
+    // $ANTLR end "rule__ProxyFlag__Group_2__0"
 
 
-    // $ANTLR start "rule__ProxyFlag__Group_3__1__Impl"
-    // InternalCurlBetterThanHttpie.g:1403:1: rule__ProxyFlag__Group_3__1__Impl : ( ':' ) ;
-    public final void rule__ProxyFlag__Group_3__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCurlBetterThanHttpie.g:1407:1: ( ( ':' ) )
-            // InternalCurlBetterThanHttpie.g:1408:1: ( ':' )
-            {
-            // InternalCurlBetterThanHttpie.g:1408:1: ( ':' )
-            // InternalCurlBetterThanHttpie.g:1409:2: ':'
-            {
-             before(grammarAccess.getProxyFlagAccess().getColonKeyword_3_1()); 
-            match(input,32,FOLLOW_2); 
-             after(grammarAccess.getProxyFlagAccess().getColonKeyword_3_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ProxyFlag__Group_3__1__Impl"
-
-
-    // $ANTLR start "rule__ProxyFlag__Group_3__2"
-    // InternalCurlBetterThanHttpie.g:1418:1: rule__ProxyFlag__Group_3__2 : rule__ProxyFlag__Group_3__2__Impl ;
-    public final void rule__ProxyFlag__Group_3__2() throws RecognitionException {
+    // $ANTLR start "rule__ProxyFlag__Group_2__0__Impl"
+    // InternalCurlBetterThanHttpie.g:1154:1: rule__ProxyFlag__Group_2__0__Impl : ( ( rule__ProxyFlag__ProtocolAssignment_2_0 ) ) ;
+    public final void rule__ProxyFlag__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:1422:1: ( rule__ProxyFlag__Group_3__2__Impl )
-            // InternalCurlBetterThanHttpie.g:1423:2: rule__ProxyFlag__Group_3__2__Impl
+            // InternalCurlBetterThanHttpie.g:1158:1: ( ( ( rule__ProxyFlag__ProtocolAssignment_2_0 ) ) )
+            // InternalCurlBetterThanHttpie.g:1159:1: ( ( rule__ProxyFlag__ProtocolAssignment_2_0 ) )
+            {
+            // InternalCurlBetterThanHttpie.g:1159:1: ( ( rule__ProxyFlag__ProtocolAssignment_2_0 ) )
+            // InternalCurlBetterThanHttpie.g:1160:2: ( rule__ProxyFlag__ProtocolAssignment_2_0 )
+            {
+             before(grammarAccess.getProxyFlagAccess().getProtocolAssignment_2_0()); 
+            // InternalCurlBetterThanHttpie.g:1161:2: ( rule__ProxyFlag__ProtocolAssignment_2_0 )
+            // InternalCurlBetterThanHttpie.g:1161:3: rule__ProxyFlag__ProtocolAssignment_2_0
             {
             pushFollow(FOLLOW_2);
-            rule__ProxyFlag__Group_3__2__Impl();
+            rule__ProxyFlag__ProtocolAssignment_2_0();
 
             state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getProxyFlagAccess().getProtocolAssignment_2_0()); 
+
+            }
 
 
             }
@@ -4418,35 +3623,58 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
         }
         return ;
     }
-    // $ANTLR end "rule__ProxyFlag__Group_3__2"
+    // $ANTLR end "rule__ProxyFlag__Group_2__0__Impl"
 
 
-    // $ANTLR start "rule__ProxyFlag__Group_3__2__Impl"
-    // InternalCurlBetterThanHttpie.g:1429:1: rule__ProxyFlag__Group_3__2__Impl : ( ( rule__ProxyFlag__PasswordAssignment_3_2 ) ) ;
-    public final void rule__ProxyFlag__Group_3__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ProxyFlag__Group_2__1"
+    // InternalCurlBetterThanHttpie.g:1169:1: rule__ProxyFlag__Group_2__1 : rule__ProxyFlag__Group_2__1__Impl ;
+    public final void rule__ProxyFlag__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:1433:1: ( ( ( rule__ProxyFlag__PasswordAssignment_3_2 ) ) )
-            // InternalCurlBetterThanHttpie.g:1434:1: ( ( rule__ProxyFlag__PasswordAssignment_3_2 ) )
-            {
-            // InternalCurlBetterThanHttpie.g:1434:1: ( ( rule__ProxyFlag__PasswordAssignment_3_2 ) )
-            // InternalCurlBetterThanHttpie.g:1435:2: ( rule__ProxyFlag__PasswordAssignment_3_2 )
-            {
-             before(grammarAccess.getProxyFlagAccess().getPasswordAssignment_3_2()); 
-            // InternalCurlBetterThanHttpie.g:1436:2: ( rule__ProxyFlag__PasswordAssignment_3_2 )
-            // InternalCurlBetterThanHttpie.g:1436:3: rule__ProxyFlag__PasswordAssignment_3_2
+            // InternalCurlBetterThanHttpie.g:1173:1: ( rule__ProxyFlag__Group_2__1__Impl )
+            // InternalCurlBetterThanHttpie.g:1174:2: rule__ProxyFlag__Group_2__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__ProxyFlag__PasswordAssignment_3_2();
+            rule__ProxyFlag__Group_2__1__Impl();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getProxyFlagAccess().getPasswordAssignment_3_2()); 
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ProxyFlag__Group_2__1"
+
+
+    // $ANTLR start "rule__ProxyFlag__Group_2__1__Impl"
+    // InternalCurlBetterThanHttpie.g:1180:1: rule__ProxyFlag__Group_2__1__Impl : ( ':' ) ;
+    public final void rule__ProxyFlag__Group_2__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCurlBetterThanHttpie.g:1184:1: ( ( ':' ) )
+            // InternalCurlBetterThanHttpie.g:1185:1: ( ':' )
+            {
+            // InternalCurlBetterThanHttpie.g:1185:1: ( ':' )
+            // InternalCurlBetterThanHttpie.g:1186:2: ':'
+            {
+             before(grammarAccess.getProxyFlagAccess().getColonKeyword_2_1()); 
+            match(input,31,FOLLOW_2); 
+             after(grammarAccess.getProxyFlagAccess().getColonKeyword_2_1()); 
 
             }
 
@@ -4465,20 +3693,185 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
         }
         return ;
     }
-    // $ANTLR end "rule__ProxyFlag__Group_3__2__Impl"
+    // $ANTLR end "rule__ProxyFlag__Group_2__1__Impl"
+
+
+    // $ANTLR start "rule__AuthFlag__Group__0"
+    // InternalCurlBetterThanHttpie.g:1196:1: rule__AuthFlag__Group__0 : rule__AuthFlag__Group__0__Impl rule__AuthFlag__Group__1 ;
+    public final void rule__AuthFlag__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCurlBetterThanHttpie.g:1200:1: ( rule__AuthFlag__Group__0__Impl rule__AuthFlag__Group__1 )
+            // InternalCurlBetterThanHttpie.g:1201:2: rule__AuthFlag__Group__0__Impl rule__AuthFlag__Group__1
+            {
+            pushFollow(FOLLOW_11);
+            rule__AuthFlag__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__AuthFlag__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__AuthFlag__Group__0"
+
+
+    // $ANTLR start "rule__AuthFlag__Group__0__Impl"
+    // InternalCurlBetterThanHttpie.g:1208:1: rule__AuthFlag__Group__0__Impl : ( ( rule__AuthFlag__Alternatives_0 ) ) ;
+    public final void rule__AuthFlag__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCurlBetterThanHttpie.g:1212:1: ( ( ( rule__AuthFlag__Alternatives_0 ) ) )
+            // InternalCurlBetterThanHttpie.g:1213:1: ( ( rule__AuthFlag__Alternatives_0 ) )
+            {
+            // InternalCurlBetterThanHttpie.g:1213:1: ( ( rule__AuthFlag__Alternatives_0 ) )
+            // InternalCurlBetterThanHttpie.g:1214:2: ( rule__AuthFlag__Alternatives_0 )
+            {
+             before(grammarAccess.getAuthFlagAccess().getAlternatives_0()); 
+            // InternalCurlBetterThanHttpie.g:1215:2: ( rule__AuthFlag__Alternatives_0 )
+            // InternalCurlBetterThanHttpie.g:1215:3: rule__AuthFlag__Alternatives_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__AuthFlag__Alternatives_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getAuthFlagAccess().getAlternatives_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__AuthFlag__Group__0__Impl"
+
+
+    // $ANTLR start "rule__AuthFlag__Group__1"
+    // InternalCurlBetterThanHttpie.g:1223:1: rule__AuthFlag__Group__1 : rule__AuthFlag__Group__1__Impl ;
+    public final void rule__AuthFlag__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCurlBetterThanHttpie.g:1227:1: ( rule__AuthFlag__Group__1__Impl )
+            // InternalCurlBetterThanHttpie.g:1228:2: rule__AuthFlag__Group__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__AuthFlag__Group__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__AuthFlag__Group__1"
+
+
+    // $ANTLR start "rule__AuthFlag__Group__1__Impl"
+    // InternalCurlBetterThanHttpie.g:1234:1: rule__AuthFlag__Group__1__Impl : ( ( rule__AuthFlag__Alternatives_1 ) ) ;
+    public final void rule__AuthFlag__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCurlBetterThanHttpie.g:1238:1: ( ( ( rule__AuthFlag__Alternatives_1 ) ) )
+            // InternalCurlBetterThanHttpie.g:1239:1: ( ( rule__AuthFlag__Alternatives_1 ) )
+            {
+            // InternalCurlBetterThanHttpie.g:1239:1: ( ( rule__AuthFlag__Alternatives_1 ) )
+            // InternalCurlBetterThanHttpie.g:1240:2: ( rule__AuthFlag__Alternatives_1 )
+            {
+             before(grammarAccess.getAuthFlagAccess().getAlternatives_1()); 
+            // InternalCurlBetterThanHttpie.g:1241:2: ( rule__AuthFlag__Alternatives_1 )
+            // InternalCurlBetterThanHttpie.g:1241:3: rule__AuthFlag__Alternatives_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__AuthFlag__Alternatives_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getAuthFlagAccess().getAlternatives_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__AuthFlag__Group__1__Impl"
 
 
     // $ANTLR start "rule__DownloadFlag__Group__0"
-    // InternalCurlBetterThanHttpie.g:1445:1: rule__DownloadFlag__Group__0 : rule__DownloadFlag__Group__0__Impl rule__DownloadFlag__Group__1 ;
+    // InternalCurlBetterThanHttpie.g:1250:1: rule__DownloadFlag__Group__0 : rule__DownloadFlag__Group__0__Impl rule__DownloadFlag__Group__1 ;
     public final void rule__DownloadFlag__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:1449:1: ( rule__DownloadFlag__Group__0__Impl rule__DownloadFlag__Group__1 )
-            // InternalCurlBetterThanHttpie.g:1450:2: rule__DownloadFlag__Group__0__Impl rule__DownloadFlag__Group__1
+            // InternalCurlBetterThanHttpie.g:1254:1: ( rule__DownloadFlag__Group__0__Impl rule__DownloadFlag__Group__1 )
+            // InternalCurlBetterThanHttpie.g:1255:2: rule__DownloadFlag__Group__0__Impl rule__DownloadFlag__Group__1
             {
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_14);
             rule__DownloadFlag__Group__0__Impl();
 
             state._fsp--;
@@ -4507,21 +3900,21 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__DownloadFlag__Group__0__Impl"
-    // InternalCurlBetterThanHttpie.g:1457:1: rule__DownloadFlag__Group__0__Impl : ( () ) ;
+    // InternalCurlBetterThanHttpie.g:1262:1: rule__DownloadFlag__Group__0__Impl : ( () ) ;
     public final void rule__DownloadFlag__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:1461:1: ( ( () ) )
-            // InternalCurlBetterThanHttpie.g:1462:1: ( () )
+            // InternalCurlBetterThanHttpie.g:1266:1: ( ( () ) )
+            // InternalCurlBetterThanHttpie.g:1267:1: ( () )
             {
-            // InternalCurlBetterThanHttpie.g:1462:1: ( () )
-            // InternalCurlBetterThanHttpie.g:1463:2: ()
+            // InternalCurlBetterThanHttpie.g:1267:1: ( () )
+            // InternalCurlBetterThanHttpie.g:1268:2: ()
             {
              before(grammarAccess.getDownloadFlagAccess().getDownloadFlagAction_0()); 
-            // InternalCurlBetterThanHttpie.g:1464:2: ()
-            // InternalCurlBetterThanHttpie.g:1464:3: 
+            // InternalCurlBetterThanHttpie.g:1269:2: ()
+            // InternalCurlBetterThanHttpie.g:1269:3: 
             {
             }
 
@@ -4544,14 +3937,14 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__DownloadFlag__Group__1"
-    // InternalCurlBetterThanHttpie.g:1472:1: rule__DownloadFlag__Group__1 : rule__DownloadFlag__Group__1__Impl ;
+    // InternalCurlBetterThanHttpie.g:1277:1: rule__DownloadFlag__Group__1 : rule__DownloadFlag__Group__1__Impl ;
     public final void rule__DownloadFlag__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:1476:1: ( rule__DownloadFlag__Group__1__Impl )
-            // InternalCurlBetterThanHttpie.g:1477:2: rule__DownloadFlag__Group__1__Impl
+            // InternalCurlBetterThanHttpie.g:1281:1: ( rule__DownloadFlag__Group__1__Impl )
+            // InternalCurlBetterThanHttpie.g:1282:2: rule__DownloadFlag__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__DownloadFlag__Group__1__Impl();
@@ -4577,21 +3970,21 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__DownloadFlag__Group__1__Impl"
-    // InternalCurlBetterThanHttpie.g:1483:1: rule__DownloadFlag__Group__1__Impl : ( ( rule__DownloadFlag__Alternatives_1 ) ) ;
+    // InternalCurlBetterThanHttpie.g:1288:1: rule__DownloadFlag__Group__1__Impl : ( ( rule__DownloadFlag__Alternatives_1 ) ) ;
     public final void rule__DownloadFlag__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:1487:1: ( ( ( rule__DownloadFlag__Alternatives_1 ) ) )
-            // InternalCurlBetterThanHttpie.g:1488:1: ( ( rule__DownloadFlag__Alternatives_1 ) )
+            // InternalCurlBetterThanHttpie.g:1292:1: ( ( ( rule__DownloadFlag__Alternatives_1 ) ) )
+            // InternalCurlBetterThanHttpie.g:1293:1: ( ( rule__DownloadFlag__Alternatives_1 ) )
             {
-            // InternalCurlBetterThanHttpie.g:1488:1: ( ( rule__DownloadFlag__Alternatives_1 ) )
-            // InternalCurlBetterThanHttpie.g:1489:2: ( rule__DownloadFlag__Alternatives_1 )
+            // InternalCurlBetterThanHttpie.g:1293:1: ( ( rule__DownloadFlag__Alternatives_1 ) )
+            // InternalCurlBetterThanHttpie.g:1294:2: ( rule__DownloadFlag__Alternatives_1 )
             {
              before(grammarAccess.getDownloadFlagAccess().getAlternatives_1()); 
-            // InternalCurlBetterThanHttpie.g:1490:2: ( rule__DownloadFlag__Alternatives_1 )
-            // InternalCurlBetterThanHttpie.g:1490:3: rule__DownloadFlag__Alternatives_1
+            // InternalCurlBetterThanHttpie.g:1295:2: ( rule__DownloadFlag__Alternatives_1 )
+            // InternalCurlBetterThanHttpie.g:1295:3: rule__DownloadFlag__Alternatives_1
             {
             pushFollow(FOLLOW_2);
             rule__DownloadFlag__Alternatives_1();
@@ -4624,16 +4017,16 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__HelpFlag__Group__0"
-    // InternalCurlBetterThanHttpie.g:1499:1: rule__HelpFlag__Group__0 : rule__HelpFlag__Group__0__Impl rule__HelpFlag__Group__1 ;
+    // InternalCurlBetterThanHttpie.g:1304:1: rule__HelpFlag__Group__0 : rule__HelpFlag__Group__0__Impl rule__HelpFlag__Group__1 ;
     public final void rule__HelpFlag__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:1503:1: ( rule__HelpFlag__Group__0__Impl rule__HelpFlag__Group__1 )
-            // InternalCurlBetterThanHttpie.g:1504:2: rule__HelpFlag__Group__0__Impl rule__HelpFlag__Group__1
+            // InternalCurlBetterThanHttpie.g:1308:1: ( rule__HelpFlag__Group__0__Impl rule__HelpFlag__Group__1 )
+            // InternalCurlBetterThanHttpie.g:1309:2: rule__HelpFlag__Group__0__Impl rule__HelpFlag__Group__1
             {
-            pushFollow(FOLLOW_17);
+            pushFollow(FOLLOW_15);
             rule__HelpFlag__Group__0__Impl();
 
             state._fsp--;
@@ -4662,21 +4055,21 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__HelpFlag__Group__0__Impl"
-    // InternalCurlBetterThanHttpie.g:1511:1: rule__HelpFlag__Group__0__Impl : ( () ) ;
+    // InternalCurlBetterThanHttpie.g:1316:1: rule__HelpFlag__Group__0__Impl : ( () ) ;
     public final void rule__HelpFlag__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:1515:1: ( ( () ) )
-            // InternalCurlBetterThanHttpie.g:1516:1: ( () )
+            // InternalCurlBetterThanHttpie.g:1320:1: ( ( () ) )
+            // InternalCurlBetterThanHttpie.g:1321:1: ( () )
             {
-            // InternalCurlBetterThanHttpie.g:1516:1: ( () )
-            // InternalCurlBetterThanHttpie.g:1517:2: ()
+            // InternalCurlBetterThanHttpie.g:1321:1: ( () )
+            // InternalCurlBetterThanHttpie.g:1322:2: ()
             {
              before(grammarAccess.getHelpFlagAccess().getHelpFlagAction_0()); 
-            // InternalCurlBetterThanHttpie.g:1518:2: ()
-            // InternalCurlBetterThanHttpie.g:1518:3: 
+            // InternalCurlBetterThanHttpie.g:1323:2: ()
+            // InternalCurlBetterThanHttpie.g:1323:3: 
             {
             }
 
@@ -4699,14 +4092,14 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__HelpFlag__Group__1"
-    // InternalCurlBetterThanHttpie.g:1526:1: rule__HelpFlag__Group__1 : rule__HelpFlag__Group__1__Impl ;
+    // InternalCurlBetterThanHttpie.g:1331:1: rule__HelpFlag__Group__1 : rule__HelpFlag__Group__1__Impl ;
     public final void rule__HelpFlag__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:1530:1: ( rule__HelpFlag__Group__1__Impl )
-            // InternalCurlBetterThanHttpie.g:1531:2: rule__HelpFlag__Group__1__Impl
+            // InternalCurlBetterThanHttpie.g:1335:1: ( rule__HelpFlag__Group__1__Impl )
+            // InternalCurlBetterThanHttpie.g:1336:2: rule__HelpFlag__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__HelpFlag__Group__1__Impl();
@@ -4732,21 +4125,21 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__HelpFlag__Group__1__Impl"
-    // InternalCurlBetterThanHttpie.g:1537:1: rule__HelpFlag__Group__1__Impl : ( ( rule__HelpFlag__Alternatives_1 ) ) ;
+    // InternalCurlBetterThanHttpie.g:1342:1: rule__HelpFlag__Group__1__Impl : ( ( rule__HelpFlag__Alternatives_1 ) ) ;
     public final void rule__HelpFlag__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:1541:1: ( ( ( rule__HelpFlag__Alternatives_1 ) ) )
-            // InternalCurlBetterThanHttpie.g:1542:1: ( ( rule__HelpFlag__Alternatives_1 ) )
+            // InternalCurlBetterThanHttpie.g:1346:1: ( ( ( rule__HelpFlag__Alternatives_1 ) ) )
+            // InternalCurlBetterThanHttpie.g:1347:1: ( ( rule__HelpFlag__Alternatives_1 ) )
             {
-            // InternalCurlBetterThanHttpie.g:1542:1: ( ( rule__HelpFlag__Alternatives_1 ) )
-            // InternalCurlBetterThanHttpie.g:1543:2: ( rule__HelpFlag__Alternatives_1 )
+            // InternalCurlBetterThanHttpie.g:1347:1: ( ( rule__HelpFlag__Alternatives_1 ) )
+            // InternalCurlBetterThanHttpie.g:1348:2: ( rule__HelpFlag__Alternatives_1 )
             {
              before(grammarAccess.getHelpFlagAccess().getAlternatives_1()); 
-            // InternalCurlBetterThanHttpie.g:1544:2: ( rule__HelpFlag__Alternatives_1 )
-            // InternalCurlBetterThanHttpie.g:1544:3: rule__HelpFlag__Alternatives_1
+            // InternalCurlBetterThanHttpie.g:1349:2: ( rule__HelpFlag__Alternatives_1 )
+            // InternalCurlBetterThanHttpie.g:1349:3: rule__HelpFlag__Alternatives_1
             {
             pushFollow(FOLLOW_2);
             rule__HelpFlag__Alternatives_1();
@@ -4779,16 +4172,16 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__VersionFlag__Group__0"
-    // InternalCurlBetterThanHttpie.g:1553:1: rule__VersionFlag__Group__0 : rule__VersionFlag__Group__0__Impl rule__VersionFlag__Group__1 ;
+    // InternalCurlBetterThanHttpie.g:1358:1: rule__VersionFlag__Group__0 : rule__VersionFlag__Group__0__Impl rule__VersionFlag__Group__1 ;
     public final void rule__VersionFlag__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:1557:1: ( rule__VersionFlag__Group__0__Impl rule__VersionFlag__Group__1 )
-            // InternalCurlBetterThanHttpie.g:1558:2: rule__VersionFlag__Group__0__Impl rule__VersionFlag__Group__1
+            // InternalCurlBetterThanHttpie.g:1362:1: ( rule__VersionFlag__Group__0__Impl rule__VersionFlag__Group__1 )
+            // InternalCurlBetterThanHttpie.g:1363:2: rule__VersionFlag__Group__0__Impl rule__VersionFlag__Group__1
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_16);
             rule__VersionFlag__Group__0__Impl();
 
             state._fsp--;
@@ -4817,21 +4210,21 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__VersionFlag__Group__0__Impl"
-    // InternalCurlBetterThanHttpie.g:1565:1: rule__VersionFlag__Group__0__Impl : ( () ) ;
+    // InternalCurlBetterThanHttpie.g:1370:1: rule__VersionFlag__Group__0__Impl : ( () ) ;
     public final void rule__VersionFlag__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:1569:1: ( ( () ) )
-            // InternalCurlBetterThanHttpie.g:1570:1: ( () )
+            // InternalCurlBetterThanHttpie.g:1374:1: ( ( () ) )
+            // InternalCurlBetterThanHttpie.g:1375:1: ( () )
             {
-            // InternalCurlBetterThanHttpie.g:1570:1: ( () )
-            // InternalCurlBetterThanHttpie.g:1571:2: ()
+            // InternalCurlBetterThanHttpie.g:1375:1: ( () )
+            // InternalCurlBetterThanHttpie.g:1376:2: ()
             {
              before(grammarAccess.getVersionFlagAccess().getVersionFlagAction_0()); 
-            // InternalCurlBetterThanHttpie.g:1572:2: ()
-            // InternalCurlBetterThanHttpie.g:1572:3: 
+            // InternalCurlBetterThanHttpie.g:1377:2: ()
+            // InternalCurlBetterThanHttpie.g:1377:3: 
             {
             }
 
@@ -4854,14 +4247,14 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__VersionFlag__Group__1"
-    // InternalCurlBetterThanHttpie.g:1580:1: rule__VersionFlag__Group__1 : rule__VersionFlag__Group__1__Impl ;
+    // InternalCurlBetterThanHttpie.g:1385:1: rule__VersionFlag__Group__1 : rule__VersionFlag__Group__1__Impl ;
     public final void rule__VersionFlag__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:1584:1: ( rule__VersionFlag__Group__1__Impl )
-            // InternalCurlBetterThanHttpie.g:1585:2: rule__VersionFlag__Group__1__Impl
+            // InternalCurlBetterThanHttpie.g:1389:1: ( rule__VersionFlag__Group__1__Impl )
+            // InternalCurlBetterThanHttpie.g:1390:2: rule__VersionFlag__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__VersionFlag__Group__1__Impl();
@@ -4887,20 +4280,20 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__VersionFlag__Group__1__Impl"
-    // InternalCurlBetterThanHttpie.g:1591:1: rule__VersionFlag__Group__1__Impl : ( '--version' ) ;
+    // InternalCurlBetterThanHttpie.g:1396:1: rule__VersionFlag__Group__1__Impl : ( '--version' ) ;
     public final void rule__VersionFlag__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:1595:1: ( ( '--version' ) )
-            // InternalCurlBetterThanHttpie.g:1596:1: ( '--version' )
+            // InternalCurlBetterThanHttpie.g:1400:1: ( ( '--version' ) )
+            // InternalCurlBetterThanHttpie.g:1401:1: ( '--version' )
             {
-            // InternalCurlBetterThanHttpie.g:1596:1: ( '--version' )
-            // InternalCurlBetterThanHttpie.g:1597:2: '--version'
+            // InternalCurlBetterThanHttpie.g:1401:1: ( '--version' )
+            // InternalCurlBetterThanHttpie.g:1402:2: '--version'
             {
              before(grammarAccess.getVersionFlagAccess().getVersionKeyword_1()); 
-            match(input,34,FOLLOW_2); 
+            match(input,32,FOLLOW_2); 
              after(grammarAccess.getVersionFlagAccess().getVersionKeyword_1()); 
 
             }
@@ -4924,16 +4317,16 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__VerboseFlag__Group__0"
-    // InternalCurlBetterThanHttpie.g:1607:1: rule__VerboseFlag__Group__0 : rule__VerboseFlag__Group__0__Impl rule__VerboseFlag__Group__1 ;
+    // InternalCurlBetterThanHttpie.g:1412:1: rule__VerboseFlag__Group__0 : rule__VerboseFlag__Group__0__Impl rule__VerboseFlag__Group__1 ;
     public final void rule__VerboseFlag__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:1611:1: ( rule__VerboseFlag__Group__0__Impl rule__VerboseFlag__Group__1 )
-            // InternalCurlBetterThanHttpie.g:1612:2: rule__VerboseFlag__Group__0__Impl rule__VerboseFlag__Group__1
+            // InternalCurlBetterThanHttpie.g:1416:1: ( rule__VerboseFlag__Group__0__Impl rule__VerboseFlag__Group__1 )
+            // InternalCurlBetterThanHttpie.g:1417:2: rule__VerboseFlag__Group__0__Impl rule__VerboseFlag__Group__1
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_17);
             rule__VerboseFlag__Group__0__Impl();
 
             state._fsp--;
@@ -4962,21 +4355,21 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__VerboseFlag__Group__0__Impl"
-    // InternalCurlBetterThanHttpie.g:1619:1: rule__VerboseFlag__Group__0__Impl : ( () ) ;
+    // InternalCurlBetterThanHttpie.g:1424:1: rule__VerboseFlag__Group__0__Impl : ( () ) ;
     public final void rule__VerboseFlag__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:1623:1: ( ( () ) )
-            // InternalCurlBetterThanHttpie.g:1624:1: ( () )
+            // InternalCurlBetterThanHttpie.g:1428:1: ( ( () ) )
+            // InternalCurlBetterThanHttpie.g:1429:1: ( () )
             {
-            // InternalCurlBetterThanHttpie.g:1624:1: ( () )
-            // InternalCurlBetterThanHttpie.g:1625:2: ()
+            // InternalCurlBetterThanHttpie.g:1429:1: ( () )
+            // InternalCurlBetterThanHttpie.g:1430:2: ()
             {
              before(grammarAccess.getVerboseFlagAccess().getVerboseFlagAction_0()); 
-            // InternalCurlBetterThanHttpie.g:1626:2: ()
-            // InternalCurlBetterThanHttpie.g:1626:3: 
+            // InternalCurlBetterThanHttpie.g:1431:2: ()
+            // InternalCurlBetterThanHttpie.g:1431:3: 
             {
             }
 
@@ -4999,14 +4392,14 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__VerboseFlag__Group__1"
-    // InternalCurlBetterThanHttpie.g:1634:1: rule__VerboseFlag__Group__1 : rule__VerboseFlag__Group__1__Impl ;
+    // InternalCurlBetterThanHttpie.g:1439:1: rule__VerboseFlag__Group__1 : rule__VerboseFlag__Group__1__Impl ;
     public final void rule__VerboseFlag__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:1638:1: ( rule__VerboseFlag__Group__1__Impl )
-            // InternalCurlBetterThanHttpie.g:1639:2: rule__VerboseFlag__Group__1__Impl
+            // InternalCurlBetterThanHttpie.g:1443:1: ( rule__VerboseFlag__Group__1__Impl )
+            // InternalCurlBetterThanHttpie.g:1444:2: rule__VerboseFlag__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__VerboseFlag__Group__1__Impl();
@@ -5032,21 +4425,21 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
 
     // $ANTLR start "rule__VerboseFlag__Group__1__Impl"
-    // InternalCurlBetterThanHttpie.g:1645:1: rule__VerboseFlag__Group__1__Impl : ( ( rule__VerboseFlag__Alternatives_1 ) ) ;
+    // InternalCurlBetterThanHttpie.g:1450:1: rule__VerboseFlag__Group__1__Impl : ( ( rule__VerboseFlag__Alternatives_1 ) ) ;
     public final void rule__VerboseFlag__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:1649:1: ( ( ( rule__VerboseFlag__Alternatives_1 ) ) )
-            // InternalCurlBetterThanHttpie.g:1650:1: ( ( rule__VerboseFlag__Alternatives_1 ) )
+            // InternalCurlBetterThanHttpie.g:1454:1: ( ( ( rule__VerboseFlag__Alternatives_1 ) ) )
+            // InternalCurlBetterThanHttpie.g:1455:1: ( ( rule__VerboseFlag__Alternatives_1 ) )
             {
-            // InternalCurlBetterThanHttpie.g:1650:1: ( ( rule__VerboseFlag__Alternatives_1 ) )
-            // InternalCurlBetterThanHttpie.g:1651:2: ( rule__VerboseFlag__Alternatives_1 )
+            // InternalCurlBetterThanHttpie.g:1455:1: ( ( rule__VerboseFlag__Alternatives_1 ) )
+            // InternalCurlBetterThanHttpie.g:1456:2: ( rule__VerboseFlag__Alternatives_1 )
             {
              before(grammarAccess.getVerboseFlagAccess().getAlternatives_1()); 
-            // InternalCurlBetterThanHttpie.g:1652:2: ( rule__VerboseFlag__Alternatives_1 )
-            // InternalCurlBetterThanHttpie.g:1652:3: rule__VerboseFlag__Alternatives_1
+            // InternalCurlBetterThanHttpie.g:1457:2: ( rule__VerboseFlag__Alternatives_1 )
+            // InternalCurlBetterThanHttpie.g:1457:3: rule__VerboseFlag__Alternatives_1
             {
             pushFollow(FOLLOW_2);
             rule__VerboseFlag__Alternatives_1();
@@ -5078,18 +4471,258 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
     // $ANTLR end "rule__VerboseFlag__Group__1__Impl"
 
 
+    // $ANTLR start "rule__TimeoutFlag__Group__0"
+    // InternalCurlBetterThanHttpie.g:1466:1: rule__TimeoutFlag__Group__0 : rule__TimeoutFlag__Group__0__Impl rule__TimeoutFlag__Group__1 ;
+    public final void rule__TimeoutFlag__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCurlBetterThanHttpie.g:1470:1: ( rule__TimeoutFlag__Group__0__Impl rule__TimeoutFlag__Group__1 )
+            // InternalCurlBetterThanHttpie.g:1471:2: rule__TimeoutFlag__Group__0__Impl rule__TimeoutFlag__Group__1
+            {
+            pushFollow(FOLLOW_11);
+            rule__TimeoutFlag__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__TimeoutFlag__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__TimeoutFlag__Group__0"
+
+
+    // $ANTLR start "rule__TimeoutFlag__Group__0__Impl"
+    // InternalCurlBetterThanHttpie.g:1478:1: rule__TimeoutFlag__Group__0__Impl : ( '--timeout' ) ;
+    public final void rule__TimeoutFlag__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCurlBetterThanHttpie.g:1482:1: ( ( '--timeout' ) )
+            // InternalCurlBetterThanHttpie.g:1483:1: ( '--timeout' )
+            {
+            // InternalCurlBetterThanHttpie.g:1483:1: ( '--timeout' )
+            // InternalCurlBetterThanHttpie.g:1484:2: '--timeout'
+            {
+             before(grammarAccess.getTimeoutFlagAccess().getTimeoutKeyword_0()); 
+            match(input,33,FOLLOW_2); 
+             after(grammarAccess.getTimeoutFlagAccess().getTimeoutKeyword_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__TimeoutFlag__Group__0__Impl"
+
+
+    // $ANTLR start "rule__TimeoutFlag__Group__1"
+    // InternalCurlBetterThanHttpie.g:1493:1: rule__TimeoutFlag__Group__1 : rule__TimeoutFlag__Group__1__Impl rule__TimeoutFlag__Group__2 ;
+    public final void rule__TimeoutFlag__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCurlBetterThanHttpie.g:1497:1: ( rule__TimeoutFlag__Group__1__Impl rule__TimeoutFlag__Group__2 )
+            // InternalCurlBetterThanHttpie.g:1498:2: rule__TimeoutFlag__Group__1__Impl rule__TimeoutFlag__Group__2
+            {
+            pushFollow(FOLLOW_18);
+            rule__TimeoutFlag__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__TimeoutFlag__Group__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__TimeoutFlag__Group__1"
+
+
+    // $ANTLR start "rule__TimeoutFlag__Group__1__Impl"
+    // InternalCurlBetterThanHttpie.g:1505:1: rule__TimeoutFlag__Group__1__Impl : ( ( rule__TimeoutFlag__Alternatives_1 ) ) ;
+    public final void rule__TimeoutFlag__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCurlBetterThanHttpie.g:1509:1: ( ( ( rule__TimeoutFlag__Alternatives_1 ) ) )
+            // InternalCurlBetterThanHttpie.g:1510:1: ( ( rule__TimeoutFlag__Alternatives_1 ) )
+            {
+            // InternalCurlBetterThanHttpie.g:1510:1: ( ( rule__TimeoutFlag__Alternatives_1 ) )
+            // InternalCurlBetterThanHttpie.g:1511:2: ( rule__TimeoutFlag__Alternatives_1 )
+            {
+             before(grammarAccess.getTimeoutFlagAccess().getAlternatives_1()); 
+            // InternalCurlBetterThanHttpie.g:1512:2: ( rule__TimeoutFlag__Alternatives_1 )
+            // InternalCurlBetterThanHttpie.g:1512:3: rule__TimeoutFlag__Alternatives_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__TimeoutFlag__Alternatives_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getTimeoutFlagAccess().getAlternatives_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__TimeoutFlag__Group__1__Impl"
+
+
+    // $ANTLR start "rule__TimeoutFlag__Group__2"
+    // InternalCurlBetterThanHttpie.g:1520:1: rule__TimeoutFlag__Group__2 : rule__TimeoutFlag__Group__2__Impl ;
+    public final void rule__TimeoutFlag__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCurlBetterThanHttpie.g:1524:1: ( rule__TimeoutFlag__Group__2__Impl )
+            // InternalCurlBetterThanHttpie.g:1525:2: rule__TimeoutFlag__Group__2__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__TimeoutFlag__Group__2__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__TimeoutFlag__Group__2"
+
+
+    // $ANTLR start "rule__TimeoutFlag__Group__2__Impl"
+    // InternalCurlBetterThanHttpie.g:1531:1: rule__TimeoutFlag__Group__2__Impl : ( ( rule__TimeoutFlag__TimeoutAssignment_2 ) ) ;
+    public final void rule__TimeoutFlag__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCurlBetterThanHttpie.g:1535:1: ( ( ( rule__TimeoutFlag__TimeoutAssignment_2 ) ) )
+            // InternalCurlBetterThanHttpie.g:1536:1: ( ( rule__TimeoutFlag__TimeoutAssignment_2 ) )
+            {
+            // InternalCurlBetterThanHttpie.g:1536:1: ( ( rule__TimeoutFlag__TimeoutAssignment_2 ) )
+            // InternalCurlBetterThanHttpie.g:1537:2: ( rule__TimeoutFlag__TimeoutAssignment_2 )
+            {
+             before(grammarAccess.getTimeoutFlagAccess().getTimeoutAssignment_2()); 
+            // InternalCurlBetterThanHttpie.g:1538:2: ( rule__TimeoutFlag__TimeoutAssignment_2 )
+            // InternalCurlBetterThanHttpie.g:1538:3: rule__TimeoutFlag__TimeoutAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__TimeoutFlag__TimeoutAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getTimeoutFlagAccess().getTimeoutAssignment_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__TimeoutFlag__Group__2__Impl"
+
+
     // $ANTLR start "rule__CommandLineInterface__FlagsAssignment_2_1"
-    // InternalCurlBetterThanHttpie.g:1661:1: rule__CommandLineInterface__FlagsAssignment_2_1 : ( ruleFlag ) ;
+    // InternalCurlBetterThanHttpie.g:1547:1: rule__CommandLineInterface__FlagsAssignment_2_1 : ( ruleFlag ) ;
     public final void rule__CommandLineInterface__FlagsAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:1665:1: ( ( ruleFlag ) )
-            // InternalCurlBetterThanHttpie.g:1666:2: ( ruleFlag )
+            // InternalCurlBetterThanHttpie.g:1551:1: ( ( ruleFlag ) )
+            // InternalCurlBetterThanHttpie.g:1552:2: ( ruleFlag )
             {
-            // InternalCurlBetterThanHttpie.g:1666:2: ( ruleFlag )
-            // InternalCurlBetterThanHttpie.g:1667:3: ruleFlag
+            // InternalCurlBetterThanHttpie.g:1552:2: ( ruleFlag )
+            // InternalCurlBetterThanHttpie.g:1553:3: ruleFlag
             {
              before(grammarAccess.getCommandLineInterfaceAccess().getFlagsFlagParserRuleCall_2_1_0()); 
             pushFollow(FOLLOW_2);
@@ -5119,22 +4752,22 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
     // $ANTLR end "rule__CommandLineInterface__FlagsAssignment_2_1"
 
 
-    // $ANTLR start "rule__ProxyFlag__ProtocolAssignment_2_0_0_0"
-    // InternalCurlBetterThanHttpie.g:1676:1: rule__ProxyFlag__ProtocolAssignment_2_0_0_0 : ( RULE_BASIC_STRING ) ;
-    public final void rule__ProxyFlag__ProtocolAssignment_2_0_0_0() throws RecognitionException {
+    // $ANTLR start "rule__ProxyFlag__ProtocolAssignment_2_0"
+    // InternalCurlBetterThanHttpie.g:1562:1: rule__ProxyFlag__ProtocolAssignment_2_0 : ( RULE_STRING ) ;
+    public final void rule__ProxyFlag__ProtocolAssignment_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:1680:1: ( ( RULE_BASIC_STRING ) )
-            // InternalCurlBetterThanHttpie.g:1681:2: ( RULE_BASIC_STRING )
+            // InternalCurlBetterThanHttpie.g:1566:1: ( ( RULE_STRING ) )
+            // InternalCurlBetterThanHttpie.g:1567:2: ( RULE_STRING )
             {
-            // InternalCurlBetterThanHttpie.g:1681:2: ( RULE_BASIC_STRING )
-            // InternalCurlBetterThanHttpie.g:1682:3: RULE_BASIC_STRING
+            // InternalCurlBetterThanHttpie.g:1567:2: ( RULE_STRING )
+            // InternalCurlBetterThanHttpie.g:1568:3: RULE_STRING
             {
-             before(grammarAccess.getProxyFlagAccess().getProtocolBASIC_STRINGTerminalRuleCall_2_0_0_0_0()); 
-            match(input,RULE_BASIC_STRING,FOLLOW_2); 
-             after(grammarAccess.getProxyFlagAccess().getProtocolBASIC_STRINGTerminalRuleCall_2_0_0_0_0()); 
+             before(grammarAccess.getProxyFlagAccess().getProtocolSTRINGTerminalRuleCall_2_0_0()); 
+            match(input,RULE_STRING,FOLLOW_2); 
+             after(grammarAccess.getProxyFlagAccess().getProtocolSTRINGTerminalRuleCall_2_0_0()); 
 
             }
 
@@ -5153,25 +4786,25 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
         }
         return ;
     }
-    // $ANTLR end "rule__ProxyFlag__ProtocolAssignment_2_0_0_0"
+    // $ANTLR end "rule__ProxyFlag__ProtocolAssignment_2_0"
 
 
-    // $ANTLR start "rule__ProxyFlag__ProxyProtocolAssignment_2_0_1_0"
-    // InternalCurlBetterThanHttpie.g:1691:1: rule__ProxyFlag__ProxyProtocolAssignment_2_0_1_0 : ( RULE_BASIC_STRING ) ;
-    public final void rule__ProxyFlag__ProxyProtocolAssignment_2_0_1_0() throws RecognitionException {
+    // $ANTLR start "rule__TimeoutFlag__TimeoutAssignment_2"
+    // InternalCurlBetterThanHttpie.g:1577:1: rule__TimeoutFlag__TimeoutAssignment_2 : ( RULE_FLOAT ) ;
+    public final void rule__TimeoutFlag__TimeoutAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCurlBetterThanHttpie.g:1695:1: ( ( RULE_BASIC_STRING ) )
-            // InternalCurlBetterThanHttpie.g:1696:2: ( RULE_BASIC_STRING )
+            // InternalCurlBetterThanHttpie.g:1581:1: ( ( RULE_FLOAT ) )
+            // InternalCurlBetterThanHttpie.g:1582:2: ( RULE_FLOAT )
             {
-            // InternalCurlBetterThanHttpie.g:1696:2: ( RULE_BASIC_STRING )
-            // InternalCurlBetterThanHttpie.g:1697:3: RULE_BASIC_STRING
+            // InternalCurlBetterThanHttpie.g:1582:2: ( RULE_FLOAT )
+            // InternalCurlBetterThanHttpie.g:1583:3: RULE_FLOAT
             {
-             before(grammarAccess.getProxyFlagAccess().getProxyProtocolBASIC_STRINGTerminalRuleCall_2_0_1_0_0()); 
-            match(input,RULE_BASIC_STRING,FOLLOW_2); 
-             after(grammarAccess.getProxyFlagAccess().getProxyProtocolBASIC_STRINGTerminalRuleCall_2_0_1_0_0()); 
+             before(grammarAccess.getTimeoutFlagAccess().getTimeoutFLOATTerminalRuleCall_2_0()); 
+            match(input,RULE_FLOAT,FOLLOW_2); 
+             after(grammarAccess.getTimeoutFlagAccess().getTimeoutFLOATTerminalRuleCall_2_0()); 
 
             }
 
@@ -5190,118 +4823,7 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
         }
         return ;
     }
-    // $ANTLR end "rule__ProxyFlag__ProxyProtocolAssignment_2_0_1_0"
-
-
-    // $ANTLR start "rule__ProxyFlag__ProxyProtocolAssignment_2_1_0"
-    // InternalCurlBetterThanHttpie.g:1706:1: rule__ProxyFlag__ProxyProtocolAssignment_2_1_0 : ( RULE_BASIC_STRING ) ;
-    public final void rule__ProxyFlag__ProxyProtocolAssignment_2_1_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCurlBetterThanHttpie.g:1710:1: ( ( RULE_BASIC_STRING ) )
-            // InternalCurlBetterThanHttpie.g:1711:2: ( RULE_BASIC_STRING )
-            {
-            // InternalCurlBetterThanHttpie.g:1711:2: ( RULE_BASIC_STRING )
-            // InternalCurlBetterThanHttpie.g:1712:3: RULE_BASIC_STRING
-            {
-             before(grammarAccess.getProxyFlagAccess().getProxyProtocolBASIC_STRINGTerminalRuleCall_2_1_0_0()); 
-            match(input,RULE_BASIC_STRING,FOLLOW_2); 
-             after(grammarAccess.getProxyFlagAccess().getProxyProtocolBASIC_STRINGTerminalRuleCall_2_1_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ProxyFlag__ProxyProtocolAssignment_2_1_0"
-
-
-    // $ANTLR start "rule__ProxyFlag__UsernameAssignment_3_0"
-    // InternalCurlBetterThanHttpie.g:1721:1: rule__ProxyFlag__UsernameAssignment_3_0 : ( RULE_STRING_UP ) ;
-    public final void rule__ProxyFlag__UsernameAssignment_3_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCurlBetterThanHttpie.g:1725:1: ( ( RULE_STRING_UP ) )
-            // InternalCurlBetterThanHttpie.g:1726:2: ( RULE_STRING_UP )
-            {
-            // InternalCurlBetterThanHttpie.g:1726:2: ( RULE_STRING_UP )
-            // InternalCurlBetterThanHttpie.g:1727:3: RULE_STRING_UP
-            {
-             before(grammarAccess.getProxyFlagAccess().getUsernameSTRING_UPTerminalRuleCall_3_0_0()); 
-            match(input,RULE_STRING_UP,FOLLOW_2); 
-             after(grammarAccess.getProxyFlagAccess().getUsernameSTRING_UPTerminalRuleCall_3_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ProxyFlag__UsernameAssignment_3_0"
-
-
-    // $ANTLR start "rule__ProxyFlag__PasswordAssignment_3_2"
-    // InternalCurlBetterThanHttpie.g:1736:1: rule__ProxyFlag__PasswordAssignment_3_2 : ( RULE_STRING_UP ) ;
-    public final void rule__ProxyFlag__PasswordAssignment_3_2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCurlBetterThanHttpie.g:1740:1: ( ( RULE_STRING_UP ) )
-            // InternalCurlBetterThanHttpie.g:1741:2: ( RULE_STRING_UP )
-            {
-            // InternalCurlBetterThanHttpie.g:1741:2: ( RULE_STRING_UP )
-            // InternalCurlBetterThanHttpie.g:1742:3: RULE_STRING_UP
-            {
-             before(grammarAccess.getProxyFlagAccess().getPasswordSTRING_UPTerminalRuleCall_3_2_0()); 
-            match(input,RULE_STRING_UP,FOLLOW_2); 
-             after(grammarAccess.getProxyFlagAccess().getPasswordSTRING_UPTerminalRuleCall_3_2_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ProxyFlag__PasswordAssignment_3_2"
+    // $ANTLR end "rule__TimeoutFlag__TimeoutAssignment_2"
 
     // Delegated rules
 
@@ -5310,22 +4832,21 @@ public class InternalCurlBetterThanHttpieParser extends AbstractInternalContentA
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000020000000L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x00000004BFDFF000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000006000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000018000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000060000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000180000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000200010L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x000000035FEFF000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000003000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x000000000000C000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000030000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x00000000000C0000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000100010L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000003000000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x000000000C000000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000030000000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000001800000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000006000000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000018000000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000000040L});
 
 }

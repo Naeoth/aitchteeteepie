@@ -37,12 +37,12 @@ public class CurlBetterThanHttpieParser extends AbstractContentAssistParser {
 					put(grammarAccess.getJsonFlagAccess().getAlternatives_1(), "rule__JsonFlag__Alternatives_1");
 					put(grammarAccess.getFormFlagAccess().getAlternatives_1(), "rule__FormFlag__Alternatives_1");
 					put(grammarAccess.getProxyFlagAccess().getAlternatives_1(), "rule__ProxyFlag__Alternatives_1");
-					put(grammarAccess.getProxyFlagAccess().getAlternatives_2(), "rule__ProxyFlag__Alternatives_2");
-					put(grammarAccess.getAuthFlagAccess().getAlternatives(), "rule__AuthFlag__Alternatives");
+					put(grammarAccess.getAuthFlagAccess().getAlternatives_0(), "rule__AuthFlag__Alternatives_0");
+					put(grammarAccess.getAuthFlagAccess().getAlternatives_1(), "rule__AuthFlag__Alternatives_1");
 					put(grammarAccess.getDownloadFlagAccess().getAlternatives_1(), "rule__DownloadFlag__Alternatives_1");
 					put(grammarAccess.getHelpFlagAccess().getAlternatives_1(), "rule__HelpFlag__Alternatives_1");
 					put(grammarAccess.getVerboseFlagAccess().getAlternatives_1(), "rule__VerboseFlag__Alternatives_1");
-					put(grammarAccess.getMethodAccess().getAlternatives(), "rule__Method__Alternatives");
+					put(grammarAccess.getTimeoutFlagAccess().getAlternatives_1(), "rule__TimeoutFlag__Alternatives_1");
 					put(grammarAccess.getCommandLineInterfaceAccess().getGroup(), "rule__CommandLineInterface__Group__0");
 					put(grammarAccess.getCommandLineInterfaceAccess().getGroup_2(), "rule__CommandLineInterface__Group_2__0");
 					put(grammarAccess.getHeadersFlagAccess().getGroup(), "rule__HeadersFlag__Group__0");
@@ -50,21 +50,16 @@ public class CurlBetterThanHttpieParser extends AbstractContentAssistParser {
 					put(grammarAccess.getJsonFlagAccess().getGroup(), "rule__JsonFlag__Group__0");
 					put(grammarAccess.getFormFlagAccess().getGroup(), "rule__FormFlag__Group__0");
 					put(grammarAccess.getProxyFlagAccess().getGroup(), "rule__ProxyFlag__Group__0");
-					put(grammarAccess.getProxyFlagAccess().getGroup_2_0(), "rule__ProxyFlag__Group_2_0__0");
-					put(grammarAccess.getProxyFlagAccess().getGroup_2_0_0(), "rule__ProxyFlag__Group_2_0_0__0");
-					put(grammarAccess.getProxyFlagAccess().getGroup_2_0_1(), "rule__ProxyFlag__Group_2_0_1__0");
-					put(grammarAccess.getProxyFlagAccess().getGroup_2_1(), "rule__ProxyFlag__Group_2_1__0");
-					put(grammarAccess.getProxyFlagAccess().getGroup_3(), "rule__ProxyFlag__Group_3__0");
+					put(grammarAccess.getProxyFlagAccess().getGroup_2(), "rule__ProxyFlag__Group_2__0");
+					put(grammarAccess.getAuthFlagAccess().getGroup(), "rule__AuthFlag__Group__0");
 					put(grammarAccess.getDownloadFlagAccess().getGroup(), "rule__DownloadFlag__Group__0");
 					put(grammarAccess.getHelpFlagAccess().getGroup(), "rule__HelpFlag__Group__0");
 					put(grammarAccess.getVersionFlagAccess().getGroup(), "rule__VersionFlag__Group__0");
 					put(grammarAccess.getVerboseFlagAccess().getGroup(), "rule__VerboseFlag__Group__0");
+					put(grammarAccess.getTimeoutFlagAccess().getGroup(), "rule__TimeoutFlag__Group__0");
 					put(grammarAccess.getCommandLineInterfaceAccess().getFlagsAssignment_2_1(), "rule__CommandLineInterface__FlagsAssignment_2_1");
-					put(grammarAccess.getProxyFlagAccess().getProtocolAssignment_2_0_0_0(), "rule__ProxyFlag__ProtocolAssignment_2_0_0_0");
-					put(grammarAccess.getProxyFlagAccess().getProxyProtocolAssignment_2_0_1_0(), "rule__ProxyFlag__ProxyProtocolAssignment_2_0_1_0");
-					put(grammarAccess.getProxyFlagAccess().getProxyProtocolAssignment_2_1_0(), "rule__ProxyFlag__ProxyProtocolAssignment_2_1_0");
-					put(grammarAccess.getProxyFlagAccess().getUsernameAssignment_3_0(), "rule__ProxyFlag__UsernameAssignment_3_0");
-					put(grammarAccess.getProxyFlagAccess().getPasswordAssignment_3_2(), "rule__ProxyFlag__PasswordAssignment_3_2");
+					put(grammarAccess.getProxyFlagAccess().getProtocolAssignment_2_0(), "rule__ProxyFlag__ProtocolAssignment_2_0");
+					put(grammarAccess.getTimeoutFlagAccess().getTimeoutAssignment_2(), "rule__TimeoutFlag__TimeoutAssignment_2");
 				}
 			};
 		}

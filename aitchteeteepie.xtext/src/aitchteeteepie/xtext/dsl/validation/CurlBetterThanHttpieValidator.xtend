@@ -3,23 +3,39 @@
  */
 package aitchteeteepie.xtext.dsl.validation
 
+import aitchteeteepie.ProxyFlag
+import aitchteeteepie.AitchteeteepiePackage
+import org.eclipse.xtext.validation.Check
 
 /**
  * This class contains custom validation rules. 
  *
- * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
+ * See https://www.eclipse.org/Xtext»/documentation/303_runtime_concepts.html#validation
  */
 class CurlBetterThanHttpieValidator extends AbstractCurlBetterThanHttpieValidator {
 	
-//	public static val INVALID_NAME = 'invalidName'
-//
-//	@Check
-//	def checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.name.charAt(0))) {
-//			warning('Name should start with a capital', 
-//					CurlBetterThanHttpiePackage.Literals.GREETING__NAME,
-//					INVALID_NAME)
-//		}
-//	}
+	/*public static val INVALID_NAME = 'invalidUserName'
+	public static val char[] SPECIAL = #[':', '@', '-', '.', '_', '~', '/', '?', '#', '[', ']', '!', '$', '&', '(', ')', '*', '+', ',', '|', ';', '%']
+
+	@Check
+	def checkProxyProtocol(ProxyFlag proxy) {
+		for (char c : SPECIAL) {
+			if (proxy.protocol.indexOf(c) != -1)
+				error("protocol must not contain special characters", 
+					AitchteeteepiePackage.Literals.PROXY_FLAG__PROTOCOL)
+			if (proxy.proxyProtocol.indexOf(c) != -1)
+				error("proxy protocol must not contain special characters", 
+					AitchteeteepiePackage.Literals.PROXY_FLAG__PROXY_PROTOCOL)
+		}
+	}
 	
+	@Check
+	def checkProxyUsername(ProxyFlag proxy) {
+		if (proxy.username.indexOf(SPECIAL.get(0)) != -1 || proxy.username.indexOf(SPECIAL.get(1)) != -1)
+			error("user name must not contain special characters", 
+				AitchteeteepiePackage.Literals.PROXY_FLAG__USERNAME)
+		if (proxy.password.indexOf(SPECIAL.get(0)) != -1 || proxy.password.indexOf(SPECIAL.get(1)) != -1)
+			error("password must not contain special ':' or '@'", 
+				AitchteeteepiePackage.Literals.PROXY_FLAG__PASSWORD)
+	}*/
 }

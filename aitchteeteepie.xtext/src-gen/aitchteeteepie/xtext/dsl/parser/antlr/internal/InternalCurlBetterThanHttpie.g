@@ -23,7 +23,6 @@ import org.eclipse.xtext.parser.*;
 import org.eclipse.xtext.parser.impl.*;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
@@ -421,86 +420,9 @@ ruleProxyFlag returns [EObject current=null]
 		(
 			(
 				(
-					(
-						(
-							lv_protocol_3_0=RULE_BASIC_STRING
-							{
-								newLeafNode(lv_protocol_3_0, grammarAccess.getProxyFlagAccess().getProtocolBASIC_STRINGTerminalRuleCall_2_0_0_0_0());
-							}
-							{
-								if ($current==null) {
-									$current = createModelElement(grammarAccess.getProxyFlagRule());
-								}
-								setWithLastConsumed(
-									$current,
-									"protocol",
-									lv_protocol_3_0,
-									"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.BASIC_STRING");
-							}
-						)
-					)
-					otherlv_4=':'
+					lv_protocol_3_0=RULE_STRING
 					{
-						newLeafNode(otherlv_4, grammarAccess.getProxyFlagAccess().getColonKeyword_2_0_0_1());
-					}
-				)
-				(
-					(
-						(
-							lv_proxyProtocol_5_0=RULE_BASIC_STRING
-							{
-								newLeafNode(lv_proxyProtocol_5_0, grammarAccess.getProxyFlagAccess().getProxyProtocolBASIC_STRINGTerminalRuleCall_2_0_1_0_0());
-							}
-							{
-								if ($current==null) {
-									$current = createModelElement(grammarAccess.getProxyFlagRule());
-								}
-								setWithLastConsumed(
-									$current,
-									"proxyProtocol",
-									lv_proxyProtocol_5_0,
-									"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.BASIC_STRING");
-							}
-						)
-					)
-					otherlv_6='://'
-					{
-						newLeafNode(otherlv_6, grammarAccess.getProxyFlagAccess().getColonSolidusSolidusKeyword_2_0_1_1());
-					}
-				)?
-			)
-			    |
-			(
-				(
-					(
-						lv_proxyProtocol_7_0=RULE_BASIC_STRING
-						{
-							newLeafNode(lv_proxyProtocol_7_0, grammarAccess.getProxyFlagAccess().getProxyProtocolBASIC_STRINGTerminalRuleCall_2_1_0_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getProxyFlagRule());
-							}
-							setWithLastConsumed(
-								$current,
-								"proxyProtocol",
-								lv_proxyProtocol_7_0,
-								"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.BASIC_STRING");
-						}
-					)
-				)
-				otherlv_8='://'
-				{
-					newLeafNode(otherlv_8, grammarAccess.getProxyFlagAccess().getColonSolidusSolidusKeyword_2_1_1());
-				}
-			)
-		)
-		(
-			(
-				(
-					lv_username_9_0=RULE_STRING_UP
-					{
-						newLeafNode(lv_username_9_0, grammarAccess.getProxyFlagAccess().getUsernameSTRING_UPTerminalRuleCall_3_0_0());
+						newLeafNode(lv_protocol_3_0, grammarAccess.getProxyFlagAccess().getProtocolSTRINGTerminalRuleCall_2_0_0());
 					}
 					{
 						if ($current==null) {
@@ -508,35 +430,17 @@ ruleProxyFlag returns [EObject current=null]
 						}
 						setWithLastConsumed(
 							$current,
-							"username",
-							lv_username_9_0,
-							"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.STRING_UP");
+							"protocol",
+							lv_protocol_3_0,
+							"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.STRING");
 					}
 				)
 			)
-			otherlv_10=':'
+			otherlv_4=':'
 			{
-				newLeafNode(otherlv_10, grammarAccess.getProxyFlagAccess().getColonKeyword_3_1());
+				newLeafNode(otherlv_4, grammarAccess.getProxyFlagAccess().getColonKeyword_2_1());
 			}
-			(
-				(
-					lv_password_11_0=RULE_STRING_UP
-					{
-						newLeafNode(lv_password_11_0, grammarAccess.getProxyFlagAccess().getPasswordSTRING_UPTerminalRuleCall_3_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getProxyFlagRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"password",
-							lv_password_11_0,
-							"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.STRING_UP");
-					}
-				)
-			)
-		)?
+		)
 	)
 ;
 
@@ -556,15 +460,28 @@ ruleAuthFlag returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='--auth'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getAuthFlagAccess().getAuthKeyword_0());
-		}
-		    |
-		otherlv_1='-a'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getAuthFlagAccess().getAKeyword_1());
-		}
+		(
+			otherlv_0='--auth'
+			{
+				newLeafNode(otherlv_0, grammarAccess.getAuthFlagAccess().getAuthKeyword_0_0());
+			}
+			    |
+			otherlv_1='-a'
+			{
+				newLeafNode(otherlv_1, grammarAccess.getAuthFlagAccess().getAKeyword_0_1());
+			}
+		)
+		(
+			otherlv_2='='
+			{
+				newLeafNode(otherlv_2, grammarAccess.getAuthFlagAccess().getEqualsSignKeyword_1_0());
+			}
+			    |
+			this_WS_3=RULE_WS
+			{
+				newLeafNode(this_WS_3, grammarAccess.getAuthFlagAccess().getWSTerminalRuleCall_1_1());
+			}
+		)
 	)
 ;
 
@@ -724,17 +641,50 @@ ruleTimeoutFlag returns [EObject current=null]
 @after {
 	leaveRule();
 }:
-	otherlv_0='--timeout'
-	{
-		newLeafNode(otherlv_0, grammarAccess.getTimeoutFlagAccess().getTimeoutKeyword());
-	}
+	(
+		otherlv_0='--timeout'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getTimeoutFlagAccess().getTimeoutKeyword_0());
+		}
+		(
+			otherlv_1='='
+			{
+				newLeafNode(otherlv_1, grammarAccess.getTimeoutFlagAccess().getEqualsSignKeyword_1_0());
+			}
+			    |
+			this_WS_2=RULE_WS
+			{
+				newLeafNode(this_WS_2, grammarAccess.getTimeoutFlagAccess().getWSTerminalRuleCall_1_1());
+			}
+		)
+		(
+			(
+				lv_timeout_3_0=RULE_FLOAT
+				{
+					newLeafNode(lv_timeout_3_0, grammarAccess.getTimeoutFlagAccess().getTimeoutFLOATTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getTimeoutFlagRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"timeout",
+						lv_timeout_3_0,
+						"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.FLOAT");
+				}
+			)
+		)
+	)
 ;
+
+RULE_BOOLEAN : ('true'|'false');
 
 fragment RULE_DIGIT : '0'..'9';
 
 fragment RULE_LETTER : ('a'..'z'|'A'..'Z');
 
-fragment RULE_SPECIAL_UP : ('-'|'.'|'_'|'~'|'/'|'?'|'#'|'['|']'|'!'|'$'|'&'|'('|')'|'*'|'+'|','|'|'|';');
+fragment RULE_SPECIAL : ('-'|'.'|'_'|'~'|'/'|'?'|'#'|'['|']'|'!'|'$'|'&'|'('|')'|'*'|'+'|','|'|'|';'|'%'|':'|'@');
 
 RULE_WS : (' '|'\t')+;
 
@@ -742,6 +692,4 @@ fragment RULE_INT : ('0'|'1'..'9' RULE_DIGIT*);
 
 RULE_FLOAT : (RULE_INT|RULE_INT? '.' RULE_DIGIT* (('E'|'e') RULE_INT)?);
 
-RULE_BASIC_STRING : (RULE_DIGIT|RULE_LETTER)+;
-
-RULE_STRING_UP : (RULE_DIGIT|RULE_LETTER|RULE_SPECIAL_UP);
+RULE_STRING : (RULE_DIGIT|RULE_LETTER|RULE_SPECIAL)+;

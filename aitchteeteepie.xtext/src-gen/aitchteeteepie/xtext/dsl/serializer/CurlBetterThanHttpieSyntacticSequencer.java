@@ -21,8 +21,8 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected CurlBetterThanHttpieGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_AuthFlag_AKeyword_1_or_AuthKeyword_0;
-	protected AbstractElementAlias match_AuthFlag_TimeoutFlag_AKeyword_1_or_AuthKeyword_0_or_TimeoutKeyword;
+	protected AbstractElementAlias match_AuthFlag_AKeyword_0_1_or_AuthKeyword_0_0;
+	protected AbstractElementAlias match_AuthFlag_EqualsSignKeyword_1_0_or_WSTerminalRuleCall_1_1;
 	protected AbstractElementAlias match_BodyFlag_BKeyword_1_1_or_BodyKeyword_1_0;
 	protected AbstractElementAlias match_CommandLineInterface_WSTerminalRuleCall_3_q;
 	protected AbstractElementAlias match_DownloadFlag_DKeyword_1_1_or_DownloadKeyword_1_0;
@@ -31,13 +31,14 @@ public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSeq
 	protected AbstractElementAlias match_HelpFlag_HKeyword_1_1_or_HelpKeyword_1_0;
 	protected AbstractElementAlias match_JsonFlag_JKeyword_1_1_or_JsonKeyword_1_0;
 	protected AbstractElementAlias match_ProxyFlag_EqualsSignKeyword_1_0_or_WSTerminalRuleCall_1_1;
+	protected AbstractElementAlias match_TimeoutFlag_EqualsSignKeyword_1_0_or_WSTerminalRuleCall_1_1;
 	protected AbstractElementAlias match_VerboseFlag_VKeyword_1_1_or_VerboseKeyword_1_0;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (CurlBetterThanHttpieGrammarAccess) access;
-		match_AuthFlag_AKeyword_1_or_AuthKeyword_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getAuthFlagAccess().getAKeyword_1()), new TokenAlias(false, false, grammarAccess.getAuthFlagAccess().getAuthKeyword_0()));
-		match_AuthFlag_TimeoutFlag_AKeyword_1_or_AuthKeyword_0_or_TimeoutKeyword = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getAuthFlagAccess().getAKeyword_1()), new TokenAlias(false, false, grammarAccess.getAuthFlagAccess().getAuthKeyword_0()), new TokenAlias(false, false, grammarAccess.getTimeoutFlagAccess().getTimeoutKeyword()));
+		match_AuthFlag_AKeyword_0_1_or_AuthKeyword_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getAuthFlagAccess().getAKeyword_0_1()), new TokenAlias(false, false, grammarAccess.getAuthFlagAccess().getAuthKeyword_0_0()));
+		match_AuthFlag_EqualsSignKeyword_1_0_or_WSTerminalRuleCall_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getAuthFlagAccess().getEqualsSignKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getAuthFlagAccess().getWSTerminalRuleCall_1_1()));
 		match_BodyFlag_BKeyword_1_1_or_BodyKeyword_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getBodyFlagAccess().getBKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getBodyFlagAccess().getBodyKeyword_1_0()));
 		match_CommandLineInterface_WSTerminalRuleCall_3_q = new TokenAlias(false, true, grammarAccess.getCommandLineInterfaceAccess().getWSTerminalRuleCall_3());
 		match_DownloadFlag_DKeyword_1_1_or_DownloadKeyword_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getDownloadFlagAccess().getDKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getDownloadFlagAccess().getDownloadKeyword_1_0()));
@@ -46,6 +47,7 @@ public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSeq
 		match_HelpFlag_HKeyword_1_1_or_HelpKeyword_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getHelpFlagAccess().getHKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getHelpFlagAccess().getHelpKeyword_1_0()));
 		match_JsonFlag_JKeyword_1_1_or_JsonKeyword_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getJsonFlagAccess().getJKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getJsonFlagAccess().getJsonKeyword_1_0()));
 		match_ProxyFlag_EqualsSignKeyword_1_0_or_WSTerminalRuleCall_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getProxyFlagAccess().getEqualsSignKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getProxyFlagAccess().getWSTerminalRuleCall_1_1()));
+		match_TimeoutFlag_EqualsSignKeyword_1_0_or_WSTerminalRuleCall_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getTimeoutFlagAccess().getEqualsSignKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getTimeoutFlagAccess().getWSTerminalRuleCall_1_1()));
 		match_VerboseFlag_VKeyword_1_1_or_VerboseKeyword_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getVerboseFlagAccess().getVKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getVerboseFlagAccess().getVerboseKeyword_1_0()));
 	}
 	
@@ -57,7 +59,7 @@ public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSeq
 	}
 	
 	/**
-	 * terminal WS: (' '|'\t')+;
+	 * terminal WS: (' ' | '\t')+;
 	 */
 	protected String getWSToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
@@ -71,10 +73,10 @@ public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSeq
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_AuthFlag_AKeyword_1_or_AuthKeyword_0.equals(syntax))
-				emit_AuthFlag_AKeyword_1_or_AuthKeyword_0(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_AuthFlag_TimeoutFlag_AKeyword_1_or_AuthKeyword_0_or_TimeoutKeyword.equals(syntax))
-				emit_AuthFlag_TimeoutFlag_AKeyword_1_or_AuthKeyword_0_or_TimeoutKeyword(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_AuthFlag_AKeyword_0_1_or_AuthKeyword_0_0.equals(syntax))
+				emit_AuthFlag_AKeyword_0_1_or_AuthKeyword_0_0(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_AuthFlag_EqualsSignKeyword_1_0_or_WSTerminalRuleCall_1_1.equals(syntax))
+				emit_AuthFlag_EqualsSignKeyword_1_0_or_WSTerminalRuleCall_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_BodyFlag_BKeyword_1_1_or_BodyKeyword_1_0.equals(syntax))
 				emit_BodyFlag_BKeyword_1_1_or_BodyKeyword_1_0(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_CommandLineInterface_WSTerminalRuleCall_3_q.equals(syntax))
@@ -91,6 +93,8 @@ public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSeq
 				emit_JsonFlag_JKeyword_1_1_or_JsonKeyword_1_0(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ProxyFlag_EqualsSignKeyword_1_0_or_WSTerminalRuleCall_1_1.equals(syntax))
 				emit_ProxyFlag_EqualsSignKeyword_1_0_or_WSTerminalRuleCall_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TimeoutFlag_EqualsSignKeyword_1_0_or_WSTerminalRuleCall_1_1.equals(syntax))
+				emit_TimeoutFlag_EqualsSignKeyword_1_0_or_WSTerminalRuleCall_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_VerboseFlag_VKeyword_1_1_or_VerboseKeyword_1_0.equals(syntax))
 				emit_VerboseFlag_VKeyword_1_1_or_VerboseKeyword_1_0(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
@@ -99,29 +103,29 @@ public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSeq
 
 	/**
 	 * Ambiguous syntax:
-	 *     '--auth' | '-a'
+	 *     '-a' | '--auth'
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) (rule start)
+	 *     (rule start) (ambiguity) (WS | '=') (rule start)
 	 */
-	protected void emit_AuthFlag_AKeyword_1_or_AuthKeyword_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_AuthFlag_AKeyword_0_1_or_AuthKeyword_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Ambiguous syntax:
-	 *     '-a' | '--timeout' | '--auth'
+	 *     WS | '='
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) (rule start)
+	 *     (rule start) ('-a' | '--auth') (ambiguity) (rule start)
 	 */
-	protected void emit_AuthFlag_TimeoutFlag_AKeyword_1_or_AuthKeyword_0_or_TimeoutKeyword(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_AuthFlag_EqualsSignKeyword_1_0_or_WSTerminalRuleCall_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Ambiguous syntax:
-	 *     '--body' | '-b'
+	 *     '-b' | '--body'
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) (rule start)
@@ -155,7 +159,7 @@ public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSeq
 	
 	/**
 	 * Ambiguous syntax:
-	 *     '-f' | '--form'
+	 *     '--form' | '-f'
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) (rule start)
@@ -166,7 +170,7 @@ public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSeq
 	
 	/**
 	 * Ambiguous syntax:
-	 *     '-t' | '--header'
+	 *     '--header' | '-t'
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) (rule start)
@@ -202,10 +206,20 @@ public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSeq
 	 *     WS | '='
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) '--proxy' (ambiguity) protocol=BASIC_STRING
-	 *     (rule start) '--proxy' (ambiguity) proxyProtocol=BASIC_STRING
+	 *     (rule start) '--proxy' (ambiguity) protocol=STRING
 	 */
 	protected void emit_ProxyFlag_EqualsSignKeyword_1_0_or_WSTerminalRuleCall_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     '=' | WS
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) '--timeout' (ambiguity) timeout=FLOAT
+	 */
+	protected void emit_TimeoutFlag_EqualsSignKeyword_1_0_or_WSTerminalRuleCall_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
