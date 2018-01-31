@@ -158,7 +158,7 @@ ruleCommandLineInterface returns [EObject current=null]
 								$current,
 								"protocol",
 								lv_protocol_7_1,
-								"org.eclipse.xtext.common.Terminals.ID");
+								"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.ID");
 						}
 						    |
 						lv_protocol_7_2=RULE_HTTP
@@ -274,7 +274,7 @@ ruleCommandLineInterface returns [EObject current=null]
 								$current,
 								"resource",
 								lv_resource_15_1,
-								"org.eclipse.xtext.common.Terminals.ID");
+								"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.ID");
 						}
 						    |
 						lv_resource_15_2=RULE_HTTP
@@ -646,7 +646,7 @@ ruleProxyFlag returns [EObject current=null]
 									$current,
 									"protocol",
 									lv_protocol_3_1,
-									"org.eclipse.xtext.common.Terminals.ID");
+									"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.ID");
 							}
 							    |
 							lv_protocol_3_2=RULE_HTTP
@@ -688,7 +688,7 @@ ruleProxyFlag returns [EObject current=null]
 									$current,
 									"proxyProtocol",
 									lv_proxyProtocol_5_1,
-									"org.eclipse.xtext.common.Terminals.ID");
+									"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.ID");
 							}
 							    |
 							lv_proxyProtocol_5_2=RULE_HTTP
@@ -730,7 +730,7 @@ ruleProxyFlag returns [EObject current=null]
 									$current,
 									"protocol",
 									lv_protocol_7_1,
-									"org.eclipse.xtext.common.Terminals.ID");
+									"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.ID");
 							}
 							    |
 							lv_protocol_7_2=RULE_HTTP
@@ -769,7 +769,7 @@ ruleProxyFlag returns [EObject current=null]
 									$current,
 									"proxyProtocol",
 									lv_proxyProtocol_9_1,
-									"org.eclipse.xtext.common.Terminals.ID");
+									"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.ID");
 							}
 							    |
 							lv_proxyProtocol_9_2=RULE_HTTP
@@ -811,7 +811,7 @@ ruleProxyFlag returns [EObject current=null]
 								$current,
 								"username",
 								lv_username_11_1,
-								"org.eclipse.xtext.common.Terminals.ID");
+								"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.ID");
 						}
 						    |
 						lv_username_11_2=RULE_HTTP
@@ -850,7 +850,7 @@ ruleProxyFlag returns [EObject current=null]
 								$current,
 								"password",
 								lv_password_13_1,
-								"org.eclipse.xtext.common.Terminals.ID");
+								"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.ID");
 						}
 						    |
 						lv_password_13_2=RULE_HTTP
@@ -1002,7 +1002,7 @@ ruleAuthFlag returns [EObject current=null]
 							$current,
 							"username",
 							lv_username_4_1,
-							"org.eclipse.xtext.common.Terminals.ID");
+							"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.ID");
 					}
 					    |
 					lv_username_4_2=RULE_HTTP
@@ -1042,7 +1042,7 @@ ruleAuthFlag returns [EObject current=null]
 								$current,
 								"password",
 								lv_password_6_1,
-								"org.eclipse.xtext.common.Terminals.ID");
+								"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.ID");
 						}
 						    |
 						lv_password_6_2=RULE_HTTP
@@ -1384,7 +1384,7 @@ ruleHttpHeaderItem returns [EObject current=null]
 							$current,
 							"field",
 							lv_field_0_1,
-							"org.eclipse.xtext.common.Terminals.ID");
+							"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.ID");
 					}
 					    |
 					lv_field_0_2=RULE_HTTP
@@ -1423,7 +1423,7 @@ ruleHttpHeaderItem returns [EObject current=null]
 							$current,
 							"value",
 							lv_value_2_1,
-							"org.eclipse.xtext.common.Terminals.ID");
+							"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.ID");
 					}
 					    |
 					lv_value_2_2=RULE_HTTP
@@ -1477,7 +1477,7 @@ ruleFormFileFieldItem returns [EObject current=null]
 							$current,
 							"field",
 							lv_field_0_1,
-							"org.eclipse.xtext.common.Terminals.ID");
+							"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.ID");
 					}
 					    |
 					lv_field_0_2=RULE_HTTP
@@ -1516,7 +1516,7 @@ ruleFormFileFieldItem returns [EObject current=null]
 							$current,
 							"value",
 							lv_value_2_1,
-							"org.eclipse.xtext.common.Terminals.ID");
+							"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.ID");
 					}
 					    |
 					lv_value_2_2=RULE_HTTP
@@ -1570,7 +1570,7 @@ ruleDataFieldItem returns [EObject current=null]
 							$current,
 							"field",
 							lv_field_0_1,
-							"org.eclipse.xtext.common.Terminals.ID");
+							"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.ID");
 					}
 					    |
 					lv_field_0_2=RULE_HTTP
@@ -1610,7 +1610,7 @@ ruleDataFieldItem returns [EObject current=null]
 								$current,
 								"value",
 								lv_value_2_1,
-								"org.eclipse.xtext.common.Terminals.ID");
+								"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.ID");
 						}
 						    |
 						lv_value_2_2=RULE_HTTP
@@ -1690,7 +1690,7 @@ ruleUrlParameterItem returns [EObject current=null]
 							$current,
 							"field",
 							lv_field_0_1,
-							"org.eclipse.xtext.common.Terminals.ID");
+							"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.ID");
 					}
 					    |
 					lv_field_0_2=RULE_HTTP
@@ -1729,7 +1729,7 @@ ruleUrlParameterItem returns [EObject current=null]
 							$current,
 							"value",
 							lv_value_2_1,
-							"org.eclipse.xtext.common.Terminals.ID");
+							"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.ID");
 					}
 					    |
 					lv_value_2_2=RULE_HTTP
@@ -1783,7 +1783,7 @@ ruleRawJsonFieldItem returns [EObject current=null]
 							$current,
 							"field",
 							lv_field_0_1,
-							"org.eclipse.xtext.common.Terminals.ID");
+							"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.ID");
 					}
 					    |
 					lv_field_0_2=RULE_HTTP
@@ -1874,16 +1874,104 @@ ruleMember returns [EObject current=null]
 }:
 	(
 		(
-			otherlv_0='\''
-			{
-				newLeafNode(otherlv_0, grammarAccess.getMemberAccess().getApostropheKeyword_0_0());
-			}
+			(
+				otherlv_0='"'
+				{
+					newLeafNode(otherlv_0, grammarAccess.getMemberAccess().getQuotationMarkKeyword_0_0_0());
+				}
+				(
+					(
+						(
+							lv_key_1_1=RULE_ID
+							{
+								newLeafNode(lv_key_1_1, grammarAccess.getMemberAccess().getKeyIDTerminalRuleCall_0_0_1_0_0());
+							}
+							{
+								if ($current==null) {
+									$current = createModelElement(grammarAccess.getMemberRule());
+								}
+								setWithLastConsumed(
+									$current,
+									"key",
+									lv_key_1_1,
+									"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.ID");
+							}
+							    |
+							lv_key_1_2=RULE_HTTP
+							{
+								newLeafNode(lv_key_1_2, grammarAccess.getMemberAccess().getKeyHTTPTerminalRuleCall_0_0_1_0_1());
+							}
+							{
+								if ($current==null) {
+									$current = createModelElement(grammarAccess.getMemberRule());
+								}
+								setWithLastConsumed(
+									$current,
+									"key",
+									lv_key_1_2,
+									"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.HTTP");
+							}
+						)
+					)
+				)
+				otherlv_2='"'
+				{
+					newLeafNode(otherlv_2, grammarAccess.getMemberAccess().getQuotationMarkKeyword_0_0_2());
+				}
+			)
+			    |
+			(
+				otherlv_3='\''
+				{
+					newLeafNode(otherlv_3, grammarAccess.getMemberAccess().getApostropheKeyword_0_1_0());
+				}
+				(
+					(
+						(
+							lv_key_4_1=RULE_ID
+							{
+								newLeafNode(lv_key_4_1, grammarAccess.getMemberAccess().getKeyIDTerminalRuleCall_0_1_1_0_0());
+							}
+							{
+								if ($current==null) {
+									$current = createModelElement(grammarAccess.getMemberRule());
+								}
+								setWithLastConsumed(
+									$current,
+									"key",
+									lv_key_4_1,
+									"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.ID");
+							}
+							    |
+							lv_key_4_2=RULE_HTTP
+							{
+								newLeafNode(lv_key_4_2, grammarAccess.getMemberAccess().getKeyHTTPTerminalRuleCall_0_1_1_0_1());
+							}
+							{
+								if ($current==null) {
+									$current = createModelElement(grammarAccess.getMemberRule());
+								}
+								setWithLastConsumed(
+									$current,
+									"key",
+									lv_key_4_2,
+									"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.HTTP");
+							}
+						)
+					)
+				)
+				otherlv_5='\''
+				{
+					newLeafNode(otherlv_5, grammarAccess.getMemberAccess().getApostropheKeyword_0_1_2());
+				}
+			)
+			    |
 			(
 				(
 					(
-						lv_key_1_1=RULE_ID
+						lv_key_6_1=RULE_ID
 						{
-							newLeafNode(lv_key_1_1, grammarAccess.getMemberAccess().getKeyIDTerminalRuleCall_0_1_0_0());
+							newLeafNode(lv_key_6_1, grammarAccess.getMemberAccess().getKeyIDTerminalRuleCall_0_2_0_0());
 						}
 						{
 							if ($current==null) {
@@ -1892,13 +1980,13 @@ ruleMember returns [EObject current=null]
 							setWithLastConsumed(
 								$current,
 								"key",
-								lv_key_1_1,
-								"org.eclipse.xtext.common.Terminals.ID");
+								lv_key_6_1,
+								"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.ID");
 						}
 						    |
-						lv_key_1_2=RULE_HTTP
+						lv_key_6_2=RULE_HTTP
 						{
-							newLeafNode(lv_key_1_2, grammarAccess.getMemberAccess().getKeyHTTPTerminalRuleCall_0_1_0_1());
+							newLeafNode(lv_key_6_2, grammarAccess.getMemberAccess().getKeyHTTPTerminalRuleCall_0_2_0_1());
 						}
 						{
 							if ($current==null) {
@@ -1907,31 +1995,27 @@ ruleMember returns [EObject current=null]
 							setWithLastConsumed(
 								$current,
 								"key",
-								lv_key_1_2,
+								lv_key_6_2,
 								"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.HTTP");
 						}
 					)
 				)
 			)
-			otherlv_2='\''
-			{
-				newLeafNode(otherlv_2, grammarAccess.getMemberAccess().getApostropheKeyword_0_2());
-			}
 		)
 		(
-			this_WS_3=RULE_WS
+			this_WS_7=RULE_WS
 			{
-				newLeafNode(this_WS_3, grammarAccess.getMemberAccess().getWSTerminalRuleCall_1());
+				newLeafNode(this_WS_7, grammarAccess.getMemberAccess().getWSTerminalRuleCall_1());
 			}
 		)?
-		otherlv_4=':'
+		otherlv_8=':'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getMemberAccess().getColonKeyword_2());
+			newLeafNode(otherlv_8, grammarAccess.getMemberAccess().getColonKeyword_2());
 		}
 		(
-			this_WS_5=RULE_WS
+			this_WS_9=RULE_WS
 			{
-				newLeafNode(this_WS_5, grammarAccess.getMemberAccess().getWSTerminalRuleCall_3());
+				newLeafNode(this_WS_9, grammarAccess.getMemberAccess().getWSTerminalRuleCall_3());
 			}
 		)?
 		(
@@ -1939,7 +2023,7 @@ ruleMember returns [EObject current=null]
 				{
 					newCompositeNode(grammarAccess.getMemberAccess().getValueJsonTypeParserRuleCall_4_0());
 				}
-				lv_value_6_0=ruleJsonType
+				lv_value_10_0=ruleJsonType
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getMemberRule());
@@ -1947,7 +2031,7 @@ ruleMember returns [EObject current=null]
 					set(
 						$current,
 						"value",
-						lv_value_6_0,
+						lv_value_10_0,
 						"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.JsonType");
 					afterParserOrEnumRuleCall();
 				}
@@ -2151,36 +2235,130 @@ ruleJsonString returns [EObject current=null]
 }:
 	(
 		(
+			otherlv_0='"'
+			{
+				newLeafNode(otherlv_0, grammarAccess.getJsonStringAccess().getQuotationMarkKeyword_0_0());
+			}
 			(
-				lv_value_0_1=RULE_ID
-				{
-					newLeafNode(lv_value_0_1, grammarAccess.getJsonStringAccess().getValueIDTerminalRuleCall_0_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getJsonStringRule());
+				(
+					(
+						lv_value_1_1=RULE_ID
+						{
+							newLeafNode(lv_value_1_1, grammarAccess.getJsonStringAccess().getValueIDTerminalRuleCall_0_1_0_0());
+						}
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getJsonStringRule());
+							}
+							setWithLastConsumed(
+								$current,
+								"value",
+								lv_value_1_1,
+								"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.ID");
+						}
+						    |
+						lv_value_1_2=RULE_HTTP
+						{
+							newLeafNode(lv_value_1_2, grammarAccess.getJsonStringAccess().getValueHTTPTerminalRuleCall_0_1_0_1());
+						}
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getJsonStringRule());
+							}
+							setWithLastConsumed(
+								$current,
+								"value",
+								lv_value_1_2,
+								"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.HTTP");
+						}
+					)
+				)
+			)
+			otherlv_2='"'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getJsonStringAccess().getQuotationMarkKeyword_0_2());
+			}
+		)
+		    |
+		(
+			otherlv_3='\''
+			{
+				newLeafNode(otherlv_3, grammarAccess.getJsonStringAccess().getApostropheKeyword_1_0());
+			}
+			(
+				(
+					(
+						lv_value_4_1=RULE_ID
+						{
+							newLeafNode(lv_value_4_1, grammarAccess.getJsonStringAccess().getValueIDTerminalRuleCall_1_1_0_0());
+						}
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getJsonStringRule());
+							}
+							setWithLastConsumed(
+								$current,
+								"value",
+								lv_value_4_1,
+								"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.ID");
+						}
+						    |
+						lv_value_4_2=RULE_HTTP
+						{
+							newLeafNode(lv_value_4_2, grammarAccess.getJsonStringAccess().getValueHTTPTerminalRuleCall_1_1_0_1());
+						}
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getJsonStringRule());
+							}
+							setWithLastConsumed(
+								$current,
+								"value",
+								lv_value_4_2,
+								"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.HTTP");
+						}
+					)
+				)
+			)
+			otherlv_5='\''
+			{
+				newLeafNode(otherlv_5, grammarAccess.getJsonStringAccess().getApostropheKeyword_1_2());
+			}
+		)
+		    |
+		(
+			(
+				(
+					lv_value_6_1=RULE_ID
+					{
+						newLeafNode(lv_value_6_1, grammarAccess.getJsonStringAccess().getValueIDTerminalRuleCall_2_0_0());
 					}
-					setWithLastConsumed(
-						$current,
-						"value",
-						lv_value_0_1,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-				    |
-				lv_value_0_2=RULE_HTTP
-				{
-					newLeafNode(lv_value_0_2, grammarAccess.getJsonStringAccess().getValueHTTPTerminalRuleCall_0_1());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getJsonStringRule());
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getJsonStringRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"value",
+							lv_value_6_1,
+							"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.ID");
 					}
-					setWithLastConsumed(
-						$current,
-						"value",
-						lv_value_0_2,
-						"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.HTTP");
-				}
+					    |
+					lv_value_6_2=RULE_HTTP
+					{
+						newLeafNode(lv_value_6_2, grammarAccess.getJsonStringAccess().getValueHTTPTerminalRuleCall_2_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getJsonStringRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"value",
+							lv_value_6_2,
+							"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.HTTP");
+					}
+				)
 			)
 		)
 	)
@@ -2435,32 +2613,24 @@ ruleMethod returns [Enumerator current=null]
 	)
 ;
 
-RULE_SEP2 : '"';
-
 fragment RULE_DIGIT : '0'..'9';
 
-RULE_WS : (' '|'\t')+;
+fragment RULE_LETTER : ('a'..'z'|'A'..'Z'|'_');
 
-RULE_INT : ('0'|'1'..'9' RULE_DIGIT*);
+RULE_HTTP : 'http';
 
 RULE_URL : ('localhost'|RULE_ID '.' RULE_ID);
 
-RULE_HTTP : 'http';
+RULE_INT : ('0'|'1'..'9' RULE_DIGIT*);
+
+RULE_FLOAT : (RULE_INT|RULE_INT? '.' RULE_DIGIT* (('E'|'e') RULE_INT)?);
 
 RULE_BOOLEAN : ('true'|'false');
 
 RULE_NULL : 'null';
 
-RULE_FLOAT : (RULE_INT|RULE_INT? '.' RULE_DIGIT* (('E'|'e') RULE_INT)?);
+RULE_NUMBER : '-'? RULE_INT ('.' RULE_DIGIT*)? (('E'|'e') '-'? RULE_DIGIT*)?;
 
-RULE_NUMBER : '-'? RULE_DIGIT* '.' RULE_DIGIT* (('E'|'e') '-'? RULE_DIGIT*)?;
+RULE_WS : (' '|'\t')+;
 
-RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
-
-RULE_STRING : ('"' ('\\' .|~(('\\'|'"')))* '"'|'\'' ('\\' .|~(('\\'|'\'')))* '\'');
-
-RULE_ML_COMMENT : '/*' ( options {greedy=false;} : . )*'*/';
-
-RULE_SL_COMMENT : '//' ~(('\n'|'\r'))* ('\r'? '\n')?;
-
-RULE_ANY_OTHER : .;
+RULE_ID : RULE_LETTER (RULE_LETTER|RULE_DIGIT)*;

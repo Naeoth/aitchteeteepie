@@ -104,7 +104,6 @@ public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSeq
 	}
 	
 	/**
-	 * @Override
 	 * terminal WS: (' '|'\t')+;
 	 */
 	protected String getWSToken(EObject semanticObject, RuleCall ruleCall, INode node) {
@@ -171,7 +170,7 @@ public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSeq
 
 	/**
 	 * Ambiguous syntax:
-	 *     '-a' | '--auth'
+	 *     '--auth' | '-a'
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) (WS | '=') username=HTTP
@@ -186,8 +185,8 @@ public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSeq
 	 *     WS | '='
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) ('-a' | '--auth') (ambiguity) username=HTTP
-	 *     (rule start) ('-a' | '--auth') (ambiguity) username=ID
+	 *     (rule start) ('--auth' | '-a') (ambiguity) username=HTTP
+	 *     (rule start) ('--auth' | '-a') (ambiguity) username=ID
 	 */
 	protected void emit_AuthFlag_EqualsSignKeyword_1_0_or_WSTerminalRuleCall_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -209,7 +208,7 @@ public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSeq
 	
 	/**
 	 * Ambiguous syntax:
-	 *     '-b' | '--body'
+	 *     '--body' | '-b'
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) (rule start)
@@ -248,7 +247,7 @@ public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSeq
 	
 	/**
 	 * Ambiguous syntax:
-	 *     '-d' | '--download'
+	 *     '--download' | '-d'
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) (rule start)
@@ -270,7 +269,7 @@ public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSeq
 	
 	/**
 	 * Ambiguous syntax:
-	 *     '--header' | '-t'
+	 *     '-t' | '--header'
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) (rule start)
@@ -336,7 +335,7 @@ public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSeq
 	
 	/**
 	 * Ambiguous syntax:
-	 *     '-j' | '--json'
+	 *     '--json' | '-j'
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) (rule start)
@@ -394,8 +393,12 @@ public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSeq
 	 *     WS?
 	 *
 	 * This ambiguous syntax occurs at:
+	 *     key=HTTP '"' (ambiguity) ':' WS? value=JsonType
 	 *     key=HTTP ''' (ambiguity) ':' WS? value=JsonType
+	 *     key=HTTP (ambiguity) ':' WS? value=JsonType
+	 *     key=ID '"' (ambiguity) ':' WS? value=JsonType
 	 *     key=ID ''' (ambiguity) ':' WS? value=JsonType
+	 *     key=ID (ambiguity) ':' WS? value=JsonType
 	 */
 	protected void emit_Member_WSTerminalRuleCall_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -406,8 +409,12 @@ public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSeq
 	 *     WS?
 	 *
 	 * This ambiguous syntax occurs at:
+	 *     key=HTTP '"' WS? ':' (ambiguity) value=JsonType
 	 *     key=HTTP ''' WS? ':' (ambiguity) value=JsonType
+	 *     key=HTTP WS? ':' (ambiguity) value=JsonType
+	 *     key=ID '"' WS? ':' (ambiguity) value=JsonType
 	 *     key=ID ''' WS? ':' (ambiguity) value=JsonType
+	 *     key=ID WS? ':' (ambiguity) value=JsonType
 	 */
 	protected void emit_Member_WSTerminalRuleCall_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -429,7 +436,7 @@ public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSeq
 	
 	/**
 	 * Ambiguous syntax:
-	 *     WS | '='
+	 *     '=' | WS
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) '--timeout' (ambiguity) timeout=FLOAT

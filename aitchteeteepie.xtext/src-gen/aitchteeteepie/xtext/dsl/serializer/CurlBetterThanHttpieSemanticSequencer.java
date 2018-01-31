@@ -364,7 +364,14 @@ public class CurlBetterThanHttpieSemanticSequencer extends AbstractDelegatingSem
 	 *     JsonString returns JsonString
 	 *
 	 * Constraint:
-	 *     (value=ID | value=HTTP)
+	 *     (
+	 *         value=ID | 
+	 *         value=HTTP | 
+	 *         value=ID | 
+	 *         value=HTTP | 
+	 *         value=ID | 
+	 *         value=HTTP
+	 *     )
 	 */
 	protected void sequence_JsonString(ISerializationContext context, JsonString semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -376,7 +383,17 @@ public class CurlBetterThanHttpieSemanticSequencer extends AbstractDelegatingSem
 	 *     Member returns Member
 	 *
 	 * Constraint:
-	 *     ((key=ID | key=HTTP) value=JsonType)
+	 *     (
+	 *         (
+	 *             key=ID | 
+	 *             key=HTTP | 
+	 *             key=ID | 
+	 *             key=HTTP | 
+	 *             key=ID | 
+	 *             key=HTTP
+	 *         ) 
+	 *         value=JsonType
+	 *     )
 	 */
 	protected void sequence_Member(ISerializationContext context, Member semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

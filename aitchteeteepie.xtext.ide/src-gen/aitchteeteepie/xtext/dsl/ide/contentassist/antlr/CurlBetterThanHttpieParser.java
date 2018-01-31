@@ -69,9 +69,15 @@ public class CurlBetterThanHttpieParser extends AbstractContentAssistParser {
 					put(grammarAccess.getUrlParameterItemAccess().getValueAlternatives_2_0(), "rule__UrlParameterItem__ValueAlternatives_2_0");
 					put(grammarAccess.getRawJsonFieldItemAccess().getFieldAlternatives_0_0(), "rule__RawJsonFieldItem__FieldAlternatives_0_0");
 					put(grammarAccess.getRawJsonFieldItemAccess().getAlternatives_2(), "rule__RawJsonFieldItem__Alternatives_2");
-					put(grammarAccess.getMemberAccess().getKeyAlternatives_0_1_0(), "rule__Member__KeyAlternatives_0_1_0");
+					put(grammarAccess.getMemberAccess().getAlternatives_0(), "rule__Member__Alternatives_0");
+					put(grammarAccess.getMemberAccess().getKeyAlternatives_0_0_1_0(), "rule__Member__KeyAlternatives_0_0_1_0");
+					put(grammarAccess.getMemberAccess().getKeyAlternatives_0_1_1_0(), "rule__Member__KeyAlternatives_0_1_1_0");
+					put(grammarAccess.getMemberAccess().getKeyAlternatives_0_2_0(), "rule__Member__KeyAlternatives_0_2_0");
 					put(grammarAccess.getJsonTypeAccess().getAlternatives(), "rule__JsonType__Alternatives");
-					put(grammarAccess.getJsonStringAccess().getValueAlternatives_0(), "rule__JsonString__ValueAlternatives_0");
+					put(grammarAccess.getJsonStringAccess().getAlternatives(), "rule__JsonString__Alternatives");
+					put(grammarAccess.getJsonStringAccess().getValueAlternatives_0_1_0(), "rule__JsonString__ValueAlternatives_0_1_0");
+					put(grammarAccess.getJsonStringAccess().getValueAlternatives_1_1_0(), "rule__JsonString__ValueAlternatives_1_1_0");
+					put(grammarAccess.getJsonStringAccess().getValueAlternatives_2_0(), "rule__JsonString__ValueAlternatives_2_0");
 					put(grammarAccess.getMethodAccess().getAlternatives(), "rule__Method__Alternatives");
 					put(grammarAccess.getCommandLineInterfaceAccess().getGroup(), "rule__CommandLineInterface__Group__0");
 					put(grammarAccess.getCommandLineInterfaceAccess().getGroup_2(), "rule__CommandLineInterface__Group_2__0");
@@ -111,11 +117,14 @@ public class CurlBetterThanHttpieParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRawJsonFieldItemAccess().getGroup(), "rule__RawJsonFieldItem__Group__0");
 					put(grammarAccess.getRawJsonFieldItemAccess().getGroup_2_1(), "rule__RawJsonFieldItem__Group_2_1__0");
 					put(grammarAccess.getMemberAccess().getGroup(), "rule__Member__Group__0");
-					put(grammarAccess.getMemberAccess().getGroup_0(), "rule__Member__Group_0__0");
+					put(grammarAccess.getMemberAccess().getGroup_0_0(), "rule__Member__Group_0_0__0");
+					put(grammarAccess.getMemberAccess().getGroup_0_1(), "rule__Member__Group_0_1__0");
 					put(grammarAccess.getJsonObjectAccess().getGroup(), "rule__JsonObject__Group__0");
 					put(grammarAccess.getJsonObjectAccess().getGroup_2(), "rule__JsonObject__Group_2__0");
 					put(grammarAccess.getJsonObjectAccess().getGroup_2_0(), "rule__JsonObject__Group_2_0__0");
 					put(grammarAccess.getJsonObjectAccess().getGroup_2_1(), "rule__JsonObject__Group_2_1__0");
+					put(grammarAccess.getJsonStringAccess().getGroup_0(), "rule__JsonString__Group_0__0");
+					put(grammarAccess.getJsonStringAccess().getGroup_1(), "rule__JsonString__Group_1__0");
 					put(grammarAccess.getJsonArrayAccess().getGroup(), "rule__JsonArray__Group__0");
 					put(grammarAccess.getJsonArrayAccess().getGroup_2(), "rule__JsonArray__Group_2__0");
 					put(grammarAccess.getJsonArrayAccess().getGroup_2_0(), "rule__JsonArray__Group_2_0__0");
@@ -154,11 +163,15 @@ public class CurlBetterThanHttpieParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRawJsonFieldItemAccess().getFieldAssignment_0(), "rule__RawJsonFieldItem__FieldAssignment_0");
 					put(grammarAccess.getRawJsonFieldItemAccess().getValueAssignment_2_0(), "rule__RawJsonFieldItem__ValueAssignment_2_0");
 					put(grammarAccess.getRawJsonFieldItemAccess().getValueAssignment_2_1_1(), "rule__RawJsonFieldItem__ValueAssignment_2_1_1");
-					put(grammarAccess.getMemberAccess().getKeyAssignment_0_1(), "rule__Member__KeyAssignment_0_1");
+					put(grammarAccess.getMemberAccess().getKeyAssignment_0_0_1(), "rule__Member__KeyAssignment_0_0_1");
+					put(grammarAccess.getMemberAccess().getKeyAssignment_0_1_1(), "rule__Member__KeyAssignment_0_1_1");
+					put(grammarAccess.getMemberAccess().getKeyAssignment_0_2(), "rule__Member__KeyAssignment_0_2");
 					put(grammarAccess.getMemberAccess().getValueAssignment_4(), "rule__Member__ValueAssignment_4");
 					put(grammarAccess.getJsonObjectAccess().getMembersAssignment_2_0_1(), "rule__JsonObject__MembersAssignment_2_0_1");
 					put(grammarAccess.getJsonObjectAccess().getMembersAssignment_2_1_3(), "rule__JsonObject__MembersAssignment_2_1_3");
-					put(grammarAccess.getJsonStringAccess().getValueAssignment(), "rule__JsonString__ValueAssignment");
+					put(grammarAccess.getJsonStringAccess().getValueAssignment_0_1(), "rule__JsonString__ValueAssignment_0_1");
+					put(grammarAccess.getJsonStringAccess().getValueAssignment_1_1(), "rule__JsonString__ValueAssignment_1_1");
+					put(grammarAccess.getJsonStringAccess().getValueAssignment_2(), "rule__JsonString__ValueAssignment_2");
 					put(grammarAccess.getJsonArrayAccess().getValuesAssignment_2_0_1(), "rule__JsonArray__ValuesAssignment_2_0_1");
 					put(grammarAccess.getJsonArrayAccess().getValuesAssignment_2_1_3(), "rule__JsonArray__ValuesAssignment_2_1_3");
 					put(grammarAccess.getJsonBooleanAccess().getValueAssignment(), "rule__JsonBoolean__ValueAssignment");
@@ -171,7 +184,7 @@ public class CurlBetterThanHttpieParser extends AbstractContentAssistParser {
 			
 	@Override
 	protected String[] getInitialHiddenTokens() {
-		return new String[] { "RULE_ML_COMMENT", "RULE_SL_COMMENT" };
+		return new String[] {  };
 	}
 
 	public CurlBetterThanHttpieGrammarAccess getGrammarAccess() {
