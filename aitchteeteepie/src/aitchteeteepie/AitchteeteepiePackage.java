@@ -484,13 +484,22 @@ public interface AitchteeteepiePackage extends EPackage {
 	int JSON_BOOLEAN = 8;
 
 	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JSON_BOOLEAN__VALUE = JSON_TYPE_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Json Boolean</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JSON_BOOLEAN_FEATURE_COUNT = JSON_TYPE_FEATURE_COUNT + 0;
+	int JSON_BOOLEAN_FEATURE_COUNT = JSON_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Json Boolean</em>' class.
@@ -660,13 +669,22 @@ public interface AitchteeteepiePackage extends EPackage {
 	int JSON_OBJECT = 14;
 
 	/**
+	 * The feature id for the '<em><b>Members</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JSON_OBJECT__MEMBERS = JSON_TYPE_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Json Object</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JSON_OBJECT_FEATURE_COUNT = JSON_TYPE_FEATURE_COUNT + 0;
+	int JSON_OBJECT_FEATURE_COUNT = JSON_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Json Object</em>' class.
@@ -790,13 +808,22 @@ public interface AitchteeteepiePackage extends EPackage {
 	int JSON_ARRAY = 18;
 
 	/**
+	 * The feature id for the '<em><b>Values</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JSON_ARRAY__VALUES = JSON_TYPE_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Json Array</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JSON_ARRAY_FEATURE_COUNT = JSON_TYPE_FEATURE_COUNT + 0;
+	int JSON_ARRAY_FEATURE_COUNT = JSON_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Json Array</em>' class.
@@ -937,13 +964,22 @@ public interface AitchteeteepiePackage extends EPackage {
 	int JSON_NUMBER = 23;
 
 	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JSON_NUMBER__VALUE = JSON_TYPE_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Json Number</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JSON_NUMBER_FEATURE_COUNT = JSON_TYPE_FEATURE_COUNT + 0;
+	int JSON_NUMBER_FEATURE_COUNT = JSON_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Json Number</em>' class.
@@ -1011,7 +1047,7 @@ public interface AitchteeteepiePackage extends EPackage {
 	int RAW_JSON_FIELD_ITEM__FIELD = ITEM__FIELD;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' reference.
+	 * The feature id for the '<em><b>Value</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1038,6 +1074,117 @@ public interface AitchteeteepiePackage extends EPackage {
 	int RAW_JSON_FIELD_ITEM_OPERATION_COUNT = ITEM_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link aitchteeteepie.impl.JsonStringImpl <em>Json String</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see aitchteeteepie.impl.JsonStringImpl
+	 * @see aitchteeteepie.impl.AitchteeteepiePackageImpl#getJsonString()
+	 * @generated
+	 */
+	int JSON_STRING = 26;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JSON_STRING__VALUE = JSON_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Json String</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JSON_STRING_FEATURE_COUNT = JSON_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Json String</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JSON_STRING_OPERATION_COUNT = JSON_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link aitchteeteepie.impl.JsonNullImpl <em>Json Null</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see aitchteeteepie.impl.JsonNullImpl
+	 * @see aitchteeteepie.impl.AitchteeteepiePackageImpl#getJsonNull()
+	 * @generated
+	 */
+	int JSON_NULL = 27;
+
+	/**
+	 * The number of structural features of the '<em>Json Null</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JSON_NULL_FEATURE_COUNT = JSON_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Json Null</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JSON_NULL_OPERATION_COUNT = JSON_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link aitchteeteepie.impl.MemberImpl <em>Member</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see aitchteeteepie.impl.MemberImpl
+	 * @see aitchteeteepie.impl.AitchteeteepiePackageImpl#getMember()
+	 * @generated
+	 */
+	int MEMBER = 28;
+
+	/**
+	 * The feature id for the '<em><b>Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEMBER__KEY = 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEMBER__VALUE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Member</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEMBER_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Member</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEMBER_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link aitchteeteepie.Method <em>Method</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1045,7 +1192,7 @@ public interface AitchteeteepiePackage extends EPackage {
 	 * @see aitchteeteepie.impl.AitchteeteepiePackageImpl#getMethod()
 	 * @generated
 	 */
-	int METHOD = 26;
+	int METHOD = 29;
 
 
 	/**
@@ -1249,6 +1396,17 @@ public interface AitchteeteepiePackage extends EPackage {
 	EClass getJsonBoolean();
 
 	/**
+	 * Returns the meta object for the attribute '{@link aitchteeteepie.JsonBoolean#isValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see aitchteeteepie.JsonBoolean#isValue()
+	 * @see #getJsonBoolean()
+	 * @generated
+	 */
+	EAttribute getJsonBoolean_Value();
+
+	/**
 	 * Returns the meta object for class '{@link aitchteeteepie.VersionFlag <em>Version Flag</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1331,6 +1489,17 @@ public interface AitchteeteepiePackage extends EPackage {
 	EClass getJsonObject();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link aitchteeteepie.JsonObject#getMembers <em>Members</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Members</em>'.
+	 * @see aitchteeteepie.JsonObject#getMembers()
+	 * @see #getJsonObject()
+	 * @generated
+	 */
+	EReference getJsonObject_Members();
+
+	/**
 	 * Returns the meta object for class '{@link aitchteeteepie.HelpFlag <em>Help Flag</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1380,6 +1549,17 @@ public interface AitchteeteepiePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getJsonArray();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link aitchteeteepie.JsonArray#getValues <em>Values</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Values</em>'.
+	 * @see aitchteeteepie.JsonArray#getValues()
+	 * @see #getJsonArray()
+	 * @generated
+	 */
+	EReference getJsonArray_Values();
 
 	/**
 	 * Returns the meta object for class '{@link aitchteeteepie.VerboseFlag <em>Verbose Flag</em>}'.
@@ -1520,6 +1700,17 @@ public interface AitchteeteepiePackage extends EPackage {
 	EClass getJsonNumber();
 
 	/**
+	 * Returns the meta object for the attribute '{@link aitchteeteepie.JsonNumber#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see aitchteeteepie.JsonNumber#getValue()
+	 * @see #getJsonNumber()
+	 * @generated
+	 */
+	EAttribute getJsonNumber_Value();
+
+	/**
 	 * Returns the meta object for class '{@link aitchteeteepie.TimeoutFlag <em>Timeout Flag</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1551,15 +1742,78 @@ public interface AitchteeteepiePackage extends EPackage {
 	EClass getRawJsonFieldItem();
 
 	/**
-	 * Returns the meta object for the reference '{@link aitchteeteepie.RawJsonFieldItem#getValue <em>Value</em>}'.
+	 * Returns the meta object for the containment reference '{@link aitchteeteepie.RawJsonFieldItem#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Value</em>'.
+	 * @return the meta object for the containment reference '<em>Value</em>'.
 	 * @see aitchteeteepie.RawJsonFieldItem#getValue()
 	 * @see #getRawJsonFieldItem()
 	 * @generated
 	 */
 	EReference getRawJsonFieldItem_Value();
+
+	/**
+	 * Returns the meta object for class '{@link aitchteeteepie.JsonString <em>Json String</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Json String</em>'.
+	 * @see aitchteeteepie.JsonString
+	 * @generated
+	 */
+	EClass getJsonString();
+
+	/**
+	 * Returns the meta object for the attribute '{@link aitchteeteepie.JsonString#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see aitchteeteepie.JsonString#getValue()
+	 * @see #getJsonString()
+	 * @generated
+	 */
+	EAttribute getJsonString_Value();
+
+	/**
+	 * Returns the meta object for class '{@link aitchteeteepie.JsonNull <em>Json Null</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Json Null</em>'.
+	 * @see aitchteeteepie.JsonNull
+	 * @generated
+	 */
+	EClass getJsonNull();
+
+	/**
+	 * Returns the meta object for class '{@link aitchteeteepie.Member <em>Member</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Member</em>'.
+	 * @see aitchteeteepie.Member
+	 * @generated
+	 */
+	EClass getMember();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link aitchteeteepie.Member#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Value</em>'.
+	 * @see aitchteeteepie.Member#getValue()
+	 * @see #getMember()
+	 * @generated
+	 */
+	EReference getMember_Value();
+
+	/**
+	 * Returns the meta object for the attribute '{@link aitchteeteepie.Member#getKey <em>Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Key</em>'.
+	 * @see aitchteeteepie.Member#getKey()
+	 * @see #getMember()
+	 * @generated
+	 */
+	EAttribute getMember_Key();
 
 	/**
 	 * Returns the meta object for enum '{@link aitchteeteepie.Method <em>Method</em>}'.
@@ -1765,6 +2019,14 @@ public interface AitchteeteepiePackage extends EPackage {
 		EClass JSON_BOOLEAN = eINSTANCE.getJsonBoolean();
 
 		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute JSON_BOOLEAN__VALUE = eINSTANCE.getJsonBoolean_Value();
+
+		/**
 		 * The meta object literal for the '{@link aitchteeteepie.impl.VersionFlagImpl <em>Version Flag</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1841,6 +2103,14 @@ public interface AitchteeteepiePackage extends EPackage {
 		EClass JSON_OBJECT = eINSTANCE.getJsonObject();
 
 		/**
+		 * The meta object literal for the '<em><b>Members</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference JSON_OBJECT__MEMBERS = eINSTANCE.getJsonObject_Members();
+
+		/**
 		 * The meta object literal for the '{@link aitchteeteepie.impl.HelpFlagImpl <em>Help Flag</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1887,6 +2157,14 @@ public interface AitchteeteepiePackage extends EPackage {
 		 * @generated
 		 */
 		EClass JSON_ARRAY = eINSTANCE.getJsonArray();
+
+		/**
+		 * The meta object literal for the '<em><b>Values</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference JSON_ARRAY__VALUES = eINSTANCE.getJsonArray_Values();
 
 		/**
 		 * The meta object literal for the '{@link aitchteeteepie.impl.VerboseFlagImpl <em>Verbose Flag</em>}' class.
@@ -2003,6 +2281,14 @@ public interface AitchteeteepiePackage extends EPackage {
 		EClass JSON_NUMBER = eINSTANCE.getJsonNumber();
 
 		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute JSON_NUMBER__VALUE = eINSTANCE.getJsonNumber_Value();
+
+		/**
 		 * The meta object literal for the '{@link aitchteeteepie.impl.TimeoutFlagImpl <em>Timeout Flag</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2031,12 +2317,66 @@ public interface AitchteeteepiePackage extends EPackage {
 		EClass RAW_JSON_FIELD_ITEM = eINSTANCE.getRawJsonFieldItem();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference RAW_JSON_FIELD_ITEM__VALUE = eINSTANCE.getRawJsonFieldItem_Value();
+
+		/**
+		 * The meta object literal for the '{@link aitchteeteepie.impl.JsonStringImpl <em>Json String</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see aitchteeteepie.impl.JsonStringImpl
+		 * @see aitchteeteepie.impl.AitchteeteepiePackageImpl#getJsonString()
+		 * @generated
+		 */
+		EClass JSON_STRING = eINSTANCE.getJsonString();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute JSON_STRING__VALUE = eINSTANCE.getJsonString_Value();
+
+		/**
+		 * The meta object literal for the '{@link aitchteeteepie.impl.JsonNullImpl <em>Json Null</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see aitchteeteepie.impl.JsonNullImpl
+		 * @see aitchteeteepie.impl.AitchteeteepiePackageImpl#getJsonNull()
+		 * @generated
+		 */
+		EClass JSON_NULL = eINSTANCE.getJsonNull();
+
+		/**
+		 * The meta object literal for the '{@link aitchteeteepie.impl.MemberImpl <em>Member</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see aitchteeteepie.impl.MemberImpl
+		 * @see aitchteeteepie.impl.AitchteeteepiePackageImpl#getMember()
+		 * @generated
+		 */
+		EClass MEMBER = eINSTANCE.getMember();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MEMBER__VALUE = eINSTANCE.getMember_Value();
+
+		/**
+		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MEMBER__KEY = eINSTANCE.getMember_Key();
 
 		/**
 		 * The meta object literal for the '{@link aitchteeteepie.Method <em>Method</em>}' enum.

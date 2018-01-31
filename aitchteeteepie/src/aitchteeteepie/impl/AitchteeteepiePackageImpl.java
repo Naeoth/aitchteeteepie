@@ -20,9 +20,12 @@ import aitchteeteepie.Item;
 import aitchteeteepie.JsonArray;
 import aitchteeteepie.JsonBoolean;
 import aitchteeteepie.JsonFlag;
+import aitchteeteepie.JsonNull;
 import aitchteeteepie.JsonNumber;
 import aitchteeteepie.JsonObject;
+import aitchteeteepie.JsonString;
 import aitchteeteepie.JsonType;
+import aitchteeteepie.Member;
 import aitchteeteepie.Method;
 import aitchteeteepie.ProxyFlag;
 import aitchteeteepie.RawJsonFieldItem;
@@ -228,6 +231,27 @@ public class AitchteeteepiePackageImpl extends EPackageImpl implements Aitchteet
 	 * @generated
 	 */
 	private EClass rawJsonFieldItemEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass jsonStringEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass jsonNullEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass memberEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -473,6 +497,15 @@ public class AitchteeteepiePackageImpl extends EPackageImpl implements Aitchteet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getJsonBoolean_Value() {
+		return (EAttribute)jsonBooleanEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getVersionFlag() {
 		return versionFlagEClass;
 	}
@@ -545,6 +578,15 @@ public class AitchteeteepiePackageImpl extends EPackageImpl implements Aitchteet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getJsonObject_Members() {
+		return (EReference)jsonObjectEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getHelpFlag() {
 		return helpFlagEClass;
 	}
@@ -583,6 +625,15 @@ public class AitchteeteepiePackageImpl extends EPackageImpl implements Aitchteet
 	 */
 	public EClass getJsonArray() {
 		return jsonArrayEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getJsonArray_Values() {
+		return (EReference)jsonArrayEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -707,6 +758,15 @@ public class AitchteeteepiePackageImpl extends EPackageImpl implements Aitchteet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getJsonNumber_Value() {
+		return (EAttribute)jsonNumberEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getTimeoutFlag() {
 		return timeoutFlagEClass;
 	}
@@ -736,6 +796,60 @@ public class AitchteeteepiePackageImpl extends EPackageImpl implements Aitchteet
 	 */
 	public EReference getRawJsonFieldItem_Value() {
 		return (EReference)rawJsonFieldItemEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getJsonString() {
+		return jsonStringEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getJsonString_Value() {
+		return (EAttribute)jsonStringEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getJsonNull() {
+		return jsonNullEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMember() {
+		return memberEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMember_Value() {
+		return (EReference)memberEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getMember_Key() {
+		return (EAttribute)memberEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -802,6 +916,7 @@ public class AitchteeteepiePackageImpl extends EPackageImpl implements Aitchteet
 		bodyFlagEClass = createEClass(BODY_FLAG);
 
 		jsonBooleanEClass = createEClass(JSON_BOOLEAN);
+		createEAttribute(jsonBooleanEClass, JSON_BOOLEAN__VALUE);
 
 		versionFlagEClass = createEClass(VERSION_FLAG);
 
@@ -816,6 +931,7 @@ public class AitchteeteepiePackageImpl extends EPackageImpl implements Aitchteet
 		createEAttribute(httpHeaderItemEClass, HTTP_HEADER_ITEM__VALUE);
 
 		jsonObjectEClass = createEClass(JSON_OBJECT);
+		createEReference(jsonObjectEClass, JSON_OBJECT__MEMBERS);
 
 		helpFlagEClass = createEClass(HELP_FLAG);
 
@@ -825,6 +941,7 @@ public class AitchteeteepiePackageImpl extends EPackageImpl implements Aitchteet
 		createEAttribute(urlParameterItemEClass, URL_PARAMETER_ITEM__VALUE);
 
 		jsonArrayEClass = createEClass(JSON_ARRAY);
+		createEReference(jsonArrayEClass, JSON_ARRAY__VALUES);
 
 		verboseFlagEClass = createEClass(VERBOSE_FLAG);
 
@@ -843,12 +960,22 @@ public class AitchteeteepiePackageImpl extends EPackageImpl implements Aitchteet
 		createEAttribute(itemEClass, ITEM__FIELD);
 
 		jsonNumberEClass = createEClass(JSON_NUMBER);
+		createEAttribute(jsonNumberEClass, JSON_NUMBER__VALUE);
 
 		timeoutFlagEClass = createEClass(TIMEOUT_FLAG);
 		createEAttribute(timeoutFlagEClass, TIMEOUT_FLAG__TIMEOUT);
 
 		rawJsonFieldItemEClass = createEClass(RAW_JSON_FIELD_ITEM);
 		createEReference(rawJsonFieldItemEClass, RAW_JSON_FIELD_ITEM__VALUE);
+
+		jsonStringEClass = createEClass(JSON_STRING);
+		createEAttribute(jsonStringEClass, JSON_STRING__VALUE);
+
+		jsonNullEClass = createEClass(JSON_NULL);
+
+		memberEClass = createEClass(MEMBER);
+		createEAttribute(memberEClass, MEMBER__KEY);
+		createEReference(memberEClass, MEMBER__VALUE);
 
 		// Create enums
 		methodEEnum = createEEnum(METHOD);
@@ -904,6 +1031,8 @@ public class AitchteeteepiePackageImpl extends EPackageImpl implements Aitchteet
 		jsonNumberEClass.getESuperTypes().add(this.getJsonType());
 		timeoutFlagEClass.getESuperTypes().add(this.getFlag());
 		rawJsonFieldItemEClass.getESuperTypes().add(this.getItem());
+		jsonStringEClass.getESuperTypes().add(this.getJsonType());
+		jsonNullEClass.getESuperTypes().add(this.getJsonType());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(jsonTypeEClass, JsonType.class, "JsonType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -933,6 +1062,7 @@ public class AitchteeteepiePackageImpl extends EPackageImpl implements Aitchteet
 		initEClass(bodyFlagEClass, BodyFlag.class, "BodyFlag", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(jsonBooleanEClass, JsonBoolean.class, "JsonBoolean", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getJsonBoolean_Value(), ecorePackage.getEBoolean(), "value", null, 0, 1, JsonBoolean.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(versionFlagEClass, VersionFlag.class, "VersionFlag", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -947,6 +1077,7 @@ public class AitchteeteepiePackageImpl extends EPackageImpl implements Aitchteet
 		initEAttribute(getHttpHeaderItem_Value(), ecorePackage.getEString(), "value", null, 0, 1, HttpHeaderItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(jsonObjectEClass, JsonObject.class, "JsonObject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getJsonObject_Members(), this.getMember(), null, "members", null, 0, -1, JsonObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(helpFlagEClass, HelpFlag.class, "HelpFlag", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -956,6 +1087,7 @@ public class AitchteeteepiePackageImpl extends EPackageImpl implements Aitchteet
 		initEAttribute(getUrlParameterItem_Value(), ecorePackage.getEString(), "value", null, 0, 1, UrlParameterItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(jsonArrayEClass, JsonArray.class, "JsonArray", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getJsonArray_Values(), this.getJsonType(), null, "values", null, 0, -1, JsonArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(verboseFlagEClass, VerboseFlag.class, "VerboseFlag", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -974,12 +1106,22 @@ public class AitchteeteepiePackageImpl extends EPackageImpl implements Aitchteet
 		initEAttribute(getItem_Field(), ecorePackage.getEString(), "field", null, 0, 1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(jsonNumberEClass, JsonNumber.class, "JsonNumber", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getJsonNumber_Value(), ecorePackage.getEFloat(), "value", null, 0, 1, JsonNumber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(timeoutFlagEClass, TimeoutFlag.class, "TimeoutFlag", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTimeoutFlag_Timeout(), ecorePackage.getEFloat(), "timeout", null, 0, 1, TimeoutFlag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(rawJsonFieldItemEClass, RawJsonFieldItem.class, "RawJsonFieldItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRawJsonFieldItem_Value(), this.getJsonType(), null, "value", null, 0, 1, RawJsonFieldItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRawJsonFieldItem_Value(), this.getJsonType(), null, "value", null, 1, 1, RawJsonFieldItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(jsonStringEClass, JsonString.class, "JsonString", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getJsonString_Value(), ecorePackage.getEString(), "value", null, 0, 1, JsonString.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(jsonNullEClass, JsonNull.class, "JsonNull", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(memberEClass, Member.class, "Member", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMember_Key(), ecorePackage.getEString(), "key", null, 0, 1, Member.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMember_Value(), this.getJsonType(), null, "value", null, 1, 1, Member.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(methodEEnum, Method.class, "Method");

@@ -78,6 +78,9 @@ public class AitchteeteepieFactoryImpl extends EFactoryImpl implements Aitchteet
 			case AitchteeteepiePackage.JSON_NUMBER: return createJsonNumber();
 			case AitchteeteepiePackage.TIMEOUT_FLAG: return createTimeoutFlag();
 			case AitchteeteepiePackage.RAW_JSON_FIELD_ITEM: return createRawJsonFieldItem();
+			case AitchteeteepiePackage.JSON_STRING: return createJsonString();
+			case AitchteeteepiePackage.JSON_NULL: return createJsonNull();
+			case AitchteeteepiePackage.MEMBER: return createMember();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -321,6 +324,36 @@ public class AitchteeteepieFactoryImpl extends EFactoryImpl implements Aitchteet
 	public RawJsonFieldItem createRawJsonFieldItem() {
 		RawJsonFieldItemImpl rawJsonFieldItem = new RawJsonFieldItemImpl();
 		return rawJsonFieldItem;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public JsonString createJsonString() {
+		JsonStringImpl jsonString = new JsonStringImpl();
+		return jsonString;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public JsonNull createJsonNull() {
+		JsonNullImpl jsonNull = new JsonNullImpl();
+		return jsonNull;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Member createMember() {
+		MemberImpl member = new MemberImpl();
+		return member;
 	}
 
 	/**

@@ -555,6 +555,75 @@ public class AitchteeteepieItemProviderAdapterFactory extends AitchteeteepieAdap
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link aitchteeteepie.JsonString} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected JsonStringItemProvider jsonStringItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link aitchteeteepie.JsonString}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createJsonStringAdapter() {
+		if (jsonStringItemProvider == null) {
+			jsonStringItemProvider = new JsonStringItemProvider(this);
+		}
+
+		return jsonStringItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link aitchteeteepie.JsonNull} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected JsonNullItemProvider jsonNullItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link aitchteeteepie.JsonNull}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createJsonNullAdapter() {
+		if (jsonNullItemProvider == null) {
+			jsonNullItemProvider = new JsonNullItemProvider(this);
+		}
+
+		return jsonNullItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link aitchteeteepie.Member} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MemberItemProvider memberItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link aitchteeteepie.Member}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMemberAdapter() {
+		if (memberItemProvider == null) {
+			memberItemProvider = new MemberItemProvider(this);
+		}
+
+		return memberItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -674,6 +743,9 @@ public class AitchteeteepieItemProviderAdapterFactory extends AitchteeteepieAdap
 		if (jsonNumberItemProvider != null) jsonNumberItemProvider.dispose();
 		if (timeoutFlagItemProvider != null) timeoutFlagItemProvider.dispose();
 		if (rawJsonFieldItemItemProvider != null) rawJsonFieldItemItemProvider.dispose();
+		if (jsonStringItemProvider != null) jsonStringItemProvider.dispose();
+		if (jsonNullItemProvider != null) jsonNullItemProvider.dispose();
+		if (memberItemProvider != null) memberItemProvider.dispose();
 	}
 
 }

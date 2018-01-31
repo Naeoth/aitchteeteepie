@@ -4,15 +4,28 @@
 package aitchteeteepie.xtext.dsl.serializer;
 
 import aitchteeteepie.AitchteeteepiePackage;
+import aitchteeteepie.AuthFlag;
 import aitchteeteepie.BodyFlag;
 import aitchteeteepie.CommandLineInterface;
+import aitchteeteepie.DataFieldItem;
 import aitchteeteepie.DownloadFlag;
+import aitchteeteepie.FormFileFieldItem;
 import aitchteeteepie.FormFlag;
 import aitchteeteepie.HeadersFlag;
 import aitchteeteepie.HelpFlag;
+import aitchteeteepie.HttpHeaderItem;
+import aitchteeteepie.JsonArray;
+import aitchteeteepie.JsonBoolean;
 import aitchteeteepie.JsonFlag;
+import aitchteeteepie.JsonNull;
+import aitchteeteepie.JsonNumber;
+import aitchteeteepie.JsonObject;
+import aitchteeteepie.JsonString;
+import aitchteeteepie.Member;
 import aitchteeteepie.ProxyFlag;
+import aitchteeteepie.RawJsonFieldItem;
 import aitchteeteepie.TimeoutFlag;
+import aitchteeteepie.UrlParameterItem;
 import aitchteeteepie.VerboseFlag;
 import aitchteeteepie.VersionFlag;
 import aitchteeteepie.xtext.dsl.services.CurlBetterThanHttpieGrammarAccess;
@@ -42,14 +55,23 @@ public class CurlBetterThanHttpieSemanticSequencer extends AbstractDelegatingSem
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == AitchteeteepiePackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case AitchteeteepiePackage.AUTH_FLAG:
+				sequence_AuthFlag(context, (AuthFlag) semanticObject); 
+				return; 
 			case AitchteeteepiePackage.BODY_FLAG:
 				sequence_BodyFlag(context, (BodyFlag) semanticObject); 
 				return; 
 			case AitchteeteepiePackage.COMMAND_LINE_INTERFACE:
 				sequence_CommandLineInterface(context, (CommandLineInterface) semanticObject); 
 				return; 
+			case AitchteeteepiePackage.DATA_FIELD_ITEM:
+				sequence_DataFieldItem(context, (DataFieldItem) semanticObject); 
+				return; 
 			case AitchteeteepiePackage.DOWNLOAD_FLAG:
 				sequence_DownloadFlag(context, (DownloadFlag) semanticObject); 
+				return; 
+			case AitchteeteepiePackage.FORM_FILE_FIELD_ITEM:
+				sequence_FormFileFieldItem(context, (FormFileFieldItem) semanticObject); 
 				return; 
 			case AitchteeteepiePackage.FORM_FLAG:
 				sequence_FormFlag(context, (FormFlag) semanticObject); 
@@ -60,14 +82,44 @@ public class CurlBetterThanHttpieSemanticSequencer extends AbstractDelegatingSem
 			case AitchteeteepiePackage.HELP_FLAG:
 				sequence_HelpFlag(context, (HelpFlag) semanticObject); 
 				return; 
+			case AitchteeteepiePackage.HTTP_HEADER_ITEM:
+				sequence_HttpHeaderItem(context, (HttpHeaderItem) semanticObject); 
+				return; 
+			case AitchteeteepiePackage.JSON_ARRAY:
+				sequence_JsonArray(context, (JsonArray) semanticObject); 
+				return; 
+			case AitchteeteepiePackage.JSON_BOOLEAN:
+				sequence_JsonBoolean(context, (JsonBoolean) semanticObject); 
+				return; 
 			case AitchteeteepiePackage.JSON_FLAG:
 				sequence_JsonFlag(context, (JsonFlag) semanticObject); 
+				return; 
+			case AitchteeteepiePackage.JSON_NULL:
+				sequence_JsonNull(context, (JsonNull) semanticObject); 
+				return; 
+			case AitchteeteepiePackage.JSON_NUMBER:
+				sequence_JsonNumber(context, (JsonNumber) semanticObject); 
+				return; 
+			case AitchteeteepiePackage.JSON_OBJECT:
+				sequence_JsonObject(context, (JsonObject) semanticObject); 
+				return; 
+			case AitchteeteepiePackage.JSON_STRING:
+				sequence_JsonString(context, (JsonString) semanticObject); 
+				return; 
+			case AitchteeteepiePackage.MEMBER:
+				sequence_Member(context, (Member) semanticObject); 
 				return; 
 			case AitchteeteepiePackage.PROXY_FLAG:
 				sequence_ProxyFlag(context, (ProxyFlag) semanticObject); 
 				return; 
+			case AitchteeteepiePackage.RAW_JSON_FIELD_ITEM:
+				sequence_RawJsonFieldItem(context, (RawJsonFieldItem) semanticObject); 
+				return; 
 			case AitchteeteepiePackage.TIMEOUT_FLAG:
 				sequence_TimeoutFlag(context, (TimeoutFlag) semanticObject); 
+				return; 
+			case AitchteeteepiePackage.URL_PARAMETER_ITEM:
+				sequence_UrlParameterItem(context, (UrlParameterItem) semanticObject); 
 				return; 
 			case AitchteeteepiePackage.VERBOSE_FLAG:
 				sequence_VerboseFlag(context, (VerboseFlag) semanticObject); 
@@ -79,6 +131,19 @@ public class CurlBetterThanHttpieSemanticSequencer extends AbstractDelegatingSem
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Contexts:
+	 *     Flag returns AuthFlag
+	 *     AuthFlag returns AuthFlag
+	 *
+	 * Constraint:
+	 *     ((username=ID | username=HTTP) (password=ID | password=HTTP)? hostname=URL?)
+	 */
+	protected void sequence_AuthFlag(ISerializationContext context, AuthFlag semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
 	
 	/**
 	 * Contexts:
@@ -98,9 +163,29 @@ public class CurlBetterThanHttpieSemanticSequencer extends AbstractDelegatingSem
 	 *     CommandLineInterface returns CommandLineInterface
 	 *
 	 * Constraint:
-	 *     flags+=Flag*
+	 *     (
+	 *         flags+=Flag* 
+	 *         method=Method? 
+	 *         (protocol=ID | protocol=HTTP)? 
+	 *         ((url=URL port=INT?) | port=INT)? 
+	 *         (resource=ID | resource=HTTP)? 
+	 *         items+=Item*
+	 *     )
 	 */
 	protected void sequence_CommandLineInterface(ISerializationContext context, CommandLineInterface semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Item returns DataFieldItem
+	 *     DataFieldItem returns DataFieldItem
+	 *
+	 * Constraint:
+	 *     ((field=ID | field=HTTP) (value=ID | value=HTTP | value=URL))
+	 */
+	protected void sequence_DataFieldItem(ISerializationContext context, DataFieldItem semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -114,6 +199,19 @@ public class CurlBetterThanHttpieSemanticSequencer extends AbstractDelegatingSem
 	 *     {DownloadFlag}
 	 */
 	protected void sequence_DownloadFlag(ISerializationContext context, DownloadFlag semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Item returns FormFileFieldItem
+	 *     FormFileFieldItem returns FormFileFieldItem
+	 *
+	 * Constraint:
+	 *     ((field=ID | field=HTTP) (value=ID | value=HTTP))
+	 */
+	protected void sequence_FormFileFieldItem(ISerializationContext context, FormFileFieldItem semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -159,6 +257,51 @@ public class CurlBetterThanHttpieSemanticSequencer extends AbstractDelegatingSem
 	
 	/**
 	 * Contexts:
+	 *     Item returns HttpHeaderItem
+	 *     HttpHeaderItem returns HttpHeaderItem
+	 *
+	 * Constraint:
+	 *     ((field=ID | field=HTTP) (value=ID | value=HTTP))
+	 */
+	protected void sequence_HttpHeaderItem(ISerializationContext context, HttpHeaderItem semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     JsonType returns JsonArray
+	 *     JsonArray returns JsonArray
+	 *
+	 * Constraint:
+	 *     (values+=JsonType values+=JsonType*)?
+	 */
+	protected void sequence_JsonArray(ISerializationContext context, JsonArray semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     JsonType returns JsonBoolean
+	 *     JsonBoolean returns JsonBoolean
+	 *
+	 * Constraint:
+	 *     value=BOOLEAN
+	 */
+	protected void sequence_JsonBoolean(ISerializationContext context, JsonBoolean semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AitchteeteepiePackage.Literals.JSON_BOOLEAN__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AitchteeteepiePackage.Literals.JSON_BOOLEAN__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getJsonBooleanAccess().getValueBOOLEANTerminalRuleCall_0(), semanticObject.isValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Flag returns JsonFlag
 	 *     JsonFlag returns JsonFlag
 	 *
@@ -172,20 +315,101 @@ public class CurlBetterThanHttpieSemanticSequencer extends AbstractDelegatingSem
 	
 	/**
 	 * Contexts:
+	 *     JsonType returns JsonNull
+	 *     JsonNull returns JsonNull
+	 *
+	 * Constraint:
+	 *     {JsonNull}
+	 */
+	protected void sequence_JsonNull(ISerializationContext context, JsonNull semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     JsonType returns JsonNumber
+	 *     JsonNumber returns JsonNumber
+	 *
+	 * Constraint:
+	 *     value=NUMBER
+	 */
+	protected void sequence_JsonNumber(ISerializationContext context, JsonNumber semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AitchteeteepiePackage.Literals.JSON_NUMBER__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AitchteeteepiePackage.Literals.JSON_NUMBER__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getJsonNumberAccess().getValueNUMBERTerminalRuleCall_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     JsonType returns JsonObject
+	 *     JsonObject returns JsonObject
+	 *
+	 * Constraint:
+	 *     (members+=Member members+=Member*)?
+	 */
+	protected void sequence_JsonObject(ISerializationContext context, JsonObject semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     JsonType returns JsonString
+	 *     JsonString returns JsonString
+	 *
+	 * Constraint:
+	 *     (value=ID | value=HTTP)
+	 */
+	protected void sequence_JsonString(ISerializationContext context, JsonString semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Member returns Member
+	 *
+	 * Constraint:
+	 *     ((key=ID | key=HTTP) value=JsonType)
+	 */
+	protected void sequence_Member(ISerializationContext context, Member semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Flag returns ProxyFlag
 	 *     ProxyFlag returns ProxyFlag
 	 *
 	 * Constraint:
-	 *     protocol=STRING
+	 *     (
+	 *         (protocol=ID | protocol=HTTP | proxyProtocol=ID | proxyProtocol=HTTP | ((protocol=ID | protocol=HTTP) (proxyProtocol=ID | proxyProtocol=HTTP))) 
+	 *         ((username=ID | username=HTTP) (password=ID | password=HTTP))? 
+	 *         ((hostname=URL port=INT?) | port=INT)?
+	 *     )
 	 */
 	protected void sequence_ProxyFlag(ISerializationContext context, ProxyFlag semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AitchteeteepiePackage.Literals.PROXY_FLAG__PROTOCOL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AitchteeteepiePackage.Literals.PROXY_FLAG__PROTOCOL));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getProxyFlagAccess().getProtocolSTRINGTerminalRuleCall_2_0_0(), semanticObject.getProtocol());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Item returns RawJsonFieldItem
+	 *     RawJsonFieldItem returns RawJsonFieldItem
+	 *
+	 * Constraint:
+	 *     ((field=ID | field=HTTP) (value=JsonType | value=JsonString))
+	 */
+	protected void sequence_RawJsonFieldItem(ISerializationContext context, RawJsonFieldItem semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -205,6 +429,19 @@ public class CurlBetterThanHttpieSemanticSequencer extends AbstractDelegatingSem
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getTimeoutFlagAccess().getTimeoutFLOATTerminalRuleCall_2_0(), semanticObject.getTimeout());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Item returns UrlParameterItem
+	 *     UrlParameterItem returns UrlParameterItem
+	 *
+	 * Constraint:
+	 *     ((field=ID | field=HTTP) (value=ID | value=HTTP))
+	 */
+	protected void sequence_UrlParameterItem(ISerializationContext context, UrlParameterItem semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

@@ -211,6 +211,33 @@ public interface AitchteeteepieFactory extends EFactory {
 	RawJsonFieldItem createRawJsonFieldItem();
 
 	/**
+	 * Returns a new object of class '<em>Json String</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Json String</em>'.
+	 * @generated
+	 */
+	JsonString createJsonString();
+
+	/**
+	 * Returns a new object of class '<em>Json Null</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Json Null</em>'.
+	 * @generated
+	 */
+	JsonNull createJsonNull();
+
+	/**
+	 * Returns a new object of class '<em>Member</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Member</em>'.
+	 * @generated
+	 */
+	Member createMember();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

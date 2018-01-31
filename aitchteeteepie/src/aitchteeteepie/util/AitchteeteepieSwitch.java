@@ -248,6 +248,26 @@ public class AitchteeteepieSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case AitchteeteepiePackage.JSON_STRING: {
+				JsonString jsonString = (JsonString)theEObject;
+				T result = caseJsonString(jsonString);
+				if (result == null) result = caseJsonType(jsonString);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case AitchteeteepiePackage.JSON_NULL: {
+				JsonNull jsonNull = (JsonNull)theEObject;
+				T result = caseJsonNull(jsonNull);
+				if (result == null) result = caseJsonType(jsonNull);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case AitchteeteepiePackage.MEMBER: {
+				Member member = (Member)theEObject;
+				T result = caseMember(member);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -639,6 +659,51 @@ public class AitchteeteepieSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRawJsonFieldItem(RawJsonFieldItem object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Json String</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Json String</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseJsonString(JsonString object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Json Null</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Json Null</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseJsonNull(JsonNull object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Member</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Member</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMember(Member object) {
 		return null;
 	}
 

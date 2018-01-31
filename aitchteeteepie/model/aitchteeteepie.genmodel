@@ -33,7 +33,9 @@
     </genClasses>
     <genClasses ecoreClass="aitchteeteepie.ecore#//DownloadFlag"/>
     <genClasses ecoreClass="aitchteeteepie.ecore#//BodyFlag"/>
-    <genClasses ecoreClass="aitchteeteepie.ecore#//JsonBoolean"/>
+    <genClasses ecoreClass="aitchteeteepie.ecore#//JsonBoolean">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aitchteeteepie.ecore#//JsonBoolean/value"/>
+    </genClasses>
     <genClasses ecoreClass="aitchteeteepie.ecore#//VersionFlag"/>
     <genClasses ecoreClass="aitchteeteepie.ecore#//DataFieldItem">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aitchteeteepie.ecore#//DataFieldItem/value"/>
@@ -43,13 +45,17 @@
     <genClasses ecoreClass="aitchteeteepie.ecore#//HttpHeaderItem">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aitchteeteepie.ecore#//HttpHeaderItem/value"/>
     </genClasses>
-    <genClasses ecoreClass="aitchteeteepie.ecore#//JsonObject"/>
+    <genClasses ecoreClass="aitchteeteepie.ecore#//JsonObject">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aitchteeteepie.ecore#//JsonObject/members"/>
+    </genClasses>
     <genClasses ecoreClass="aitchteeteepie.ecore#//HelpFlag"/>
     <genClasses ecoreClass="aitchteeteepie.ecore#//HeadersFlag"/>
     <genClasses ecoreClass="aitchteeteepie.ecore#//UrlParameterItem">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aitchteeteepie.ecore#//UrlParameterItem/value"/>
     </genClasses>
-    <genClasses ecoreClass="aitchteeteepie.ecore#//JsonArray"/>
+    <genClasses ecoreClass="aitchteeteepie.ecore#//JsonArray">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aitchteeteepie.ecore#//JsonArray/values"/>
+    </genClasses>
     <genClasses ecoreClass="aitchteeteepie.ecore#//VerboseFlag"/>
     <genClasses image="false" ecoreClass="aitchteeteepie.ecore#//Flag"/>
     <genClasses ecoreClass="aitchteeteepie.ecore#//CommandLineInterface">
@@ -64,12 +70,22 @@
     <genClasses image="false" ecoreClass="aitchteeteepie.ecore#//Item">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aitchteeteepie.ecore#//Item/field"/>
     </genClasses>
-    <genClasses ecoreClass="aitchteeteepie.ecore#//JsonNumber"/>
+    <genClasses ecoreClass="aitchteeteepie.ecore#//JsonNumber">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aitchteeteepie.ecore#//JsonNumber/value"/>
+    </genClasses>
     <genClasses ecoreClass="aitchteeteepie.ecore#//TimeoutFlag">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aitchteeteepie.ecore#//TimeoutFlag/timeout"/>
     </genClasses>
     <genClasses ecoreClass="aitchteeteepie.ecore#//RawJsonFieldItem">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference aitchteeteepie.ecore#//RawJsonFieldItem/value"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference aitchteeteepie.ecore#//RawJsonFieldItem/value"/>
+    </genClasses>
+    <genClasses ecoreClass="aitchteeteepie.ecore#//JsonString">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aitchteeteepie.ecore#//JsonString/value"/>
+    </genClasses>
+    <genClasses ecoreClass="aitchteeteepie.ecore#//JsonNull"/>
+    <genClasses ecoreClass="aitchteeteepie.ecore#//Member">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aitchteeteepie.ecore#//Member/key"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference aitchteeteepie.ecore#//Member/value"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -3,13 +3,18 @@
 package aitchteeteepie.provider;
 
 
+import aitchteeteepie.AitchteeteepiePackage;
+import aitchteeteepie.JsonBoolean;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link aitchteeteepie.JsonBoolean} object.
@@ -39,8 +44,31 @@ public class JsonBooleanItemProvider extends JsonTypeItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Value feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addValuePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_JsonBoolean_value_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_JsonBoolean_value_feature", "_UI_JsonBoolean_type"),
+				 AitchteeteepiePackage.Literals.JSON_BOOLEAN__VALUE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -62,7 +90,8 @@ public class JsonBooleanItemProvider extends JsonTypeItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_JsonBoolean_type");
+		JsonBoolean jsonBoolean = (JsonBoolean)object;
+		return getString("_UI_JsonBoolean_type") + " " + jsonBoolean.isValue();
 	}
 	
 
@@ -76,6 +105,12 @@ public class JsonBooleanItemProvider extends JsonTypeItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(JsonBoolean.class)) {
+			case AitchteeteepiePackage.JSON_BOOLEAN__VALUE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

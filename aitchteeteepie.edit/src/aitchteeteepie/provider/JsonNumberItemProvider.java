@@ -3,13 +3,18 @@
 package aitchteeteepie.provider;
 
 
+import aitchteeteepie.AitchteeteepiePackage;
+import aitchteeteepie.JsonNumber;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link aitchteeteepie.JsonNumber} object.
@@ -39,8 +44,31 @@ public class JsonNumberItemProvider extends JsonTypeItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Value feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addValuePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_JsonNumber_value_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_JsonNumber_value_feature", "_UI_JsonNumber_type"),
+				 AitchteeteepiePackage.Literals.JSON_NUMBER__VALUE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -62,7 +90,8 @@ public class JsonNumberItemProvider extends JsonTypeItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_JsonNumber_type");
+		JsonNumber jsonNumber = (JsonNumber)object;
+		return getString("_UI_JsonNumber_type") + " " + jsonNumber.getValue();
 	}
 	
 
@@ -76,6 +105,12 @@ public class JsonNumberItemProvider extends JsonTypeItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(JsonNumber.class)) {
+			case AitchteeteepiePackage.JSON_NUMBER__VALUE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

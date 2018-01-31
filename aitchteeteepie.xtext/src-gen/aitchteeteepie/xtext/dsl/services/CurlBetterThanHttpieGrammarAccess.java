@@ -9,6 +9,8 @@ import java.util.List;
 import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
+import org.eclipse.xtext.EnumLiteralDeclaration;
+import org.eclipse.xtext.EnumRule;
 import org.eclipse.xtext.Grammar;
 import org.eclipse.xtext.GrammarUtil;
 import org.eclipse.xtext.Group;
@@ -16,6 +18,8 @@ import org.eclipse.xtext.Keyword;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.TerminalRule;
+import org.eclipse.xtext.common.services.TerminalsGrammarAccess;
+import org.eclipse.xtext.service.AbstractElementFinder.AbstractEnumRuleElementFinder;
 import org.eclipse.xtext.service.AbstractElementFinder.AbstractGrammarElementFinder;
 import org.eclipse.xtext.service.GrammarProvider;
 
@@ -26,26 +30,62 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.CommandLineInterface");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cCommandLineInterfaceAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cHttpKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final RuleCall cHTTPTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final RuleCall cWSTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
 		private final Assignment cFlagsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
 		private final RuleCall cFlagsFlagParserRuleCall_2_1_0 = (RuleCall)cFlagsAssignment_2_1.eContents().get(0);
-		private final RuleCall cWSTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final RuleCall cWSTerminalRuleCall_3_0 = (RuleCall)cGroup_3.eContents().get(0);
+		private final Assignment cMethodAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cMethodMethodEnumRuleCall_3_1_0 = (RuleCall)cMethodAssignment_3_1.eContents().get(0);
+		private final RuleCall cWSTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Assignment cProtocolAssignment_5_0 = (Assignment)cGroup_5.eContents().get(0);
+		private final Alternatives cProtocolAlternatives_5_0_0 = (Alternatives)cProtocolAssignment_5_0.eContents().get(0);
+		private final RuleCall cProtocolIDTerminalRuleCall_5_0_0_0 = (RuleCall)cProtocolAlternatives_5_0_0.eContents().get(0);
+		private final RuleCall cProtocolHTTPTerminalRuleCall_5_0_0_1 = (RuleCall)cProtocolAlternatives_5_0_0.eContents().get(1);
+		private final Keyword cColonSolidusSolidusKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
+		private final Alternatives cAlternatives_6 = (Alternatives)cGroup.eContents().get(6);
+		private final Group cGroup_6_0 = (Group)cAlternatives_6.eContents().get(0);
+		private final Assignment cUrlAssignment_6_0_0 = (Assignment)cGroup_6_0.eContents().get(0);
+		private final RuleCall cUrlURLTerminalRuleCall_6_0_0_0 = (RuleCall)cUrlAssignment_6_0_0.eContents().get(0);
+		private final Group cGroup_6_0_1 = (Group)cGroup_6_0.eContents().get(1);
+		private final Keyword cColonKeyword_6_0_1_0 = (Keyword)cGroup_6_0_1.eContents().get(0);
+		private final Assignment cPortAssignment_6_0_1_1 = (Assignment)cGroup_6_0_1.eContents().get(1);
+		private final RuleCall cPortINTTerminalRuleCall_6_0_1_1_0 = (RuleCall)cPortAssignment_6_0_1_1.eContents().get(0);
+		private final Group cGroup_6_1 = (Group)cAlternatives_6.eContents().get(1);
+		private final Keyword cColonKeyword_6_1_0 = (Keyword)cGroup_6_1.eContents().get(0);
+		private final Assignment cPortAssignment_6_1_1 = (Assignment)cGroup_6_1.eContents().get(1);
+		private final RuleCall cPortINTTerminalRuleCall_6_1_1_0 = (RuleCall)cPortAssignment_6_1_1.eContents().get(0);
+		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+		private final Keyword cSolidusKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Assignment cResourceAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+		private final Alternatives cResourceAlternatives_7_1_0 = (Alternatives)cResourceAssignment_7_1.eContents().get(0);
+		private final RuleCall cResourceIDTerminalRuleCall_7_1_0_0 = (RuleCall)cResourceAlternatives_7_1_0.eContents().get(0);
+		private final RuleCall cResourceHTTPTerminalRuleCall_7_1_0_1 = (RuleCall)cResourceAlternatives_7_1_0.eContents().get(1);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final RuleCall cWSTerminalRuleCall_8_0 = (RuleCall)cGroup_8.eContents().get(0);
+		private final Keyword cHyphenMinusHyphenMinusKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
+		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
+		private final RuleCall cWSTerminalRuleCall_9_0 = (RuleCall)cGroup_9.eContents().get(0);
+		private final Assignment cItemsAssignment_9_1 = (Assignment)cGroup_9.eContents().get(1);
+		private final RuleCall cItemsItemParserRuleCall_9_1_0 = (RuleCall)cItemsAssignment_9_1.eContents().get(0);
 		
 		//CommandLineInterface:
-		//	{CommandLineInterface}
-		//	'http' (WS flags+=Flag)* WS?;
+		//	{CommandLineInterface} HTTP (WS flags+=Flag)* (WS method=Method)? WS (protocol=(ID | HTTP) '://')? (url=URL (':'
+		//	port=INT)? | ':' port=INT?) ('/' resource=(ID | HTTP))? (WS '--')? (WS items+=Item)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{CommandLineInterface} 'http' (WS flags+=Flag)* WS?
+		//{CommandLineInterface} HTTP (WS flags+=Flag)* (WS method=Method)? WS (protocol=(ID | HTTP) '://')? (url=URL (':'
+		//port=INT)? | ':' port=INT?) ('/' resource=(ID | HTTP))? (WS '--')? (WS items+=Item)*
 		public Group getGroup() { return cGroup; }
 		
 		//{CommandLineInterface}
 		public Action getCommandLineInterfaceAction_0() { return cCommandLineInterfaceAction_0; }
 		
-		//'http'
-		public Keyword getHttpKeyword_1() { return cHttpKeyword_1; }
+		//HTTP
+		public RuleCall getHTTPTerminalRuleCall_1() { return cHTTPTerminalRuleCall_1; }
 		
 		//(WS flags+=Flag)*
 		public Group getGroup_2() { return cGroup_2; }
@@ -59,8 +99,113 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 		//Flag
 		public RuleCall getFlagsFlagParserRuleCall_2_1_0() { return cFlagsFlagParserRuleCall_2_1_0; }
 		
-		//WS?
-		public RuleCall getWSTerminalRuleCall_3() { return cWSTerminalRuleCall_3; }
+		//(WS method=Method)?
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//WS
+		public RuleCall getWSTerminalRuleCall_3_0() { return cWSTerminalRuleCall_3_0; }
+		
+		//method=Method
+		public Assignment getMethodAssignment_3_1() { return cMethodAssignment_3_1; }
+		
+		//Method
+		public RuleCall getMethodMethodEnumRuleCall_3_1_0() { return cMethodMethodEnumRuleCall_3_1_0; }
+		
+		//WS
+		public RuleCall getWSTerminalRuleCall_4() { return cWSTerminalRuleCall_4; }
+		
+		//(protocol=(ID | HTTP) '://')?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//protocol=(ID | HTTP)
+		public Assignment getProtocolAssignment_5_0() { return cProtocolAssignment_5_0; }
+		
+		//(ID | HTTP)
+		public Alternatives getProtocolAlternatives_5_0_0() { return cProtocolAlternatives_5_0_0; }
+		
+		//ID
+		public RuleCall getProtocolIDTerminalRuleCall_5_0_0_0() { return cProtocolIDTerminalRuleCall_5_0_0_0; }
+		
+		//HTTP
+		public RuleCall getProtocolHTTPTerminalRuleCall_5_0_0_1() { return cProtocolHTTPTerminalRuleCall_5_0_0_1; }
+		
+		//'://'
+		public Keyword getColonSolidusSolidusKeyword_5_1() { return cColonSolidusSolidusKeyword_5_1; }
+		
+		//url=URL (':' port=INT)? | ':' port=INT?
+		public Alternatives getAlternatives_6() { return cAlternatives_6; }
+		
+		//url=URL (':' port=INT)?
+		public Group getGroup_6_0() { return cGroup_6_0; }
+		
+		//url=URL
+		public Assignment getUrlAssignment_6_0_0() { return cUrlAssignment_6_0_0; }
+		
+		//URL
+		public RuleCall getUrlURLTerminalRuleCall_6_0_0_0() { return cUrlURLTerminalRuleCall_6_0_0_0; }
+		
+		//(':' port=INT)?
+		public Group getGroup_6_0_1() { return cGroup_6_0_1; }
+		
+		//':'
+		public Keyword getColonKeyword_6_0_1_0() { return cColonKeyword_6_0_1_0; }
+		
+		//port=INT
+		public Assignment getPortAssignment_6_0_1_1() { return cPortAssignment_6_0_1_1; }
+		
+		//INT
+		public RuleCall getPortINTTerminalRuleCall_6_0_1_1_0() { return cPortINTTerminalRuleCall_6_0_1_1_0; }
+		
+		//':' port=INT?
+		public Group getGroup_6_1() { return cGroup_6_1; }
+		
+		//':'
+		public Keyword getColonKeyword_6_1_0() { return cColonKeyword_6_1_0; }
+		
+		//port=INT?
+		public Assignment getPortAssignment_6_1_1() { return cPortAssignment_6_1_1; }
+		
+		//INT
+		public RuleCall getPortINTTerminalRuleCall_6_1_1_0() { return cPortINTTerminalRuleCall_6_1_1_0; }
+		
+		//('/' resource=(ID | HTTP))?
+		public Group getGroup_7() { return cGroup_7; }
+		
+		//'/'
+		public Keyword getSolidusKeyword_7_0() { return cSolidusKeyword_7_0; }
+		
+		//resource=(ID | HTTP)
+		public Assignment getResourceAssignment_7_1() { return cResourceAssignment_7_1; }
+		
+		//(ID | HTTP)
+		public Alternatives getResourceAlternatives_7_1_0() { return cResourceAlternatives_7_1_0; }
+		
+		//ID
+		public RuleCall getResourceIDTerminalRuleCall_7_1_0_0() { return cResourceIDTerminalRuleCall_7_1_0_0; }
+		
+		//HTTP
+		public RuleCall getResourceHTTPTerminalRuleCall_7_1_0_1() { return cResourceHTTPTerminalRuleCall_7_1_0_1; }
+		
+		//(WS '--')?
+		public Group getGroup_8() { return cGroup_8; }
+		
+		//WS
+		public RuleCall getWSTerminalRuleCall_8_0() { return cWSTerminalRuleCall_8_0; }
+		
+		//'--'
+		public Keyword getHyphenMinusHyphenMinusKeyword_8_1() { return cHyphenMinusHyphenMinusKeyword_8_1; }
+		
+		//(WS items+=Item)*
+		public Group getGroup_9() { return cGroup_9; }
+		
+		//WS
+		public RuleCall getWSTerminalRuleCall_9_0() { return cWSTerminalRuleCall_9_0; }
+		
+		//items+=Item
+		public Assignment getItemsAssignment_9_1() { return cItemsAssignment_9_1; }
+		
+		//Item
+		public RuleCall getItemsItemParserRuleCall_9_1_0() { return cItemsItemParserRuleCall_9_1_0; }
 	}
 	public class FlagElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.Flag");
@@ -77,7 +222,7 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 		private final RuleCall cVerboseFlagParserRuleCall_9 = (RuleCall)cAlternatives.eContents().get(9);
 		private final RuleCall cTimeoutFlagParserRuleCall_10 = (RuleCall)cAlternatives.eContents().get(10);
 		
-		//// (WS method=Method)? WS (protocol=BASIC_STRING '://')? (url=STRING (':' port=INT)? | (':' (port=INT)?)) ('/' resource=STRING)? (WS '--')? (WS items+=Item)* WS?;
+		////WS?
 		//// FLAGS
 		//Flag:
 		//	ProxyFlag | FormFlag | AuthFlag | DownloadFlag | BodyFlag | VersionFlag | JsonFlag | HelpFlag | HeadersFlag |
@@ -236,16 +381,63 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
 		private final Keyword cEqualsSignKeyword_1_0 = (Keyword)cAlternatives_1.eContents().get(0);
 		private final RuleCall cWSTerminalRuleCall_1_1 = (RuleCall)cAlternatives_1.eContents().get(1);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Assignment cProtocolAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
-		private final RuleCall cProtocolSTRINGTerminalRuleCall_2_0_0 = (RuleCall)cProtocolAssignment_2_0.eContents().get(0);
-		private final Keyword cColonKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
+		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
+		private final Group cGroup_2_0 = (Group)cAlternatives_2.eContents().get(0);
+		private final Assignment cProtocolAssignment_2_0_0 = (Assignment)cGroup_2_0.eContents().get(0);
+		private final Alternatives cProtocolAlternatives_2_0_0_0 = (Alternatives)cProtocolAssignment_2_0_0.eContents().get(0);
+		private final RuleCall cProtocolIDTerminalRuleCall_2_0_0_0_0 = (RuleCall)cProtocolAlternatives_2_0_0_0.eContents().get(0);
+		private final RuleCall cProtocolHTTPTerminalRuleCall_2_0_0_0_1 = (RuleCall)cProtocolAlternatives_2_0_0_0.eContents().get(1);
+		private final Keyword cColonKeyword_2_0_1 = (Keyword)cGroup_2_0.eContents().get(1);
+		private final Group cGroup_2_1 = (Group)cAlternatives_2.eContents().get(1);
+		private final Assignment cProxyProtocolAssignment_2_1_0 = (Assignment)cGroup_2_1.eContents().get(0);
+		private final Alternatives cProxyProtocolAlternatives_2_1_0_0 = (Alternatives)cProxyProtocolAssignment_2_1_0.eContents().get(0);
+		private final RuleCall cProxyProtocolIDTerminalRuleCall_2_1_0_0_0 = (RuleCall)cProxyProtocolAlternatives_2_1_0_0.eContents().get(0);
+		private final RuleCall cProxyProtocolHTTPTerminalRuleCall_2_1_0_0_1 = (RuleCall)cProxyProtocolAlternatives_2_1_0_0.eContents().get(1);
+		private final Keyword cColonSolidusSolidusKeyword_2_1_1 = (Keyword)cGroup_2_1.eContents().get(1);
+		private final Group cGroup_2_2 = (Group)cAlternatives_2.eContents().get(2);
+		private final Assignment cProtocolAssignment_2_2_0 = (Assignment)cGroup_2_2.eContents().get(0);
+		private final Alternatives cProtocolAlternatives_2_2_0_0 = (Alternatives)cProtocolAssignment_2_2_0.eContents().get(0);
+		private final RuleCall cProtocolIDTerminalRuleCall_2_2_0_0_0 = (RuleCall)cProtocolAlternatives_2_2_0_0.eContents().get(0);
+		private final RuleCall cProtocolHTTPTerminalRuleCall_2_2_0_0_1 = (RuleCall)cProtocolAlternatives_2_2_0_0.eContents().get(1);
+		private final Keyword cColonKeyword_2_2_1 = (Keyword)cGroup_2_2.eContents().get(1);
+		private final Assignment cProxyProtocolAssignment_2_2_2 = (Assignment)cGroup_2_2.eContents().get(2);
+		private final Alternatives cProxyProtocolAlternatives_2_2_2_0 = (Alternatives)cProxyProtocolAssignment_2_2_2.eContents().get(0);
+		private final RuleCall cProxyProtocolIDTerminalRuleCall_2_2_2_0_0 = (RuleCall)cProxyProtocolAlternatives_2_2_2_0.eContents().get(0);
+		private final RuleCall cProxyProtocolHTTPTerminalRuleCall_2_2_2_0_1 = (RuleCall)cProxyProtocolAlternatives_2_2_2_0.eContents().get(1);
+		private final Keyword cColonSolidusSolidusKeyword_2_2_3 = (Keyword)cGroup_2_2.eContents().get(3);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Assignment cUsernameAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
+		private final Alternatives cUsernameAlternatives_3_0_0 = (Alternatives)cUsernameAssignment_3_0.eContents().get(0);
+		private final RuleCall cUsernameIDTerminalRuleCall_3_0_0_0 = (RuleCall)cUsernameAlternatives_3_0_0.eContents().get(0);
+		private final RuleCall cUsernameHTTPTerminalRuleCall_3_0_0_1 = (RuleCall)cUsernameAlternatives_3_0_0.eContents().get(1);
+		private final Keyword cColonKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Assignment cPasswordAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
+		private final Alternatives cPasswordAlternatives_3_2_0 = (Alternatives)cPasswordAssignment_3_2.eContents().get(0);
+		private final RuleCall cPasswordIDTerminalRuleCall_3_2_0_0 = (RuleCall)cPasswordAlternatives_3_2_0.eContents().get(0);
+		private final RuleCall cPasswordHTTPTerminalRuleCall_3_2_0_1 = (RuleCall)cPasswordAlternatives_3_2_0.eContents().get(1);
+		private final Keyword cCommercialAtKeyword_3_3 = (Keyword)cGroup_3.eContents().get(3);
+		private final Alternatives cAlternatives_4 = (Alternatives)cGroup.eContents().get(4);
+		private final Group cGroup_4_0 = (Group)cAlternatives_4.eContents().get(0);
+		private final Assignment cHostnameAssignment_4_0_0 = (Assignment)cGroup_4_0.eContents().get(0);
+		private final RuleCall cHostnameURLTerminalRuleCall_4_0_0_0 = (RuleCall)cHostnameAssignment_4_0_0.eContents().get(0);
+		private final Group cGroup_4_0_1 = (Group)cGroup_4_0.eContents().get(1);
+		private final Keyword cColonKeyword_4_0_1_0 = (Keyword)cGroup_4_0_1.eContents().get(0);
+		private final Assignment cPortAssignment_4_0_1_1 = (Assignment)cGroup_4_0_1.eContents().get(1);
+		private final RuleCall cPortINTTerminalRuleCall_4_0_1_1_0 = (RuleCall)cPortAssignment_4_0_1_1.eContents().get(0);
+		private final Group cGroup_4_1 = (Group)cAlternatives_4.eContents().get(1);
+		private final Keyword cColonKeyword_4_1_0 = (Keyword)cGroup_4_1.eContents().get(0);
+		private final Assignment cPortAssignment_4_1_1 = (Assignment)cGroup_4_1.eContents().get(1);
+		private final RuleCall cPortINTTerminalRuleCall_4_1_1_0 = (RuleCall)cPortAssignment_4_1_1.eContents().get(0);
 		
 		//ProxyFlag:
-		//	'--proxy' ('=' | WS) (protocol=STRING ':');
+		//	'--proxy' ('=' | WS) (protocol=(ID | HTTP) ':' | proxyProtocol=(ID | HTTP) '://' | protocol=(ID | HTTP) ':'
+		//	proxyProtocol=(ID | HTTP) '://') (username=(ID | HTTP) ':' password=(ID | HTTP) '@')? (hostname=URL (':' port=INT)? |
+		//	':' port=INT?);
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'--proxy' ('=' | WS) (protocol=STRING ':')
+		//'--proxy' ('=' | WS) (protocol=(ID | HTTP) ':' | proxyProtocol=(ID | HTTP) '://' | protocol=(ID | HTTP) ':'
+		//proxyProtocol=(ID | HTTP) '://') (username=(ID | HTTP) ':' password=(ID | HTTP) '@')? (hostname=URL (':' port=INT)? |
+		//':' port=INT?)
 		public Group getGroup() { return cGroup; }
 		
 		//'--proxy'
@@ -260,17 +452,146 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 		//WS
 		public RuleCall getWSTerminalRuleCall_1_1() { return cWSTerminalRuleCall_1_1; }
 		
-		//protocol=STRING ':'
-		public Group getGroup_2() { return cGroup_2; }
+		//protocol=(ID | HTTP) ':' | proxyProtocol=(ID | HTTP) '://' | protocol=(ID | HTTP) ':' proxyProtocol=(ID | HTTP) '://'
+		public Alternatives getAlternatives_2() { return cAlternatives_2; }
 		
-		//protocol=STRING
-		public Assignment getProtocolAssignment_2_0() { return cProtocolAssignment_2_0; }
+		//protocol=(ID | HTTP) ':'
+		public Group getGroup_2_0() { return cGroup_2_0; }
 		
-		//STRING
-		public RuleCall getProtocolSTRINGTerminalRuleCall_2_0_0() { return cProtocolSTRINGTerminalRuleCall_2_0_0; }
+		//protocol=(ID | HTTP)
+		public Assignment getProtocolAssignment_2_0_0() { return cProtocolAssignment_2_0_0; }
+		
+		//(ID | HTTP)
+		public Alternatives getProtocolAlternatives_2_0_0_0() { return cProtocolAlternatives_2_0_0_0; }
+		
+		//ID
+		public RuleCall getProtocolIDTerminalRuleCall_2_0_0_0_0() { return cProtocolIDTerminalRuleCall_2_0_0_0_0; }
+		
+		//HTTP
+		public RuleCall getProtocolHTTPTerminalRuleCall_2_0_0_0_1() { return cProtocolHTTPTerminalRuleCall_2_0_0_0_1; }
 		
 		//':'
-		public Keyword getColonKeyword_2_1() { return cColonKeyword_2_1; }
+		public Keyword getColonKeyword_2_0_1() { return cColonKeyword_2_0_1; }
+		
+		//proxyProtocol=(ID | HTTP) '://'
+		public Group getGroup_2_1() { return cGroup_2_1; }
+		
+		//proxyProtocol=(ID | HTTP)
+		public Assignment getProxyProtocolAssignment_2_1_0() { return cProxyProtocolAssignment_2_1_0; }
+		
+		//(ID | HTTP)
+		public Alternatives getProxyProtocolAlternatives_2_1_0_0() { return cProxyProtocolAlternatives_2_1_0_0; }
+		
+		//ID
+		public RuleCall getProxyProtocolIDTerminalRuleCall_2_1_0_0_0() { return cProxyProtocolIDTerminalRuleCall_2_1_0_0_0; }
+		
+		//HTTP
+		public RuleCall getProxyProtocolHTTPTerminalRuleCall_2_1_0_0_1() { return cProxyProtocolHTTPTerminalRuleCall_2_1_0_0_1; }
+		
+		//'://'
+		public Keyword getColonSolidusSolidusKeyword_2_1_1() { return cColonSolidusSolidusKeyword_2_1_1; }
+		
+		//protocol=(ID | HTTP) ':' proxyProtocol=(ID | HTTP) '://'
+		public Group getGroup_2_2() { return cGroup_2_2; }
+		
+		//protocol=(ID | HTTP)
+		public Assignment getProtocolAssignment_2_2_0() { return cProtocolAssignment_2_2_0; }
+		
+		//(ID | HTTP)
+		public Alternatives getProtocolAlternatives_2_2_0_0() { return cProtocolAlternatives_2_2_0_0; }
+		
+		//ID
+		public RuleCall getProtocolIDTerminalRuleCall_2_2_0_0_0() { return cProtocolIDTerminalRuleCall_2_2_0_0_0; }
+		
+		//HTTP
+		public RuleCall getProtocolHTTPTerminalRuleCall_2_2_0_0_1() { return cProtocolHTTPTerminalRuleCall_2_2_0_0_1; }
+		
+		//':'
+		public Keyword getColonKeyword_2_2_1() { return cColonKeyword_2_2_1; }
+		
+		//proxyProtocol=(ID | HTTP)
+		public Assignment getProxyProtocolAssignment_2_2_2() { return cProxyProtocolAssignment_2_2_2; }
+		
+		//(ID | HTTP)
+		public Alternatives getProxyProtocolAlternatives_2_2_2_0() { return cProxyProtocolAlternatives_2_2_2_0; }
+		
+		//ID
+		public RuleCall getProxyProtocolIDTerminalRuleCall_2_2_2_0_0() { return cProxyProtocolIDTerminalRuleCall_2_2_2_0_0; }
+		
+		//HTTP
+		public RuleCall getProxyProtocolHTTPTerminalRuleCall_2_2_2_0_1() { return cProxyProtocolHTTPTerminalRuleCall_2_2_2_0_1; }
+		
+		//'://'
+		public Keyword getColonSolidusSolidusKeyword_2_2_3() { return cColonSolidusSolidusKeyword_2_2_3; }
+		
+		//(username=(ID | HTTP) ':' password=(ID | HTTP) '@')?
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//username=(ID | HTTP)
+		public Assignment getUsernameAssignment_3_0() { return cUsernameAssignment_3_0; }
+		
+		//(ID | HTTP)
+		public Alternatives getUsernameAlternatives_3_0_0() { return cUsernameAlternatives_3_0_0; }
+		
+		//ID
+		public RuleCall getUsernameIDTerminalRuleCall_3_0_0_0() { return cUsernameIDTerminalRuleCall_3_0_0_0; }
+		
+		//HTTP
+		public RuleCall getUsernameHTTPTerminalRuleCall_3_0_0_1() { return cUsernameHTTPTerminalRuleCall_3_0_0_1; }
+		
+		//':'
+		public Keyword getColonKeyword_3_1() { return cColonKeyword_3_1; }
+		
+		//password=(ID | HTTP)
+		public Assignment getPasswordAssignment_3_2() { return cPasswordAssignment_3_2; }
+		
+		//(ID | HTTP)
+		public Alternatives getPasswordAlternatives_3_2_0() { return cPasswordAlternatives_3_2_0; }
+		
+		//ID
+		public RuleCall getPasswordIDTerminalRuleCall_3_2_0_0() { return cPasswordIDTerminalRuleCall_3_2_0_0; }
+		
+		//HTTP
+		public RuleCall getPasswordHTTPTerminalRuleCall_3_2_0_1() { return cPasswordHTTPTerminalRuleCall_3_2_0_1; }
+		
+		//'@'
+		public Keyword getCommercialAtKeyword_3_3() { return cCommercialAtKeyword_3_3; }
+		
+		//hostname=URL (':' port=INT)? | ':' port=INT?
+		public Alternatives getAlternatives_4() { return cAlternatives_4; }
+		
+		//hostname=URL (':' port=INT)?
+		public Group getGroup_4_0() { return cGroup_4_0; }
+		
+		//hostname=URL
+		public Assignment getHostnameAssignment_4_0_0() { return cHostnameAssignment_4_0_0; }
+		
+		//URL
+		public RuleCall getHostnameURLTerminalRuleCall_4_0_0_0() { return cHostnameURLTerminalRuleCall_4_0_0_0; }
+		
+		//(':' port=INT)?
+		public Group getGroup_4_0_1() { return cGroup_4_0_1; }
+		
+		//':'
+		public Keyword getColonKeyword_4_0_1_0() { return cColonKeyword_4_0_1_0; }
+		
+		//port=INT
+		public Assignment getPortAssignment_4_0_1_1() { return cPortAssignment_4_0_1_1; }
+		
+		//INT
+		public RuleCall getPortINTTerminalRuleCall_4_0_1_1_0() { return cPortINTTerminalRuleCall_4_0_1_1_0; }
+		
+		//':' port=INT?
+		public Group getGroup_4_1() { return cGroup_4_1; }
+		
+		//':'
+		public Keyword getColonKeyword_4_1_0() { return cColonKeyword_4_1_0; }
+		
+		//port=INT?
+		public Assignment getPortAssignment_4_1_1() { return cPortAssignment_4_1_1; }
+		
+		//INT
+		public RuleCall getPortINTTerminalRuleCall_4_1_1_0() { return cPortINTTerminalRuleCall_4_1_1_0; }
 	}
 	public class AuthFlagElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.AuthFlag");
@@ -281,13 +602,28 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
 		private final Keyword cEqualsSignKeyword_1_0 = (Keyword)cAlternatives_1.eContents().get(0);
 		private final RuleCall cWSTerminalRuleCall_1_1 = (RuleCall)cAlternatives_1.eContents().get(1);
+		private final Assignment cUsernameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final Alternatives cUsernameAlternatives_2_0 = (Alternatives)cUsernameAssignment_2.eContents().get(0);
+		private final RuleCall cUsernameIDTerminalRuleCall_2_0_0 = (RuleCall)cUsernameAlternatives_2_0.eContents().get(0);
+		private final RuleCall cUsernameHTTPTerminalRuleCall_2_0_1 = (RuleCall)cUsernameAlternatives_2_0.eContents().get(1);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cColonKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cPasswordAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final Alternatives cPasswordAlternatives_3_1_0 = (Alternatives)cPasswordAssignment_3_1.eContents().get(0);
+		private final RuleCall cPasswordIDTerminalRuleCall_3_1_0_0 = (RuleCall)cPasswordAlternatives_3_1_0.eContents().get(0);
+		private final RuleCall cPasswordHTTPTerminalRuleCall_3_1_0_1 = (RuleCall)cPasswordAlternatives_3_1_0.eContents().get(1);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cCommercialAtKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Alternatives cAlternatives_4_1 = (Alternatives)cGroup_4.eContents().get(1);
+		private final Assignment cHostnameAssignment_4_1_0 = (Assignment)cAlternatives_4_1.eContents().get(0);
+		private final RuleCall cHostnameURLTerminalRuleCall_4_1_0_0 = (RuleCall)cHostnameAssignment_4_1_0.eContents().get(0);
+		private final Keyword cColonKeyword_4_1_1 = (Keyword)cAlternatives_4_1.eContents().get(1);
 		
-		////((protocol=STRING ':') (proxyProtocol=STRING '://')? | proxyProtocol=STRING '://');// (username=STRING ':' password=STRING '@')?; // (hostname=STRING (':' port=INT)? | (':' (port=INT)?));
 		//AuthFlag:
-		//	('--auth' | '-a') ('=' | WS);
+		//	('--auth' | '-a') ('=' | WS) username=(ID | HTTP) (':' password=(ID | HTTP))? ('@' (hostname=URL | ":"))?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('--auth' | '-a') ('=' | WS)
+		//('--auth' | '-a') ('=' | WS) username=(ID | HTTP) (':' password=(ID | HTTP))? ('@' (hostname=URL | ":"))?
 		public Group getGroup() { return cGroup; }
 		
 		//'--auth' | '-a'
@@ -307,6 +643,54 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 		
 		//WS
 		public RuleCall getWSTerminalRuleCall_1_1() { return cWSTerminalRuleCall_1_1; }
+		
+		//username=(ID | HTTP)
+		public Assignment getUsernameAssignment_2() { return cUsernameAssignment_2; }
+		
+		//(ID | HTTP)
+		public Alternatives getUsernameAlternatives_2_0() { return cUsernameAlternatives_2_0; }
+		
+		//ID
+		public RuleCall getUsernameIDTerminalRuleCall_2_0_0() { return cUsernameIDTerminalRuleCall_2_0_0; }
+		
+		//HTTP
+		public RuleCall getUsernameHTTPTerminalRuleCall_2_0_1() { return cUsernameHTTPTerminalRuleCall_2_0_1; }
+		
+		//(':' password=(ID | HTTP))?
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//':'
+		public Keyword getColonKeyword_3_0() { return cColonKeyword_3_0; }
+		
+		//password=(ID | HTTP)
+		public Assignment getPasswordAssignment_3_1() { return cPasswordAssignment_3_1; }
+		
+		//(ID | HTTP)
+		public Alternatives getPasswordAlternatives_3_1_0() { return cPasswordAlternatives_3_1_0; }
+		
+		//ID
+		public RuleCall getPasswordIDTerminalRuleCall_3_1_0_0() { return cPasswordIDTerminalRuleCall_3_1_0_0; }
+		
+		//HTTP
+		public RuleCall getPasswordHTTPTerminalRuleCall_3_1_0_1() { return cPasswordHTTPTerminalRuleCall_3_1_0_1; }
+		
+		//('@' (hostname=URL | ":"))?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'@'
+		public Keyword getCommercialAtKeyword_4_0() { return cCommercialAtKeyword_4_0; }
+		
+		//hostname=URL | ":"
+		public Alternatives getAlternatives_4_1() { return cAlternatives_4_1; }
+		
+		//hostname=URL
+		public Assignment getHostnameAssignment_4_1_0() { return cHostnameAssignment_4_1_0; }
+		
+		//URL
+		public RuleCall getHostnameURLTerminalRuleCall_4_1_0_0() { return cHostnameURLTerminalRuleCall_4_1_0_0; }
+		
+		//":"
+		public Keyword getColonKeyword_4_1_1() { return cColonKeyword_4_1_1; }
 	}
 	public class DownloadFlagElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.DownloadFlag");
@@ -316,7 +700,6 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 		private final Keyword cDownloadKeyword_1_0 = (Keyword)cAlternatives_1.eContents().get(0);
 		private final Keyword cDKeyword_1_1 = (Keyword)cAlternatives_1.eContents().get(1);
 		
-		////username=EXTENDED_STRING (':' password=EXTENDED_STRING)? ('@' hostname=BASIC_STRING)?;
 		//DownloadFlag:
 		//	{DownloadFlag} ('--download' | '-d');
 		@Override public ParserRule getRule() { return rule; }
@@ -445,7 +828,661 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 		//FLOAT
 		public RuleCall getTimeoutFLOATTerminalRuleCall_2_0() { return cTimeoutFLOATTerminalRuleCall_2_0; }
 	}
+	public class ItemElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.Item");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cHttpHeaderItemParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cFormFileFieldItemParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cDataFieldItemParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cUrlParameterItemParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cRawJsonFieldItemParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		
+		//// ITEMS
+		//Item:
+		//	HttpHeaderItem | FormFileFieldItem | DataFieldItem | UrlParameterItem | RawJsonFieldItem;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//HttpHeaderItem | FormFileFieldItem | DataFieldItem | UrlParameterItem | RawJsonFieldItem
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//HttpHeaderItem
+		public RuleCall getHttpHeaderItemParserRuleCall_0() { return cHttpHeaderItemParserRuleCall_0; }
+		
+		//FormFileFieldItem
+		public RuleCall getFormFileFieldItemParserRuleCall_1() { return cFormFileFieldItemParserRuleCall_1; }
+		
+		//DataFieldItem
+		public RuleCall getDataFieldItemParserRuleCall_2() { return cDataFieldItemParserRuleCall_2; }
+		
+		//UrlParameterItem
+		public RuleCall getUrlParameterItemParserRuleCall_3() { return cUrlParameterItemParserRuleCall_3; }
+		
+		//RawJsonFieldItem
+		public RuleCall getRawJsonFieldItemParserRuleCall_4() { return cRawJsonFieldItemParserRuleCall_4; }
+	}
+	public class HttpHeaderItemElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.HttpHeaderItem");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cFieldAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Alternatives cFieldAlternatives_0_0 = (Alternatives)cFieldAssignment_0.eContents().get(0);
+		private final RuleCall cFieldIDTerminalRuleCall_0_0_0 = (RuleCall)cFieldAlternatives_0_0.eContents().get(0);
+		private final RuleCall cFieldHTTPTerminalRuleCall_0_0_1 = (RuleCall)cFieldAlternatives_0_0.eContents().get(1);
+		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final Alternatives cValueAlternatives_2_0 = (Alternatives)cValueAssignment_2.eContents().get(0);
+		private final RuleCall cValueIDTerminalRuleCall_2_0_0 = (RuleCall)cValueAlternatives_2_0.eContents().get(0);
+		private final RuleCall cValueHTTPTerminalRuleCall_2_0_1 = (RuleCall)cValueAlternatives_2_0.eContents().get(1);
+		
+		//HttpHeaderItem:
+		//	field=(ID | HTTP) ":" value=(ID | HTTP);
+		@Override public ParserRule getRule() { return rule; }
+		
+		//field=(ID | HTTP) ":" value=(ID | HTTP)
+		public Group getGroup() { return cGroup; }
+		
+		//field=(ID | HTTP)
+		public Assignment getFieldAssignment_0() { return cFieldAssignment_0; }
+		
+		//(ID | HTTP)
+		public Alternatives getFieldAlternatives_0_0() { return cFieldAlternatives_0_0; }
+		
+		//ID
+		public RuleCall getFieldIDTerminalRuleCall_0_0_0() { return cFieldIDTerminalRuleCall_0_0_0; }
+		
+		//HTTP
+		public RuleCall getFieldHTTPTerminalRuleCall_0_0_1() { return cFieldHTTPTerminalRuleCall_0_0_1; }
+		
+		//":"
+		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+		
+		//value=(ID | HTTP)
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+		
+		//(ID | HTTP)
+		public Alternatives getValueAlternatives_2_0() { return cValueAlternatives_2_0; }
+		
+		//ID
+		public RuleCall getValueIDTerminalRuleCall_2_0_0() { return cValueIDTerminalRuleCall_2_0_0; }
+		
+		//HTTP
+		public RuleCall getValueHTTPTerminalRuleCall_2_0_1() { return cValueHTTPTerminalRuleCall_2_0_1; }
+	}
+	public class FormFileFieldItemElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.FormFileFieldItem");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cFieldAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Alternatives cFieldAlternatives_0_0 = (Alternatives)cFieldAssignment_0.eContents().get(0);
+		private final RuleCall cFieldIDTerminalRuleCall_0_0_0 = (RuleCall)cFieldAlternatives_0_0.eContents().get(0);
+		private final RuleCall cFieldHTTPTerminalRuleCall_0_0_1 = (RuleCall)cFieldAlternatives_0_0.eContents().get(1);
+		private final Keyword cCommercialAtKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final Alternatives cValueAlternatives_2_0 = (Alternatives)cValueAssignment_2.eContents().get(0);
+		private final RuleCall cValueIDTerminalRuleCall_2_0_0 = (RuleCall)cValueAlternatives_2_0.eContents().get(0);
+		private final RuleCall cValueHTTPTerminalRuleCall_2_0_1 = (RuleCall)cValueAlternatives_2_0.eContents().get(1);
+		
+		//FormFileFieldItem:
+		//	field=(ID | HTTP) '@' value=(ID | HTTP);
+		@Override public ParserRule getRule() { return rule; }
+		
+		//field=(ID | HTTP) '@' value=(ID | HTTP)
+		public Group getGroup() { return cGroup; }
+		
+		//field=(ID | HTTP)
+		public Assignment getFieldAssignment_0() { return cFieldAssignment_0; }
+		
+		//(ID | HTTP)
+		public Alternatives getFieldAlternatives_0_0() { return cFieldAlternatives_0_0; }
+		
+		//ID
+		public RuleCall getFieldIDTerminalRuleCall_0_0_0() { return cFieldIDTerminalRuleCall_0_0_0; }
+		
+		//HTTP
+		public RuleCall getFieldHTTPTerminalRuleCall_0_0_1() { return cFieldHTTPTerminalRuleCall_0_0_1; }
+		
+		//'@'
+		public Keyword getCommercialAtKeyword_1() { return cCommercialAtKeyword_1; }
+		
+		//value=(ID | HTTP)
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+		
+		//(ID | HTTP)
+		public Alternatives getValueAlternatives_2_0() { return cValueAlternatives_2_0; }
+		
+		//ID
+		public RuleCall getValueIDTerminalRuleCall_2_0_0() { return cValueIDTerminalRuleCall_2_0_0; }
+		
+		//HTTP
+		public RuleCall getValueHTTPTerminalRuleCall_2_0_1() { return cValueHTTPTerminalRuleCall_2_0_1; }
+	}
+	public class DataFieldItemElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.DataFieldItem");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cFieldAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Alternatives cFieldAlternatives_0_0 = (Alternatives)cFieldAssignment_0.eContents().get(0);
+		private final RuleCall cFieldIDTerminalRuleCall_0_0_0 = (RuleCall)cFieldAlternatives_0_0.eContents().get(0);
+		private final RuleCall cFieldHTTPTerminalRuleCall_0_0_1 = (RuleCall)cFieldAlternatives_0_0.eContents().get(1);
+		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
+		private final Assignment cValueAssignment_2_0 = (Assignment)cAlternatives_2.eContents().get(0);
+		private final Alternatives cValueAlternatives_2_0_0 = (Alternatives)cValueAssignment_2_0.eContents().get(0);
+		private final RuleCall cValueIDTerminalRuleCall_2_0_0_0 = (RuleCall)cValueAlternatives_2_0_0.eContents().get(0);
+		private final RuleCall cValueHTTPTerminalRuleCall_2_0_0_1 = (RuleCall)cValueAlternatives_2_0_0.eContents().get(1);
+		private final Group cGroup_2_1 = (Group)cAlternatives_2.eContents().get(1);
+		private final Keyword cCommercialAtKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
+		private final Assignment cValueAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
+		private final RuleCall cValueURLTerminalRuleCall_2_1_1_0 = (RuleCall)cValueAssignment_2_1_1.eContents().get(0);
+		
+		//DataFieldItem:
+		//	field=(ID | HTTP) '=' (value=(ID | HTTP) | '@' value=URL);
+		@Override public ParserRule getRule() { return rule; }
+		
+		//field=(ID | HTTP) '=' (value=(ID | HTTP) | '@' value=URL)
+		public Group getGroup() { return cGroup; }
+		
+		//field=(ID | HTTP)
+		public Assignment getFieldAssignment_0() { return cFieldAssignment_0; }
+		
+		//(ID | HTTP)
+		public Alternatives getFieldAlternatives_0_0() { return cFieldAlternatives_0_0; }
+		
+		//ID
+		public RuleCall getFieldIDTerminalRuleCall_0_0_0() { return cFieldIDTerminalRuleCall_0_0_0; }
+		
+		//HTTP
+		public RuleCall getFieldHTTPTerminalRuleCall_0_0_1() { return cFieldHTTPTerminalRuleCall_0_0_1; }
+		
+		//'='
+		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
+		
+		//value=(ID | HTTP) | '@' value=URL
+		public Alternatives getAlternatives_2() { return cAlternatives_2; }
+		
+		//value=(ID | HTTP)
+		public Assignment getValueAssignment_2_0() { return cValueAssignment_2_0; }
+		
+		//(ID | HTTP)
+		public Alternatives getValueAlternatives_2_0_0() { return cValueAlternatives_2_0_0; }
+		
+		//ID
+		public RuleCall getValueIDTerminalRuleCall_2_0_0_0() { return cValueIDTerminalRuleCall_2_0_0_0; }
+		
+		//HTTP
+		public RuleCall getValueHTTPTerminalRuleCall_2_0_0_1() { return cValueHTTPTerminalRuleCall_2_0_0_1; }
+		
+		//'@' value=URL
+		public Group getGroup_2_1() { return cGroup_2_1; }
+		
+		//'@'
+		public Keyword getCommercialAtKeyword_2_1_0() { return cCommercialAtKeyword_2_1_0; }
+		
+		//value=URL
+		public Assignment getValueAssignment_2_1_1() { return cValueAssignment_2_1_1; }
+		
+		//URL
+		public RuleCall getValueURLTerminalRuleCall_2_1_1_0() { return cValueURLTerminalRuleCall_2_1_1_0; }
+	}
+	public class UrlParameterItemElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.UrlParameterItem");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cFieldAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Alternatives cFieldAlternatives_0_0 = (Alternatives)cFieldAssignment_0.eContents().get(0);
+		private final RuleCall cFieldIDTerminalRuleCall_0_0_0 = (RuleCall)cFieldAlternatives_0_0.eContents().get(0);
+		private final RuleCall cFieldHTTPTerminalRuleCall_0_0_1 = (RuleCall)cFieldAlternatives_0_0.eContents().get(1);
+		private final Keyword cEqualsSignEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final Alternatives cValueAlternatives_2_0 = (Alternatives)cValueAssignment_2.eContents().get(0);
+		private final RuleCall cValueIDTerminalRuleCall_2_0_0 = (RuleCall)cValueAlternatives_2_0.eContents().get(0);
+		private final RuleCall cValueHTTPTerminalRuleCall_2_0_1 = (RuleCall)cValueAlternatives_2_0.eContents().get(1);
+		
+		//UrlParameterItem:
+		//	field=(ID | HTTP) '==' value=(ID | HTTP);
+		@Override public ParserRule getRule() { return rule; }
+		
+		//field=(ID | HTTP) '==' value=(ID | HTTP)
+		public Group getGroup() { return cGroup; }
+		
+		//field=(ID | HTTP)
+		public Assignment getFieldAssignment_0() { return cFieldAssignment_0; }
+		
+		//(ID | HTTP)
+		public Alternatives getFieldAlternatives_0_0() { return cFieldAlternatives_0_0; }
+		
+		//ID
+		public RuleCall getFieldIDTerminalRuleCall_0_0_0() { return cFieldIDTerminalRuleCall_0_0_0; }
+		
+		//HTTP
+		public RuleCall getFieldHTTPTerminalRuleCall_0_0_1() { return cFieldHTTPTerminalRuleCall_0_0_1; }
+		
+		//'=='
+		public Keyword getEqualsSignEqualsSignKeyword_1() { return cEqualsSignEqualsSignKeyword_1; }
+		
+		//value=(ID | HTTP)
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+		
+		//(ID | HTTP)
+		public Alternatives getValueAlternatives_2_0() { return cValueAlternatives_2_0; }
+		
+		//ID
+		public RuleCall getValueIDTerminalRuleCall_2_0_0() { return cValueIDTerminalRuleCall_2_0_0; }
+		
+		//HTTP
+		public RuleCall getValueHTTPTerminalRuleCall_2_0_1() { return cValueHTTPTerminalRuleCall_2_0_1; }
+	}
+	public class RawJsonFieldItemElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.RawJsonFieldItem");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cFieldAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Alternatives cFieldAlternatives_0_0 = (Alternatives)cFieldAssignment_0.eContents().get(0);
+		private final RuleCall cFieldIDTerminalRuleCall_0_0_0 = (RuleCall)cFieldAlternatives_0_0.eContents().get(0);
+		private final RuleCall cFieldHTTPTerminalRuleCall_0_0_1 = (RuleCall)cFieldAlternatives_0_0.eContents().get(1);
+		private final Keyword cColonEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
+		private final Assignment cValueAssignment_2_0 = (Assignment)cAlternatives_2.eContents().get(0);
+		private final RuleCall cValueJsonTypeParserRuleCall_2_0_0 = (RuleCall)cValueAssignment_2_0.eContents().get(0);
+		private final Group cGroup_2_1 = (Group)cAlternatives_2.eContents().get(1);
+		private final Keyword cCommercialAtKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
+		private final Assignment cValueAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
+		private final RuleCall cValueJsonStringParserRuleCall_2_1_1_0 = (RuleCall)cValueAssignment_2_1_1.eContents().get(0);
+		
+		//RawJsonFieldItem:
+		//	field=(ID | HTTP) ':=' (value=JsonType | '@' value=JsonString);
+		@Override public ParserRule getRule() { return rule; }
+		
+		//field=(ID | HTTP) ':=' (value=JsonType | '@' value=JsonString)
+		public Group getGroup() { return cGroup; }
+		
+		//field=(ID | HTTP)
+		public Assignment getFieldAssignment_0() { return cFieldAssignment_0; }
+		
+		//(ID | HTTP)
+		public Alternatives getFieldAlternatives_0_0() { return cFieldAlternatives_0_0; }
+		
+		//ID
+		public RuleCall getFieldIDTerminalRuleCall_0_0_0() { return cFieldIDTerminalRuleCall_0_0_0; }
+		
+		//HTTP
+		public RuleCall getFieldHTTPTerminalRuleCall_0_0_1() { return cFieldHTTPTerminalRuleCall_0_0_1; }
+		
+		//':='
+		public Keyword getColonEqualsSignKeyword_1() { return cColonEqualsSignKeyword_1; }
+		
+		//value=JsonType | '@' value=JsonString
+		public Alternatives getAlternatives_2() { return cAlternatives_2; }
+		
+		//value=JsonType
+		public Assignment getValueAssignment_2_0() { return cValueAssignment_2_0; }
+		
+		//JsonType
+		public RuleCall getValueJsonTypeParserRuleCall_2_0_0() { return cValueJsonTypeParserRuleCall_2_0_0; }
+		
+		//'@' value=JsonString
+		public Group getGroup_2_1() { return cGroup_2_1; }
+		
+		//'@'
+		public Keyword getCommercialAtKeyword_2_1_0() { return cCommercialAtKeyword_2_1_0; }
+		
+		//value=JsonString
+		public Assignment getValueAssignment_2_1_1() { return cValueAssignment_2_1_1; }
+		
+		//JsonString
+		public RuleCall getValueJsonStringParserRuleCall_2_1_1_0() { return cValueJsonStringParserRuleCall_2_1_1_0; }
+	}
+	public class MemberElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.Member");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cGroup.eContents().get(0);
+		private final Keyword cApostropheKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Assignment cKeyAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final Alternatives cKeyAlternatives_0_1_0 = (Alternatives)cKeyAssignment_0_1.eContents().get(0);
+		private final RuleCall cKeyIDTerminalRuleCall_0_1_0_0 = (RuleCall)cKeyAlternatives_0_1_0.eContents().get(0);
+		private final RuleCall cKeyHTTPTerminalRuleCall_0_1_0_1 = (RuleCall)cKeyAlternatives_0_1_0.eContents().get(1);
+		private final Keyword cApostropheKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
+		private final RuleCall cWSTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final RuleCall cWSTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		private final Assignment cValueAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cValueJsonTypeParserRuleCall_4_0 = (RuleCall)cValueAssignment_4.eContents().get(0);
+		
+		//Member:
+		//	("'" key=(ID | HTTP) "'") WS? ':' WS? value=JsonType;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//("'" key=(ID | HTTP) "'") WS? ':' WS? value=JsonType
+		public Group getGroup() { return cGroup; }
+		
+		//"'" key=(ID | HTTP) "'"
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//"'"
+		public Keyword getApostropheKeyword_0_0() { return cApostropheKeyword_0_0; }
+		
+		//key=(ID | HTTP)
+		public Assignment getKeyAssignment_0_1() { return cKeyAssignment_0_1; }
+		
+		//(ID | HTTP)
+		public Alternatives getKeyAlternatives_0_1_0() { return cKeyAlternatives_0_1_0; }
+		
+		//ID
+		public RuleCall getKeyIDTerminalRuleCall_0_1_0_0() { return cKeyIDTerminalRuleCall_0_1_0_0; }
+		
+		//HTTP
+		public RuleCall getKeyHTTPTerminalRuleCall_0_1_0_1() { return cKeyHTTPTerminalRuleCall_0_1_0_1; }
+		
+		//"'"
+		public Keyword getApostropheKeyword_0_2() { return cApostropheKeyword_0_2; }
+		
+		//WS?
+		public RuleCall getWSTerminalRuleCall_1() { return cWSTerminalRuleCall_1; }
+		
+		//':'
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
+		
+		//WS?
+		public RuleCall getWSTerminalRuleCall_3() { return cWSTerminalRuleCall_3; }
+		
+		//value=JsonType
+		public Assignment getValueAssignment_4() { return cValueAssignment_4; }
+		
+		//JsonType
+		public RuleCall getValueJsonTypeParserRuleCall_4_0() { return cValueJsonTypeParserRuleCall_4_0; }
+	}
+	public class JsonTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.JsonType");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cJsonObjectParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cJsonStringParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cJsonArrayParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cJsonBooleanParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cJsonNullParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cJsonNumberParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		
+		//JsonType:
+		//	JsonObject | JsonString | JsonArray | JsonBoolean | JsonNull | JsonNumber;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//JsonObject | JsonString | JsonArray | JsonBoolean | JsonNull | JsonNumber
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//JsonObject
+		public RuleCall getJsonObjectParserRuleCall_0() { return cJsonObjectParserRuleCall_0; }
+		
+		//JsonString
+		public RuleCall getJsonStringParserRuleCall_1() { return cJsonStringParserRuleCall_1; }
+		
+		//JsonArray
+		public RuleCall getJsonArrayParserRuleCall_2() { return cJsonArrayParserRuleCall_2; }
+		
+		//JsonBoolean
+		public RuleCall getJsonBooleanParserRuleCall_3() { return cJsonBooleanParserRuleCall_3; }
+		
+		//JsonNull
+		public RuleCall getJsonNullParserRuleCall_4() { return cJsonNullParserRuleCall_4; }
+		
+		//JsonNumber
+		public RuleCall getJsonNumberParserRuleCall_5() { return cJsonNumberParserRuleCall_5; }
+	}
+	public class JsonObjectElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.JsonObject");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cJsonObjectAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Group cGroup_2_0 = (Group)cGroup_2.eContents().get(0);
+		private final RuleCall cWSTerminalRuleCall_2_0_0 = (RuleCall)cGroup_2_0.eContents().get(0);
+		private final Assignment cMembersAssignment_2_0_1 = (Assignment)cGroup_2_0.eContents().get(1);
+		private final RuleCall cMembersMemberParserRuleCall_2_0_1_0 = (RuleCall)cMembersAssignment_2_0_1.eContents().get(0);
+		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
+		private final RuleCall cWSTerminalRuleCall_2_1_0 = (RuleCall)cGroup_2_1.eContents().get(0);
+		private final Keyword cCommaKeyword_2_1_1 = (Keyword)cGroup_2_1.eContents().get(1);
+		private final RuleCall cWSTerminalRuleCall_2_1_2 = (RuleCall)cGroup_2_1.eContents().get(2);
+		private final Assignment cMembersAssignment_2_1_3 = (Assignment)cGroup_2_1.eContents().get(3);
+		private final RuleCall cMembersMemberParserRuleCall_2_1_3_0 = (RuleCall)cMembersAssignment_2_1_3.eContents().get(0);
+		private final RuleCall cWSTerminalRuleCall_2_2 = (RuleCall)cGroup_2.eContents().get(2);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//JsonObject:
+		//	{JsonObject}
+		//	'{' ((WS? members+=Member) (WS? ',' WS? members+=Member)* WS?)? '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{JsonObject} '{' ((WS? members+=Member) (WS? ',' WS? members+=Member)* WS?)? '}'
+		public Group getGroup() { return cGroup; }
+		
+		//{JsonObject}
+		public Action getJsonObjectAction_0() { return cJsonObjectAction_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//((WS? members+=Member) (WS? ',' WS? members+=Member)* WS?)?
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//WS? members+=Member
+		public Group getGroup_2_0() { return cGroup_2_0; }
+		
+		//WS?
+		public RuleCall getWSTerminalRuleCall_2_0_0() { return cWSTerminalRuleCall_2_0_0; }
+		
+		//members+=Member
+		public Assignment getMembersAssignment_2_0_1() { return cMembersAssignment_2_0_1; }
+		
+		//Member
+		public RuleCall getMembersMemberParserRuleCall_2_0_1_0() { return cMembersMemberParserRuleCall_2_0_1_0; }
+		
+		//(WS? ',' WS? members+=Member)*
+		public Group getGroup_2_1() { return cGroup_2_1; }
+		
+		//WS?
+		public RuleCall getWSTerminalRuleCall_2_1_0() { return cWSTerminalRuleCall_2_1_0; }
+		
+		//','
+		public Keyword getCommaKeyword_2_1_1() { return cCommaKeyword_2_1_1; }
+		
+		//WS?
+		public RuleCall getWSTerminalRuleCall_2_1_2() { return cWSTerminalRuleCall_2_1_2; }
+		
+		//members+=Member
+		public Assignment getMembersAssignment_2_1_3() { return cMembersAssignment_2_1_3; }
+		
+		//Member
+		public RuleCall getMembersMemberParserRuleCall_2_1_3_0() { return cMembersMemberParserRuleCall_2_1_3_0; }
+		
+		//WS?
+		public RuleCall getWSTerminalRuleCall_2_2() { return cWSTerminalRuleCall_2_2; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+	}
+	public class JsonStringElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.JsonString");
+		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
+		private final Alternatives cValueAlternatives_0 = (Alternatives)cValueAssignment.eContents().get(0);
+		private final RuleCall cValueIDTerminalRuleCall_0_0 = (RuleCall)cValueAlternatives_0.eContents().get(0);
+		private final RuleCall cValueHTTPTerminalRuleCall_0_1 = (RuleCall)cValueAlternatives_0.eContents().get(1);
+		
+		//JsonString:
+		//	value=(ID | HTTP);
+		@Override public ParserRule getRule() { return rule; }
+		
+		////(SEP1 value=(ID|HTTP) SEP1) |
+		////('"' value=(ID|HTTP) '"') |
+		//value=(ID | HTTP)
+		public Assignment getValueAssignment() { return cValueAssignment; }
+		
+		//(ID | HTTP)
+		public Alternatives getValueAlternatives_0() { return cValueAlternatives_0; }
+		
+		//ID
+		public RuleCall getValueIDTerminalRuleCall_0_0() { return cValueIDTerminalRuleCall_0_0; }
+		
+		//HTTP
+		public RuleCall getValueHTTPTerminalRuleCall_0_1() { return cValueHTTPTerminalRuleCall_0_1; }
+	}
+	public class JsonArrayElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.JsonArray");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cJsonArrayAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cLeftSquareBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Group cGroup_2_0 = (Group)cGroup_2.eContents().get(0);
+		private final RuleCall cWSTerminalRuleCall_2_0_0 = (RuleCall)cGroup_2_0.eContents().get(0);
+		private final Assignment cValuesAssignment_2_0_1 = (Assignment)cGroup_2_0.eContents().get(1);
+		private final RuleCall cValuesJsonTypeParserRuleCall_2_0_1_0 = (RuleCall)cValuesAssignment_2_0_1.eContents().get(0);
+		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
+		private final RuleCall cWSTerminalRuleCall_2_1_0 = (RuleCall)cGroup_2_1.eContents().get(0);
+		private final Keyword cCommaKeyword_2_1_1 = (Keyword)cGroup_2_1.eContents().get(1);
+		private final RuleCall cWSTerminalRuleCall_2_1_2 = (RuleCall)cGroup_2_1.eContents().get(2);
+		private final Assignment cValuesAssignment_2_1_3 = (Assignment)cGroup_2_1.eContents().get(3);
+		private final RuleCall cValuesJsonTypeParserRuleCall_2_1_3_0 = (RuleCall)cValuesAssignment_2_1_3.eContents().get(0);
+		private final RuleCall cWSTerminalRuleCall_2_2 = (RuleCall)cGroup_2.eContents().get(2);
+		private final Keyword cRightSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//JsonArray:
+		//	{JsonArray}
+		//	'[' ((WS? values+=JsonType) (WS? ',' WS? values+=JsonType)* WS?)? ']';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{JsonArray} '[' ((WS? values+=JsonType) (WS? ',' WS? values+=JsonType)* WS?)? ']'
+		public Group getGroup() { return cGroup; }
+		
+		//{JsonArray}
+		public Action getJsonArrayAction_0() { return cJsonArrayAction_0; }
+		
+		//'['
+		public Keyword getLeftSquareBracketKeyword_1() { return cLeftSquareBracketKeyword_1; }
+		
+		//((WS? values+=JsonType) (WS? ',' WS? values+=JsonType)* WS?)?
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//WS? values+=JsonType
+		public Group getGroup_2_0() { return cGroup_2_0; }
+		
+		//WS?
+		public RuleCall getWSTerminalRuleCall_2_0_0() { return cWSTerminalRuleCall_2_0_0; }
+		
+		//values+=JsonType
+		public Assignment getValuesAssignment_2_0_1() { return cValuesAssignment_2_0_1; }
+		
+		//JsonType
+		public RuleCall getValuesJsonTypeParserRuleCall_2_0_1_0() { return cValuesJsonTypeParserRuleCall_2_0_1_0; }
+		
+		//(WS? ',' WS? values+=JsonType)*
+		public Group getGroup_2_1() { return cGroup_2_1; }
+		
+		//WS?
+		public RuleCall getWSTerminalRuleCall_2_1_0() { return cWSTerminalRuleCall_2_1_0; }
+		
+		//','
+		public Keyword getCommaKeyword_2_1_1() { return cCommaKeyword_2_1_1; }
+		
+		//WS?
+		public RuleCall getWSTerminalRuleCall_2_1_2() { return cWSTerminalRuleCall_2_1_2; }
+		
+		//values+=JsonType
+		public Assignment getValuesAssignment_2_1_3() { return cValuesAssignment_2_1_3; }
+		
+		//JsonType
+		public RuleCall getValuesJsonTypeParserRuleCall_2_1_3_0() { return cValuesJsonTypeParserRuleCall_2_1_3_0; }
+		
+		//WS?
+		public RuleCall getWSTerminalRuleCall_2_2() { return cWSTerminalRuleCall_2_2; }
+		
+		//']'
+		public Keyword getRightSquareBracketKeyword_3() { return cRightSquareBracketKeyword_3; }
+	}
+	public class JsonBooleanElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.JsonBoolean");
+		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cValueBOOLEANTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
+		
+		//JsonBoolean:
+		//	value=BOOLEAN;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//value=BOOLEAN
+		public Assignment getValueAssignment() { return cValueAssignment; }
+		
+		//BOOLEAN
+		public RuleCall getValueBOOLEANTerminalRuleCall_0() { return cValueBOOLEANTerminalRuleCall_0; }
+	}
+	public class JsonNullElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.JsonNull");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cJsonNullAction_0 = (Action)cGroup.eContents().get(0);
+		private final RuleCall cNULLTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		
+		//JsonNull:
+		//	{JsonNull} NULL;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{JsonNull} NULL
+		public Group getGroup() { return cGroup; }
+		
+		//{JsonNull}
+		public Action getJsonNullAction_0() { return cJsonNullAction_0; }
+		
+		//NULL
+		public RuleCall getNULLTerminalRuleCall_1() { return cNULLTerminalRuleCall_1; }
+	}
+	public class JsonNumberElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.JsonNumber");
+		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cValueNUMBERTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
+		
+		//JsonNumber:
+		//	value=NUMBER;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//value=NUMBER
+		public Assignment getValueAssignment() { return cValueAssignment; }
+		
+		//NUMBER
+		public RuleCall getValueNUMBERTerminalRuleCall_0() { return cValueNUMBERTerminalRuleCall_0; }
+	}
 	
+	public class MethodElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.Method");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cGETEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cGETGETKeyword_0_0 = (Keyword)cGETEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cPOSTEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cPOSTPOSTKeyword_1_0 = (Keyword)cPOSTEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cPUTEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cPUTPUTKeyword_2_0 = (Keyword)cPUTEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cDELETEEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cDELETEDELETEKeyword_3_0 = (Keyword)cDELETEEnumLiteralDeclaration_3.eContents().get(0);
+		
+		//enum Method:
+		//	GET | POST | PUT | DELETE;
+		public EnumRule getRule() { return rule; }
+		
+		//GET | POST | PUT | DELETE
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//GET
+		public EnumLiteralDeclaration getGETEnumLiteralDeclaration_0() { return cGETEnumLiteralDeclaration_0; }
+		
+		//'GET'
+		public Keyword getGETGETKeyword_0_0() { return cGETGETKeyword_0_0; }
+		
+		//POST
+		public EnumLiteralDeclaration getPOSTEnumLiteralDeclaration_1() { return cPOSTEnumLiteralDeclaration_1; }
+		
+		//'POST'
+		public Keyword getPOSTPOSTKeyword_1_0() { return cPOSTPOSTKeyword_1_0; }
+		
+		//PUT
+		public EnumLiteralDeclaration getPUTEnumLiteralDeclaration_2() { return cPUTEnumLiteralDeclaration_2; }
+		
+		//'PUT'
+		public Keyword getPUTPUTKeyword_2_0() { return cPUTPUTKeyword_2_0; }
+		
+		//DELETE
+		public EnumLiteralDeclaration getDELETEEnumLiteralDeclaration_3() { return cDELETEEnumLiteralDeclaration_3; }
+		
+		//'DELETE'
+		public Keyword getDELETEDELETEKeyword_3_0() { return cDELETEDELETEKeyword_3_0; }
+	}
 	
 	private final CommandLineInterfaceElements pCommandLineInterface;
 	private final FlagElements pFlag;
@@ -460,20 +1497,41 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 	private final VersionFlagElements pVersionFlag;
 	private final VerboseFlagElements pVerboseFlag;
 	private final TimeoutFlagElements pTimeoutFlag;
-	private final TerminalRule tBOOLEAN;
+	private final MethodElements eMethod;
+	private final ItemElements pItem;
+	private final HttpHeaderItemElements pHttpHeaderItem;
+	private final FormFileFieldItemElements pFormFileFieldItem;
+	private final DataFieldItemElements pDataFieldItem;
+	private final UrlParameterItemElements pUrlParameterItem;
+	private final RawJsonFieldItemElements pRawJsonFieldItem;
+	private final MemberElements pMember;
+	private final JsonTypeElements pJsonType;
+	private final JsonObjectElements pJsonObject;
+	private final JsonStringElements pJsonString;
+	private final TerminalRule tSEP2;
+	private final JsonArrayElements pJsonArray;
+	private final JsonBooleanElements pJsonBoolean;
+	private final JsonNullElements pJsonNull;
+	private final JsonNumberElements pJsonNumber;
 	private final TerminalRule tDIGIT;
-	private final TerminalRule tLETTER;
-	private final TerminalRule tSPECIAL;
 	private final TerminalRule tWS;
 	private final TerminalRule tINT;
+	private final TerminalRule tURL;
+	private final TerminalRule tHTTP;
+	private final TerminalRule tBOOLEAN;
+	private final TerminalRule tNULL;
 	private final TerminalRule tFLOAT;
-	private final TerminalRule tSTRING;
+	private final TerminalRule tNUMBER;
 	
 	private final Grammar grammar;
+	
+	private final TerminalsGrammarAccess gaTerminals;
 
 	@Inject
-	public CurlBetterThanHttpieGrammarAccess(GrammarProvider grammarProvider) {
+	public CurlBetterThanHttpieGrammarAccess(GrammarProvider grammarProvider,
+			TerminalsGrammarAccess gaTerminals) {
 		this.grammar = internalFindGrammar(grammarProvider);
+		this.gaTerminals = gaTerminals;
 		this.pCommandLineInterface = new CommandLineInterfaceElements();
 		this.pFlag = new FlagElements();
 		this.pHeadersFlag = new HeadersFlagElements();
@@ -487,14 +1545,31 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 		this.pVersionFlag = new VersionFlagElements();
 		this.pVerboseFlag = new VerboseFlagElements();
 		this.pTimeoutFlag = new TimeoutFlagElements();
-		this.tBOOLEAN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.BOOLEAN");
+		this.eMethod = new MethodElements();
+		this.pItem = new ItemElements();
+		this.pHttpHeaderItem = new HttpHeaderItemElements();
+		this.pFormFileFieldItem = new FormFileFieldItemElements();
+		this.pDataFieldItem = new DataFieldItemElements();
+		this.pUrlParameterItem = new UrlParameterItemElements();
+		this.pRawJsonFieldItem = new RawJsonFieldItemElements();
+		this.pMember = new MemberElements();
+		this.pJsonType = new JsonTypeElements();
+		this.pJsonObject = new JsonObjectElements();
+		this.pJsonString = new JsonStringElements();
+		this.tSEP2 = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.SEP2");
+		this.pJsonArray = new JsonArrayElements();
+		this.pJsonBoolean = new JsonBooleanElements();
+		this.pJsonNull = new JsonNullElements();
+		this.pJsonNumber = new JsonNumberElements();
 		this.tDIGIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.DIGIT");
-		this.tLETTER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.LETTER");
-		this.tSPECIAL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.SPECIAL");
 		this.tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.WS");
 		this.tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.INT");
+		this.tURL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.URL");
+		this.tHTTP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.HTTP");
+		this.tBOOLEAN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.BOOLEAN");
+		this.tNULL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.NULL");
 		this.tFLOAT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.FLOAT");
-		this.tSTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.STRING");
+		this.tNUMBER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.NUMBER");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -518,11 +1593,15 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 		return grammar;
 	}
 	
+	
+	public TerminalsGrammarAccess getTerminalsGrammarAccess() {
+		return gaTerminals;
+	}
 
 	
 	//CommandLineInterface:
-	//	{CommandLineInterface}
-	//	'http' (WS flags+=Flag)* WS?;
+	//	{CommandLineInterface} HTTP (WS flags+=Flag)* (WS method=Method)? WS (protocol=(ID | HTTP) '://')? (url=URL (':'
+	//	port=INT)? | ':' port=INT?) ('/' resource=(ID | HTTP))? (WS '--')? (WS items+=Item)*;
 	public CommandLineInterfaceElements getCommandLineInterfaceAccess() {
 		return pCommandLineInterface;
 	}
@@ -531,7 +1610,7 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 		return getCommandLineInterfaceAccess().getRule();
 	}
 	
-	//// (WS method=Method)? WS (protocol=BASIC_STRING '://')? (url=STRING (':' port=INT)? | (':' (port=INT)?)) ('/' resource=STRING)? (WS '--')? (WS items+=Item)* WS?;
+	////WS?
 	//// FLAGS
 	//Flag:
 	//	ProxyFlag | FormFlag | AuthFlag | DownloadFlag | BodyFlag | VersionFlag | JsonFlag | HelpFlag | HeadersFlag |
@@ -585,7 +1664,9 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 	}
 	
 	//ProxyFlag:
-	//	'--proxy' ('=' | WS) (protocol=STRING ':');
+	//	'--proxy' ('=' | WS) (protocol=(ID | HTTP) ':' | proxyProtocol=(ID | HTTP) '://' | protocol=(ID | HTTP) ':'
+	//	proxyProtocol=(ID | HTTP) '://') (username=(ID | HTTP) ':' password=(ID | HTTP) '@')? (hostname=URL (':' port=INT)? |
+	//	':' port=INT?);
 	public ProxyFlagElements getProxyFlagAccess() {
 		return pProxyFlag;
 	}
@@ -594,9 +1675,8 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 		return getProxyFlagAccess().getRule();
 	}
 	
-	////((protocol=STRING ':') (proxyProtocol=STRING '://')? | proxyProtocol=STRING '://');// (username=STRING ':' password=STRING '@')?; // (hostname=STRING (':' port=INT)? | (':' (port=INT)?));
 	//AuthFlag:
-	//	('--auth' | '-a') ('=' | WS);
+	//	('--auth' | '-a') ('=' | WS) username=(ID | HTTP) (':' password=(ID | HTTP))? ('@' (hostname=URL | ":"))?;
 	public AuthFlagElements getAuthFlagAccess() {
 		return pAuthFlag;
 	}
@@ -605,7 +1685,6 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 		return getAuthFlagAccess().getRule();
 	}
 	
-	////username=EXTENDED_STRING (':' password=EXTENDED_STRING)? ('@' hostname=BASIC_STRING)?;
 	//DownloadFlag:
 	//	{DownloadFlag} ('--download' | '-d');
 	public DownloadFlagElements getDownloadFlagAccess() {
@@ -657,10 +1736,163 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 		return getTimeoutFlagAccess().getRule();
 	}
 	
-	//terminal BOOLEAN:
-	//	'true' | 'false';
-	public TerminalRule getBOOLEANRule() {
-		return tBOOLEAN;
+	//enum Method:
+	//	GET | POST | PUT | DELETE;
+	public MethodElements getMethodAccess() {
+		return eMethod;
+	}
+	
+	public EnumRule getMethodRule() {
+		return getMethodAccess().getRule();
+	}
+	
+	//// ITEMS
+	//Item:
+	//	HttpHeaderItem | FormFileFieldItem | DataFieldItem | UrlParameterItem | RawJsonFieldItem;
+	public ItemElements getItemAccess() {
+		return pItem;
+	}
+	
+	public ParserRule getItemRule() {
+		return getItemAccess().getRule();
+	}
+	
+	//HttpHeaderItem:
+	//	field=(ID | HTTP) ":" value=(ID | HTTP);
+	public HttpHeaderItemElements getHttpHeaderItemAccess() {
+		return pHttpHeaderItem;
+	}
+	
+	public ParserRule getHttpHeaderItemRule() {
+		return getHttpHeaderItemAccess().getRule();
+	}
+	
+	//FormFileFieldItem:
+	//	field=(ID | HTTP) '@' value=(ID | HTTP);
+	public FormFileFieldItemElements getFormFileFieldItemAccess() {
+		return pFormFileFieldItem;
+	}
+	
+	public ParserRule getFormFileFieldItemRule() {
+		return getFormFileFieldItemAccess().getRule();
+	}
+	
+	//DataFieldItem:
+	//	field=(ID | HTTP) '=' (value=(ID | HTTP) | '@' value=URL);
+	public DataFieldItemElements getDataFieldItemAccess() {
+		return pDataFieldItem;
+	}
+	
+	public ParserRule getDataFieldItemRule() {
+		return getDataFieldItemAccess().getRule();
+	}
+	
+	//UrlParameterItem:
+	//	field=(ID | HTTP) '==' value=(ID | HTTP);
+	public UrlParameterItemElements getUrlParameterItemAccess() {
+		return pUrlParameterItem;
+	}
+	
+	public ParserRule getUrlParameterItemRule() {
+		return getUrlParameterItemAccess().getRule();
+	}
+	
+	//RawJsonFieldItem:
+	//	field=(ID | HTTP) ':=' (value=JsonType | '@' value=JsonString);
+	public RawJsonFieldItemElements getRawJsonFieldItemAccess() {
+		return pRawJsonFieldItem;
+	}
+	
+	public ParserRule getRawJsonFieldItemRule() {
+		return getRawJsonFieldItemAccess().getRule();
+	}
+	
+	//Member:
+	//	("'" key=(ID | HTTP) "'") WS? ':' WS? value=JsonType;
+	public MemberElements getMemberAccess() {
+		return pMember;
+	}
+	
+	public ParserRule getMemberRule() {
+		return getMemberAccess().getRule();
+	}
+	
+	//JsonType:
+	//	JsonObject | JsonString | JsonArray | JsonBoolean | JsonNull | JsonNumber;
+	public JsonTypeElements getJsonTypeAccess() {
+		return pJsonType;
+	}
+	
+	public ParserRule getJsonTypeRule() {
+		return getJsonTypeAccess().getRule();
+	}
+	
+	//JsonObject:
+	//	{JsonObject}
+	//	'{' ((WS? members+=Member) (WS? ',' WS? members+=Member)* WS?)? '}';
+	public JsonObjectElements getJsonObjectAccess() {
+		return pJsonObject;
+	}
+	
+	public ParserRule getJsonObjectRule() {
+		return getJsonObjectAccess().getRule();
+	}
+	
+	//JsonString:
+	//	value=(ID | HTTP);
+	public JsonStringElements getJsonStringAccess() {
+		return pJsonString;
+	}
+	
+	public ParserRule getJsonStringRule() {
+		return getJsonStringAccess().getRule();
+	}
+	
+	//terminal SEP2:
+	//	'"';
+	public TerminalRule getSEP2Rule() {
+		return tSEP2;
+	}
+	
+	//JsonArray:
+	//	{JsonArray}
+	//	'[' ((WS? values+=JsonType) (WS? ',' WS? values+=JsonType)* WS?)? ']';
+	public JsonArrayElements getJsonArrayAccess() {
+		return pJsonArray;
+	}
+	
+	public ParserRule getJsonArrayRule() {
+		return getJsonArrayAccess().getRule();
+	}
+	
+	//JsonBoolean:
+	//	value=BOOLEAN;
+	public JsonBooleanElements getJsonBooleanAccess() {
+		return pJsonBoolean;
+	}
+	
+	public ParserRule getJsonBooleanRule() {
+		return getJsonBooleanAccess().getRule();
+	}
+	
+	//JsonNull:
+	//	{JsonNull} NULL;
+	public JsonNullElements getJsonNullAccess() {
+		return pJsonNull;
+	}
+	
+	public ParserRule getJsonNullRule() {
+		return getJsonNullAccess().getRule();
+	}
+	
+	//JsonNumber:
+	//	value=NUMBER;
+	public JsonNumberElements getJsonNumberAccess() {
+		return pJsonNumber;
+	}
+	
+	public ParserRule getJsonNumberRule() {
+		return getJsonNumberAccess().getRule();
 	}
 	
 	//terminal fragment DIGIT:
@@ -669,29 +1901,40 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 		return tDIGIT;
 	}
 	
-	//terminal fragment LETTER:
-	//	'a'..'z' | 'A'..'Z';
-	public TerminalRule getLETTERRule() {
-		return tLETTER;
-	}
-	
-	//terminal fragment SPECIAL:
-	//	'-' | '.' | '_' | '~' | '/' | '?' | '#' | '[' | ']' | '!' | '$' | '&' | '(' | ')' | '*' | '+' | ',' | '|' | ';' | '%'
-	//	| ':' | '@';
-	public TerminalRule getSPECIALRule() {
-		return tSPECIAL;
-	}
-	
-	//terminal WS:
+	//@ Override terminal WS:
 	//	' ' | '\t'+;
 	public TerminalRule getWSRule() {
 		return tWS;
 	}
 	
-	//terminal INT returns ecore::EInt:
+	//@ Override terminal INT returns ecore::EInt:
 	//	'0' | '1'..'9' DIGIT*;
 	public TerminalRule getINTRule() {
 		return tINT;
+	}
+	
+	//terminal URL:
+	//	"localhost" | ID '.' ID;
+	public TerminalRule getURLRule() {
+		return tURL;
+	}
+	
+	//terminal HTTP:
+	//	'http';
+	public TerminalRule getHTTPRule() {
+		return tHTTP;
+	}
+	
+	//terminal BOOLEAN returns ecore::EBoolean:
+	//	'true' | 'false';
+	public TerminalRule getBOOLEANRule() {
+		return tBOOLEAN;
+	}
+	
+	//terminal NULL:
+	//	'null';
+	public TerminalRule getNULLRule() {
+		return tNULL;
 	}
 	
 	//terminal FLOAT returns ecore::EFloat:
@@ -700,9 +1943,39 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 		return tFLOAT;
 	}
 	
+	//terminal NUMBER returns ecore::EFloat:
+	//	'-'? DIGIT* '.' DIGIT* (('E' | 'e') '-'? DIGIT*)?;
+	public TerminalRule getNUMBERRule() {
+		return tNUMBER;
+	}
+	
+	//terminal ID:
+	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
+	public TerminalRule getIDRule() {
+		return gaTerminals.getIDRule();
+	}
+	
 	//terminal STRING:
-	//	DIGIT | LETTER | SPECIAL+;
+	//	'"' ('\\' . | !('\\' | '"'))* '"' | "'" ('\\' . | !('\\' | "'"))* "'";
 	public TerminalRule getSTRINGRule() {
-		return tSTRING;
+		return gaTerminals.getSTRINGRule();
+	}
+	
+	//terminal ML_COMMENT:
+	//	'/*'->'*/';
+	public TerminalRule getML_COMMENTRule() {
+		return gaTerminals.getML_COMMENTRule();
+	}
+	
+	//terminal SL_COMMENT:
+	//	'//' !('\n' | '\r')* ('\r'? '\n')?;
+	public TerminalRule getSL_COMMENTRule() {
+		return gaTerminals.getSL_COMMENTRule();
+	}
+	
+	//terminal ANY_OTHER:
+	//	.;
+	public TerminalRule getANY_OTHERRule() {
+		return gaTerminals.getANY_OTHERRule();
 	}
 }

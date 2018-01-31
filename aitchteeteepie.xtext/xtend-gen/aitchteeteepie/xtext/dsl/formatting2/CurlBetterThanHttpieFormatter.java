@@ -3,18 +3,11 @@
  */
 package aitchteeteepie.xtext.dsl.formatting2;
 
-import aitchteeteepie.xtext.dsl.services.CurlBetterThanHttpieGrammarAccess;
-import com.google.inject.Inject;
 import org.eclipse.xtext.formatting2.AbstractFormatter2;
 import org.eclipse.xtext.formatting2.IFormattableDocument;
-import org.eclipse.xtext.xbase.lib.Extension;
 
 @SuppressWarnings("all")
 public class CurlBetterThanHttpieFormatter extends AbstractFormatter2 {
-  @Inject
-  @Extension
-  private CurlBetterThanHttpieGrammarAccess _curlBetterThanHttpieGrammarAccess;
-  
   @Override
   public void format(final Object obj, final IFormattableDocument document) {
     throw new UnsupportedOperationException("TODO: auto-generated method stub");

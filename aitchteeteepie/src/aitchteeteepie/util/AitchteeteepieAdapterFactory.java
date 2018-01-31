@@ -172,6 +172,18 @@ public class AitchteeteepieAdapterFactory extends AdapterFactoryImpl {
 				return createRawJsonFieldItemAdapter();
 			}
 			@Override
+			public Adapter caseJsonString(JsonString object) {
+				return createJsonStringAdapter();
+			}
+			@Override
+			public Adapter caseJsonNull(JsonNull object) {
+				return createJsonNullAdapter();
+			}
+			@Override
+			public Adapter caseMember(Member object) {
+				return createMemberAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -552,6 +564,48 @@ public class AitchteeteepieAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRawJsonFieldItemAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link aitchteeteepie.JsonString <em>Json String</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see aitchteeteepie.JsonString
+	 * @generated
+	 */
+	public Adapter createJsonStringAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link aitchteeteepie.JsonNull <em>Json Null</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see aitchteeteepie.JsonNull
+	 * @generated
+	 */
+	public Adapter createJsonNullAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link aitchteeteepie.Member <em>Member</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see aitchteeteepie.Member
+	 * @generated
+	 */
+	public Adapter createMemberAdapter() {
 		return null;
 	}
 
