@@ -7,7 +7,6 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import aitchteeteepie.CommandLineInterface
 import aitchteeteepie.RawJsonFieldItem
 import aitchteeteepie.DataFieldItem
 import aitchteeteepie.FormFileFieldItem
@@ -26,6 +25,15 @@ import aitchteeteepie.Flag
 import aitchteeteepie.HeadersFlag
 import aitchteeteepie.DownloadFlag
 import aitchteeteepie.VerboseFlag
+import aitchteeteepie.CommandLineInterface
+import aitchteeteepie.JsonType
+import aitchteeteepie.JsonObject
+import aitchteeteepie.JsonString
+import aitchteeteepie.JsonArray
+import aitchteeteepie.JsonBoolean
+import aitchteeteepie.JsonNull
+import aitchteeteepie.JsonNumber
+import aitchteeteepie.Member
 
 class CurlBetterThanHttpieGenerator extends AbstractGenerator {
 	private boolean formFlag=false;
@@ -69,7 +77,7 @@ class CurlBetterThanHttpieGenerator extends AbstractGenerator {
 		if(urlParametersCmpl.size > 0)
 			urlParametersString = '?' + urlParametersCmpl.join('&')
 		
-		'''curl «req.method.compile» «httpHeadersCmpl.join(' ')» «flagsCmpl.join(' ')» «req.protocol»://«req.url»:«req.port»«urlParametersString» «dataFieldsString»«formFieldsCmpl.join(' ')»'''
+		'''curl «req.method.compile» «httpHeadersCmpl.join(' ')» «flagsCmpl.join(' ')» «req.protocol»://«req.url»:«req.port»«urlParametersString» «dataFieldsString»«formFieldsCmpl.join(' ')»«rawJsonFieldCmpl.join(' ')»'''
 	}
 	
 	def dispatch compile (Flag f) '''«f.compile»'''
@@ -108,13 +116,29 @@ class CurlBetterThanHttpieGenerator extends AbstractGenerator {
 	def dispatch compile(FormFileFieldItem formField)''' -d "@«formField.value»"'''
 	
 	def dispatch compile(DataFieldItem data) {
-		if(formFlag)
+		if (formFlag)
 			''' -F «data.field»=«data.value»'''
-		else{
+		else {
 			'''«data.field»=«data.value»'''
 		}
 	}
 	
-	def dispatch compile(RawJsonFieldItem rawJsonField) '''#TODO'''
+	def dispatch compile(RawJsonFieldItem rawJsonField) '''-d '«rawJsonField.value.compile»' '''
 	
+	def dispatch compile(JsonType jsonType) '''«jsonType.compile»'''
+	
+	def dispatch compile(Member m) '''"«m.key»":«m.value.compile»'''
+	
+	def dispatch compile(JsonObject jsonObject)
+	'''{«IF jsonObject.members.length == 1»«jsonObject.members.get(0).compile»«ELSEIF jsonObject.members.length != 0»«val last = jsonObject.members.get(jsonObject.members.length - 1)»«FOR Member m : jsonObject.members»«m.compile»«IF last !== m»«','»«ENDIF»«ENDFOR»«ENDIF»}'''
+	
+	def dispatch compile(JsonString jsonString) '''"«jsonString.value»"'''
+	
+	def dispatch compile(JsonArray jsonArray) '''[«IF jsonArray.values.length == 1»«jsonArray.values.get(0).compile»«ELSEIF jsonArray.values.length != 0»«val last = jsonArray.values.get(jsonArray.values.length - 1)»«FOR JsonType jt: jsonArray.values»«jt.compile»«IF last !== jt»«','»«ENDIF»«ENDFOR»«ENDIF»]'''
+	
+	def dispatch compile(JsonBoolean jsonBoolean) '''«jsonBoolean.value»'''
+	
+	def dispatch compile(JsonNull jsonNull) '''null'''
+	
+	def dispatch compile(JsonNumber jsonNumber) '''«jsonNumber.value»'''
 }
