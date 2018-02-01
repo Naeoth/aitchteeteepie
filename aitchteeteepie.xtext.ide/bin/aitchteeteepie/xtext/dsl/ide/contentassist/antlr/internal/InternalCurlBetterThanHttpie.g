@@ -2123,6 +2123,7 @@ rule__CommandLineInterface__Group__9
 	}
 :
 	rule__CommandLineInterface__Group__9__Impl
+	rule__CommandLineInterface__Group__10
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -2137,6 +2138,32 @@ rule__CommandLineInterface__Group__9__Impl
 	{ before(grammarAccess.getCommandLineInterfaceAccess().getGroup_9()); }
 	(rule__CommandLineInterface__Group_9__0)*
 	{ after(grammarAccess.getCommandLineInterfaceAccess().getGroup_9()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__CommandLineInterface__Group__10
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__CommandLineInterface__Group__10__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__CommandLineInterface__Group__10__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getCommandLineInterfaceAccess().getWSTerminalRuleCall_10()); }
+	(RULE_WS)?
+	{ after(grammarAccess.getCommandLineInterfaceAccess().getWSTerminalRuleCall_10()); }
 )
 ;
 finally {
@@ -6416,9 +6443,9 @@ rule__JsonNumber__ValueAssignment
 	}
 :
 	(
-		{ before(grammarAccess.getJsonNumberAccess().getValueNUMBERTerminalRuleCall_0()); }
-		RULE_NUMBER
-		{ after(grammarAccess.getJsonNumberAccess().getValueNUMBERTerminalRuleCall_0()); }
+		{ before(grammarAccess.getJsonNumberAccess().getValueFLOATTerminalRuleCall_0()); }
+		RULE_FLOAT
+		{ after(grammarAccess.getJsonNumberAccess().getValueFLOATTerminalRuleCall_0()); }
 	)
 ;
 finally {
@@ -6429,19 +6456,17 @@ fragment RULE_DIGIT : '0'..'9';
 
 fragment RULE_LETTER : ('a'..'z'|'A'..'Z'|'_');
 
+RULE_BOOLEAN : ('true'|'false');
+
+RULE_NULL : 'null';
+
 RULE_HTTP : 'http';
 
 RULE_URL : ('localhost'|RULE_ID '.' RULE_ID);
 
 RULE_INT : ('0'|'1'..'9' RULE_DIGIT*);
 
-RULE_FLOAT : (RULE_INT|RULE_INT? '.' RULE_DIGIT* (('E'|'e') RULE_INT)?);
-
-RULE_BOOLEAN : ('true'|'false');
-
-RULE_NULL : 'null';
-
-RULE_NUMBER : '-'? RULE_INT ('.' RULE_DIGIT*)? (('E'|'e') '-'? RULE_DIGIT*)?;
+RULE_FLOAT : '-'? RULE_INT ('.' RULE_DIGIT* (('E'|'e') '-'? RULE_INT)?)?;
 
 RULE_WS : (' '|'\t')+;
 

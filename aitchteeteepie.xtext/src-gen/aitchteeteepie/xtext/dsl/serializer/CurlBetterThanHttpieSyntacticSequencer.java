@@ -26,6 +26,7 @@ public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSeq
 	protected AbstractElementAlias match_AuthFlag_EqualsSignKeyword_1_0_or_WSTerminalRuleCall_1_1;
 	protected AbstractElementAlias match_AuthFlag___CommercialAtKeyword_4_0_ColonKeyword_4_1_1__q;
 	protected AbstractElementAlias match_BodyFlag_BKeyword_1_1_or_BodyKeyword_1_0;
+	protected AbstractElementAlias match_CommandLineInterface_WSTerminalRuleCall_10_q;
 	protected AbstractElementAlias match_CommandLineInterface___WSTerminalRuleCall_8_0_HyphenMinusHyphenMinusKeyword_8_1__q;
 	protected AbstractElementAlias match_DownloadFlag_DKeyword_1_1_or_DownloadKeyword_1_0;
 	protected AbstractElementAlias match_FormFlag_FKeyword_1_1_or_FormKeyword_1_0;
@@ -53,6 +54,7 @@ public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSeq
 		match_AuthFlag_EqualsSignKeyword_1_0_or_WSTerminalRuleCall_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getAuthFlagAccess().getEqualsSignKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getAuthFlagAccess().getWSTerminalRuleCall_1_1()));
 		match_AuthFlag___CommercialAtKeyword_4_0_ColonKeyword_4_1_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getAuthFlagAccess().getCommercialAtKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getAuthFlagAccess().getColonKeyword_4_1_1()));
 		match_BodyFlag_BKeyword_1_1_or_BodyKeyword_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getBodyFlagAccess().getBKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getBodyFlagAccess().getBodyKeyword_1_0()));
+		match_CommandLineInterface_WSTerminalRuleCall_10_q = new TokenAlias(false, true, grammarAccess.getCommandLineInterfaceAccess().getWSTerminalRuleCall_10());
 		match_CommandLineInterface___WSTerminalRuleCall_8_0_HyphenMinusHyphenMinusKeyword_8_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getCommandLineInterfaceAccess().getWSTerminalRuleCall_8_0()), new TokenAlias(false, false, grammarAccess.getCommandLineInterfaceAccess().getHyphenMinusHyphenMinusKeyword_8_1()));
 		match_DownloadFlag_DKeyword_1_1_or_DownloadKeyword_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getDownloadFlagAccess().getDKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getDownloadFlagAccess().getDownloadKeyword_1_0()));
 		match_FormFlag_FKeyword_1_1_or_FormKeyword_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getFormFlagAccess().getFKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getFormFlagAccess().getFormKeyword_1_0()));
@@ -126,6 +128,8 @@ public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSeq
 				emit_AuthFlag___CommercialAtKeyword_4_0_ColonKeyword_4_1_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_BodyFlag_BKeyword_1_1_or_BodyKeyword_1_0.equals(syntax))
 				emit_BodyFlag_BKeyword_1_1_or_BodyKeyword_1_0(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_CommandLineInterface_WSTerminalRuleCall_10_q.equals(syntax))
+				emit_CommandLineInterface_WSTerminalRuleCall_10_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_CommandLineInterface___WSTerminalRuleCall_8_0_HyphenMinusHyphenMinusKeyword_8_1__q.equals(syntax))
 				emit_CommandLineInterface___WSTerminalRuleCall_8_0_HyphenMinusHyphenMinusKeyword_8_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_DownloadFlag_DKeyword_1_1_or_DownloadKeyword_1_0.equals(syntax))
@@ -170,11 +174,11 @@ public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSeq
 
 	/**
 	 * Ambiguous syntax:
-	 *     '--auth' | '-a'
+	 *     '-a' | '--auth'
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) (WS | '=') username=HTTP
-	 *     (rule start) (ambiguity) (WS | '=') username=ID
+	 *     (rule start) (ambiguity) ('=' | WS) username=HTTP
+	 *     (rule start) (ambiguity) ('=' | WS) username=ID
 	 */
 	protected void emit_AuthFlag_AKeyword_0_1_or_AuthKeyword_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -182,11 +186,11 @@ public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSeq
 	
 	/**
 	 * Ambiguous syntax:
-	 *     WS | '='
+	 *     '=' | WS
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) ('--auth' | '-a') (ambiguity) username=HTTP
-	 *     (rule start) ('--auth' | '-a') (ambiguity) username=ID
+	 *     (rule start) ('-a' | '--auth') (ambiguity) username=HTTP
+	 *     (rule start) ('-a' | '--auth') (ambiguity) username=ID
 	 */
 	protected void emit_AuthFlag_EqualsSignKeyword_1_0_or_WSTerminalRuleCall_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -219,27 +223,47 @@ public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSeq
 	
 	/**
 	 * Ambiguous syntax:
+	 *     WS?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) HTTP WS ':' (WS '--')? (ambiguity) (rule start)
+	 *     flags+=Flag WS ':' (WS '--')? (ambiguity) (rule end)
+	 *     items+=Item (ambiguity) (rule end)
+	 *     method=Method WS ':' (WS '--')? (ambiguity) (rule end)
+	 *     port=INT (WS '--')? (ambiguity) (rule end)
+	 *     protocol=HTTP '://' ':' (WS '--')? (ambiguity) (rule end)
+	 *     protocol=ID '://' ':' (WS '--')? (ambiguity) (rule end)
+	 *     resource=HTTP (WS '--')? (ambiguity) (rule end)
+	 *     resource=ID (WS '--')? (ambiguity) (rule end)
+	 *     url=URL (WS '--')? (ambiguity) (rule end)
+	 */
+	protected void emit_CommandLineInterface_WSTerminalRuleCall_10_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
 	 *     (WS '--')?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) HTTP WS ':' (ambiguity) (rule start)
 	 *     (rule start) HTTP WS ':' (ambiguity) WS items+=Item
-	 *     flags+=Flag WS ':' (ambiguity) (rule end)
+	 *     (rule start) HTTP WS ':' (ambiguity) WS? (rule start)
 	 *     flags+=Flag WS ':' (ambiguity) WS items+=Item
-	 *     method=Method WS ':' (ambiguity) (rule end)
+	 *     flags+=Flag WS ':' (ambiguity) WS? (rule end)
 	 *     method=Method WS ':' (ambiguity) WS items+=Item
-	 *     port=INT (ambiguity) (rule end)
+	 *     method=Method WS ':' (ambiguity) WS? (rule end)
 	 *     port=INT (ambiguity) WS items+=Item
-	 *     protocol=HTTP '://' ':' (ambiguity) (rule end)
+	 *     port=INT (ambiguity) WS? (rule end)
 	 *     protocol=HTTP '://' ':' (ambiguity) WS items+=Item
-	 *     protocol=ID '://' ':' (ambiguity) (rule end)
+	 *     protocol=HTTP '://' ':' (ambiguity) WS? (rule end)
 	 *     protocol=ID '://' ':' (ambiguity) WS items+=Item
-	 *     resource=HTTP (ambiguity) (rule end)
+	 *     protocol=ID '://' ':' (ambiguity) WS? (rule end)
 	 *     resource=HTTP (ambiguity) WS items+=Item
-	 *     resource=ID (ambiguity) (rule end)
+	 *     resource=HTTP (ambiguity) WS? (rule end)
 	 *     resource=ID (ambiguity) WS items+=Item
-	 *     url=URL (ambiguity) (rule end)
+	 *     resource=ID (ambiguity) WS? (rule end)
 	 *     url=URL (ambiguity) WS items+=Item
+	 *     url=URL (ambiguity) WS? (rule end)
 	 */
 	protected void emit_CommandLineInterface___WSTerminalRuleCall_8_0_HyphenMinusHyphenMinusKeyword_8_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -247,7 +271,7 @@ public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSeq
 	
 	/**
 	 * Ambiguous syntax:
-	 *     '--download' | '-d'
+	 *     '-d' | '--download'
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) (rule start)
@@ -269,7 +293,7 @@ public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSeq
 	
 	/**
 	 * Ambiguous syntax:
-	 *     '-t' | '--header'
+	 *     '--header' | '-t'
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) (rule start)
@@ -335,7 +359,7 @@ public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSeq
 	
 	/**
 	 * Ambiguous syntax:
-	 *     '--json' | '-j'
+	 *     '-j' | '--json'
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) (rule start)
@@ -422,7 +446,7 @@ public class CurlBetterThanHttpieSyntacticSequencer extends AbstractSyntacticSeq
 	
 	/**
 	 * Ambiguous syntax:
-	 *     '=' | WS
+	 *     WS | '='
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) '--proxy' (ambiguity) protocol=HTTP

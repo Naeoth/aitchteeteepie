@@ -330,6 +330,12 @@ ruleCommandLineInterface returns [EObject current=null]
 				)
 			)
 		)*
+		(
+			this_WS_20=RULE_WS
+			{
+				newLeafNode(this_WS_20, grammarAccess.getCommandLineInterfaceAccess().getWSTerminalRuleCall_10());
+			}
+		)?
 	)
 ;
 
@@ -2552,9 +2558,9 @@ ruleJsonNumber returns [EObject current=null]
 }:
 	(
 		(
-			lv_value_0_0=RULE_NUMBER
+			lv_value_0_0=RULE_FLOAT
 			{
-				newLeafNode(lv_value_0_0, grammarAccess.getJsonNumberAccess().getValueNUMBERTerminalRuleCall_0());
+				newLeafNode(lv_value_0_0, grammarAccess.getJsonNumberAccess().getValueFLOATTerminalRuleCall_0());
 			}
 			{
 				if ($current==null) {
@@ -2564,7 +2570,7 @@ ruleJsonNumber returns [EObject current=null]
 					$current,
 					"value",
 					lv_value_0_0,
-					"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.NUMBER");
+					"aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.FLOAT");
 			}
 		)
 	)
@@ -2617,19 +2623,17 @@ fragment RULE_DIGIT : '0'..'9';
 
 fragment RULE_LETTER : ('a'..'z'|'A'..'Z'|'_');
 
+RULE_BOOLEAN : ('true'|'false');
+
+RULE_NULL : 'null';
+
 RULE_HTTP : 'http';
 
 RULE_URL : ('localhost'|RULE_ID '.' RULE_ID);
 
 RULE_INT : ('0'|'1'..'9' RULE_DIGIT*);
 
-RULE_FLOAT : (RULE_INT|RULE_INT? '.' RULE_DIGIT* (('E'|'e') RULE_INT)?);
-
-RULE_BOOLEAN : ('true'|'false');
-
-RULE_NULL : 'null';
-
-RULE_NUMBER : '-'? RULE_INT ('.' RULE_DIGIT*)? (('E'|'e') '-'? RULE_DIGIT*)?;
+RULE_FLOAT : '-'? RULE_INT ('.' RULE_DIGIT* (('E'|'e') '-'? RULE_INT)?)?;
 
 RULE_WS : (' '|'\t')+;
 

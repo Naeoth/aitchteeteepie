@@ -70,14 +70,15 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 		private final RuleCall cWSTerminalRuleCall_9_0 = (RuleCall)cGroup_9.eContents().get(0);
 		private final Assignment cItemsAssignment_9_1 = (Assignment)cGroup_9.eContents().get(1);
 		private final RuleCall cItemsItemParserRuleCall_9_1_0 = (RuleCall)cItemsAssignment_9_1.eContents().get(0);
+		private final RuleCall cWSTerminalRuleCall_10 = (RuleCall)cGroup.eContents().get(10);
 		
 		//CommandLineInterface:
 		//	{CommandLineInterface} HTTP (WS flags+=Flag)* (WS method=Method)? WS (protocol=(ID | HTTP) '://')? (url=URL (':'
-		//	port=INT)? | ':' port=INT?) ('/' resource=(ID | HTTP))? (WS '--')? (WS items+=Item)*;
+		//	port=INT)? | ':' port=INT?) ('/' resource=(ID | HTTP))? (WS '--')? (WS items+=Item)* WS?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{CommandLineInterface} HTTP (WS flags+=Flag)* (WS method=Method)? WS (protocol=(ID | HTTP) '://')? (url=URL (':'
-		//port=INT)? | ':' port=INT?) ('/' resource=(ID | HTTP))? (WS '--')? (WS items+=Item)*
+		//port=INT)? | ':' port=INT?) ('/' resource=(ID | HTTP))? (WS '--')? (WS items+=Item)* WS?
 		public Group getGroup() { return cGroup; }
 		
 		//{CommandLineInterface}
@@ -205,6 +206,9 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 		
 		//Item
 		public RuleCall getItemsItemParserRuleCall_9_1_0() { return cItemsItemParserRuleCall_9_1_0; }
+		
+		//WS?
+		public RuleCall getWSTerminalRuleCall_10() { return cWSTerminalRuleCall_10; }
 	}
 	public class FlagElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.Flag");
@@ -221,7 +225,6 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 		private final RuleCall cVerboseFlagParserRuleCall_9 = (RuleCall)cAlternatives.eContents().get(9);
 		private final RuleCall cTimeoutFlagParserRuleCall_10 = (RuleCall)cAlternatives.eContents().get(10);
 		
-		////WS?
 		//// FLAGS
 		//Flag:
 		//	ProxyFlag | FormFlag | AuthFlag | DownloadFlag | BodyFlag | VersionFlag | JsonFlag | HelpFlag | HeadersFlag |
@@ -1532,17 +1535,17 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 	public class JsonNumberElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.JsonNumber");
 		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cValueNUMBERTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
+		private final RuleCall cValueFLOATTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
 		
 		//JsonNumber:
-		//	value=NUMBER;
+		//	value=FLOAT;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//value=NUMBER
+		//value=FLOAT
 		public Assignment getValueAssignment() { return cValueAssignment; }
 		
-		//NUMBER
-		public RuleCall getValueNUMBERTerminalRuleCall_0() { return cValueNUMBERTerminalRuleCall_0; }
+		//FLOAT
+		public RuleCall getValueFLOATTerminalRuleCall_0() { return cValueFLOATTerminalRuleCall_0; }
 	}
 	
 	public class MethodElements extends AbstractEnumRuleElementFinder {
@@ -1619,13 +1622,12 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 	private final JsonNumberElements pJsonNumber;
 	private final TerminalRule tDIGIT;
 	private final TerminalRule tLETTER;
+	private final TerminalRule tBOOLEAN;
+	private final TerminalRule tNULL;
 	private final TerminalRule tHTTP;
 	private final TerminalRule tURL;
 	private final TerminalRule tINT;
 	private final TerminalRule tFLOAT;
-	private final TerminalRule tBOOLEAN;
-	private final TerminalRule tNULL;
-	private final TerminalRule tNUMBER;
 	private final TerminalRule tWS;
 	private final TerminalRule tID;
 	
@@ -1664,13 +1666,12 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 		this.pJsonNumber = new JsonNumberElements();
 		this.tDIGIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.DIGIT");
 		this.tLETTER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.LETTER");
+		this.tBOOLEAN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.BOOLEAN");
+		this.tNULL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.NULL");
 		this.tHTTP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.HTTP");
 		this.tURL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.URL");
 		this.tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.INT");
 		this.tFLOAT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.FLOAT");
-		this.tBOOLEAN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.BOOLEAN");
-		this.tNULL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.NULL");
-		this.tNUMBER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.NUMBER");
 		this.tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.WS");
 		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "aitchteeteepie.xtext.dsl.CurlBetterThanHttpie.ID");
 	}
@@ -1700,7 +1701,7 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 	
 	//CommandLineInterface:
 	//	{CommandLineInterface} HTTP (WS flags+=Flag)* (WS method=Method)? WS (protocol=(ID | HTTP) '://')? (url=URL (':'
-	//	port=INT)? | ':' port=INT?) ('/' resource=(ID | HTTP))? (WS '--')? (WS items+=Item)*;
+	//	port=INT)? | ':' port=INT?) ('/' resource=(ID | HTTP))? (WS '--')? (WS items+=Item)* WS?;
 	public CommandLineInterfaceElements getCommandLineInterfaceAccess() {
 		return pCommandLineInterface;
 	}
@@ -1709,7 +1710,6 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 		return getCommandLineInterfaceAccess().getRule();
 	}
 	
-	////WS?
 	//// FLAGS
 	//Flag:
 	//	ProxyFlag | FormFlag | AuthFlag | DownloadFlag | BodyFlag | VersionFlag | JsonFlag | HelpFlag | HeadersFlag |
@@ -1979,7 +1979,7 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 	}
 	
 	//JsonNumber:
-	//	value=NUMBER;
+	//	value=FLOAT;
 	public JsonNumberElements getJsonNumberAccess() {
 		return pJsonNumber;
 	}
@@ -1998,6 +1998,18 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 	//	'a'..'z' | 'A'..'Z' | '_';
 	public TerminalRule getLETTERRule() {
 		return tLETTER;
+	}
+	
+	//terminal BOOLEAN returns ecore::EBoolean:
+	//	'true' | 'false';
+	public TerminalRule getBOOLEANRule() {
+		return tBOOLEAN;
+	}
+	
+	//terminal NULL:
+	//	'null';
+	public TerminalRule getNULLRule() {
+		return tNULL;
 	}
 	
 	//terminal HTTP:
@@ -2019,27 +2031,9 @@ public class CurlBetterThanHttpieGrammarAccess extends AbstractGrammarElementFin
 	}
 	
 	//terminal FLOAT returns ecore::EFloat:
-	//	INT | INT? '.' DIGIT* (('E' | 'e') INT)?;
+	//	'-'? INT ('.' DIGIT* (('E' | 'e') '-'? INT)?)?;
 	public TerminalRule getFLOATRule() {
 		return tFLOAT;
-	}
-	
-	//terminal BOOLEAN returns ecore::EBoolean:
-	//	'true' | 'false';
-	public TerminalRule getBOOLEANRule() {
-		return tBOOLEAN;
-	}
-	
-	//terminal NULL:
-	//	'null';
-	public TerminalRule getNULLRule() {
-		return tNULL;
-	}
-	
-	//terminal NUMBER returns ecore::EFloat:
-	//	'-'? INT ('.' DIGIT*)? (('E' | 'e') '-'? DIGIT*)?;
-	public TerminalRule getNUMBERRule() {
-		return tNUMBER;
 	}
 	
 	//terminal WS:

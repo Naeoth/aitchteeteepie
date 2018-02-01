@@ -332,7 +332,7 @@ public class CurlBetterThanHttpieSemanticSequencer extends AbstractDelegatingSem
 	 *     JsonNumber returns JsonNumber
 	 *
 	 * Constraint:
-	 *     value=NUMBER
+	 *     value=FLOAT
 	 */
 	protected void sequence_JsonNumber(ISerializationContext context, JsonNumber semanticObject) {
 		if (errorAcceptor != null) {
@@ -340,7 +340,7 @@ public class CurlBetterThanHttpieSemanticSequencer extends AbstractDelegatingSem
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AitchteeteepiePackage.Literals.JSON_NUMBER__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getJsonNumberAccess().getValueNUMBERTerminalRuleCall_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getJsonNumberAccess().getValueFLOATTerminalRuleCall_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
