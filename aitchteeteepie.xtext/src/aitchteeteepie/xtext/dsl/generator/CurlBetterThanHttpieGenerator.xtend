@@ -68,16 +68,16 @@ class CurlBetterThanHttpieGenerator extends AbstractGenerator {
 		val rawJsonFieldCmpl = RawJsonFieldItem.map[param | param.compile]
 		
 		var dataFieldsString = ""
-		if(dataFieldsCmpl.size > 0 && !formFlag)
+		if (dataFieldsCmpl.size > 0 && !formFlag)
 			dataFieldsString = '-d "' + dataFieldsCmpl.join('&') + '"'
-		else{
+		else
 			dataFieldsString = dataFieldsCmpl.join(' ')
-		}
+
 		var urlParametersString = ""
-		if(urlParametersCmpl.size > 0)
+		if (urlParametersCmpl.size > 0)
 			urlParametersString = '?' + urlParametersCmpl.join('&')
 		
-		'''curl «req.method.compile» «httpHeadersCmpl.join(' ')» «flagsCmpl.join(' ')» «req.protocol»://«req.url»:«req.port»«urlParametersString» «dataFieldsString»«formFieldsCmpl.join(' ')»«rawJsonFieldCmpl.join(' ')»'''
+		'''curl «req.method.compile» «httpHeadersCmpl.join(' ')» «flagsCmpl.join(' ')» «req.protocol»://«req.url»:«req.port»/«req.resource»«urlParametersString» «dataFieldsString»«formFieldsCmpl.join(' ')»«rawJsonFieldCmpl.join(' ')»'''
 	}
 	
 	def dispatch compile (Flag f) '''«f.compile»'''
@@ -105,9 +105,13 @@ class CurlBetterThanHttpieGenerator extends AbstractGenerator {
 	
 	def dispatch compile(JsonFlag jf) '''-H "Content-Type: application/json"'''
 	
-	def dispatch compile(AuthFlag af) '''--user «af.username»:«af.password» «af.hostname»'''
+	def dispatch compile(AuthFlag af) '''--user «af.username»«IF af.password !== null»:«af.password»«ENDIF»'''
 	
-	def dispatch compile(ProxyFlag pf) '''--proxy-user «pf.username»:«pf.password»'''
+	def dispatch compile(ProxyFlag pf) {
+		if (pf.proxyProtocol === null)
+			pf.proxyProtocol = "http";
+		'''--proxy «pf.proxyProtocol»://«IF pf.username !== null»«pf.username»:«pf.password»@«ENDIF»«pf.hostname»«IF pf.port != 0»«pf.port»«ENDIF»'''
+	}
 	
 	def dispatch compile(HttpHeaderItem http) '''-H "«http.field»: «http.value»"'''
 	
@@ -129,8 +133,7 @@ class CurlBetterThanHttpieGenerator extends AbstractGenerator {
 	
 	def dispatch compile(Member m) '''"«m.key»":«m.value.compile»'''
 	
-	def dispatch compile(JsonObject jsonObject)
-	'''{«IF jsonObject.members.length == 1»«jsonObject.members.get(0).compile»«ELSEIF jsonObject.members.length != 0»«val last = jsonObject.members.get(jsonObject.members.length - 1)»«FOR Member m : jsonObject.members»«m.compile»«IF last !== m»«','»«ENDIF»«ENDFOR»«ENDIF»}'''
+	def dispatch compile(JsonObject jsonObject) '''{«IF jsonObject.members.length == 1»«jsonObject.members.get(0).compile»«ELSEIF jsonObject.members.length != 0»«val last = jsonObject.members.get(jsonObject.members.length - 1)»«FOR Member m : jsonObject.members»«m.compile»«IF last !== m»«','»«ENDIF»«ENDFOR»«ENDIF»}'''
 	
 	def dispatch compile(JsonString jsonString) '''"«jsonString.value»"'''
 	
