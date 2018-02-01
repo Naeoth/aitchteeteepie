@@ -48,10 +48,6 @@ class CurlBetterThanHttpieGenerator extends AbstractGenerator {
 			req.url="localhost";
 		if (req.method === null)
 			req.method=Method.GET;
-		if (req.protocol === null)
-			req.protocol = "https";
-		if(req.port === 0)
-			req.port = 80;
 	
 		val flagsCmpl = req.flags.map[option | option.compile]
 		
@@ -77,7 +73,7 @@ class CurlBetterThanHttpieGenerator extends AbstractGenerator {
 		if (urlParametersCmpl.size > 0)
 			urlParametersString = '?' + urlParametersCmpl.join('&')
 		
-		'''curl «req.method.compile» «httpHeadersCmpl.join(' ')» «flagsCmpl.join(' ')» «req.protocol»://«req.url»:«req.port»/«req.resource»«urlParametersString» «dataFieldsString»«formFieldsCmpl.join(' ')»«rawJsonFieldCmpl.join(' ')»'''
+		'''curl «req.method.compile» «httpHeadersCmpl.join(' ')» «flagsCmpl.join(' ')» «IF req.protocol !== null»«req.protocol»://«ENDIF»«req.url»«IF req.port != 0»:«req.port»«ENDIF»«IF req.resource !== null»/«req.resource»«ENDIF»«urlParametersString» «dataFieldsString»«formFieldsCmpl.join(' ')»«rawJsonFieldCmpl.join(' ')»'''
 	}
 	
 	def dispatch compile (Flag f) '''«f.compile»'''
